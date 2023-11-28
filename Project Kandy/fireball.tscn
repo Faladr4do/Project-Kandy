@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://6sl7t740k2tp"]
+
+[ext_resource type="Script" path="res://fireball.gd" id="1_5jgkk"]
+[ext_resource type="Texture2D" uid="uid://no4ohgd0ro2s" path="res://Project Kandy/projectile/durum.png" id="2_sgbus"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_45fqv"]
+size = Vector2(10.16, 5)
+
+[node name="fireball" type="Area2D"]
+script = ExtResource("1_5jgkk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 1.19209e-07)
+rotation = -0.380039
+scale = Vector2(0.012, 0.012)
+texture = ExtResource("2_sgbus")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_45fqv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
