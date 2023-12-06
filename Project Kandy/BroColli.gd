@@ -16,10 +16,10 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var doubleJump = false
 var lentoTempo = false
 var staAtacar = false
+var estigar_cooldown = true
 
 func _ready():
 	add_to_group("Vegetal")
-
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -35,9 +35,7 @@ func _physics_process(delta):
 			doubleJump = false
 		
 	if Input.is_action_just_pressed("reiniciar"):
-		get_tree().reload_current_scene()
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+		morrer()
 	
 	if Input.is_action_just_pressed("slown") and lentoTempo == false:
 		lentoTempo = true
@@ -52,11 +50,14 @@ func _physics_process(delta):
 		relogio.emit_signal("timeout")
 		
 	if Input.is_action_just_pressed("estigar"):
-		animColli.play("shoot")
-		staAtacar = true
-		await animColli.animation_finished
-		estigar()
-		staAtacar = false
+		if estigar_cooldown:
+			animColli.play("shoot")
+			staAtacar = true
+			await animColli.animation_finished
+			estigar()
+			staAtacar = false
+		else:
+			pass
 	
 	var direction = Input.get_axis("left", "right")
 	
@@ -94,3 +95,14 @@ func estigar():
 	var cena_estigada = fire.instantiate()
 	owner.add_child(cena_estigada)
 	cena_estigada.global_position = mira.global_position
+
+
+func _on_hitbox_body_entered(body):
+	if body.is_in_group("Inimigo"):
+		if Global.vidas_totais > 0:
+			Global.vidas_totais -= 1
+		elif Global.vidas_totais <= 0:
+			morrer()
+		
+func morrer():
+	get_tree().reload_current_scene()

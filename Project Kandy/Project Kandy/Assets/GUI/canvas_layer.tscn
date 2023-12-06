@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://em3bia5jdls6"]
+
+[ext_resource type="Script" path="res://CanvasLayer.gd" id="1_hitcr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rn8m5"]
+font_size = 5
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_yk2s1"]
+font_size = 5
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_hitcr")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 2.0
+offset_right = 42.0
+offset_bottom = 23.0
+label_settings = SubResource("LabelSettings_rn8m5")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 2.0
+offset_top = 5.0
+offset_right = 42.0
+offset_bottom = 28.0
+label_settings = SubResource("LabelSettings_yk2s1")
+clip_text = true

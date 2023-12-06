@@ -36,7 +36,7 @@ func _physics_process(delta):
 	var direction = Input.get_axis("left", "right")
 	
 	if direction != 0:
-		spriteCorn.flip_h = (direction == -1)
+		spriteNick.flip_h = (direction == -1)
 	
 	if direction:
 		velocity.x = direction * SPEED

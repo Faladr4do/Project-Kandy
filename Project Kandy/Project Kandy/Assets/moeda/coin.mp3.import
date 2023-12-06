@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://4uhmqknl0psx"
+path="res://.godot/imported/coin.mp3-9520d9677b97eecbbeb977ea7163fc22.mp3str"
+
+[deps]
+
+source_file="res://Project Kandy/Assets/moeda/coin.mp3"
+dest_files=["res://.godot/imported/coin.mp3-9520d9677b97eecbbeb977ea7163fc22.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

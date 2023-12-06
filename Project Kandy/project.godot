@@ -12,8 +12,12 @@ config_version=5
 
 config/name="Project Kandy"
 run/main_scene="res://TesterKandy.tscn"
-config/features=PackedStringArray("4.1", "GL Compatibility")
+config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://kandy_icon.png"
+
+[autoload]
+
+Global="*res://global.gd"
 
 [display]
 
