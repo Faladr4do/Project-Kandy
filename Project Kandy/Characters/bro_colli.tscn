@@ -290,7 +290,7 @@ _data = {
 size = Vector2(10, 2)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l3l3h"]
-size = Vector2(14, 19)
+size = Vector2(10, 19)
 
 [node name="BroColli" type="CharacterBody2D"]
 script = ExtResource("1_6f88t")
@@ -302,29 +302,36 @@ hframes = 5
 [node name="Marker2D" type="Marker2D" parent="Sprite2D"]
 position = Vector2(12, 0)
 
+[node name="TextureRect" type="TextureRect" parent="Sprite2D"]
+z_index = -25
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -169.5
+offset_top = -109.0
+offset_right = 150.5
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("6_vyyb6")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_us7li")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "idle"
 libraries = {
 "": SubResource("AnimationLibrary_gmvhx")
 }
-autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 process_callback = 0
 position_smoothing_enabled = true
-
-[node name="TextureRect" type="TextureRect" parent="."]
-z_index = -25
-offset_left = -132.0
-offset_top = -84.0
-offset_right = 145.0
-offset_bottom = 81.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("6_vyyb6")
 
 [node name="pes" type="Area2D" parent="."]
 
