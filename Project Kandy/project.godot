@@ -65,6 +65,12 @@ estigar={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Mundo"
+2d_physics/layer_2="Players"
+2d_physics/layer_3="Inimigos"
+
 [physics]
 
 2d/default_gravity_vector=Vector2(0, -1)

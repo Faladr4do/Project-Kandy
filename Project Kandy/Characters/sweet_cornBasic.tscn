@@ -1,95 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://dapxtpx1vq5jn"]
+[gd_scene load_steps=17 format=3 uid="uid://dapxtpx1vq5jn"]
 
+[ext_resource type="Script" path="res://Characters/sweet_cornBasic.gd" id="1_5xf0j"]
 [ext_resource type="Texture2D" uid="uid://bkufkfhu20hhy" path="res://Project Kandy/Sweet Corn/SweetCornIdle.png" id="1_f2mfh"]
 [ext_resource type="Texture2D" uid="uid://ceng7qppwnou3" path="res://Project Kandy/Sweet Corn/SweetCornDead.png" id="2_0yo8a"]
 [ext_resource type="Texture2D" uid="uid://cqkg2gljrjoue" path="res://Project Kandy/Sweet Corn/SweetCornJump.png" id="3_w5r3w"]
 [ext_resource type="Texture2D" uid="uid://5kex756gnjbo" path="res://Project Kandy/Sweet Corn/SweetCornWalk.png" id="4_jjah7"]
-
-[sub_resource type="GDScript" id="GDScript_6amq8"]
-script/source = "extends CharacterBody2D
-
-
-@onready var velocy = -20.0
-@onready var velocyOld = 0
-
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting(\"physics/2d/default_gravity\")
-var estaVivo = true
-var estaMorrer = false
-var patrulhando = false
-
-
-@onready var animCorn = $AnimationPlayer
-@onready var spriteCorn = $Sprite2D
-@onready var chao = $RayCast2D
-
-func _ready():
-	add_to_group(\"Inimigo\")
-
-func _physics_process(delta):
-	if estaMorrer:
-		return
-	if not is_on_floor():
-		velocity.y += gravity * delta
-	
-	if is_on_floor():
-		if chao.is_colliding() and !is_on_wall():
-			velocity.x = velocy
-		elif !chao.is_colliding() or is_on_wall():
-			virar()
-
-#	if is_on_floor() or is_on_wall():
-#		if chao.is_colliding() and !is_on_wall():
-#			velocity.x = velocy
-#		elif !chao.is_colliding() or is_on_wall():
-#			virar()
-	
-	move_and_slide()
-	atualizar_Anims(velocy)
-	fall()
-	
-func atualizar_Anims(velocy):
-	if estaMorrer:
-		return
-	if is_on_floor():
-		if velocy == 0:
-			animCorn.play(\"idle\")
-		else:
-			animCorn.play(\"walk\")
-	else:
-		if velocity.y < 0:
-			animCorn.play(\"jump\")
-		#elif position.y > 200:
-			#animCorn.play(\"dead\")
-
-func fall():
-	if not is_on_floor() and position.y > 200:
-		animCorn.play(\"dead\")
-
-
-func _on_hitbox_body_entered(body):
-	if body.is_in_group(\"Vegetal\"):
-		morte()
-
-func morte():
-	if estaMorrer:
-		return
-	animCorn.play(\"dead\")
-	$hitbox/CollisionShape2D.call_deferred(\"set_disabled\", true)
-	$CollisionShape2D.call_deferred(\"set_disabled\", true)
-	estaMorrer = true
-	await get_tree().create_timer(0.75).timeout
-	queue_free()
-
-func virar():
-	scale.x = abs(scale.x) * -1
-	velocy= velocy*-1
-
-
-func _on_target_body_entered(body):
-	if body.is_in_group(\"bala\"):
-		morte()
-"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y50cb"]
 size = Vector2(24.9999, 26.7858)
@@ -372,10 +287,13 @@ _data = {
 size = Vector2(10, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_spfyy"]
-size = Vector2(14, 15)
+size = Vector2(12, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_su3ax"]
+size = Vector2(15, 8)
 
 [node name="SweetCorn" type="CharacterBody2D"]
-script = SubResource("GDScript_6amq8")
+script = ExtResource("1_5xf0j")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_f2mfh")
@@ -408,10 +326,21 @@ scale = Vector2(0.937, 0.3)
 wait_time = 2.0
 
 [node name="target" type="Area2D" parent="."]
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="target"]
-position = Vector2(0, 6.5)
+position = Vector2(-1, 7.5)
 shape = SubResource("RectangleShape2D_spfyy")
+debug_color = Color(0.890196, 0, 0.796078, 0.235294)
+
+[node name="teste parede" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="teste parede"]
+position = Vector2(-3.5, 6)
+shape = SubResource("RectangleShape2D_su3ax")
+debug_color = Color(0, 0.639216, 0.352941, 0.25098)
 
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_entered" from="target" to="." method="_on_target_body_entered"]
+[connection signal="body_entered" from="teste parede" to="." method="_on_teste_parede_body_entered"]

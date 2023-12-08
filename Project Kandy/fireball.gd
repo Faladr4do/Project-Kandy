@@ -5,12 +5,14 @@ var velocidade = -90
 var ladoD
 
 func _ready():
-	add_to_group("bala")
+	add_to_group("Bala")
 
 func _physics_process(delta):
 	position += transform.x * velocidade * delta
 	
 func _on_body_entered(body):
 	if body.is_in_group("Inimigo"):
-		queue_free()
+		pass
+	elif body.is_in_group("Alvo"):
+		pass
 	

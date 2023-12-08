@@ -1,2 +1,9 @@
 res://TesterKandy.tscn
+res://BroColli.gd
 res://Characters/bro_colli.tscn
+res://CanvasLayer.gd
+res://moving_platform.gd
+res://Characters/sweet_cornBasic.tscn
+res://Characters/sweet_cornBasic.gd
+res://fireball.gd
+res://fireball.tscn

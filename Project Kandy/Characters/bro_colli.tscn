@@ -347,4 +347,8 @@ position = Vector2(0, 11)
 position = Vector2(0, -10.5)
 shape = SubResource("RectangleShape2D_l3l3h")
 
+[node name="estigar cooldown" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

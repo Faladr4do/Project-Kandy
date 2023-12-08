@@ -10,13 +10,15 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var animColli = $AnimationPlayer
 @onready var spriteColli = $Sprite2D
 @onready var mira : Marker2D = $Sprite2D/Marker2D
+@onready var estigar_cooldown = $"estigar cooldown"
 
 @export var fire : PackedScene = preload("res://fireball.tscn")
 
 var doubleJump = false
 var lentoTempo = false
 var staAtacar = false
-var estigar_cooldown = true
+var cooldown = false
+
 
 func _ready():
 	add_to_group("Vegetal")
@@ -50,12 +52,15 @@ func _physics_process(delta):
 		relogio.emit_signal("timeout")
 		
 	if Input.is_action_just_pressed("estigar"):
-		if estigar_cooldown:
-			animColli.play("shoot")
+		if !cooldown:
 			staAtacar = true
+			cooldown = true
+			animColli.play("shoot")
 			await animColli.animation_finished
 			estigar()
 			staAtacar = false
+			await estigar_cooldown.timeout
+			cooldown = false
 		else:
 			pass
 	
