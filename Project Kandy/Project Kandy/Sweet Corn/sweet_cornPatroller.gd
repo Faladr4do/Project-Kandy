@@ -91,9 +91,10 @@ func morte():
 
 func virar():
 	velocy_old= velocy
-	velocy= velocy_old*0
+	velocy= velocy*0
 	print(velocy)
 	await get_tree().create_timer(3).timeout
 	print(velocy)
+	velocy= velocy*1
 	scale.x = abs(scale.x) * -1
-	velocy= velocy_old * -1
+	velocy= velocy * -1

@@ -12,7 +12,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var mira : Marker2D = $Sprite2D/Marker2D
 @onready var estigar_cooldown = $"estigar cooldown"
 
-@export var fire : PackedScene = preload("res://fireball.tscn")
+@export var fire : PackedScene = preload("res://Project Kandy/Projeteis/fireball.tscn")
 
 var doubleJump = false
 var lentoTempo = false

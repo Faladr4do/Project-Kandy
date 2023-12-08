@@ -290,7 +290,7 @@ size = Vector2(10, 1)
 size = Vector2(12, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_su3ax"]
-size = Vector2(15, 17)
+size = Vector2(15, 15)
 
 [node name="SweetCorn" type="CharacterBody2D"]
 script = ExtResource("1_5xf0j")
@@ -337,7 +337,7 @@ debug_color = Color(0.890196, 0, 0.796078, 0.235294)
 [node name="teste parede" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="teste parede"]
-position = Vector2(-3.5, 5.5)
+position = Vector2(-3.5, 6.5)
 shape = SubResource("RectangleShape2D_su3ax")
 debug_color = Color(0, 0.639216, 0.352941, 0.25098)
 
