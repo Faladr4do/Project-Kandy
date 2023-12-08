@@ -1,9 +1,5 @@
+res://Project Kandy/Sweet Corn/sweet_cornBasic.tscn
 res://TesterKandy.tscn
-res://BroColli.gd
-res://Characters/bro_colli.tscn
-res://CanvasLayer.gd
-res://moving_platform.gd
-res://Characters/sweet_cornBasic.tscn
-res://Characters/sweet_cornBasic.gd
-res://fireball.gd
-res://fireball.tscn
+res://Project Kandy/Sweet Corn/sweet_cornBasic.gd
+res://Project Kandy/Sweet Corn/sweet_cornPatroller.tscn
+res://Project Kandy/Sweet Corn/sweet_cornPatroller.gd

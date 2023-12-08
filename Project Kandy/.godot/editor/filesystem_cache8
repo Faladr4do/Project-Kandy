@@ -1,34 +1,20 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1702075530
-BroColli.gd::GDScript::-1::1702071556::0::1::::<>CharacterBody2D<>::
+::res://::1702076442
 CanvasLayer.gd::GDScript::-1::1702071801::0::1::::<>CanvasLayer<>::
 CharacterBody2D.gd::GDScript::-1::1701989475::0::1::::<>CharacterBody2D<>::
 export_presets.cfg::TextFile::-1::1701989475::0::1::::<><>::
 fireball.gd::GDScript::-1::1702074469::0::1::::<>Area2D<>::
-fireball.tscn::PackedScene::2213739033406322305::1702075383::0::1::::<><>::res://fireball.gd<>uid://no4ohgd0ro2s::::res://Project Kandy/projectile/durum.png
+fireball.tscn::PackedScene::2213739033406322305::1702075951::0::1::::<><>::res://fireball.gd<>uid://no4ohgd0ro2s::::res://Project Kandy/projectile/durum.png
 global.gd::GDScript::-1::1701989475::0::1::::<>Node<>::
 icon.svg::CompressedTexture2D::5401316501093550367::1701989475::1701989475::1::::<><>::
 kandy_icon.png::CompressedTexture2D::8537936388674910985::1701989475::1701989475::1::::<><>::
-LeoIdleSheet.png::CompressedTexture2D::1631525232789507407::1701989475::1701989475::1::::<><>::
-LeoPlayer.gd::GDScript::-1::1701989475::0::1::::<>CharacterBody2D<>::
-leo_player.tscn::PackedScene::3039917526579722137::1701989475::0::1::::<><>::res://LeoPlayer.gd<>uid://xik8no8teyd0::::res://LeoIdleSheet.png<>uid://e5x4v2l1kjf8::::res://Project Kandy/Assets/Tiles/BgSky.png
 moving_platform.gd::GDScript::-1::1702072892::0::1::::<>Path2D<>::
 moving_platform.tscn::PackedScene::1334344155978892781::1701989475::0::1::::<><>::res://moving_platform.gd<>uid://tkwdg4lmkmy4::::res://Project Kandy/Assets/Tiles/moving_platforms.png
 new_script.gd::GDScript::-1::1702072722::0::1::::<>CharacterBody2D<>::
 spritesheet (1).png::CompressedTexture2D::5920732495532484598::1701989475::1701989475::1::::<><>::
 spritesheet.png::CompressedTexture2D::5648624615300684109::1701989475::1701989475::1::::<><>::
-TesterKandy.tscn::PackedScene::4829026827772789777::1702075382::0::1::::<><>::uid://c0ej330af3pbo::::res://Characters/bro_colli.tscn<>uid://bb3ayy721opys::::res://Project Kandy/Assets/Tiles/Tilemap.png<>uid://xqjbpnw1t7fm::::res://Characters/red_twins.tscn<>uid://dapxtpx1vq5jn::::res://Characters/sweet_cornBasic.tscn<>uid://brgldvwqi3en::::res://Project Kandy/Assets/Tiles/WallsFloor.png<>uid://bsfm2vssugol0::::res://Project Kandy/Assets/moeda/moeda.tscn<>uid://em3bia5jdls6::::res://Project Kandy/Assets/GUI/canvas_layer.tscn<>uid://tampoaptrmt6::::res://moving_platform.tscn
-::res://Characters/::1702075383
-bro_colli.tscn::PackedScene::6536417933799200092::1702075383::0::1::::<><>::res://BroColli.gd<>uid://cmj6xb5led6hh::::res://Project Kandy/BroColli/BroColliIdle.png<>uid://camufduobrdxn::::res://Project Kandy/BroColli/BroColliJump.png<>uid://bsp2ucfp8bs48::::res://Project Kandy/BroColli/BroColliWalk.png<>uid://daab8s3kc4ew8::::res://Project Kandy/BroColli/BroColliShoot.png<>uid://e5x4v2l1kjf8::::res://Project Kandy/Assets/Tiles/BgSky.png
-red_twins.gd::GDScript::-1::1701989475::0::1::::<>CharacterBody2D<>::
-red_twins.tscn::PackedScene::1647922495436321902::1701989475::0::1::::<><>::uid://c58w4c1ssjuct::::res://Project Kandy/RapMato & SliceSpice/MatoSpiceIdle.png<>res://Characters/red_twins.gd
-SweetCorn.gd::GDScript::-1::1701989475::0::1::::<>CharacterBody2D<>::
-sweet_corn.tscn::PackedScene::3411031283395036962::1701989475::0::1::::<><>::uid://bkufkfhu20hhy::::res://Project Kandy/Sweet Corn/SweetCornIdle.png<>uid://5kex756gnjbo::::res://Project Kandy/Sweet Corn/SweetCornWalk.png<>uid://cqkg2gljrjoue::::res://Project Kandy/Sweet Corn/SweetCornJump.png<>uid://ceng7qppwnou3::::res://Project Kandy/Sweet Corn/SweetCornDead.png
-sweet_cornBasic2.gd::GDScript::-1::1702072678::0::1::::<>CharacterBody2D<>::
-sweet_cornBasic.gd::GDScript::-1::1702075079::0::1::::<>CharacterBody2D<>::
-sweet_cornBasic.tscn::PackedScene::7191658962898823175::1702075383::0::1::::<><>::res://Characters/sweet_cornBasic.gd<>uid://bkufkfhu20hhy::::res://Project Kandy/Sweet Corn/SweetCornIdle.png<>uid://ceng7qppwnou3::::res://Project Kandy/Sweet Corn/SweetCornDead.png<>uid://cqkg2gljrjoue::::res://Project Kandy/Sweet Corn/SweetCornJump.png<>uid://5kex756gnjbo::::res://Project Kandy/Sweet Corn/SweetCornWalk.png
-sweet_cornPatrol.tscn::PackedScene::201865167295318987::1701989475::0::1::::<><>::uid://bkufkfhu20hhy::::res://Project Kandy/Sweet Corn/SweetCornIdle.png<>uid://ceng7qppwnou3::::res://Project Kandy/Sweet Corn/SweetCornDead.png<>uid://cqkg2gljrjoue::::res://Project Kandy/Sweet Corn/SweetCornJump.png<>uid://5kex756gnjbo::::res://Project Kandy/Sweet Corn/SweetCornWalk.png
-::res://Project Kandy/::1701989475
+TesterKandy.tscn::PackedScene::4829026827772789777::1702076442::0::1::::<><>::uid://c0ej330af3pbo::::res://Project Kandy/BroColli/bro_colli.tscn<>uid://bb3ayy721opys::::res://Project Kandy/Assets/Tiles/Tilemap.png<>uid://xqjbpnw1t7fm::::res://Project Kandy/RapMato & SliceSpice/red_twins.tscn<>uid://dapxtpx1vq5jn::::res://Project Kandy/Sweet Corn/sweet_cornBasic.tscn<>uid://brgldvwqi3en::::res://Project Kandy/Assets/Tiles/WallsFloor.png<>uid://bsfm2vssugol0::::res://Project Kandy/Assets/moeda/moeda.tscn<>uid://em3bia5jdls6::::res://Project Kandy/Assets/GUI/canvas_layer.tscn<>uid://tampoaptrmt6::::res://moving_platform.tscn
+::res://Project Kandy/::1702076181
 ::res://Project Kandy/Assets/::1701989475
 ::res://Project Kandy/Assets/GUI/::1701989475
 canvas_layer.tscn::PackedScene::307230190754234903::1701989475::0::1::::<><>::res://CanvasLayer.gd
@@ -42,22 +28,41 @@ BgSky.png::CompressedTexture2D::344136131265803775::1701989475::1701989475::1:::
 moving_platforms.png::CompressedTexture2D::1355573298341452333::1701989475::1701989475::1::::<><>::
 Tilemap.png::CompressedTexture2D::2514456274754739054::1701989475::1701989475::1::::<><>::
 WallsFloor.png::CompressedTexture2D::105667402178852037::1701989475::1701989475::1::::<><>::
-::res://Project Kandy/BroColli/::1701989475
-BroColliIdle.png::CompressedTexture2D::5635610290237473321::1701989475::1701989475::1::::<><>::
-BroColliJump.png::CompressedTexture2D::4798837358364016639::1701989475::1701989475::1::::<><>::
-BroColliShoot.png::CompressedTexture2D::7159382688403929573::1701989475::1701989475::1::::<><>::
-BroColliWalk.png::CompressedTexture2D::3682460723667787003::1701989475::1701989475::1::::<><>::
+::res://Project Kandy/BroColli/::1702076140
+BroColli.gd::GDScript::-1::1702071556::0::1::::<>CharacterBody2D<>::
+bro_colli.tscn::PackedScene::6536417933799200092::1702076140::0::1::::<><>::res://Project Kandy/BroColli/BroColli.gd<>uid://cmj6xb5led6hh::::res://Project Kandy/BroColli/sprites/BroColliIdle.png<>uid://camufduobrdxn::::res://Project Kandy/BroColli/sprites/BroColliJump.png<>uid://bsp2ucfp8bs48::::res://Project Kandy/BroColli/sprites/BroColliWalk.png<>uid://daab8s3kc4ew8::::res://Project Kandy/BroColli/sprites/BroColliShoot.png<>uid://e5x4v2l1kjf8::::res://Project Kandy/Assets/Tiles/BgSky.png
+::res://Project Kandy/BroColli/sprites/::1702076140
+BroColliIdle.png::CompressedTexture2D::5635610290237473321::1701989475::1702076140::1::::<><>::
+BroColliJump.png::CompressedTexture2D::4798837358364016639::1701989475::1702076140::1::::<><>::
+BroColliShoot.png::CompressedTexture2D::7159382688403929573::1701989475::1702076140::1::::<><>::
+BroColliWalk.png::CompressedTexture2D::3682460723667787003::1701989475::1702076140::1::::<><>::
 ::res://Project Kandy/ideas/::1701989475
 pixil-frame-0 (1).png::CompressedTexture2D::6600604024701773751::1701989475::1701989475::1::::<><>::
 where it started.png::CompressedTexture2D::4814704913448542190::1701989475::1701989475::1::::<><>::
+::res://Project Kandy/LeoPlayer/::1702076247
+LeoPlayer.gd::GDScript::-1::1701989475::0::1::::<>CharacterBody2D<>::
+leo_player.tscn::PackedScene::3039917526579722137::1702076247::0::1::::<><>::res://Project Kandy/LeoPlayer/LeoPlayer.gd<>uid://xik8no8teyd0::::res://Project Kandy/LeoPlayer/sprites/LeoIdleSheet.png<>uid://e5x4v2l1kjf8::::res://Project Kandy/Assets/Tiles/BgSky.png
+::res://Project Kandy/LeoPlayer/sprites/::1702076253
+LeoIdleSheet.png::CompressedTexture2D::1631525232789507407::1701989475::1702076253::1::::<><>::
 ::res://Project Kandy/projectile/::1701989475
 durum.png::CompressedTexture2D::943142426858831320::1701989475::1701989475::1::::<><>::
 fireball.png::CompressedTexture2D::5516864784299819289::1701989475::1701989475::1::::<><>::
-::res://Project Kandy/RapMato & SliceSpice/::1701989475
-MatoSpiceIdle.png::CompressedTexture2D::6948018850329134159::1701989475::1701989475::1::::<><>::
-::res://Project Kandy/Sweet Corn/::1701989475
-SweetCornDead.png::CompressedTexture2D::5080855964359791332::1701989475::1701989475::1::::<><>::
-SweetCornHurt.png::CompressedTexture2D::6082057636855006624::1701989475::1701989475::1::::<><>::
-SweetCornIdle.png::CompressedTexture2D::3129918392433663834::1701989475::1701989475::1::::<><>::
-SweetCornJump.png::CompressedTexture2D::5916919494092305564::1701989475::1701989475::1::::<><>::
-SweetCornWalk.png::CompressedTexture2D::2126594756420822396::1701989475::1701989475::1::::<><>::
+::res://Project Kandy/RapMato & SliceSpice/::1702076040
+red_twins.gd::GDScript::-1::1701989475::0::1::::<>CharacterBody2D<>::
+red_twins.tscn::PackedScene::1647922495436321902::1702076040::0::1::::<><>::uid://c58w4c1ssjuct::::res://Project Kandy/RapMato & SliceSpice/sprites/MatoSpiceIdle.png<>res://Project Kandy/RapMato & SliceSpice/red_twins.gd
+::res://Project Kandy/RapMato & SliceSpice/sprites/::1702076040
+MatoSpiceIdle.png::CompressedTexture2D::6948018850329134159::1701989475::1702076040::1::::<><>::
+::res://Project Kandy/Sweet Corn/::1702076442
+sweet_cornPatroller.tscn::PackedScene::3368935622542987305::1702076539::0::1::::<><>::res://Project Kandy/Sweet Corn/sweet_cornBasic.gd<>uid://bkufkfhu20hhy::::res://Project Kandy/Sweet Corn/sprites/SweetCornIdle.png<>uid://ceng7qppwnou3::::res://Project Kandy/Sweet Corn/sprites/SweetCornDead.png<>uid://cqkg2gljrjoue::::res://Project Kandy/Sweet Corn/sprites/SweetCornJump.png<>uid://5kex756gnjbo::::res://Project Kandy/Sweet Corn/sprites/SweetCornWalk.png
+SweetCorn.gd::GDScript::-1::1701989475::0::1::::<>CharacterBody2D<>::
+sweet_corn.tscn::PackedScene::3411031283395036962::1702076019::0::1::::<><>::uid://bkufkfhu20hhy::::res://Project Kandy/Sweet Corn/sprites/SweetCornIdle.png<>uid://5kex756gnjbo::::res://Project Kandy/Sweet Corn/sprites/SweetCornWalk.png<>uid://cqkg2gljrjoue::::res://Project Kandy/Sweet Corn/sprites/SweetCornJump.png<>uid://ceng7qppwnou3::::res://Project Kandy/Sweet Corn/sprites/SweetCornDead.png
+sweet_cornBasic2.gd::GDScript::-1::1702072678::0::1::::<>CharacterBody2D<>::
+sweet_cornBasic.gd::GDScript::-1::1702076405::0::1::::<>CharacterBody2D<>::
+sweet_cornBasic.tscn::PackedScene::7191658962898823175::1702076516::0::1::::<><>::res://Project Kandy/Sweet Corn/sweet_cornBasic.gd<>uid://bkufkfhu20hhy::::res://Project Kandy/Sweet Corn/sprites/SweetCornIdle.png<>uid://ceng7qppwnou3::::res://Project Kandy/Sweet Corn/sprites/SweetCornDead.png<>uid://cqkg2gljrjoue::::res://Project Kandy/Sweet Corn/sprites/SweetCornJump.png<>uid://5kex756gnjbo::::res://Project Kandy/Sweet Corn/sprites/SweetCornWalk.png
+sweet_cornPatrol.tscn::PackedScene::201865167295318987::1702076019::0::1::::<><>::uid://bkufkfhu20hhy::::res://Project Kandy/Sweet Corn/sprites/SweetCornIdle.png<>uid://ceng7qppwnou3::::res://Project Kandy/Sweet Corn/sprites/SweetCornDead.png<>uid://cqkg2gljrjoue::::res://Project Kandy/Sweet Corn/sprites/SweetCornJump.png<>uid://5kex756gnjbo::::res://Project Kandy/Sweet Corn/sprites/SweetCornWalk.png
+::res://Project Kandy/Sweet Corn/sprites/::1702076019
+SweetCornDead.png::CompressedTexture2D::5080855964359791332::1701989475::1702076019::1::::<><>::
+SweetCornHurt.png::CompressedTexture2D::6082057636855006624::1701989475::1702076019::1::::<><>::
+SweetCornIdle.png::CompressedTexture2D::3129918392433663834::1701989475::1702076019::1::::<><>::
+SweetCornJump.png::CompressedTexture2D::5916919494092305564::1701989475::1702076019::1::::<><>::
+SweetCornWalk.png::CompressedTexture2D::2126594756420822396::1701989475::1702076019::1::::<><>::
