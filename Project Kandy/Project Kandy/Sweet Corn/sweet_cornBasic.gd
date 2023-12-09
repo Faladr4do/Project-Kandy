@@ -57,7 +57,7 @@ func atualizar_Anims(velocy):
 			#animCorn.play("dead")
 
 func fall():
-	if not is_on_floor() and position.y > 200:
+	if !is_on_floor() and position.y > 200:
 		animCorn.play("dead")
 
 
