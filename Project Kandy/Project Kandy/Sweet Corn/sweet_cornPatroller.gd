@@ -29,10 +29,10 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 	
 	if is_on_floor():
-		if chao.is_colliding() and !is_on_wall():
+		if chao.is_colliding():
 			velocity.x = velocy
-		elif !chao.is_colliding():
-			virar()
+		else:
+			patrulhar()
 #	if is_on_floor() or is_on_wall():
 #		if chao.is_colliding() and !is_on_wall():
 #			velocity.x = velocy
@@ -76,7 +76,7 @@ func _on_teste_parede_body_entered(body):
 	if body.is_in_group("Vegetal") or body.is_in_group("Bala"):
 		pass
 	else:
-		virar()
+		patrulhar()
 
 
 func morte():
@@ -90,11 +90,13 @@ func morte():
 	queue_free()
 
 func virar():
+	scale.x = abs(scale.x) * -1
+	velocy= velocy * -1
+
+func patrulhar():
 	velocy_old= velocy
-	velocy= velocy*0
-	print(velocy)
+	velocy= 0
 	await get_tree().create_timer(3).timeout
-	print(velocy)
-	velocy= velocy*1
+	velocy= velocy_old
 	scale.x = abs(scale.x) * -1
 	velocy= velocy * -1

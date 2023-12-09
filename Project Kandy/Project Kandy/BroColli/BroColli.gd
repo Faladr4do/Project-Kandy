@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const SPEED = 55.0
-const JUMP_VELOCITY = -140.0
+const JUMP_VELOCITY = -150.0
 var relogio = Timer.new()
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.

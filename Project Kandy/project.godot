@@ -73,6 +73,7 @@ estigar={
 
 [physics]
 
+2d/default_gravity=500.0
 2d/default_gravity_vector=Vector2(0, -1)
 
 [rendering]
