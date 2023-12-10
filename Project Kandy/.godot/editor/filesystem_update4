@@ -1,9 +1,6 @@
 res://TesterKandy.tscn
-res://Project Kandy/Sweet Corn/sweet_cornBasic.gd
-res://Project Kandy/Sweet Corn/prototype_jumper.tscn
-res://Project Kandy/Sweet Corn/prototype_jumper.gd
+res://Project Kandy/BroColli/BroColli.gd
 res://Project Kandy/BroColli/bro_colli.tscn
 res://Project Kandy/Sweet Corn/sweet_cornBasic.tscn
 res://Project Kandy/Sweet Corn/sweet_cornPatroller.tscn
-res://Project Kandy/BroColli/BroColli.gd
-res://Project Kandy/Sweet Corn/sweet_cornPatroller.gd
+res://Project Kandy/Sweet Corn/prototype_jumper.tscn

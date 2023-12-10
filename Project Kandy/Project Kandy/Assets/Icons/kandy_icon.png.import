@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dtv3thbmb7hp6"
-path="res://.godot/imported/kandy_icon.png-4aca80fea9ccab0e1f34d5183b7c67c0.ctex"
+path="res://.godot/imported/kandy_icon.png-c2718045747b29f4ea21b237c8187c78.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://kandy_icon.png"
-dest_files=["res://.godot/imported/kandy_icon.png-4aca80fea9ccab0e1f34d5183b7c67c0.ctex"]
+source_file="res://Project Kandy/Assets/Icons/kandy_icon.png"
+dest_files=["res://.godot/imported/kandy_icon.png-c2718045747b29f4ea21b237c8187c78.ctex"]
 
 [params]
 

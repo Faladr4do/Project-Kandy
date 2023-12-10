@@ -13,7 +13,11 @@ config_version=5
 config/name="Project Kandy"
 run/main_scene="res://TesterKandy.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://kandy_icon.png"
+boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
+boot_splash/image="res://Project Kandy/Assets/Icons/kandy_icon.png"
+boot_splash/fullsize=false
+boot_splash/use_filter=false
+config/icon="res://Project Kandy/Assets/Icons/kandy_icon.png"
 
 [autoload]
 

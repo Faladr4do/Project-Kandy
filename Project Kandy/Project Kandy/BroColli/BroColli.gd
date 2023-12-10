@@ -16,7 +16,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var doubleJump = false
 var lentoTempo = false
-var staAtacar = false
+var estaAtacar = false
 var cooldown = false
 
 
@@ -52,13 +52,13 @@ func _physics_process(delta):
 		relogio.emit_signal("timeout")
 		
 	if Input.is_action_just_pressed("estigar"):
-		if !cooldown:
-			staAtacar = true
-			cooldown = true
+		if !cooldown and !estaAtacar:
+			estaAtacar = true
 			animColli.play("shoot")
 			await animColli.animation_finished
 			estigar()
-			staAtacar = false
+			estaAtacar = false
+			cooldown = true
 			await estigar_cooldown.timeout
 			cooldown = false
 		else:
@@ -79,7 +79,7 @@ func _physics_process(delta):
 	atualizar_Anims(direction)
 	
 func atualizar_Anims(direction):
-	if staAtacar:
+	if estaAtacar:
 		return
 	if is_on_floor():
 		if direction == 0:
