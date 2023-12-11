@@ -305,10 +305,10 @@ scale = Vector2(0.480002, 0.559999)
 shape = SubResource("RectangleShape2D_y50cb")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "idle"
 libraries = {
 "": SubResource("AnimationLibrary_0yxwg")
 }
-autoplay = "idle"
 
 [node name="hitbox" type="Area2D" parent="."]
 

@@ -284,7 +284,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kpinx"]
-size = Vector2(10, 1)
+size = Vector2(10, 1.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_spfyy"]
 size = Vector2(12, 13)
@@ -305,14 +305,15 @@ scale = Vector2(0.480002, 0.559999)
 shape = SubResource("RectangleShape2D_y50cb")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "idle"
 libraries = {
 "": SubResource("AnimationLibrary_0yxwg")
 }
-autoplay = "idle"
 
 [node name="hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0, -0.75)
 shape = SubResource("RectangleShape2D_kpinx")
 debug_color = Color(1, 0, 0.137255, 0.419608)
 
