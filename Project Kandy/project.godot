@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Project Kandy"
-run/main_scene="res://TesterKandy.tscn"
+run/main_scene="res://Project Kandy/Menus/menu_principal.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
 boot_splash/image="res://Project Kandy/Assets/Icons/kandy_icon.png"
@@ -25,12 +25,11 @@ Global="*res://global.gd"
 
 [display]
 
-window/size/viewport_width=100
-window/size/viewport_height=50
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/size/mode=2
-window/size/window_width_override=1280
-window/size/window_height_override=720
-window/stretch/scale=8.0
+window/stretch/mode="viewport"
+window/stretch/aspect="ignore"
 
 [input]
 

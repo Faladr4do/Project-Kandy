@@ -2,7 +2,6 @@ extends Area2D
 
 #var direcao = Vector2.RIGHT
 var velocidade = -90
-var ladoD
 
 func _ready():
 	add_to_group("Bala")

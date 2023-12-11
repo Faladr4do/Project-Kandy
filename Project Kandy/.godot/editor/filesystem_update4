@@ -1,6 +1,10 @@
-res://TesterKandy.tscn
 res://Project Kandy/BroColli/bro_colli.tscn
 res://Project Kandy/Sweet Corn/sweet_cornBasic.tscn
 res://Project Kandy/Sweet Corn/sweet_cornPatroller.tscn
 res://Project Kandy/Sweet Corn/prototype_jumper.tscn
+res://TesterKandy.tscn
+res://Project Kandy/Menus/menu_principal.tscn
+res://Project Kandy/Projeteis/fireball.gd
 res://Project Kandy/BroColli/BroColli.gd
+res://screenfix.gd
+res://Project Kandy/Menus/menu_principal.gd
