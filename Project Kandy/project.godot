@@ -27,7 +27,6 @@ Global="*res://global.gd"
 
 window/size/viewport_width=100
 window/size/viewport_height=50
-window/size/mode=2
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/scale=8.0

@@ -65,10 +65,10 @@ func _physics_process(delta):
 			pass
 	
 	var direction = Input.get_axis("left", "right")
-	
 	if direction != 0:
 		scale.x = scale.y * direction
-		
+	
+	print(scale.y)
 	
 	if direction:
 		velocity.x = direction * SPEED
@@ -98,6 +98,10 @@ func devolta():
 
 func estigar():
 	var cena_estigada = fire.instantiate()
+	if scale.y < 0:
+		cena_estigada.velocidade = -90
+	elif scale.y > 0:
+		cena_estigada.velocidade = 90
 	owner.add_child(cena_estigada)
 	cena_estigada.global_position = mira.global_position
 
