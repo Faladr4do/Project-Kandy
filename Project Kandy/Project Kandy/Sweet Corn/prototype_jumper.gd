@@ -65,7 +65,8 @@ func _on_target_body_entered(body):
 	if body.is_in_group("Bala"):
 		morte()
 	elif body.is_in_group("Vegetal"):
-		virar()
+		explodir()
+		morte()
 
 func _on_teste_parede_body_entered(body):
 	if body.is_in_group("Vegetal") or body.is_in_group("Bala"):
@@ -73,6 +74,13 @@ func _on_teste_parede_body_entered(body):
 	else:
 		virar()
 
+func explodir():
+	pass
+
+func virar():
+	
+	scale.x = abs(scale.x) * -1
+	velocy= velocy * -1
 
 func morte():
 	if estaMorrer:
@@ -83,8 +91,3 @@ func morte():
 	estaMorrer = true
 	await get_tree().create_timer(0.75).timeout
 	queue_free()
-
-func virar():
-	
-	scale.x = abs(scale.x) * -1
-	velocy= velocy * -1

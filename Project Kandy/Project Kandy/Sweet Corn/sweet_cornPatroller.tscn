@@ -287,10 +287,10 @@ _data = {
 size = Vector2(10, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_spfyy"]
-size = Vector2(12, 13)
+size = Vector2(12, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_su3ax"]
-size = Vector2(15, 15)
+size = Vector2(15, 14)
 
 [node name="SweetCorn" type="CharacterBody2D"]
 script = ExtResource("1_voh2w")
@@ -313,6 +313,7 @@ libraries = {
 [node name="hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_kpinx")
 debug_color = Color(1, 0, 0.137255, 0.419608)
 
@@ -330,14 +331,14 @@ collision_layer = 7
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="target"]
-position = Vector2(-1, 7.5)
+position = Vector2(-1, 6)
 shape = SubResource("RectangleShape2D_spfyy")
 debug_color = Color(0.890196, 0, 0.796078, 0.235294)
 
 [node name="teste parede" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="teste parede"]
-position = Vector2(-3.5, 6.5)
+position = Vector2(-3.5, 7)
 shape = SubResource("RectangleShape2D_su3ax")
 debug_color = Color(0, 0.639216, 0.352941, 0.25098)
 
