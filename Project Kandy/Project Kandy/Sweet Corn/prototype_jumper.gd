@@ -1,16 +1,14 @@
 extends CharacterBody2D
 
-const vel_salto = -20
+const vel_salto = -360
 
-@onready var velocy = -60.0
+@onready var velocy = -480.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var estaVivo = true
 var estaMorrer = false
 var patrulhando = false
-var va = 0
-
 
 @onready var animCorn = $AnimationPlayer
 @onready var spriteCorn = $Sprite2D
@@ -25,7 +23,7 @@ func _physics_process(delta):
 	if estaMorrer:
 		return
 	if !is_on_floor():
-		velocity.y += (gravity * delta) * 0.1
+		velocity.y += (gravity * delta) * 1
 	
 	if is_on_floor():
 		if chao.is_colliding():
@@ -53,7 +51,7 @@ func atualizar_Anims(velocy):
 			#animCorn.play("dead")
 
 func fall():
-	if !is_on_floor() and position.y > 200:
+	if !is_on_floor() and position.y > 200000:
 		animCorn.play("dead")
 
 

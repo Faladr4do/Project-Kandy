@@ -1,7 +1,7 @@
 extends Path2D
 
 @export var loop = true
-@export var velocidade = 10
+@export var velocidade = 60
 
 @onready var caminho = $PathFollow2D
 @onready var animacion = $AnimationPlayer

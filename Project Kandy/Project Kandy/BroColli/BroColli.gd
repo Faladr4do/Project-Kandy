@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-const SPEED = 55.0
-const JUMP_VELOCITY = -150.0
+const SPEED = 440.0
+const  JUMP_VELOCITY = -900.0
 var relogio = Timer.new()
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -89,7 +89,7 @@ func atualizar_Anims(direction):
 	else:
 		if velocity.y < 0:
 			animColli.play("jump")
-		elif velocity.y > 200:
+		elif velocity.y > 200000:
 			animColli.play("fall")
 			
 func devolta():
@@ -99,9 +99,9 @@ func devolta():
 func estigar():
 	var cena_estigada = fire.instantiate()
 	if scale.y < 0:
-		cena_estigada.velocidade = -90
+		cena_estigada.velocidade = -100
 	elif scale.y > 0:
-		cena_estigada.velocidade = 90
+		cena_estigada.velocidade = 100
 	owner.add_child(cena_estigada)
 	cena_estigada.global_position = mira.global_position
 

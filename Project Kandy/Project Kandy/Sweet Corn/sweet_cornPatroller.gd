@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-@onready var velocy = -20.0
+@onready var velocy = -160.0
 @onready var velocyOld = 0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -58,7 +58,7 @@ func atualizar_Anims(velocy):
 			#animCorn.play("dead")
 
 func fall():
-	if !is_on_floor() and position.y > 200:
+	if !is_on_floor() and position.y > 200000:
 		animCorn.play("dead")
 
 

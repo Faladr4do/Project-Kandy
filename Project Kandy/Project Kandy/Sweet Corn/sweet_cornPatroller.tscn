@@ -293,6 +293,7 @@ size = Vector2(12, 12)
 size = Vector2(15, 14)
 
 [node name="SweetCorn" type="CharacterBody2D"]
+scale = Vector2(8, 8)
 script = ExtResource("1_voh2w")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
