@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const vel_salto = -360
+const vel_salto = -580
 
 @onready var velocy = -480.0
 
@@ -9,6 +9,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var estaVivo = true
 var estaMorrer = false
 var patrulhando = false
+var diff_speed_aerial = 0.6
 
 @onready var animCorn = $AnimationPlayer
 @onready var spriteCorn = $Sprite2D
@@ -23,7 +24,7 @@ func _physics_process(delta):
 	if estaMorrer:
 		return
 	if !is_on_floor():
-		velocity.y += (gravity * delta) * 1
+		velocity.y += (gravity * delta) * diff_speed_aerial
 	
 	if is_on_floor():
 		if chao.is_colliding():
@@ -31,6 +32,8 @@ func _physics_process(delta):
 			velocity.y = vel_salto
 		elif !chao.is_colliding():
 			virar()
+	else:
+		velocity.x = velocy * diff_speed_aerial
 
 	move_and_slide()
 	atualizar_Anims(velocy)

@@ -25,21 +25,21 @@ func _ready():
 
 func _physics_process(delta):
 	# Add the gravity.
-	if not is_on_floor():
+	if !is_on_floor():
 		velocity.y += gravity * delta
 
 	# Handle Jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		doubleJump = true
-	elif Input.is_action_just_pressed("jump") and doubleJump == true:
+	elif Input.is_action_just_pressed("jump") and doubleJump:
 			velocity.y = JUMP_VELOCITY*1.3
 			doubleJump = false
 		
 	if Input.is_action_just_pressed("reiniciar"):
 		morrer()
 	
-	if Input.is_action_just_pressed("slown") and lentoTempo == false:
+	if Input.is_action_just_pressed("slown") and !lentoTempo:
 		lentoTempo = true
 		relogio.connect("timeout", Callable(self, "devolta"))
 		relogio.wait_time = 2
@@ -47,7 +47,7 @@ func _physics_process(delta):
 		add_child(relogio)
 		Engine.set_time_scale(0.5)
 		relogio.start()
-	elif Input.is_action_just_pressed("slown") and lentoTempo == true:
+	elif Input.is_action_just_pressed("slown") and !lentoTempo:
 		relogio.stop()
 		relogio.emit_signal("timeout")
 		

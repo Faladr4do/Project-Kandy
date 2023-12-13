@@ -1,12 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://em3bia5jdls6"]
 
 [ext_resource type="Script" path="res://CanvasLayer.gd" id="1_hitcr"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_kvlgc"]
-font_size = 10
+[ext_resource type="FontFile" uid="uid://chvuo2lxramxx" path="res://Project Kandy/Assets/Fontes/AtariClassic-gry3.ttf" id="2_2v314"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dkiit"]
-font_size = 10
+line_spacing = 0.0
+font = ExtResource("2_2v314")
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
 
 [node name="CanvasLayer" type="CanvasLayer"]
 scale = Vector2(5, 5)
@@ -15,16 +16,20 @@ script = ExtResource("1_hitcr")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 2.0
-offset_top = 2.8
+offset_top = 2.0
 offset_right = 42.0
-offset_bottom = 28.8
-label_settings = SubResource("LabelSettings_kvlgc")
+offset_bottom = 18.0
+scale = Vector2(0.7, 0.7)
+text = "
+"
+label_settings = SubResource("LabelSettings_dkiit")
 
 [node name="Label2" type="Label" parent="."]
 offset_left = 2.0
-offset_top = 28.8
+offset_top = 13.2
 offset_right = 42.0
-offset_bottom = 54.8
+offset_bottom = 29.2
+scale = Vector2(0.7, 0.7)
 text = "
 "
 label_settings = SubResource("LabelSettings_dkiit")

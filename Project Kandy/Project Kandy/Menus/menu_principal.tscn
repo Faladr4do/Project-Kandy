@@ -1,37 +1,37 @@
-[gd_scene load_steps=2 format=3 uid="uid://cmklmesqxmnuq"]
+[gd_scene load_steps=3 format=3 uid="uid://cmklmesqxmnuq"]
 
 [ext_resource type="Script" path="res://Project Kandy/Menus/menu_principal.gd" id="1_ublsb"]
+[ext_resource type="FontFile" uid="uid://chvuo2lxramxx" path="res://Project Kandy/Assets/Fontes/AtariClassic-gry3.ttf" id="2_hwyy7"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 4.0
-offset_top = 236.0
-offset_right = 4.0
-offset_bottom = 236.0
 scale = Vector2(1.42527, 0.440001)
 script = ExtResource("1_ublsb")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 40.5405
-offset_top = 892.307
-offset_right = 129.541
-offset_bottom = 993.307
-scale = Vector2(4.71148, 8.89837)
+offset_left = 20.0
+offset_top = 1790.0
+offset_right = 188.0
+offset_bottom = 1870.0
+scale = Vector2(3, 7.673)
 
 [node name="BotaoJogar" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_hwyy7")
 text = "Jogar"
 
-[node name="BotaoDefinições" type="Button" parent="VBoxContainer"]
+[node name="BotaoConfigurar" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Definições"
+theme_override_fonts/font = ExtResource("2_hwyy7")
+text = "Configurar"
 
 [node name="BotaoSair" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_hwyy7")
 text = "Sair"
 
 [connection signal="pressed" from="VBoxContainer/BotaoJogar" to="." method="_on_botao_jogar_pressed"]
-[connection signal="pressed" from="VBoxContainer/BotaoDefinições" to="." method="_on_botao_definições_pressed"]
+[connection signal="pressed" from="VBoxContainer/BotaoConfigurar" to="." method="_on_botao_definições_pressed"]
 [connection signal="pressed" from="VBoxContainer/BotaoSair" to="." method="_on_botao_sair_pressed"]
