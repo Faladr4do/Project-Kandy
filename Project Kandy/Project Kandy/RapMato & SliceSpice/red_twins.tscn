@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://c58w4c1ssjuct" path="res://Project Kandy/RapMato & SliceSpice/sprites/MatoSpiceIdle.png" id="1_2e4mk"]
 [ext_resource type="Script" path="res://Project Kandy/RapMato & SliceSpice/red_twins.gd" id="1_wqrwh"]
 
-
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_h2sum"]
 a = Vector2(17, 10)
 b = Vector2(-7, 10)
@@ -120,6 +119,7 @@ _data = {
 }
 
 [node name="RedTwins" type="CharacterBody2D"]
+scale = Vector2(8, 8)
 script = ExtResource("1_wqrwh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

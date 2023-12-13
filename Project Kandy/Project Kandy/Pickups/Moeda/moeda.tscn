@@ -4,14 +4,13 @@
 [ext_resource type="Script" path="res://Project Kandy/Pickups/Moeda/moeda.gd" id="2_k1a4r"]
 [ext_resource type="AudioStream" uid="uid://4uhmqknl0psx" path="res://Project Kandy/Pickups/Moeda/efeitos de som/coin.mp3" id="3_fy5wo"]
 
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2muxn"]
 radius = 666.667
 height = 1634.0
 
 [node name="moeda" type="Sprite2D"]
 z_as_relative = false
-scale = Vector2(0.004, 0.004)
+scale = Vector2(0.032, 0.032)
 texture = ExtResource("1_vof38")
 script = ExtResource("2_k1a4r")
 

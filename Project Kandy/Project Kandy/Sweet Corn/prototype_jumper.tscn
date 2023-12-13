@@ -293,6 +293,7 @@ size = Vector2(12, 12)
 size = Vector2(15, 14)
 
 [node name="SweetCorn" type="CharacterBody2D"]
+scale = Vector2(8, 8)
 script = ExtResource("1_31toa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -305,10 +306,10 @@ scale = Vector2(0.480002, 0.559999)
 shape = SubResource("RectangleShape2D_y50cb")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "idle"
 libraries = {
 "": SubResource("AnimationLibrary_0yxwg")
 }
-autoplay = "idle"
 
 [node name="hitbox" type="Area2D" parent="."]
 

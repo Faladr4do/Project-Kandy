@@ -293,6 +293,7 @@ size = Vector2(10, 2)
 size = Vector2(10, 19)
 
 [node name="BroColli" type="CharacterBody2D"]
+scale = Vector2(8, 8)
 script = ExtResource("1_6f88t")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -324,10 +325,10 @@ position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_us7li")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "idle"
 libraries = {
 "": SubResource("AnimationLibrary_gmvhx")
 }
-autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 process_callback = 0
