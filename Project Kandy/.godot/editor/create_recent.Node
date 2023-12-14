@@ -1,6 +1,6 @@
+CollisionShape2D
+Area2D
 Button
 VBoxContainer
 Node
-CollisionShape2D
-Area2D
 Timer

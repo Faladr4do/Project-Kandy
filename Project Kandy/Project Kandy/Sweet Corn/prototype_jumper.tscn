@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cqdpnv17u7a8v"]
+[gd_scene load_steps=18 format=3 uid="uid://cqdpnv17u7a8v"]
 
 [ext_resource type="Script" path="res://Project Kandy/Sweet Corn/prototype_jumper.gd" id="1_31toa"]
 [ext_resource type="Texture2D" uid="uid://bkufkfhu20hhy" path="res://Project Kandy/Sweet Corn/sprites/SweetCornIdle.png" id="2_8lohh"]
@@ -292,6 +292,8 @@ size = Vector2(12, 12)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_su3ax"]
 size = Vector2(15, 14)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4861l"]
+
 [node name="SweetCorn" type="CharacterBody2D"]
 scale = Vector2(8, 8)
 script = ExtResource("1_31toa")
@@ -306,10 +308,10 @@ scale = Vector2(0.480002, 0.559999)
 shape = SubResource("RectangleShape2D_y50cb")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "idle"
 libraries = {
 "": SubResource("AnimationLibrary_0yxwg")
 }
-autoplay = "idle"
 
 [node name="hitbox" type="Area2D" parent="."]
 
@@ -342,6 +344,13 @@ debug_color = Color(0.890196, 0, 0.796078, 0.235294)
 position = Vector2(-3.5, 7)
 shape = SubResource("RectangleShape2D_su3ax")
 debug_color = Color(0, 0.639216, 0.352941, 0.25098)
+
+[node name="Explosão" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Explosão"]
+position = Vector2(0, 7.5)
+scale = Vector2(1.6, 1.6)
+shape = SubResource("RectangleShape2D_4861l")
 
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_entered" from="target" to="." method="_on_target_body_entered"]
