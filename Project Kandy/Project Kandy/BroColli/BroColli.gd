@@ -33,7 +33,7 @@ func _physics_process(delta):
 		velocity.y = JUMP_VELOCITY
 		doubleJump = true
 	elif Input.is_action_just_pressed("jump") and doubleJump:
-			velocity.y = JUMP_VELOCITY*1.3
+			velocity.y = JUMP_VELOCITY * 1
 			doubleJump = false
 		
 	if Input.is_action_just_pressed("reiniciar"):

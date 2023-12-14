@@ -75,6 +75,11 @@ func _on_teste_parede_body_entered(body):
 	else:
 		virar()
 
+func _on_explosão_body_entered(body):
+	if body.is_in_group("Vegetal") and explodindo:
+		
+
+
 func explodir():
 	pass
 
