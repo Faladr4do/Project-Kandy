@@ -113,6 +113,6 @@ func _on_hitbox_body_entered(body):
 		elif Global.vidas_totais <= 0:
 			morrer()
 			Global.vidas_totais = 3
-		
+
 func morrer():
 	get_tree().reload_current_scene()
