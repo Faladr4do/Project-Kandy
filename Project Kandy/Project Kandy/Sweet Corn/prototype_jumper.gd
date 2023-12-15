@@ -4,6 +4,7 @@ const vel_salto = -580
 
 @onready var velocy = 480.0
 
+@export var kaboom : PackedScene = preload("res://Project Kandy/Projeteis/explosão.tscn")
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var estaVivo = true
