@@ -12,10 +12,11 @@ var patrulhando = false
 var diff_speed_aerial = 0.6
 var explodindo = false
 
-@onready var animCorn = $AnimationPlayer
-@onready var spriteCorn = $Sprite2D
+@onready var animBomb = $AnimationPlayer
+@onready var spriteBomb = $Sprite2D
 @onready var chao = $RayCast2D
 @onready var alvo = $target
+@onready var explosao = $"Explosão"
 
 func _ready():
 	add_to_group("Inimigo")
@@ -26,15 +27,13 @@ func _physics_process(delta):
 		return
 	if !is_on_floor():
 		velocity.y += (gravity * delta) * diff_speed_aerial
-	
+		velocity.x = velocy * diff_speed_aerial
 	if is_on_floor():
 		if chao.is_colliding():
 			velocity.x = velocy
 			velocity.y = vel_salto
 		elif !chao.is_colliding():
 			virar()
-	else:
-		velocity.x = velocy * diff_speed_aerial
 
 	move_and_slide()
 	atualizar_Anims(velocy)
@@ -45,18 +44,18 @@ func atualizar_Anims(velocy):
 		return
 	if is_on_floor():
 		if velocy == 0:
-			animCorn.play("jumper")
+			animBomb.play("jumper")
 		else:
-			animCorn.play("jumper")
+			animBomb.play("jumper")
 	else:
 		if velocity.y < 0:
-			animCorn.play("jumper")
+			animBomb.play("jumper")
 		#elif position.y > 200:
-			#animCorn.play("dead")
+			#animBomb.play("dead")
 
 func fall():
 	if !is_on_floor() and position.y > 200000:
-		animCorn.play("jumper")
+		animBomb.play("jumper")
 
 
 func _on_hitbox_body_entered(body):
@@ -70,7 +69,7 @@ func _on_target_body_entered(body):
 		explodir()
 		morte()
 
-func _on_teste_parede_body_entered(body):
+func _on_teste_frente_body_entered(body):
 	if body.is_in_group("Vegetal") or body.is_in_group("Bala"):
 		pass
 	else:
@@ -82,17 +81,18 @@ func _on_explosão_body_entered(body):
 
 
 func explodir():
-	pass
-
-func virar():
+	explodindo = true
+	await animBomb.animation_finished
+	queue_free()
 	
+func virar():
 	scale.x = abs(scale.x) * -1
 	velocy= velocy * -1
 
 func morte():
 	if estaMorrer:
 		return
-	animCorn.play("dead")
+	animBomb.play("dead")
 	$hitbox/CollisionShape2D.call_deferred("set_disabled", true)
 	$CollisionShape2D.call_deferred("set_disabled", true)
 	estaMorrer = true

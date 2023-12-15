@@ -6,7 +6,7 @@
 [sub_resource type="LabelSettings" id="LabelSettings_dkiit"]
 line_spacing = 0.0
 font = ExtResource("2_2v314")
-outline_size = 2
+outline_size = 3
 outline_color = Color(0, 0, 0, 1)
 
 [node name="CanvasLayer" type="CanvasLayer"]
