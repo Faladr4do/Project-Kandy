@@ -67,9 +67,6 @@ func _physics_process(delta):
 	var direction = Input.get_axis("left", "right")
 	if direction != 0:
 		scale.x = scale.y * direction
-	
-	print(scale.y)
-	
 	if direction:
 		velocity.x = direction * SPEED
 	else:
@@ -107,12 +104,14 @@ func estigar():
 
 
 func _on_hitbox_body_entered(body):
-	if body.is_in_group("Inimigo"):
-		if Global.vidas_totais > 0:
+	if Global.vidas_totais > 0:
+		if body.is_in_group("Inimigo"):
 			Global.vidas_totais -= 1
-		elif Global.vidas_totais <= 0:
-			morrer()
-			Global.vidas_totais = 3
+		if body.is_in_group("Explosivo"):
+			Global.vidas_totais -= 2
+	elif Global.vidas_totais <= 0:
+		morrer()
+		Global.vidas_totais = 3
 
 func morrer():
 	get_tree().reload_current_scene()
