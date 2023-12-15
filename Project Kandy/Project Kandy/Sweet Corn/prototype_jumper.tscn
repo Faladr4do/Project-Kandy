@@ -337,9 +337,8 @@ _data = {
 "walk": SubResource("Animation_684mq")
 }
 
-[sub_resource type="Animation" id="Animation_48dpi"]
-resource_name = "idle"
-loop_mode = 1
+[sub_resource type="Animation" id="Animation_7u0ei"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -389,8 +388,9 @@ tracks/3/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_7u0ei"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_48dpi"]
+resource_name = "idle"
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true

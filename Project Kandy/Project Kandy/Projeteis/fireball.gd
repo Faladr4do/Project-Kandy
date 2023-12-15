@@ -21,4 +21,3 @@ func _on_body_entered(body):
 		pass
 	elif body.is_in_group("Alvo"):
 		pass
-	

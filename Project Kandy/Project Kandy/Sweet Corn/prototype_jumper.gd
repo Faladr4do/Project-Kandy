@@ -77,9 +77,9 @@ func _on_teste_frente_body_entered(body):
 		virar()
 
 func explodir():
-	explodindo = true
-	await animBomb.animation_finished
-	queue_free()
+	var cena_explosiva = kaboom.instantiate()
+	owner.add_child(cena_explosiva)
+	cena_explosiva.global_position = spriteBomb.global_position
 	
 func virar():
 	scale.x = abs(scale.x) * -1
@@ -88,9 +88,5 @@ func virar():
 func morte():
 	if estaMorrer:
 		return
-	animBomb.play("dead")
-	$hitbox/CollisionShape2D.call_deferred("set_disabled", true)
-	$CollisionShape2D.call_deferred("set_disabled", true)
 	estaMorrer = true
-	await get_tree().create_timer(0.75).timeout
 	queue_free()
