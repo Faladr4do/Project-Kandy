@@ -70,10 +70,11 @@ func _physics_process(delta):
 	if direction != 0:
 		scale.x = scale.y * direction
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x = (direction * SPEED) * speed
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
+	verificar_vida()
 	move_and_slide()
 	atualizar_Anims(direction)
 	
@@ -105,26 +106,23 @@ func estigar():
 	owner.add_child(cena_estigada)
 	cena_estigada.global_position = mira.global_position
 
+func verificar_vida():
+	if Global.vidas_totais >= 0:
+		pass
+	elif Global.vidas_totais < 0:
+		morrer()
 
 func _on_hitbox_body_entered(body):
-	if Global.vidas_totais >= 0:
-		if body.is_in_group("Inimigo_Tocador"):
-			Global.vidas_totais -= Global.dano_toque
-	elif Global.vidas_totais < 0:
-		morrer()
-		Global.vidas_totais = Global.vidas_max
+	if body.is_in_group("Inimigo_Tocador"):
+		Global.vidas_totais -= Global.dano_toque
 
 func _on_hitbox_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
-	if Global.vidas_totais >= 0:
-		if area.is_in_group("Explosivo"):
-			Global.vidas_totais -= Global.dano_explosivo
-	elif Global.vidas_totais < 0:
-		morrer()
-		Global.vidas_totais = Global.vidas_max
+	if area.is_in_group("Explosivo"):
+		Global.vidas_totais -= Global.dano_explosivo
 
 func morrer():
-	
 	get_tree().reload_current_scene()
+	Global.vidas_totais = Global.vidas_max
 
 
 
