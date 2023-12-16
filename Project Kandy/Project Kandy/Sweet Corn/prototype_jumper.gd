@@ -2,19 +2,22 @@ extends CharacterBody2D
 
 const vel_salto = -580
 
-@onready var velocy = -480.0
+@onready var velocy = 480.0
 
+@export var kaboom : PackedScene = preload("res://Project Kandy/Projeteis/explosão.tscn")
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var estaVivo = true
 var estaMorrer = false
 var patrulhando = false
 var diff_speed_aerial = 0.6
+var explodindo = false
 
-@onready var animCorn = $AnimationPlayer
-@onready var spriteCorn = $Sprite2D
+@onready var animBomb = $AnimationPlayer
+@onready var spriteBomb = $Sprite2D
 @onready var chao = $RayCast2D
 @onready var alvo = $target
+@onready var explosao = $"Explosão"
 
 func _ready():
 	add_to_group("Inimigo")
@@ -25,15 +28,13 @@ func _physics_process(delta):
 		return
 	if !is_on_floor():
 		velocity.y += (gravity * delta) * diff_speed_aerial
-	
+		velocity.x = velocy * diff_speed_aerial
 	if is_on_floor():
 		if chao.is_colliding():
 			velocity.x = velocy
 			velocity.y = vel_salto
 		elif !chao.is_colliding():
 			virar()
-	else:
-		velocity.x = velocy * diff_speed_aerial
 
 	move_and_slide()
 	atualizar_Anims(velocy)
@@ -44,18 +45,18 @@ func atualizar_Anims(velocy):
 		return
 	if is_on_floor():
 		if velocy == 0:
-			animCorn.play("idle")
+			animBomb.play("jumper")
 		else:
-			animCorn.play("walk")
+			animBomb.play("jumper")
 	else:
 		if velocity.y < 0:
-			animCorn.play("jump")
+			animBomb.play("jumper")
 		#elif position.y > 200:
-			#animCorn.play("dead")
+			#animBomb.play("dead")
 
 func fall():
 	if !is_on_floor() and position.y > 200000:
-		animCorn.play("dead")
+		animBomb.play("jumper")
 
 
 func _on_hitbox_body_entered(body):
@@ -63,37 +64,37 @@ func _on_hitbox_body_entered(body):
 		morte()
 
 func _on_target_body_entered(body):
-	if body.is_in_group("Bala"):
-		morte()
-	elif body.is_in_group("Vegetal"):
+	if estaMorrer:
+		return
+	if body.is_in_group("Vegetal"):
 		explodir()
 		morte()
 
-func _on_teste_parede_body_entered(body):
-	if body.is_in_group("Vegetal") or body.is_in_group("Bala"):
+func _on_teste_frente_body_entered(body):
+	if body.is_in_group("Vegetal"):
 		pass
 	else:
 		virar()
 
-func _on_explosão_body_entered(body):
-	if body.is_in_group("Vegetal") and explodindo:
-		
-
-
 func explodir():
-	pass
-
-func virar():
+	var cena_explosiva = kaboom.instantiate()
+	owner.add_child(cena_explosiva)
+	cena_explosiva.global_position = spriteBomb.global_position
 	
+func virar():
 	scale.x = abs(scale.x) * -1
 	velocy= velocy * -1
 
 func morte():
 	if estaMorrer:
 		return
-	animCorn.play("dead")
-	$hitbox/CollisionShape2D.call_deferred("set_disabled", true)
-	$CollisionShape2D.call_deferred("set_disabled", true)
 	estaMorrer = true
-	await get_tree().create_timer(0.75).timeout
 	queue_free()
+
+
+func _on_target_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
+	if area.is_in_group("Bala"):
+		explodir()
+		morte()
+	else:
+		pass

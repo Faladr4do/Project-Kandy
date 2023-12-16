@@ -90,3 +90,10 @@ func morte():
 func virar():
 	scale.x = abs(scale.x) * -1
 	velocy= velocy*-1
+
+
+func _on_target_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
+	if area.is_in_group("Bala"):
+		morte()
+	else:
+		pass
