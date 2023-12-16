@@ -447,8 +447,8 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y7ssg"]
-radius = 6.375
-height = 14.5
+radius = 7.125
+height = 16.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bfqyq"]
 
@@ -467,23 +467,16 @@ scale = Vector2(0.5, 0.5)
 shape = SubResource("CircleShape2D_ofriq")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "jumper"
 libraries = {
 "": SubResource("AnimationLibrary_0yxwg")
 }
+autoplay = "jumper"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationPlayer"]
-autoplay = "idle"
 libraries = {
 "": SubResource("AnimationLibrary_d288c")
 }
-
-[node name="hitbox" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
-position = Vector2(0, -1)
-shape = SubResource("CapsuleShape2D_y7ssg")
-debug_color = Color(1, 0, 0.137255, 0.419608)
+autoplay = "idle"
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(35, -6.5)
@@ -494,7 +487,15 @@ scale = Vector2(0.937, 0.3)
 [node name="patrolTempo" type="Timer" parent="."]
 wait_time = 2.0
 
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_y7ssg")
+debug_color = Color(1, 0, 0.137255, 0.419608)
+
 [node name="target" type="Area2D" parent="."]
+scale = Vector2(0.97, 0.97)
 collision_layer = 7
 collision_mask = 7
 
@@ -513,5 +514,6 @@ shape = SubResource("CircleShape2D_ahg3r")
 debug_color = Color(0.556863, 0.545098, 0.372549, 0.419608)
 
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="area_shape_entered" from="target" to="." method="_on_target_area_shape_entered"]
 [connection signal="body_entered" from="target" to="." method="_on_target_body_entered"]
 [connection signal="body_entered" from="teste frente" to="." method="_on_teste_frente_body_entered"]

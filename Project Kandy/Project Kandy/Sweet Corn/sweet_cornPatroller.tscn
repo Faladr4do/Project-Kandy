@@ -306,10 +306,10 @@ scale = Vector2(0.480002, 0.559999)
 shape = SubResource("RectangleShape2D_y50cb")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "idle"
 libraries = {
 "": SubResource("AnimationLibrary_0yxwg")
 }
+autoplay = "idle"
 
 [node name="hitbox" type="Area2D" parent="."]
 
@@ -344,5 +344,6 @@ shape = SubResource("RectangleShape2D_su3ax")
 debug_color = Color(0, 0.639216, 0.352941, 0.25098)
 
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="area_shape_entered" from="target" to="." method="_on_target_area_shape_entered"]
 [connection signal="body_entered" from="target" to="." method="_on_target_body_entered"]
 [connection signal="body_entered" from="teste parede" to="." method="_on_teste_parede_body_entered"]

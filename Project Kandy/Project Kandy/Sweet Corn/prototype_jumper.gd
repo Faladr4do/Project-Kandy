@@ -64,14 +64,14 @@ func _on_hitbox_body_entered(body):
 		morte()
 
 func _on_target_body_entered(body):
-	if body.is_in_group("Bala"):
-		morte()
-	elif body.is_in_group("Vegetal"):
+	if estaMorrer:
+		return
+	if body.is_in_group("Vegetal"):
 		explodir()
 		morte()
 
 func _on_teste_frente_body_entered(body):
-	if body.is_in_group("Vegetal") or body.is_in_group("Bala"):
+	if body.is_in_group("Vegetal"):
 		pass
 	else:
 		virar()
@@ -90,3 +90,11 @@ func morte():
 		return
 	estaMorrer = true
 	queue_free()
+
+
+func _on_target_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
+	if area.is_in_group("Bala"):
+		explodir()
+		morte()
+	else:
+		pass
