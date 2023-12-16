@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://em3bia5jdls6"]
+
+[ext_resource type="Script" path="res://CanvasLayer.gd" id="1_ye78g"]
+[ext_resource type="LabelSettings" uid="uid://dh7rhhtjwrqtk" path="res://Project Kandy/Assets/Fontes/AtariFont.tres" id="2_gdcek"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+scale = Vector2(5, 5)
+transform = Transform2D(5, 0, 0, 5, 0, 0)
+script = ExtResource("1_ye78g")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 42.0
+offset_bottom = 18.0
+scale = Vector2(0.7, 0.7)
+text = "
+"
+label_settings = ExtResource("2_gdcek")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 2.0
+offset_top = 13.2
+offset_right = 42.0
+offset_bottom = 29.2
+scale = Vector2(0.7, 0.7)
+text = "
+"
+label_settings = ExtResource("2_gdcek")

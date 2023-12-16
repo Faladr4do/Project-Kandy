@@ -15,3 +15,16 @@ res://Project Kandy/Projeteis/fireball.gd
 res://explosão.gd
 res://Project Kandy/Pickups/Moeda/moeda.tscn
 res://global.gd
+res://Project Kandy/Pickups/Cura/cura.tscn
+res://Project Kandy/Pickups/Cura/cura.gd
+res://Project Kandy/SugarBomb/prototype_jumper.tscn
+res://Jogo.tscn
+res://Project Kandy/Menus/menu_principal.gd
+res://Project Kandy/Menus/menu_pausa.tscn
+res://Project Kandy/Assets/HUD/canvas_layer.tscn
+res://Project Kandy/Assets/Fontes/AtariFont.tres
+res://jogo.gd
+res://Project Kandy/Menus/menu_pausa.gd
+res://gerenciador_jogo.gd
+res://Project Kandy/ObjetosProgramaveis/PlataformaSemPausa/moving_platform.tscn
+res://Project Kandy/ObjetosProgramaveis/PlataformaSemPausa/moving_platform.gd

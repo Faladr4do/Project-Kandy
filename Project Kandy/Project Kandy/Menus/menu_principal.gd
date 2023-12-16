@@ -12,7 +12,7 @@ func _process(delta):
 
 
 func _on_botao_jogar_pressed():
-	get_tree().change_scene_to_file("res://TesterKandy.tscn")
+	get_tree().change_scene_to_file("res://Jogo.tscn")
 
 func _on_botao_definições_pressed():
 	pass # Replace with function body.

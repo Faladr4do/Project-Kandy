@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dvlmxp81e372k" path="res://Project Kandy/Pickups/Moeda/sprites/moeda holder.png" id="1_vof38"]
 [ext_resource type="Script" path="res://Project Kandy/Pickups/Moeda/moeda.gd" id="2_k1a4r"]
-[ext_resource type="AudioStream" uid="uid://4uhmqknl0psx" path="res://Project Kandy/Pickups/Moeda/efeitos de som/coin.mp3" id="3_fy5wo"]
+[ext_resource type="AudioStream" uid="uid://4uhmqknl0psx" path="res://Project Kandy/Pickups/Moeda/som/coin.mp3" id="3_fy5wo"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2muxn"]
 radius = 666.667

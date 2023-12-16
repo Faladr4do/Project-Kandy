@@ -1,0 +1,81 @@
+[gd_scene load_steps=4 format=3 uid="uid://cv85fjsdmayo0"]
+
+[ext_resource type="LabelSettings" uid="uid://dh7rhhtjwrqtk" path="res://Project Kandy/Assets/Fontes/AtariFont.tres" id="1_4cwht"]
+[ext_resource type="Script" path="res://Project Kandy/Menus/menu_pausa.gd" id="1_bplvm"]
+[ext_resource type="FontFile" uid="uid://chvuo2lxramxx" path="res://Project Kandy/Assets/Fontes/AtariClassic-gry3.ttf" id="2_4iyud"]
+
+[node name="MenuPausa" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bplvm")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.447917
+anchor_top = 0.407407
+anchor_right = 0.65625
+anchor_bottom = 0.777778
+offset_left = -116.0
+offset_top = -170.0
+offset_right = -266.0
+offset_bottom = -270.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.036
+anchor_top = 0.186667
+anchor_right = 0.964
+anchor_bottom = 0.813333
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = " = PAUSA ="
+label_settings = ExtResource("1_4cwht")
+horizontal_alignment = 1
+
+[node name="BotaoJogar" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4iyud")
+text = "Jogar"
+
+[node name="BotaoReiniciar" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4iyud")
+text = "Voltar para
+Checkpoint"
+
+[node name="BotaoConfigurar" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4iyud")
+text = "Configurar"
+
+[node name="BotaoSair" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4iyud")
+text = "Sair"
+
+[node name="BotaoVoltarMenu" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4iyud")
+text = "Voltar para
+Menu Principal"
+
+[connection signal="pressed" from="Panel/VBoxContainer/BotaoJogar" to="." method="_on_botao_jogar_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/BotaoReiniciar" to="." method="_on_botao_reiniciar_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/BotaoConfigurar" to="." method="_on_botao_configurar_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/BotaoSair" to="." method="_on_botao_sair_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/BotaoVoltarMenu" to="." method="_on_botao_voltar_menu_pressed"]

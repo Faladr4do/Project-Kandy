@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhf4dl6a4p1o4"]
+
+[ext_resource type="PackedScene" uid="uid://ca2hmpp8v0oof" path="res://TesterKandy.tscn" id="1_uyvd0"]
+[ext_resource type="Script" path="res://gerenciador_jogo.gd" id="1_ydjgn"]
+[ext_resource type="PackedScene" uid="uid://cv85fjsdmayo0" path="res://Project Kandy/Menus/menu_pausa.tscn" id="2_mipuw"]
+[ext_resource type="PackedScene" uid="uid://em3bia5jdls6" path="res://Project Kandy/Assets/HUD/canvas_layer.tscn" id="3_comk6"]
+
+[node name="GerenciadorJogo" type="Node"]
+script = ExtResource("1_ydjgn")
+
+[node name="TesterKandy" parent="." instance=ExtResource("1_uyvd0")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MenuPausa" parent="CanvasLayer" node_paths=PackedStringArray("gerenciador_jogo") instance=ExtResource("2_mipuw")]
+gerenciador_jogo = NodePath("../..")
+
+[node name="CanvasLayer2" parent="." instance=ExtResource("3_comk6")]
