@@ -17,10 +17,10 @@ var explodindo = false
 @onready var spriteBomb = $Sprite2D
 @onready var chao = $RayCast2D
 @onready var alvo = $target
-@onready var explosao = $"Explosão"
 
 func _ready():
 	add_to_group("Inimigo")
+	add_to_group("Inimigo_Longo")
 	alvo.add_to_group("Alvo")
 
 func _physics_process(delta):

@@ -19,7 +19,7 @@ func _physics_process(delta):
 		pass
 	
 func _on_body_entered(body):
-	if body.is_in_group("Inimigo") or body.is_in_group("Alvo"):
+	if body.is_in_group("Alvo"):
 		queue_free()
 	#elif b:
 		#queue_free()

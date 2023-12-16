@@ -18,6 +18,7 @@ var patrulhando = false
 
 func _ready():
 	add_to_group("Inimigo")
+	add_to_group("Inimigo_Tocador")
 	alvo.add_to_group("Alvo")
 
 func _physics_process(delta):

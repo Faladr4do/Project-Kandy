@@ -19,6 +19,7 @@ var velocy_old = 0
 
 func _ready():
 	add_to_group("Inimigo")
+	add_to_group("Inimigo_Tocador")
 	alvo.add_to_group("Alvo")
 	
 

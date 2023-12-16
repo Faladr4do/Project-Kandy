@@ -18,6 +18,7 @@ var doubleJump = false
 var lentoTempo = false
 var estaAtacar = false
 var cooldown = false
+var speed = 1
 
 
 func _ready():
@@ -26,7 +27,7 @@ func _ready():
 func _physics_process(delta):
 	# Add the gravity.
 	if !is_on_floor():
-		velocity.y += gravity * delta
+		velocity.y += (gravity * delta) * speed
 
 	# Handle Jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -41,6 +42,7 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("slown") and !lentoTempo:
 		lentoTempo = true
+		speed = 2
 		relogio.connect("timeout", Callable(self, "devolta"))
 		relogio.wait_time = 2
 		relogio.one_shot = true
@@ -90,6 +92,7 @@ func atualizar_Anims(direction):
 			animColli.play("fall")
 			
 func devolta():
+	speed = 1
 	Engine.set_time_scale(1)
 	lentoTempo = false
 
@@ -105,17 +108,17 @@ func estigar():
 
 func _on_hitbox_body_entered(body):
 	if Global.vidas_totais > 0:
-		if body.is_in_group("Inimigo"):
+		if body.is_in_group("Inimigo_Tocador"):
 			Global.vidas_totais -= 1
 	elif Global.vidas_totais <= 0:
 		morrer()
 		Global.vidas_totais = 3
 
 func _on_hitbox_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
-	if Global.vidas_totais > 0:
+	if Global.vidas_totais >= 0:
 		if area.is_in_group("Explosivo"):
 			Global.vidas_totais -= 2
-	elif Global.vidas_totais <= 0:
+	elif Global.vidas_totais < 0:
 		morrer()
 		Global.vidas_totais = 3
 
