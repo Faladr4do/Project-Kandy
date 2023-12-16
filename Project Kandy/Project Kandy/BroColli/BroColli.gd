@@ -107,22 +107,23 @@ func estigar():
 
 
 func _on_hitbox_body_entered(body):
-	if Global.vidas_totais > 0:
+	if Global.vidas_totais >= 0:
 		if body.is_in_group("Inimigo_Tocador"):
-			Global.vidas_totais -= 1
-	elif Global.vidas_totais <= 0:
+			Global.vidas_totais -= Global.dano_toque
+	elif Global.vidas_totais < 0:
 		morrer()
-		Global.vidas_totais = 3
+		Global.vidas_totais = Global.vidas_max
 
 func _on_hitbox_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
 	if Global.vidas_totais >= 0:
 		if area.is_in_group("Explosivo"):
-			Global.vidas_totais -= 2
+			Global.vidas_totais -= Global.dano_explosivo
 	elif Global.vidas_totais < 0:
 		morrer()
-		Global.vidas_totais = 3
+		Global.vidas_totais = Global.vidas_max
 
 func morrer():
+	
 	get_tree().reload_current_scene()
 
 

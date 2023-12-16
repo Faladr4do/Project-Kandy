@@ -2,7 +2,7 @@ extends Area2D
 
 @onready var sprite_kaboom = $Sprite2D
 @onready var anim_kaboom = $AnimationPlayer
-@onready var som_explosivo = $AudioStreamPlayer2D
+@onready var som_explosivo = $explosion
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,7 +13,9 @@ func _ready():
 func _process(delta):
 	som_explosivo.play()
 	anim_kaboom.play("explode")
-	await anim_kaboom.animation_finished
+	#fix temporario
+	await get_tree().create_timer(0.5).timeout
+	#await som_explosivo.finished
 	queue_free()
 
 
