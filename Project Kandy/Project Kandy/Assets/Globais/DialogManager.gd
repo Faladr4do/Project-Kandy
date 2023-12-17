@@ -6,12 +6,12 @@ var linhas_dialogo = []
 var index_linha_atual = 0
 
 var caixa_texto
-var posicao_texto_caixa: Vector2
+var posicao_texto_caixa
 
 var dialogo_ativo = false
 var avancar_linha = false
 
-func comecar_dialogo(posicao, linhas):
+func comecar_dialogo(posicao, linhas: Array[String]):
 	if dialogo_ativo:
 		return
 	linhas_dialogo = linhas

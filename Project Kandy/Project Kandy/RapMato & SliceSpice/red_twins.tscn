@@ -130,6 +130,9 @@ texture = ExtResource("1_2e4mk")
 flip_h = true
 hframes = 7
 
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, -11.5)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = -10
 position = Vector2(-5, 10.3)
