@@ -10,7 +10,6 @@ var estaVivo = true
 var estaMorrer = false
 var patrulhando = false
 
-
 @onready var animCorn = $AnimationPlayer
 @onready var spriteCorn = $Sprite2D
 @onready var chao = $RayCast2D
@@ -82,8 +81,8 @@ func morte():
 	if estaMorrer:
 		return
 	animCorn.play("dead")
-	$hitbox/CollisionShape2D.call_deferred("set_disabled", true)
-	$CollisionShape2D.call_deferred("set_disabled", true)
+	$hitbox/CollisionPolygon2D.call_deferred("set_disabled", true)
+	$CollisionPolygon2D.call_deferred("set_disabled", true)
 	estaMorrer = true
 	await get_tree().create_timer(0.75).timeout
 	queue_free()

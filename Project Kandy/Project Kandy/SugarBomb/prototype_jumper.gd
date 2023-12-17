@@ -78,7 +78,7 @@ func _on_teste_frente_body_entered(body):
 
 func explodir():
 	var cena_explosiva = kaboom.instantiate()
-	owner.add_child(cena_explosiva)
+	owner.call_deferred("add_child", cena_explosiva)
 	cena_explosiva.global_position = spriteBomb.global_position
 	
 func virar():

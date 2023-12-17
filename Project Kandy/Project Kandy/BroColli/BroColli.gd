@@ -19,6 +19,8 @@ var lentoTempo = false
 var estaAtacar = false
 var cooldown = false
 var speed = 1
+var tempo_coyote = 0.0
+var temporizar_coyote = 0.1
 
 
 func _ready():
@@ -74,6 +76,9 @@ func _physics_process(delta):
 		velocity.x = (direction * SPEED) * speed
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
+	if is_on_floor():
+		tempo_coyote
 
 	verificar_vida()
 	move_and_slide()
@@ -120,6 +125,9 @@ func _on_hitbox_body_entered(body):
 func _on_hitbox_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
 	if area.is_in_group("Explosivo"):
 		Global.vidas_totais -= Global.dano_explosivo
+
+func player_comprador_method():
+	pass
 
 func morrer():
 	get_tree().reload_current_scene()

@@ -84,8 +84,8 @@ func morte():
 	if estaMorrer:
 		return
 	animCorn.play("dead")
-	$hitbox/CollisionShape2D.call_deferred("set_disabled", true)
-	$CollisionShape2D.call_deferred("set_disabled", true)
+	$hitbox/CollisionPolygon2D.call_deferred("set_disabled", true)
+	$CollisionPolygon2D.call_deferred("set_disabled", true)
 	estaMorrer = true
 	await get_tree().create_timer(0.75).timeout
 	queue_free()

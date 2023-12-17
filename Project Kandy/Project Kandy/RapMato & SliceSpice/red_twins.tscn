@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://xqjbpnw1t7fm"]
+[gd_scene load_steps=8 format=3 uid="uid://xqjbpnw1t7fm"]
 
 [ext_resource type="Texture2D" uid="uid://c58w4c1ssjuct" path="res://Project Kandy/RapMato & SliceSpice/sprites/MatoSpiceIdle.png" id="1_2e4mk"]
 [ext_resource type="Script" path="res://Project Kandy/RapMato & SliceSpice/red_twins.gd" id="1_wqrwh"]
@@ -118,6 +118,9 @@ _data = {
 "idle": SubResource("Animation_fmwv7")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7j67h"]
+size = Vector2(39.75, 23)
+
 [node name="RedTwins" type="CharacterBody2D"]
 scale = Vector2(8, 8)
 script = ExtResource("1_wqrwh")
@@ -134,7 +137,14 @@ scale = Vector2(1, 0.1)
 shape = SubResource("SegmentShape2D_h2sum")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "idle"
 libraries = {
 "": SubResource("AnimationLibrary_mqx60")
 }
+autoplay = "idle"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_7j67h")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
