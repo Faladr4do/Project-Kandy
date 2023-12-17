@@ -5,7 +5,11 @@
 [ext_resource type="FontFile" uid="uid://chvuo2lxramxx" path="res://Project Kandy/Assets/Fontes/AtariClassic-gry3.ttf" id="2_4iyud"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_17qth"]
-bg_color = Color(0.294118, 0, 0, 0.588235)
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="MenuPausa" type="Control"]
 process_mode = 2
@@ -50,17 +54,19 @@ anchor_right = 0.964
 anchor_bottom = 0.813333
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 15
 alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
-text = " = PAUSA ="
+text = "= PAUSA ="
 label_settings = ExtResource("1_4cwht")
 horizontal_alignment = 1
 
 [node name="BotaoJogar" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_4iyud")
 text = "Jogar"
 
