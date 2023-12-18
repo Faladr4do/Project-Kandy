@@ -25,10 +25,6 @@ func _physics_process(delta):
 	if is_on_floor():
 		if esta_respirar:
 			animPedra.play("idle_respirar")
-			
-#		elif !esta_respirar:
-#			animPedra.play("idle_pestanejar")
-#
 		elif esta_falar:
 			animPedra.play("falar")
 			
@@ -36,11 +32,12 @@ func _physics_process(delta):
 
 func _on_area_dialogo_body_entered(body):
 	if body.is_in_group("Vegetal"):
-		esta_falar = true
-		Dialog.comecar_dialogo(local_falar, falas)
-		esta_falar = false
-	else:
-		esta_falar = false
+		if Input.is_action_just_pressed("interagir"):
+			esta_falar = true
+			Dialog.comecar_dialogo(local_falar, falas)
+			esta_falar = false
+		else:
+			esta_falar = false
 
 
 func _on_area_voltar_dr_body_entered(body):
@@ -48,4 +45,8 @@ func _on_area_voltar_dr_body_entered(body):
 		scale.x = abs(scale.x) * -1
 		
 func pestanejar():
-	pass
+	if esta_respirar and !esta_falar:
+		await get_tree().create_timer(3).timeout
+		animPedra.play("idle_pestanejar")
+		esta_respirar = true
+		

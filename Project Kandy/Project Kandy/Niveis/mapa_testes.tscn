@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://s7ny52peovh7"]
+
+[ext_resource type="PackedScene" uid="uid://c0ej330af3pbo" path="res://Project Kandy/BroColli/bro_colli.tscn" id="1_p2pqi"]
+[ext_resource type="Texture2D" uid="uid://tkwdg4lmkmy4" path="res://Project Kandy/Assets/Tiles/moving_platforms.png" id="2_e6woo"]
+[ext_resource type="PackedScene" uid="uid://c0vxysqew3npd" path="res://Project Kandy/DrPedra/dr_pedra.tscn" id="3_6de72"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vwwv1"]
+texture = ExtResource("2_e6woo")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_8g56j"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_vwwv1")
+
+[node name="MapaTestes" type="Node2D"]
+process_mode = 1
+
+[node name="BroColli" parent="." instance=ExtResource("1_p2pqi")]
+position = Vector2(35, -109)
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(8, 8)
+tile_set = SubResource("TileSet_8g56j")
+format = 2
+layer_0/tile_data = PackedInt32Array(65530, 0, 0, 65531, 65536, 0, 65532, 65536, 0, 65533, 65536, 0, 65534, 65536, 0, 65535, 65536, 0, 0, 65536, 0, 1, 65536, 0, 2, 65536, 0, 3, 65536, 0, 4, 65536, 0, 5, 65536, 0, 6, 65536, 0, 7, 65536, 0, 8, 65536, 0, 9, 65536, 0, 10, 65536, 0, 11, 65536, 0, 12, 65536, 0, 13, 65536, 0, 14, 65536, 0, 15, 65536, 0, 16, 65536, 0, 17, 131072, 0, -131082, 65536, 1, -131081, 65536, 1, -131080, 131072, 1, -131085, 65536, 1, -131084, 65536, 1, -131083, 65536, 1, -131088, 65536, 1, -131087, 65536, 1, -131086, 65536, 1, -131089, 65536, 1, -131092, 65536, 1, -131091, 65536, 1, -131090, 65536, 1, -131095, 65536, 1, -131094, 65536, 1, -131093, 65536, 1, -131098, 0, 1, -131097, 65536, 1, -131096, 65536, 1)
+
+[node name="DrPedra" parent="." instance=ExtResource("3_6de72")]
+position = Vector2(-1988, -427)

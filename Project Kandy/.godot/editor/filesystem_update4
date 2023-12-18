@@ -1,7 +1,9 @@
-res://Jogo.tscn
+res://Project Kandy/Niveis/mapa_testes.tscn
 res://explosão.gd
+res://gerenciador_jogo.gd
 res://Project Kandy/Assets/Fontes/AtariFont.tres
-res://TesterKandy.tscn
+res://Jogo.tscn
+res://Project Kandy/Menus/TesterKandy.tscn
 res://Project Kandy/BroColli/bro_colli.tscn
 res://Project Kandy/SugarBomb/prototype_jumper.tscn
 res://Project Kandy/Sweet Corn/sweet_cornBasic.tscn
@@ -9,4 +11,5 @@ res://Project Kandy/Sweet Corn/sweet_cornPatroller.tscn
 res://Project Kandy/RapMato & SliceSpice/red_twins.tscn
 res://Project Kandy/Assets/CaixaTexto/caixa_texto.tscn
 res://Project Kandy/DrPedra/dr_pedra.tscn
-res://Project Kandy/DrPedra/dr_pedra.gd
+res://Project Kandy/Menus/menu_principal.tscn
+res://Project Kandy/BroColli/BroColli.gd
