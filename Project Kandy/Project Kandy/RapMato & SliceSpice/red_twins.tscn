@@ -140,10 +140,10 @@ scale = Vector2(1, 0.1)
 shape = SubResource("SegmentShape2D_h2sum")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "idle"
 libraries = {
 "": SubResource("AnimationLibrary_mqx60")
 }
-autoplay = "idle"
 
 [node name="Area2D" type="Area2D" parent="."]
 

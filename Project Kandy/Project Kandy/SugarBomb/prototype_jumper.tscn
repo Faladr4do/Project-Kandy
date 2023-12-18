@@ -467,16 +467,16 @@ scale = Vector2(0.5, 0.5)
 shape = SubResource("CircleShape2D_ofriq")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "jumper"
 libraries = {
 "": SubResource("AnimationLibrary_0yxwg")
 }
-autoplay = "jumper"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationPlayer"]
+autoplay = "idle"
 libraries = {
 "": SubResource("AnimationLibrary_d288c")
 }
-autoplay = "idle"
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(35, -6.5)

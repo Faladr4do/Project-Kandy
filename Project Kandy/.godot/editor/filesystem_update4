@@ -1,1 +1,12 @@
+res://Jogo.tscn
+res://explosão.gd
+res://Project Kandy/Assets/Fontes/AtariFont.tres
+res://TesterKandy.tscn
+res://Project Kandy/BroColli/bro_colli.tscn
+res://Project Kandy/SugarBomb/prototype_jumper.tscn
+res://Project Kandy/Sweet Corn/sweet_cornBasic.tscn
+res://Project Kandy/Sweet Corn/sweet_cornPatroller.tscn
+res://Project Kandy/RapMato & SliceSpice/red_twins.tscn
+res://Project Kandy/Assets/CaixaTexto/caixa_texto.tscn
+res://Project Kandy/DrPedra/dr_pedra.tscn
 res://Project Kandy/DrPedra/dr_pedra.gd

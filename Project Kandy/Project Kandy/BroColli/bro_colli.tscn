@@ -318,10 +318,10 @@ texture = ExtResource("6_vyyb6")
 polygon = PackedVector2Array(-0.5, 8, -0.5, 12, -2.5, 12, -2.5, -6, 3.5, -6, 3.5, 12, 1.5, 12, 1.5, 8)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "idle"
 libraries = {
 "": SubResource("AnimationLibrary_gmvhx")
 }
-autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 process_callback = 0
