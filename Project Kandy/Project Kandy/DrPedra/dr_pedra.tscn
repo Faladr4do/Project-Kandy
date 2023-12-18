@@ -1,9 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://c0vxysqew3npd"]
+[gd_scene load_steps=12 format=3 uid="uid://c0vxysqew3npd"]
 
 [ext_resource type="Script" path="res://Project Kandy/DrPedra/dr_pedra.gd" id="1_ntale"]
 [ext_resource type="Texture2D" uid="uid://cy1s2nhhcm8no" path="res://Project Kandy/DrPedra/sprites/DrPedraIdleBreath.png" id="1_vre3o"]
 [ext_resource type="Texture2D" uid="uid://xp8nham7e0ek" path="res://Project Kandy/DrPedra/sprites/DrPedraIdleBlink.png" id="2_bmv67"]
-[ext_resource type="Texture2D" uid="uid://crik3407fwrkq" path="res://Project Kandy/DrPedra/sprites/DrPedraSpeak.png" id="3_4k40k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v1r7i"]
 size = Vector2(11.125, 7.375)
@@ -61,57 +60,6 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_h8bfl"]
 resource_name = "falar"
-length = 0.3
-loop_mode = 1
-step = 0.15
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("3_4k40k")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [2]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:vframes")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.15),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0, 1]
-}
 
 [sub_resource type="Animation" id="Animation_2g7du"]
 resource_name = "idle_pestanejar"
@@ -251,10 +199,10 @@ position = Vector2(0.0625, 0.8125)
 shape = SubResource("RectangleShape2D_v1r7i")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "idle_respirar"
 libraries = {
 "": SubResource("AnimationLibrary_bbevq")
 }
+autoplay = "idle_respirar"
 
 [node name="AreaDialogo" type="Area2D" parent="."]
 

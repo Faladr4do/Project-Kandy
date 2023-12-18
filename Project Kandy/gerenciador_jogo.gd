@@ -15,6 +15,4 @@ var game_paused = false:
 # Called when the node enters the scene tree for the first time.
 func _input(event):
 	if event.is_action_pressed("cancelar"):
-		print(game_paused)
 		game_paused = !game_paused
-		print(game_paused)
