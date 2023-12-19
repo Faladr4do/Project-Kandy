@@ -4,8 +4,13 @@
 [ext_resource type="Script" path="res://Project Kandy/ObjetosProgramaveis/GomaTrampolim/goma_beijo.gd" id="1_x6bn4"]
 [ext_resource type="Texture2D" uid="uid://d3et3ohecf7j0" path="res://Project Kandy/ObjetosProgramaveis/GomaTrampolim/sprites/GomaBeijoJump.png" id="2_4a644"]
 
-[sub_resource type="Animation" id="Animation_51ic2"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5l6wf"]
+size = Vector2(144, 53)
+
+[sub_resource type="Animation" id="Animation_80p7k"]
 resource_name = "idle"
+length = 0.5
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -55,61 +60,7 @@ tracks/3/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_5jkag"]
-resource_name = "jumper"
-length = 0.2
-loop_mode = 2
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("2_4a644")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [4]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:vframes")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1, 0.15),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-
-[sub_resource type="Animation" id="Animation_bmj3j"]
+[sub_resource type="Animation" id="Animation_kss2y"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -160,41 +111,92 @@ tracks/3/keys = {
 "values": [0]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_axm2r"]
-_data = {
-"RESET": SubResource("Animation_bmj3j"),
-"idle": SubResource("Animation_51ic2"),
-"jumper": SubResource("Animation_5jkag")
+[sub_resource type="Animation" id="Animation_d320n"]
+resource_name = "goma_jump"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_4a644")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 3, 2, 1, 0]
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v5lrw"]
-size = Vector2(145, 79)
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y5gl7"]
+_data = {
+"RESET": SubResource("Animation_kss2y"),
+"goma_jump": SubResource("Animation_d320n"),
+"idle": SubResource("Animation_80p7k")
+}
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_54p2f"]
-size = Vector2(132, 32)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_728gn"]
+size = Vector2(144, 70)
 
-[node name="GomaBeijo" type="CharacterBody2D"]
+[node name="Area2D" type="Area2D"]
 script = ExtResource("1_x6bn4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(8, 8)
 texture = ExtResource("1_esfl4")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -16.5)
+shape = SubResource("RectangleShape2D_5l6wf")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_axm2r")
+"": SubResource("AnimationLibrary_y5gl7")
 }
 autoplay = "idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 39.5)
-shape = SubResource("RectangleShape2D_v5lrw")
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="area_pular" type="Area2D" parent="."]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 45)
+shape = SubResource("RectangleShape2D_728gn")
+debug_color = Color(0.854902, 0, 0.890196, 0.419608)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="area_pular"]
-position = Vector2(1, -16)
-shape = SubResource("RectangleShape2D_54p2f")
-debug_color = Color(0.988235, 0, 0.298039, 0.419608)
-
-[connection signal="body_entered" from="area_pular" to="." method="_on_area_pular_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://c0vxysqew3npd"]
+[gd_scene load_steps=13 format=3 uid="uid://c0vxysqew3npd"]
 
 [ext_resource type="Script" path="res://Project Kandy/DrPedra/dr_pedra.gd" id="1_ntale"]
 [ext_resource type="Texture2D" uid="uid://cy1s2nhhcm8no" path="res://Project Kandy/DrPedra/sprites/DrPedraIdleBreath.png" id="1_vre3o"]
 [ext_resource type="Texture2D" uid="uid://xp8nham7e0ek" path="res://Project Kandy/DrPedra/sprites/DrPedraIdleBlink.png" id="2_bmv67"]
+[ext_resource type="PackedScene" uid="uid://dabn8vv1h0aj3" path="res://Project Kandy/Assets/Globais/area_interagir.tscn" id="4_xriw2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v1r7i"]
 size = Vector2(11.125, 7.375)
@@ -217,5 +218,13 @@ debug_color = Color(0.662745, 0.478431, 0.505882, 0.419608)
 position = Vector2(37.1875, -11)
 shape = SubResource("RectangleShape2D_gkrpd")
 
+[node name="AreaInteragir" parent="." instance=ExtResource("4_xriw2")]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="AreaInteragir"]
+position = Vector2(-15.25, -12.0625)
+shape = SubResource("RectangleShape2D_hhg15")
+debug_color = Color(0.662745, 0.478431, 0.505882, 0.419608)
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="AreaDialogo" to="." method="_on_area_dialogo_body_entered"]
 [connection signal="body_entered" from="AreaVoltarDr" to="." method="_on_area_voltar_dr_body_entered"]

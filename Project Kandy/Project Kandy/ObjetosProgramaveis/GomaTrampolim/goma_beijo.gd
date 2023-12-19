@@ -1,11 +1,21 @@
-extends CharacterBody2D
+extends Area2D
 
-var poder_salto = 4000
+@onready var animGoma = $AnimationPlayer
+
+var poder_salto = -1600
+var usavel = true
 
 func _physics_process(delta):
 	pass
 
 
-func _on_area_pular_body_entered(body):
+func _on_body_entered(body):
 	if body.is_in_group("Vegetal"):
+		animGoma.play("goma_jump")
 		body.velocity.y = poder_salto
+		body.doubleJump = true
+
+func _on_animation_player_animation_finished(anim_name):
+	if anim_name == "goma_jump":
+		
+		animGoma.play("idle")

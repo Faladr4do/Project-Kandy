@@ -1,15 +1,17 @@
-res://Jogo.tscn
+res://Project Kandy/ObjetosProgramaveis/GomaTrampolim/goma_beijo.tscn
 res://explosão.gd
 res://gerenciador_jogo.gd
 res://Project Kandy/Assets/Fontes/AtariFont.tres
-res://TesterKandy.tscn
+res://Jogo.tscn
+res://Project Kandy/Niveis/mapa_testes.tscn
 res://Project Kandy/BroColli/bro_colli.tscn
-res://Project Kandy/SugarBomb/prototype_jumper.tscn
-res://Project Kandy/Sweet Corn/sweet_cornBasic.tscn
-res://Project Kandy/Sweet Corn/sweet_cornPatroller.tscn
 res://Project Kandy/RapMato & SliceSpice/red_twins.tscn
 res://Project Kandy/Assets/CaixaTexto/caixa_texto.tscn
 res://Project Kandy/DrPedra/dr_pedra.tscn
-res://Project Kandy/ObjetosProgramaveis/GomaTrampolim/goma_beijo.tscn
 res://Project Kandy/ObjetosProgramaveis/GomaTrampolim/goma_beijo.gd
-res://Project Kandy/Niveis/mapa_testes.tscn
+res://Project Kandy/DrPedra/dr_pedra.gd
+res://AreaInteragir.gd
+res://Project Kandy/Assets/Globais/interagir_gestor.tscn
+res://Project Kandy/Assets/Globais/interagir_gestor.gd
+res://Project Kandy/Assets/Globais/area_interagir.tscn
+res://Project Kandy/BroColli/BroColli.gd

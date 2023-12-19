@@ -23,6 +23,7 @@ config/icon="res://Project Kandy/Assets/Icons/kandy_icon.png"
 
 Global="*res://Project Kandy/Assets/Globais/global.gd"
 Dialog="*res://Project Kandy/Assets/Globais/DialogManager.gd"
+Interagir="*res://Project Kandy/Assets/Globais/interagir_gestor.tscn"
 
 [display]
 

@@ -287,6 +287,7 @@ _data = {
 size = Vector2(6, 2)
 
 [node name="BroColli" type="CharacterBody2D"]
+z_index = 1
 scale = Vector2(8, 8)
 script = ExtResource("1_6f88t")
 
