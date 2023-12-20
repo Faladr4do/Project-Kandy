@@ -11,6 +11,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var spriteColli = $Sprite2D
 @onready var mira : Marker2D = $Sprite2D/Marker2D
 @onready var estigar_cooldown = $"estigar cooldown"
+@onready var hit_flash = $HitFlashAnimPlay
 
 @export var fire : PackedScene = preload("res://Project Kandy/Projeteis/fireball.tscn")
 
@@ -121,10 +122,12 @@ func verificar_vida():
 func _on_hitbox_body_entered(body):
 	if body.is_in_group("Inimigo_Tocador"):
 		Global.vidas_totais -= Global.dano_toque
+		hit_flash.play("hit_flash")
 
 func _on_hitbox_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
 	if area.is_in_group("Explosivo"):
 		Global.vidas_totais -= Global.dano_explosivo
+		hit_flash.play("hit_flash")
 
 func player_comprador_method():
 	pass

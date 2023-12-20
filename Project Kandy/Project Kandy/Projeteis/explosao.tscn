@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://ch08yn4i0up76"]
 
-[ext_resource type="Script" path="res://explosão.gd" id="1_0ya00"]
-[ext_resource type="Texture2D" uid="uid://deeivout4iujo" path="res://Project Kandy/Projeteis/sprites/explosion.png" id="2_alose"]
-[ext_resource type="AudioStream" uid="uid://cqjt1svmhx1jx" path="res://Project Kandy/Projeteis/sons/explosion.mp3" id="3_rih3p"]
+[ext_resource type="Script" path="res://explosao.gd" id="1_kt6is"]
+[ext_resource type="Texture2D" uid="uid://deeivout4iujo" path="res://Project Kandy/Projeteis/sprites/explosion.png" id="2_yofj7"]
+[ext_resource type="AudioStream" uid="uid://cqjt1svmhx1jx" path="res://Project Kandy/Projeteis/sons/explosion.mp3" id="3_1er5y"]
 
 [sub_resource type="Animation" id="Animation_duqhj"]
 length = 0.001
@@ -16,7 +16,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_alose")]
+"values": [ExtResource("2_yofj7")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -68,7 +68,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_alose")]
+"values": [ExtResource("2_yofj7")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -115,13 +115,13 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m73oy"]
 
-[node name="explosão" type="Area2D"]
+[node name="explosao" type="Area2D"]
 scale = Vector2(1.5, 1.5)
-script = ExtResource("1_0ya00")
+script = ExtResource("1_kt6is")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(11, -10)
-texture = ExtResource("2_alose")
+texture = ExtResource("2_yofj7")
 hframes = 3
 vframes = 2
 
@@ -136,4 +136,6 @@ scale = Vector2(7, 7)
 shape = SubResource("RectangleShape2D_m73oy")
 
 [node name="explosion" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_rih3p")
+stream = ExtResource("3_1er5y")
+
+[connection signal="finished" from="explosion" to="." method="_on_explosion_finished"]

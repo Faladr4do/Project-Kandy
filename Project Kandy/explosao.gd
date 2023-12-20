@@ -19,3 +19,7 @@ func _process(delta):
 	queue_free()
 
 
+
+
+func _on_explosion_finished():
+	pass

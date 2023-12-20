@@ -1,6 +1,6 @@
 extends Area2D
 
-class_name AreaIntergir
+class_name AreaInteragir
 
 @export var nome_acao = "interagir"
 

@@ -15,3 +15,10 @@ res://Project Kandy/Assets/Globais/interagir_gestor.tscn
 res://Project Kandy/Assets/Globais/interagir_gestor.gd
 res://Project Kandy/Assets/Globais/area_interagir.tscn
 res://Project Kandy/BroColli/BroColli.gd
+res://Project Kandy/Assets/Shaders/hit_flash.tres
+res://Project Kandy/Sweet Corn/sweet_cornBasic.tscn
+res://Project Kandy/Projeteis/explosão.tscn
+res://Project Kandy/Projeteis/explosao.tscn
+res://explosao.gd
+res://Project Kandy/SugarBomb/prototype_jumper.tscn
+res://Project Kandy/SugarBomb/prototype_jumper.gd

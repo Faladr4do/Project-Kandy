@@ -8,10 +8,10 @@ const texto_base = "[E] para "
 var areas_ativas = []
 var pode_interagir = true
 
-func registar_area(area: AreaIntergir):
+func registar_area(area: AreaInteragir):
 	areas_ativas.push_back(area)
 	
-func desregistar_area(area: AreaIntergir):
+func desregistar_area(area: AreaInteragir):
 	var index = areas_ativas.find(area)
 	if index != -1:
 		areas_ativas.remove_at(index)

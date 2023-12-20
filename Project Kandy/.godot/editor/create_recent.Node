@@ -1,13 +1,13 @@
+CollisionPolygon2D
+AnimationPlayer
 CollisionShape2D
 Area2D
 Label
-AnimationPlayer
 StaticBody2D
 Sprite2D
 CharacterBody2D
 TileMap
 Marker2D
-CollisionPolygon2D
 Timer
 MarginContainer
 NinePatchRect

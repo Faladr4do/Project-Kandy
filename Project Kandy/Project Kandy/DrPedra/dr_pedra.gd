@@ -8,7 +8,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var rng = RandomNumberGenerator.new()
 var random
 
-@onready var area_interagir: AreaIntergir = $AreaInteragir
+@onready var area_interagir: AreaInteragir = $AreaInteragir
 
 @onready var local_falar = $Marker2D.global_position
 @onready var animPedra = $AnimationPlayer
