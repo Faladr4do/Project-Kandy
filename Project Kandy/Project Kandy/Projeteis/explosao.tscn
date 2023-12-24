@@ -137,5 +137,6 @@ shape = SubResource("RectangleShape2D_m73oy")
 
 [node name="explosion" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_1er5y")
+autoplay = true
 
 [connection signal="finished" from="explosion" to="." method="_on_explosion_finished"]
