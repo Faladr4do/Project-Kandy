@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Project Kandy"
+config/tags=PackedStringArray("main_projects")
 run/main_scene="res://Project Kandy/Menus/menu_principal.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
@@ -32,6 +33,17 @@ window/size/viewport_height=1080
 window/size/mode=2
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
+
+[file_customization]
+
+folder_colors={
+"res://Project Kandy/BroColli/": "green",
+"res://Project Kandy/DrPedra/": "green",
+"res://Project Kandy/RapMato & SliceSpice/": "green",
+"res://Project Kandy/SugarBomb/": "red",
+"res://Project Kandy/SugarShooter/": "red",
+"res://Project Kandy/Sweet Corn/": "red"
+}
 
 [input]
 

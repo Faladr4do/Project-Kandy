@@ -30,12 +30,10 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-func _on_interact():
-	Dialog.comecar_dialogo(local_falar, falas)
 
 func _on_area_dialogo_body_entered(body):
 	if body.is_in_group("Vegetal"):
-		pass
+		Dialog.comecar_dialogo(local_falar, falas)
 
 
 func _on_area_voltar_dr_body_entered(body):
