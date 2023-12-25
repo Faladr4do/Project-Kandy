@@ -84,7 +84,7 @@ func _physics_process(delta):
 	verificar_vida()
 	move_and_slide()
 	atualizar_Anims(direction)
-	
+
 func atualizar_Anims(direction):
 	if estaAtacar:
 		return
@@ -94,11 +94,11 @@ func atualizar_Anims(direction):
 		else:
 			animColli.play("walk")
 	else:
-		if velocity.y < 0:
+		if velocity.y < 0 and doubleJump:
 			animColli.play("jump")
-		elif velocity.y > 200000:
+		elif velocity.y > 0:
 			animColli.play("fall")
-			
+
 func devolta():
 	speed = 1
 	Engine.set_time_scale(1)

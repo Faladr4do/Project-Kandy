@@ -20,6 +20,10 @@ boot_splash/fullsize=false
 boot_splash/use_filter=false
 config/icon="res://Project Kandy/Assets/Icons/kandy_icon.png"
 
+[audio]
+
+buses/default_bus_layout=""
+
 [autoload]
 
 Global="*res://Project Kandy/Assets/Globais/global.gd"

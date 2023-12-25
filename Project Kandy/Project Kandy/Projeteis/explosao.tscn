@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://ch08yn4i0up76"]
 
-[ext_resource type="Script" path="res://explosao.gd" id="1_kt6is"]
+[ext_resource type="Script" path="res://Project Kandy/Projeteis/explosao.gd" id="1_pkgu8"]
 [ext_resource type="Texture2D" uid="uid://deeivout4iujo" path="res://Project Kandy/Projeteis/sprites/explosion.png" id="2_yofj7"]
 [ext_resource type="AudioStream" uid="uid://cqjt1svmhx1jx" path="res://Project Kandy/Projeteis/sons/explosion.mp3" id="3_1er5y"]
 
@@ -141,7 +141,7 @@ _data = {
 
 [node name="explosao" type="Area2D"]
 scale = Vector2(1.5, 1.5)
-script = ExtResource("1_kt6is")
+script = ExtResource("1_pkgu8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(11, -10)
@@ -153,7 +153,6 @@ vframes = 2
 libraries = {
 "": SubResource("AnimationLibrary_nlvv0")
 }
-autoplay = "explode"
 
 [node name="area" type="CollisionShape2D" parent="."]
 scale = Vector2(7, 7)
@@ -162,6 +161,7 @@ shape = SubResource("RectangleShape2D_m73oy")
 [node name="explosion" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_1er5y")
 autoplay = true
+attenuation = 0.7
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="finished" from="explosion" to="." method="_on_explosion_finished"]

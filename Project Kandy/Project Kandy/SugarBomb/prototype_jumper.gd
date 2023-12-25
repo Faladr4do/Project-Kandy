@@ -71,7 +71,7 @@ func _on_target_body_entered(body):
 		morte()
 
 func _on_teste_frente_body_entered(body):
-	if body.is_in_group("Vegetal"):
+	if body.is_in_group("Vegetal") or body.is_in_group("Bala"):
 		pass
 	else:
 		virar()
