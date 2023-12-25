@@ -1,3 +1,4 @@
+Marker2D
 CollisionPolygon2D
 AnimationPlayer
 CollisionShape2D
@@ -7,7 +8,6 @@ StaticBody2D
 Sprite2D
 CharacterBody2D
 TileMap
-Marker2D
 Timer
 MarginContainer
 NinePatchRect

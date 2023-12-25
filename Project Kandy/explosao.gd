@@ -11,15 +11,16 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	som_explosivo.play()
+	"""som_explosivo.play()
 	anim_kaboom.play("explode")
 	#fix temporario
 	await get_tree().create_timer(0.5).timeout
 	#await som_explosivo.finished
-	queue_free()
-
-
-
+	queue_free()"""
 
 func _on_explosion_finished():
+	pass
+
+
+func _on_animation_player_animation_finished(anim_name):
 	pass
