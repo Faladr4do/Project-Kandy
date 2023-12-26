@@ -13,3 +13,7 @@ res://Project Kandy/Menus/menu_principal.tscn
 res://Project Kandy/Projeteis/explosao.tscn
 res://Project Kandy/SugarBomb/prototype_jumper.gd
 res://Project Kandy/BroColli/BroColli.gd
+res://Project Kandy/DrPedra/dr_pedra.tscn
+res://Project Kandy/DrPedra/dr_pedra.gd
+res://Project Kandy/Assets/Globais/DialogManager.gd
+res://Project Kandy/Assets/CaixaTexto/MarginContainer.gd
