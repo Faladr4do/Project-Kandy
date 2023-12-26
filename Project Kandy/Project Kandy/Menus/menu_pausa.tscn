@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dyh336256jfdn"]
+[gd_scene load_steps=5 format=3 uid="uid://qe4canp7n10u"]
 
 [ext_resource type="LabelSettings" uid="uid://dh7rhhtjwrqtk" path="res://Project Kandy/Assets/Fontes/AtariFont.tres" id="1_4cwht"]
 [ext_resource type="Script" path="res://Project Kandy/Menus/menu_pausa.gd" id="1_bplvm"]

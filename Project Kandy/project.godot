@@ -14,6 +14,7 @@ config/name="Project Kandy"
 config/tags=PackedStringArray("main_projects")
 run/main_scene="res://Project Kandy/Menus/menu_principal.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
+run/max_fps=144
 boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
 boot_splash/image="res://Project Kandy/Assets/Icons/kandy_icon.png"
 boot_splash/fullsize=false
@@ -35,6 +36,8 @@ Interagir="*res://Project Kandy/Assets/Globais/interagir_gestor.tscn"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=2
+window/size/window_width_override=1280
+window/size/window_height_override=720
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ch08yn4i0up76"]
+[gd_scene load_steps=8 format=3 uid="uid://djw783jxvawn0"]
 
 [ext_resource type="Script" path="res://Project Kandy/Projeteis/explosao.gd" id="1_pkgu8"]
 [ext_resource type="Texture2D" uid="uid://deeivout4iujo" path="res://Project Kandy/Projeteis/sprites/explosion.png" id="2_yofj7"]

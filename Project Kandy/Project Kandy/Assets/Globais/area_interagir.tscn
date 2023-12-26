@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dabn8vv1h0aj3"]
 
-[ext_resource type="Script" path="res://AreaInteragir.gd" id="1_aayx1"]
+[ext_resource type="Script" path="res://Project Kandy/Assets/Globais/AreaInteragir.gd" id="1_aayx1"]
+
 
 [node name="AreaInteragir" type="Area2D"]
 collision_layer = 0

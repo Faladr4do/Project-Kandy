@@ -43,7 +43,6 @@ func _on_area_voltar_dr_body_entered(body):
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "idle_respirar":
 		random = rng.randi_range(0,10)
-		print(random)
 		if random >= 5:
 			animPedra.play("idle_pestanejar")
 		else:
