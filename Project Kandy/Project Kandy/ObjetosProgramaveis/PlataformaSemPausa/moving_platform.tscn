@@ -44,7 +44,7 @@ _data = {
 "move": SubResource("Animation_8gg4p")
 }
 
-[node name="Path2D" type="Path2D"]
+[node name="Plataforma" type="Path2D"]
 scale = Vector2(8, 8)
 script = ExtResource("1_csn0s")
 

@@ -26,3 +26,6 @@ res://Project Kandy/Menus/menu_pausa.gd
 res://jogo.tscn
 res://jogo_full.tscn
 res://Project Kandy/Menus/menu_principal.gd
+res://Project Kandy/ObjetosProgramaveis/CaramelSaw/serra_caramelo.tscn
+res://Project Kandy/ObjetosProgramaveis/CaramelSaw/serra_caramelo.gd
+res://Project Kandy/Assets/Globais/global.gd
