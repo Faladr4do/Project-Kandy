@@ -1,0 +1,1 @@
+A cena explosiva parece não estar visivel quando instanciada no Node Jogo (da para ouvir o audio no entanto), mas quando a instancio no node2D normal nada errado acontece.
