@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://djw783jxvawn0"]
+[gd_scene load_steps=8 format=3 uid="uid://dq5nc5oa72eke"]
 
 [ext_resource type="Script" path="res://Project Kandy/Projeteis/explosao.gd" id="1_pkgu8"]
 [ext_resource type="Texture2D" uid="uid://deeivout4iujo" path="res://Project Kandy/Projeteis/sprites/explosion.png" id="2_yofj7"]
@@ -163,5 +163,5 @@ stream = ExtResource("3_1er5y")
 autoplay = true
 attenuation = 0.7
 
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
-[connection signal="finished" from="explosion" to="." method="_on_explosion_finished"]

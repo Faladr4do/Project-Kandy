@@ -19,6 +19,7 @@ var explodindo = false
 @onready var alvo = $target
 
 func _ready():
+	add_to_group("Vivo")
 	add_to_group("Inimigo")
 	add_to_group("Inimigo_Longo")
 	alvo.add_to_group("Alvo")

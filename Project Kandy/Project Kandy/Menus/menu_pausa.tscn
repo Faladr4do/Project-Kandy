@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://qe4canp7n10u"]
+[gd_scene load_steps=5 format=3 uid="uid://c6i0fl7bbgfvc"]
 
-[ext_resource type="LabelSettings" uid="uid://dh7rhhtjwrqtk" path="res://Project Kandy/Assets/Fontes/AtariFont.tres" id="1_4cwht"]
+[ext_resource type="LabelSettings" uid="uid://dt4qythdv8y4n" path="res://Project Kandy/Assets/Fontes/AtariFont.tres" id="1_4cwht"]
 [ext_resource type="Script" path="res://Project Kandy/Menus/menu_pausa.gd" id="1_bplvm"]
 [ext_resource type="FontFile" uid="uid://chvuo2lxramxx" path="res://Project Kandy/Assets/Fontes/AtariClassic-gry3.ttf" id="2_4iyud"]
 

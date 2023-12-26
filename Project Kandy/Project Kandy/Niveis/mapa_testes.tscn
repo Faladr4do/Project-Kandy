@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bpxvcsvhn2cw"]
+[gd_scene load_steps=9 format=3 uid="uid://c466srbesxb7h"]
 
 [ext_resource type="PackedScene" uid="uid://c0ej330af3pbo" path="res://Project Kandy/BroColli/bro_colli.tscn" id="1_p2pqi"]
 [ext_resource type="Texture2D" uid="uid://tkwdg4lmkmy4" path="res://Project Kandy/Assets/Tiles/moving_platforms.png" id="2_e6woo"]

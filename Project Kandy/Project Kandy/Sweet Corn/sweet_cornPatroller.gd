@@ -10,6 +10,7 @@ var estaVivo = true
 var estaMorrer = false
 var patrulhando = false
 var velocy_old = 0
+var dano = Global.dano_toque
 
 
 @onready var animCorn = $AnimationPlayer
@@ -18,6 +19,7 @@ var velocy_old = 0
 @onready var alvo = $target
 
 func _ready():
+	add_to_group("Vivo")
 	add_to_group("Inimigo")
 	add_to_group("Inimigo_Tocador")
 	alvo.add_to_group("Alvo")
@@ -71,6 +73,7 @@ func _on_target_body_entered(body):
 	if body.is_in_group("Bala"):
 		morte()
 	elif body.is_in_group("Vegetal"):
+		body.dano(dano)
 		virar()
 
 func _on_teste_parede_body_entered(body):
