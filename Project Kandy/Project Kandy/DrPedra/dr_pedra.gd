@@ -37,7 +37,6 @@ func _physics_process(delta):
 	esta_falar = Dialog.dialogo_ativo 
 	
 	if esta_falar:
-		print("esta a falar")
 		animPedra.play("falar")
 		await animPedra.animation_finished
 	
@@ -50,7 +49,6 @@ func _on_animation_player_animation_finished(anim_name):
 			conta_idle += 1
 		elif anim_name == "idle_pestanejar":
 			conta_idle = 0
-	print(conta_idle)
 
 #Dialogo começa assim que o player entra na area
 func _on_area_dialogo_body_entered(body):
@@ -58,7 +56,7 @@ func _on_area_dialogo_body_entered(body):
 		Dialog.comecar_dialogo(local_falar, intro)
 		intro_feita = true
 	elif intro_feita:
-		Dialog.pequeno_dialogo(local_falar, falas, 1, 3)
+		Dialog.comecar_dialogo(local_falar, falas)
 		#do this#
 
 func _on_area_voltar_dr_body_entered(body):

@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://60u0wf55vhok"]
+[gd_scene load_steps=5 format=3 uid="uid://duwpkr0nk41ey"]
 
 [ext_resource type="Script" path="res://Project Kandy/Assets/Globais/gerenciador_jogo.gd" id="1_ydjgn"]
-[ext_resource type="PackedScene" uid="uid://dyh336256jfdn" path="res://Project Kandy/Menus/menu_pausa.tscn" id="2_mipuw"]
-[ext_resource type="PackedScene" uid="uid://s7ny52peovh7" path="res://Project Kandy/Niveis/mapa_testes.tscn" id="2_pntvn"]
+[ext_resource type="PackedScene" uid="uid://qe4canp7n10u" path="res://Project Kandy/Menus/menu_pausa.tscn" id="2_mipuw"]
+[ext_resource type="PackedScene" uid="uid://bpxvcsvhn2cw" path="res://Project Kandy/Niveis/mapa_testes.tscn" id="2_pntvn"]
 [ext_resource type="PackedScene" uid="uid://em3bia5jdls6" path="res://Project Kandy/Assets/HUD/canvas_layer.tscn" id="3_comk6"]
 
 [node name="GerenciadorJogo" type="Node"]

@@ -1,10 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://s7ny52peovh7"]
+[gd_scene load_steps=8 format=3 uid="uid://bpxvcsvhn2cw"]
 
 [ext_resource type="PackedScene" uid="uid://c0ej330af3pbo" path="res://Project Kandy/BroColli/bro_colli.tscn" id="1_p2pqi"]
 [ext_resource type="Texture2D" uid="uid://tkwdg4lmkmy4" path="res://Project Kandy/Assets/Tiles/moving_platforms.png" id="2_e6woo"]
 [ext_resource type="PackedScene" uid="uid://c0vxysqew3npd" path="res://Project Kandy/DrPedra/dr_pedra.tscn" id="3_6de72"]
 [ext_resource type="PackedScene" uid="uid://051ksev1cvoe" path="res://Project Kandy/ObjetosProgramaveis/GomaTrampolim/goma_beijo.tscn" id="4_ya8g6"]
-[ext_resource type="PackedScene" uid="uid://c05mc12yjbrnm" path="res://Project Kandy/SugarBomb/prototype_jumper.tscn" id="5_vlcao"]
+[ext_resource type="PackedScene" uid="uid://c5pnis6kufugs" path="res://Project Kandy/SugarBomb/prototype_jumper.tscn" id="5_vlcao"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vwwv1"]
 texture = ExtResource("2_e6woo")

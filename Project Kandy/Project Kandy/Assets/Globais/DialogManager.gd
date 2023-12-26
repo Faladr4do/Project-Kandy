@@ -21,15 +21,16 @@ func comecar_dialogo(posicao, linhas: Array[String]):
 	_mostrar_caixa_texto()
 	dialogo_ativo = true
 
-func pequeno_dialogo(posicao, linhas: Array[String], min_linhas, max_linhas):
-	if dialogo_ativo:
-		return
-	random = randi_range(min_linhas, max_linhas)
-	linhas[random]
-	linhas_dialogo = linhas
-	posicao_texto_caixa = posicao
-	_mostrar_caixa_texto()
-	dialogo_ativo = true
+# Função Protótipo Para Falas Random ao Interagir
+#func pequeno_dialogo(posicao, linhas: Array[String], min_linhas, max_linhas):
+	#if dialogo_ativo:
+		#return
+	#random = randi_range(min_linhas, max_linhas)
+	#linhas[random]
+	#linhas_dialogo = linhas
+	#posicao_texto_caixa = posicao
+	#_mostrar_caixa_texto()
+	#dialogo_ativo = true
 
 func _mostrar_caixa_texto():
 	caixa_texto = caixa_de_texto.instantiate()

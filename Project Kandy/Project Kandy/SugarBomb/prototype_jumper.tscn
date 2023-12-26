@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c05mc12yjbrnm"]
+[gd_scene load_steps=22 format=3 uid="uid://c5pnis6kufugs"]
 
 [ext_resource type="Script" path="res://Project Kandy/SugarBomb/prototype_jumper.gd" id="1_31toa"]
 [ext_resource type="Texture2D" uid="uid://bkufkfhu20hhy" path="res://Project Kandy/Sweet Corn/sprites/SweetCornIdle.png" id="2_8lohh"]
