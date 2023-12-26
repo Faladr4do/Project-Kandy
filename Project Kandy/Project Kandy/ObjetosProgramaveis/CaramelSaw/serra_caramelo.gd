@@ -1,5 +1,7 @@
 extends Path2D
 
+var dano = Global.dano_obstaculo
+
 @export var loop = true
 @export var velocidade = 60
 @export var escala_vel = 1
@@ -10,6 +12,9 @@ extends Path2D
 func _ready():
 	area_serra.add_to_group("Obstaculo")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("Vegetal"):
+		body.dano(dano)

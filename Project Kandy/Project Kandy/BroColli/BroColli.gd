@@ -4,6 +4,9 @@ const SPEED = 440.0
 const  JUMP_VELOCITY = -900.0
 var relogio = Timer.new()
 
+var vida_total = Global.vidas_totais
+var vida_max = Global.vidas_max
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -26,14 +29,14 @@ var temporizar_coyote = 0.1
 
 
 func _ready():
+	add_to_group("Vivo")
 	add_to_group("Vegetal")
+	
 
 func _physics_process(delta):
 	# Add the gravity.
 	if !is_on_floor():
 		velocity.y += (gravity * delta) * speed
-
-
 	# Handle Jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -115,10 +118,7 @@ func estigar():
 	cena_estigada.global_position = mira.global_position
 
 func verificar_vida():
-	if Global.vidas_totais >= 0:
-		pass
-	elif Global.vidas_totais < 0:
-		morrer()
+		Global.vidas_totais = vida_total
 
 func _on_hitbox_body_entered(body):
 	if body.is_in_group("Inimigo_Tocador"):
@@ -144,10 +144,16 @@ func morrer():
 	get_tree().reload_current_scene()
 	Global.vidas_totais = Global.vidas_max
 
-func dano():
+func dano(dano_sofrido):
+	vida_total -= dano_sofrido
+	imune_dano()
+	if vida_total < 0:
+		morrer()
+
+func imune_dano():
 	hitbox.monitoring = false
 	hit_flash.play("hit_flash")
 	await get_tree().create_timer(75).timeout
 	hitbox.monitoring = true
-
+	
 

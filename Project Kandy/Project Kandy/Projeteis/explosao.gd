@@ -1,5 +1,7 @@
 extends Area2D
 
+var dano = Global.dano_explosivo
+
 @onready var sprite_kaboom = $Sprite2D
 @onready var anim_kaboom = $AnimationPlayer
 @onready var som_explosivo = $explosion
@@ -13,9 +15,9 @@ func _ready():
 func _process(delta):
 	anim_kaboom.play("explode")
 
-func _on_explosion_finished():
-	pass
-
-
 func _on_animation_player_animation_finished(anim_name):
 	queue_free()
+
+func _on_body_entered(body):
+	if body.is_in_group("Vegetal"):
+		body.dano(dano)
