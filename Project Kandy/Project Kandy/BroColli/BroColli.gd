@@ -12,6 +12,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var mira : Marker2D = $Sprite2D/Marker2D
 @onready var estigar_cooldown = $"estigar cooldown"
 @onready var hit_flash = $HitFlashAnimPlay
+@onready var hitbox = $hitbox
 
 @export var fire : PackedScene = preload("res://Project Kandy/Projeteis/fireball.tscn")
 
@@ -126,10 +127,15 @@ func _on_hitbox_body_entered(body):
 		hit_flash.play("hit_flash")
 
 func _on_hitbox_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
-	if area.is_in_group("Explosivo"):
-		print("ouch explosão")
-		Global.vidas_totais -= Global.dano_explosivo
-		hit_flash.play("hit_flash")
+	if !hit_flash.is_playing():
+		if area.is_in_group("Explosivo"):
+			print("ouch explosão")
+			Global.vidas_totais -= Global.dano_explosivo
+			hit_flash.play("hit_flash")
+		if area.is_in_group("Obstaculo"):
+			print("ouch obstaculo")
+			Global.vidas_totais -= Global.dano_obstaculo
+			hit_flash.play("hit_flash")
 
 func player_comprador_method():
 	pass
@@ -138,5 +144,10 @@ func morrer():
 	get_tree().reload_current_scene()
 	Global.vidas_totais = Global.vidas_max
 
+func dano():
+	hitbox.monitoring = false
+	hit_flash.play("hit_flash")
+	await get_tree().create_timer(75).timeout
+	hitbox.monitoring = true
 
 

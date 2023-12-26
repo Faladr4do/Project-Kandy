@@ -12,3 +12,4 @@ var dano_projetil = 1
 
 #Dano Cenário
 var dano_explosivo = 2
+var dano_obstaculo = 1
