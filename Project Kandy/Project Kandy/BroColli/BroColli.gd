@@ -121,11 +121,13 @@ func verificar_vida():
 
 func _on_hitbox_body_entered(body):
 	if body.is_in_group("Inimigo_Tocador"):
+		print("ouch toque")
 		Global.vidas_totais -= Global.dano_toque
 		hit_flash.play("hit_flash")
 
 func _on_hitbox_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
 	if area.is_in_group("Explosivo"):
+		print("ouch explosão")
 		Global.vidas_totais -= Global.dano_explosivo
 		hit_flash.play("hit_flash")
 

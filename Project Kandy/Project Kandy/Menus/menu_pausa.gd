@@ -1,6 +1,6 @@
 extends Control
 
-@export var gerenciador_jogo : GerenciadorJogo
+@export var gerenciador_jogo : GerenciadorJogo = GerenciadorJogo.new()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	hide()
@@ -34,6 +34,3 @@ func _on_botao_sair_pressed():
 
 func _on_botao_voltar_menu_pressed():
 	get_tree().change_scene_to_file("res://Project Kandy/Menus/menu_principal.tscn")
-
-
-

@@ -20,6 +20,9 @@ res://Project Kandy/ObjetosProgramaveis/PlataformaSemPausa/moving_platform.tscn
 res://Project Kandy/BroColli/BroColli.gd
 res://Project Kandy/ObjetosProgramaveis/PlataformaSemPausa/moving_platform.gd
 res://Project Kandy/Niveis/TesterKandy.tscn
-
 res://Project Kandy/Assets/Globais/DialogManager.gd
-
+res://node.tscn
+res://Project Kandy/Menus/menu_pausa.gd
+res://jogo.tscn
+res://jogo_full.tscn
+res://Project Kandy/Menus/menu_principal.gd

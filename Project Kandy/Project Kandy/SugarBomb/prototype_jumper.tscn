@@ -456,7 +456,7 @@ radius = 10.1588
 [sub_resource type="CircleShape2D" id="CircleShape2D_ahg3r"]
 radius = 8.61651
 
-[node name="SweetCorn" type="CharacterBody2D"]
+[node name="SugarBomber" type="CharacterBody2D"]
 scale = Vector2(8, 8)
 script = ExtResource("1_31toa")
 
