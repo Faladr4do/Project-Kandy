@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" path="res://Project Kandy/Assets/Globais/AreaInteragir.gd" id="1_aayx1"]
 
-
 [node name="AreaInteragir" type="Area2D"]
 collision_layer = 0
 collision_mask = 2

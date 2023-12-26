@@ -11,7 +11,7 @@ var tempo_letra = 0.03
 var tempo_espaco = 0.06
 var tempo_pontuar = 0.2
 
-signal finished_displaying()
+signal acabou_de_mostrar()
 
 func mostrar_texto(texto_mostra: String):
 	texto = texto_mostra
@@ -32,7 +32,7 @@ func mostrar_fala():
 	texto_fala.text += texto[num_letras]
 	num_letras += 1
 	if num_letras >= texto.length():
-		finished_displaying.emit()
+		acabou_de_mostrar.emit()
 		return
 	match texto[num_letras]:
 		"!", ".", ",", "?":

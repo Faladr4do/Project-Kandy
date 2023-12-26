@@ -11,7 +11,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print("cheguei")
 	anim_kaboom.play("explode")
 
 func _on_explosion_finished():

@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c0vxysqew3npd" path="res://Project Kandy/DrPedra/dr_pedra.tscn" id="3_6de72"]
 [ext_resource type="PackedScene" uid="uid://051ksev1cvoe" path="res://Project Kandy/ObjetosProgramaveis/GomaTrampolim/goma_beijo.tscn" id="4_ya8g6"]
 [ext_resource type="PackedScene" uid="uid://c5pnis6kufugs" path="res://Project Kandy/SugarBomb/prototype_jumper.tscn" id="5_vlcao"]
+
 [ext_resource type="PackedScene" uid="uid://tampoaptrmt6" path="res://Project Kandy/ObjetosProgramaveis/PlataformaSemPausa/moving_platform.tscn" id="6_i5s5p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vwwv1"]
