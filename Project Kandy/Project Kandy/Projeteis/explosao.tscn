@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dq5nc5oa72eke"]
+[gd_scene load_steps=10 format=3 uid="uid://dq5nc5oa72eke"]
 
 [ext_resource type="Script" path="res://Project Kandy/Projeteis/explosao.gd" id="1_pkgu8"]
 [ext_resource type="Texture2D" uid="uid://deeivout4iujo" path="res://Project Kandy/Projeteis/sprites/explosion.png" id="2_yofj7"]
 [ext_resource type="AudioStream" uid="uid://cqjt1svmhx1jx" path="res://Project Kandy/Projeteis/sons/explosion.mp3" id="3_1er5y"]
+[ext_resource type="Texture2D" uid="uid://xu0agnyddscv" path="res://Project Kandy/Projeteis/sprites/explosion_pink.png" id="3_75i2a"]
 
 [sub_resource type="Animation" id="Animation_duqhj"]
 length = 0.001
@@ -131,15 +132,82 @@ tracks/4/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_tp566"]
+resource_name = "explode_pink"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_75i2a")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nlvv0"]
 _data = {
 "RESET": SubResource("Animation_duqhj"),
-"explode": SubResource("Animation_urnti")
+"explode": SubResource("Animation_urnti"),
+"explode_pink": SubResource("Animation_tp566")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m73oy"]
 
 [node name="explosao" type="Area2D"]
+modulate = Color(1, 0, 1, 1)
+z_index = 5
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_pkgu8")
 

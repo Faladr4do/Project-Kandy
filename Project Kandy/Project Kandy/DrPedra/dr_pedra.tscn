@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Project Kandy/DrPedra/dr_pedra.gd" id="1_ntale"]
 [ext_resource type="Texture2D" uid="uid://cy1s2nhhcm8no" path="res://Project Kandy/DrPedra/sprites/DrPedraIdleBreath.png" id="1_vre3o"]
 [ext_resource type="Texture2D" uid="uid://xp8nham7e0ek" path="res://Project Kandy/DrPedra/sprites/DrPedraIdleBlink.png" id="2_bmv67"]
-[ext_resource type="PackedScene" uid="uid://dabn8vv1h0aj3" path="res://Project Kandy/Assets/Globais/area_interagir.tscn" id="4_xriw2"]
+[ext_resource type="PackedScene" path="res://Project Kandy/Assets/Globais/area_interagir.tscn" id="4_xriw2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v1r7i"]
 size = Vector2(11.125, 7.375)

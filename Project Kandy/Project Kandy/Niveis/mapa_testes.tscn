@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://c466srbesxb7h"]
+[gd_scene load_steps=10 format=3 uid="uid://c466srbesxb7h"]
 
-[ext_resource type="PackedScene" uid="uid://c0ej330af3pbo" path="res://Project Kandy/BroColli/bro_colli.tscn" id="1_p2pqi"]
+[ext_resource type="PackedScene" uid="uid://c0ej330af3pbo" path="res://Project Kandy/BroColli/bro_colli.tscn" id="1_0qhot"]
 [ext_resource type="Texture2D" uid="uid://tkwdg4lmkmy4" path="res://Project Kandy/Assets/Tiles/moving_platforms.png" id="2_e6woo"]
 [ext_resource type="PackedScene" uid="uid://c0vxysqew3npd" path="res://Project Kandy/DrPedra/dr_pedra.tscn" id="3_6de72"]
 [ext_resource type="PackedScene" uid="uid://051ksev1cvoe" path="res://Project Kandy/ObjetosProgramaveis/GomaTrampolim/goma_beijo.tscn" id="4_ya8g6"]
 [ext_resource type="PackedScene" uid="uid://dglbh5md887ag" path="res://Project Kandy/ObjetosProgramaveis/CaramelSaw/serra_caramelo.tscn" id="5_08cjd"]
+[ext_resource type="PackedScene" uid="uid://dapxtpx1vq5jn" path="res://Project Kandy/Sweet Corn/sweet_cornBasic.tscn" id="6_luu6s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vwwv1"]
 texture = ExtResource("2_e6woo")
@@ -46,8 +47,8 @@ point_count = 2
 [node name="MapaTestes" type="Node2D"]
 process_mode = 1
 
-[node name="BroColli" parent="." instance=ExtResource("1_p2pqi")]
-position = Vector2(35, -109)
+[node name="BroColli" parent="." instance=ExtResource("1_0qhot")]
+position = Vector2(-76, -109)
 
 [node name="DrPedra" parent="." instance=ExtResource("3_6de72")]
 position = Vector2(-1988, -427)
@@ -64,3 +65,7 @@ position = Vector2(-541, -123)
 [node name="SerraCaramelo" parent="." instance=ExtResource("5_08cjd")]
 position = Vector2(1517, 0)
 curve = SubResource("Curve2D_stg6u")
+
+[node name="SweetCorn2" parent="." instance=ExtResource("6_luu6s")]
+position = Vector2(844, -134)
+vida_total = 1

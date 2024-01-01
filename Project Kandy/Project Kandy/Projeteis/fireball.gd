@@ -1,7 +1,13 @@
 extends Area2D
 
 #var direcao = Vector2.RIGHT
-var velocidade
+
+@export var dano_forca : float = 0
+@export var forca_knockback : float = 2000
+@export var velocidade : float 
+
+var desaparecer = false
+
 var distancia
 var posicao_ini
 
@@ -17,11 +23,5 @@ func _physics_process(delta):
 		sprite_estigada.rotation_degrees = 21.8
 	else:
 		pass
-	
-func _on_body_entered(body):
-	if body.is_in_group("Alvo"):
+	if desaparecer:
 		queue_free()
-	elif body.is_in_group("Inimigo"):
-		pass
-	#elif b:
-		#queue_free()

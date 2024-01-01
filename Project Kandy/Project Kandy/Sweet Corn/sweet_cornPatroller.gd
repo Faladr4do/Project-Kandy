@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends EntidadeViva
 
 
 @onready var velocy = -160.0
@@ -10,8 +10,6 @@ var estaVivo = true
 var estaMorrer = false
 var patrulhando = false
 var velocy_old = 0
-var dano = Global.dano_toque
-
 
 @onready var animCorn = $AnimationPlayer
 @onready var spriteCorn = $Sprite2D
@@ -43,26 +41,12 @@ func _physics_process(delta):
 #			virar()
 	
 	move_and_slide()
-	atualizar_Anims(velocy)
+	auto_animar("walk", "idle", "jump", "fall")
 	fall()
-	
-func atualizar_Anims(velocy):
-	if estaMorrer:
-		return
-	if is_on_floor():
-		if velocy == 0:
-			animCorn.play("idle")
-		else:
-			animCorn.play("walk")
-	else:
-		if velocity.y < 0:
-			animCorn.play("jump")
-		#elif position.y > 200:
-			#animCorn.play("dead")
 
 func fall():
 	if !is_on_floor() and position.y > 200000:
-		animCorn.play("dead")
+		animCorn.play("fall")
 
 
 func _on_hitbox_body_entered(body):
@@ -70,11 +54,17 @@ func _on_hitbox_body_entered(body):
 		morte()
 
 func _on_target_body_entered(body):
+	if estaMorrer:
+		return
 	if body.is_in_group("Bala"):
 		morte()
-	elif body.is_in_group("Vegetal"):
-		body.dano(dano)
-		virar()
+	elif body.has_method("dano"):
+		var ataque = Ataque.new()
+		ataque.dano_ataque = dano_forca
+		ataque.forca_knockback = forca_knockback
+		ataque.posicao_ataque = global_position
+		body.dano(ataque, estaMorrer)
+	virar()
 
 func _on_teste_parede_body_entered(body):
 	if body.is_in_group("Vegetal") or body.is_in_group("Bala"):
@@ -95,7 +85,7 @@ func morte():
 
 func virar():
 	scale.x = abs(scale.x) * -1
-	velocy= velocy * -1
+	velocy= -velocy
 
 func patrulhar():
 	velocy_old= velocy

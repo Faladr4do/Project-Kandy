@@ -1,15 +1,15 @@
-extends CharacterBody2D
+extends EntidadeViva
 
 
 @onready var velocy = -160.0
 @onready var velocyOld = 0
 
+@export var lado_esquerdo : bool = true
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-var estaVivo = true
 var estaMorrer = false
 var patrulhando = false
-var dano = Global.dano_toque
 
 @onready var animCorn = $AnimationPlayer
 @onready var spriteCorn = $Sprite2D
@@ -21,10 +21,16 @@ func _ready():
 	add_to_group("Inimigo")
 	add_to_group("Inimigo_Tocador")
 	alvo.add_to_group("Alvo")
+	scale.x = abs(scale.x) * -1
+	if lado_esquerdo:
+		pass
+	else:
+		virar()
 
 func _physics_process(delta):
 	if estaMorrer:
 		return
+	print(vida_total)
 	if !is_on_floor():
 		velocity.y += gravity * delta
 	
@@ -40,38 +46,46 @@ func _physics_process(delta):
 #			virar()
 	
 	move_and_slide()
-	atualizar_Anims(velocy)
+	auto_animar("walk", "idle", "jump", "fall")
 	fall()
 	
-func atualizar_Anims(velocy):
-	if estaMorrer:
-		return
-	if is_on_floor():
-		if velocy == 0:
-			animCorn.play("idle")
-		else:
-			animCorn.play("walk")
-	else:
-		if velocity.y < 0:
-			animCorn.play("jump")
+#func atualizar_Anims(velocy):
+	#if estaMorrer:
+		#return
+	#if is_on_floor():
+		#if velocy == 0:
+			#animCorn.play("idle")
+		#else:
+			#animCorn.play("walk")
+	#else:
+		#if velocity.y < 0:
+			#animCorn.play("jump")
 		#elif position.y > 200:
 			#animCorn.play("dead")
 
 func fall():
 	if !is_on_floor() and position.y > 200000:
-		animCorn.play("dead")
+		animCorn.play("fall")
 
 
 func _on_hitbox_body_entered(body):
-	if body.is_in_group("Vegetal"):
-		morte()
+	if body.has_method("dano"):
+		var ataque = Ataque.new()
+		ataque.dano_ataque = dano_forca
+		ataque.forca_knockback = forca_knockback
+		ataque.posicao_ataque = global_position
+		body.dano(ataque, estaMorrer)
 
 func _on_target_body_entered(body):
-	if body.is_in_group("Bala"):
-		morte()
-	elif body.is_in_group("Vegetal"):
-		body.dano(dano)
-		virar()
+	if estaMorrer:
+		return
+	if body.has_method("dano"):
+		var ataque = Ataque.new()
+		ataque.dano_ataque = dano_forca
+		ataque.forca_knockback = forca_knockback
+		ataque.posicao_ataque = global_position
+		body.dano(ataque, estaMorrer)
+	virar()
 
 func _on_teste_parede_body_entered(body):
 	if body.is_in_group("Vegetal") or body.is_in_group("Bala"):
@@ -92,11 +106,8 @@ func morte():
 
 func virar():
 	scale.x = abs(scale.x) * -1
-	velocy= velocy*-1
-
+	velocy= -velocy
 
 func _on_target_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
 	if area.is_in_group("Bala"):
 		morte()
-	else:
-		pass

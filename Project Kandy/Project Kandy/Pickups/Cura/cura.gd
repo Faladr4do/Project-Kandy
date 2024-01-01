@@ -8,7 +8,7 @@ var coletada = false
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("Vegetal") and !coletada:
-		if body.vida_max == body.vida_total:
+		if body.vida_total == Global.vidas_max:
 			pass
 		else:
 			coletada = true

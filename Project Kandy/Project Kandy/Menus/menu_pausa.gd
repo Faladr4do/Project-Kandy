@@ -4,14 +4,12 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	hide()
-	gerenciador_jogo.connect("toggle_game_paused", on_game_manager_toggle_game_paused)
+	gerenciador_jogo.connect("pausar_jogo", alterar_menu_ao_cancelar)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
-func on_game_manager_toggle_game_paused(is_paused):
+func alterar_menu_ao_cancelar(is_paused):
 	if is_paused:
 		show()
 	else:
@@ -19,7 +17,7 @@ func on_game_manager_toggle_game_paused(is_paused):
 
 
 func _on_botao_jogar_pressed():
-	gerenciador_jogo. game_paused = false
+	gerenciador_jogo.game_paused = false
 
 func _on_botao_reiniciar_pressed():
 	get_tree().reload_current_scene()

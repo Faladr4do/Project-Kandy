@@ -1,10 +1,16 @@
-[gd_scene load_steps=14 format=3 uid="uid://bn8643nc87bav"]
+[gd_scene load_steps=20 format=3 uid="uid://bn8643nc87bav"]
 
 [ext_resource type="Script" path="res://Project Kandy/Sweet Corn/sweet_cornPatroller.gd" id="1_voh2w"]
 [ext_resource type="Texture2D" uid="uid://bkufkfhu20hhy" path="res://Project Kandy/Sweet Corn/sprites/SweetCornIdle.png" id="2_ef4ty"]
+[ext_resource type="Shader" uid="uid://cyuovkuipu54b" path="res://Project Kandy/Assets/Shaders/hit_flash.tres" id="2_s43g4"]
 [ext_resource type="Texture2D" uid="uid://ceng7qppwnou3" path="res://Project Kandy/Sweet Corn/sprites/SweetCornDead.png" id="3_cp7vb"]
 [ext_resource type="Texture2D" uid="uid://cqkg2gljrjoue" path="res://Project Kandy/Sweet Corn/sprites/SweetCornJump.png" id="4_s5ysh"]
 [ext_resource type="Texture2D" uid="uid://5kex756gnjbo" path="res://Project Kandy/Sweet Corn/sprites/SweetCornWalk.png" id="5_y2lr7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rb4kv"]
+shader = ExtResource("2_s43g4")
+shader_parameter/ativo = true
+shader_parameter/hit = Color(1, 1, 1, 1)
 
 [sub_resource type="Animation" id="Animation_istk7"]
 length = 0.001
@@ -270,11 +276,66 @@ tracks/3/keys = {
 "values": [0, 1, 2, 3]
 }
 
+[sub_resource type="Animation" id="Animation_lmajx"]
+resource_name = "fall"
+length = 0.6
+loop_mode = 1
+step = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_s5ysh")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0yxwg"]
 _data = {
 "RESET": SubResource("Animation_istk7"),
 "attack": SubResource("Animation_pjh1t"),
 "dead": SubResource("Animation_h4i8t"),
+"fall": SubResource("Animation_lmajx"),
 "idle": SubResource("Animation_on2r1"),
 "jump": SubResource("Animation_f0gb7"),
 "walk": SubResource("Animation_684mq")
@@ -283,11 +344,54 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_su3ax"]
 size = Vector2(15, 14)
 
-[node name="SweetCorn" type="CharacterBody2D"]
+[sub_resource type="Animation" id="Animation_0kguw"]
+resource_name = "hit_flash"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/ativo")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_14jph"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/ativo")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yyu1p"]
+_data = {
+"RESET": SubResource("Animation_14jph"),
+"hit_flash": SubResource("Animation_0kguw")
+}
+
+[node name="SweetCorn" type="CharacterBody2D" node_paths=PackedStringArray("animacoes", "sprite", "hit_flash", "hitbox")]
 scale = Vector2(8, 8)
 script = ExtResource("1_voh2w")
+velocidade = 160.0
+animacoes = NodePath("AnimationPlayer")
+sprite = NodePath("Sprite2D")
+hit_flash = NodePath("HitFlashAnimPlay")
+hitbox = NodePath("hitbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_rb4kv")
 texture = ExtResource("2_ef4ty")
 hframes = 4
 
@@ -327,6 +431,12 @@ polygon = PackedVector2Array(-6, 12, 6, 12, 6, 5, 5, 5, 4, 1, -4, 1, -5, 7, -6, 
 position = Vector2(-3.5, 7)
 shape = SubResource("RectangleShape2D_su3ax")
 debug_color = Color(0, 0.639216, 0.352941, 0.25098)
+
+[node name="HitFlashAnimPlay" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_yyu1p")
+}
+autoplay = "hit_flash"
 
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="area_shape_entered" from="target" to="." method="_on_target_area_shape_entered"]

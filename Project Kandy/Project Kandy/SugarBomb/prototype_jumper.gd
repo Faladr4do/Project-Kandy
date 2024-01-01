@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends EntidadeViva
 
 const vel_salto = -580
 
@@ -46,18 +46,18 @@ func atualizar_Anims(velocy):
 		return
 	if is_on_floor():
 		if velocy == 0:
-			animBomb.play("jumper")
+			animBomb.play("idle")
 		else:
-			animBomb.play("jumper")
+			animBomb.play("idle")
 	else:
 		if velocity.y < 0:
-			animBomb.play("jumper")
+			animBomb.play("idle")
 		#elif position.y > 200:
 			#animBomb.play("dead")
 
 func fall():
 	if !is_on_floor() and position.y > 200000:
-		animBomb.play("jumper")
+		animBomb.play("idle")
 
 
 func _on_hitbox_body_entered(body):
@@ -97,5 +97,3 @@ func _on_target_area_shape_entered(area_rid, area, area_shape_index, local_shape
 	if area.is_in_group("Bala"):
 		explodir()
 		morte()
-	else:
-		pass

@@ -1,10 +1,9 @@
-extends CharacterBody2D
+extends EntidadeViva
 
 const SPEED = 440.0
-const  JUMP_VELOCITY = -900.0
+const  JUMP_VELOCITY = 900.0
 var relogio = Timer.new()
 
-var vida_total = Global.vidas_totais
 var vida_max = Global.vidas_max
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -14,8 +13,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var spriteColli = $Sprite2D
 @onready var mira : Marker2D = $Sprite2D/Marker2D
 @onready var estigar_cooldown = $"estigar cooldown"
-@onready var hit_flash = $HitFlashAnimPlay
-@onready var hitbox = $hitbox
+
 
 @export var fire : PackedScene = preload("res://Project Kandy/Projeteis/fireball.tscn")
 
@@ -39,14 +37,15 @@ func _physics_process(delta):
 		velocity.y += (gravity * delta) * speed
 	# Handle Jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		velocity.y = (JUMP_VELOCITY) * -1
 		doubleJump = true
 	elif Input.is_action_just_pressed("jump") and doubleJump:
-			velocity.y = JUMP_VELOCITY * 1
+			velocity.y = (JUMP_VELOCITY * 1) * -1
 			doubleJump = false
 		
 	if Input.is_action_just_pressed("reiniciar"):
-		morrer()
+		vida_total = Global.vidas_max
+		get_tree().reload_current_scene()
 	
 	if Input.is_action_just_pressed("slown") and !lentoTempo:
 		lentoTempo = true
@@ -84,8 +83,8 @@ func _physics_process(delta):
 		
 	if is_on_floor():
 		tempo_coyote
-
-	verificar_vida()
+	
+	hit_flash_play()
 	move_and_slide()
 	atualizar_Anims(direction)
 
@@ -117,43 +116,22 @@ func estigar():
 	owner.add_child(cena_estigada)
 	cena_estigada.global_position = mira.global_position
 
-func verificar_vida():
-		Global.vidas_totais = vida_total
-
-func _on_hitbox_body_entered(body):
-	if body.is_in_group("Inimigo_Tocador"):
-		print("ouch toque")
-		Global.vidas_totais -= Global.dano_toque
-		hit_flash.play("hit_flash")
-
-func _on_hitbox_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
-	if !hit_flash.is_playing():
-		if area.is_in_group("Explosivo"):
-			print("ouch explosão")
-			Global.vidas_totais -= Global.dano_explosivo
-			hit_flash.play("hit_flash")
-		if area.is_in_group("Obstaculo"):
-			print("ouch obstaculo")
-			Global.vidas_totais -= Global.dano_obstaculo
-			hit_flash.play("hit_flash")
+#func _on_hitbox_body_entered(body):
+	#if body.is_in_group("Inimigo_Tocador"):
+		#print("ouch toque")
+		#Global.vidas_totais -= Global.dano_toque
+		#hit_flash.play("hit_flash")
+#
+#func _on_hitbox_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
+	#if !hit_flash.is_playing():
+		#if area.is_in_group("Explosivo"):
+			#print("ouch explosão")
+			#Global.vidas_totais -= Global.dano_explosivo
+			#hit_flash.play("hit_flash")
+		#if area.is_in_group("Obstaculo"):
+			#print("ouch obstaculo")
+			#Global.vidas_totais -= Global.dano_obstaculo
+			#hit_flash.play("hit_flash")
 
 func player_comprador_method():
 	pass
-
-func morrer():
-	get_tree().reload_current_scene()
-	Global.vidas_totais = Global.vidas_max
-
-func dano(dano_sofrido):
-	vida_total -= dano_sofrido
-	imune_dano()
-	if vida_total < 0:
-		morrer()
-
-func imune_dano():
-	hitbox.monitoring = false
-	hit_flash.play("hit_flash")
-	await get_tree().create_timer(75).timeout
-	hitbox.monitoring = true
-	
-

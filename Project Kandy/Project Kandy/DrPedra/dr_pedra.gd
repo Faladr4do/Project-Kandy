@@ -35,11 +35,6 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 	
 	esta_falar = Dialog.dialogo_ativo 
-	
-	if esta_falar:
-		animPedra.play("falar")
-		await animPedra.animation_finished
-	
 	gerir_idle()
 	move_and_slide()
 
@@ -65,10 +60,11 @@ func _on_area_voltar_dr_body_entered(body):
 
 func gerir_idle():
 	if esta_falar:
-		return
-	if conta_idle != 5:
-		animPedra.play("idle_respirar")
-		await animPedra.animation_finished
-	elif conta_idle == 5:
-		animPedra.play("idle_pestanejar")
-		await animPedra.animation_finished
+		animPedra.play("falar")
+	else:
+		if conta_idle != 5:
+			animPedra.play("idle_respirar")
+			await animPedra.animation_finished
+		elif conta_idle == 5:
+			animPedra.play("idle_pestanejar")
+			await animPedra.animation_finished
