@@ -70,6 +70,7 @@ func fall():
 
 func _on_hitbox_body_entered(body):
 	if body.has_method("dano"):
+		print("body_hitbox")
 		var ataque = Ataque.new()
 		ataque.dano_ataque = dano_forca
 		ataque.forca_knockback = forca_knockback
@@ -80,12 +81,13 @@ func _on_target_body_entered(body):
 	if estaMorrer:
 		return
 	if body.has_method("dano"):
+		print("body_target")
 		var ataque = Ataque.new()
 		ataque.dano_ataque = dano_forca
 		ataque.forca_knockback = forca_knockback
 		ataque.posicao_ataque = global_position
 		body.dano(ataque, estaMorrer)
-	virar()
+		virar()
 
 func _on_teste_parede_body_entered(body):
 	if body.is_in_group("Vegetal") or body.is_in_group("Bala"):

@@ -2,7 +2,7 @@ extends Area2D
 
 #var direcao = Vector2.RIGHT
 
-@export var dano_forca : float = 0
+@export var dano_forca : float = 1
 @export var forca_knockback : float = 2000
 @export var velocidade : float 
 

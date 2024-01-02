@@ -49,6 +49,7 @@ process_mode = 1
 
 [node name="BroColli" parent="." instance=ExtResource("1_0qhot")]
 position = Vector2(-76, -109)
+dano_forca = 1.0
 
 [node name="DrPedra" parent="." instance=ExtResource("3_6de72")]
 position = Vector2(-1988, -427)
@@ -68,4 +69,3 @@ curve = SubResource("Curve2D_stg6u")
 
 [node name="SweetCorn2" parent="." instance=ExtResource("6_luu6s")]
 position = Vector2(844, -134)
-vida_total = 1
