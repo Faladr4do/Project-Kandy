@@ -384,7 +384,7 @@ _data = {
 [node name="SweetCorn2" type="CharacterBody2D" node_paths=PackedStringArray("animacoes", "sprite", "hit_flash", "hitbox")]
 scale = Vector2(8, 8)
 script = ExtResource("1_5xf0j")
-dano_forca = 2.0
+dano_forca = 1.0
 forca_knockback = 2000.0
 velocidade = -160.0
 animacoes = NodePath("AnimationPlayer")
@@ -401,10 +401,10 @@ hframes = 4
 polygon = PackedVector2Array(4, 5, 4, 1, 3, 1, 3, 0, -3, 0, -3, 1, -4, 1, -4, 7, -5, 7, -5, 12, -5, 15, -3, 15, -3, 12, 1, 12, 1, 15, 4, 15, 4, 12)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "idle"
 libraries = {
 "": SubResource("AnimationLibrary_0yxwg")
 }
+autoplay = "idle"
 
 [node name="hitbox" type="Area2D" parent="."]
 
@@ -435,10 +435,10 @@ shape = SubResource("RectangleShape2D_su3ax")
 debug_color = Color(0, 0.639216, 0.352941, 0.25098)
 
 [node name="HitFlashAnimPlay" type="AnimationPlayer" parent="."]
-autoplay = "hit_flash"
 libraries = {
 "": SubResource("AnimationLibrary_a0cpg")
 }
+autoplay = "hit_flash"
 
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="area_shape_entered" from="target" to="." method="_on_target_area_shape_entered"]

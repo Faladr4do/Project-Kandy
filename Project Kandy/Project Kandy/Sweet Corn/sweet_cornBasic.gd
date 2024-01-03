@@ -10,8 +10,6 @@ extends EntidadeViva
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var patrulhando = false
 
-@onready var animCorn = $AnimationPlayer
-@onready var spriteCorn = $Sprite2D
 @onready var chao = $RayCast2D
 @onready var alvo = $target
 
@@ -53,29 +51,29 @@ func _physics_process(delta):
 		#return
 	#if is_on_floor():
 		#if velocy == 0:
-			#animCorn.play("idle")
+			#animacoes.play("idle")
 		#else:
-			#animCorn.play("walk")
+			#animacoes.play("walk")
 	#else:
 		#if velocity.y < 0:
-			#animCorn.play("jump")
+			#animacoes.play("jump")
 		#elif position.y > 200:
-			#animCorn.play("dead")
+			#animacoes.play("dead")
 
 func fall():
 	if !is_on_floor() and position.y > 200000:
-		animCorn.play("fall")
-
+		animacoes.play("fall")
 
 func _on_hitbox_body_entered(body):
-	pass
-#	if body.has_method("dano") and !body.is_in_group("Inimigo"):
-#		print("body_hitbox")
-#		var ataque = Ataque.new()
-#		ataque.dano_ataque = dano_forca
-#		ataque.forca_knockback = forca_knockback
-#		ataque.posicao_ataque = global_position
-#		body.dano(ataque, estaMorrer)
+	if body.is_in_group("Vegetal"):
+		morte()
+	#if body.has_method("dano") and body.is_in_group("Vegetal"):
+		#print("body_hitbox")
+		#var ataque = Ataque.new()
+		#ataque.dano_ataque = dano_forca
+		#ataque.forca_knockback = forca_knockback
+		#ataque.posicao_ataque = global_position
+		#body.dano(ataque)
 
 func _on_target_body_entered(body):
 	if estaMorrer:
@@ -95,18 +93,6 @@ func _on_teste_parede_body_entered(body):
 	else:
 		virar()
 
-
-func morte():
-	if estaMorrer:
-		return
-	animCorn.play("dead")
-	$hitbox/CollisionPolygon2D.call_deferred("set_disabled", true)
-	$CollisionPolygon2D.call_deferred("set_disabled", true)
-	estaMorrer = true
-	await get_tree().create_timer(0.75).timeout
-	queue_free()
-
 func virar():
 	scale.x = abs(scale.x) * -1
 	velocy= -velocy
-

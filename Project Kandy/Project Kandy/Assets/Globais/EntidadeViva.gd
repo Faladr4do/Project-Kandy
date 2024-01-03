@@ -18,6 +18,7 @@ var receber_dano = false
 var esta_atacar = false
 var esta_correr = false
 var estaMorrer = false
+@onready var anim_morte = animacoes
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -63,12 +64,17 @@ func auto_animar(walk, idle, jump, fall):
 			animacoes.play(fall)
 
 func estou_vivo():
-	if vida_total >= 0:
-		vivo = true
-		return true
-	#with all of the above checks missed, we know the user is dead
-	vivo = false
-	return false
-	
+	if vida_total < 0:
+		morte()
+
+func morte():
+	if estaMorrer:
+		return
+	animacoes.play("dead")
+	$hitbox/CollisionPolygon2D.call_deferred("set_disabled", true)
+	$CollisionPolygon2D.call_deferred("set_disabled", true)
+	estaMorrer = true
+	await get_tree().create_timer(0.75).timeout
+	queue_free()
 #func tempo_hit_flash(hit_flash: AnimationPlayer):
 	#tempo_imune = hit_flash.get_animation_length("hit_flash")

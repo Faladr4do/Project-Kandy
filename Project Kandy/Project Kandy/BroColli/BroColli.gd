@@ -9,8 +9,6 @@ var vida_max = Global.vidas_max
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-@onready var animColli = $AnimationPlayer
-@onready var spriteColli = $Sprite2D
 @onready var mira : Marker2D = $Sprite2D/Marker2D
 @onready var estigar_cooldown = $"estigar cooldown"
 
@@ -63,8 +61,8 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("estigar"):
 		if !cooldown and !estaAtacar:
 			estaAtacar = true
-			animColli.play("shoot")
-			await animColli.animation_finished
+			animacoes.play("shoot")
+			await animacoes.animation_finished
 			estigar()
 			estaAtacar = false
 			cooldown = true
@@ -93,14 +91,14 @@ func atualizar_Anims(direction):
 		return
 	if is_on_floor():
 		if direction == 0:
-			animColli.play("idle")
+			animacoes.play("idle")
 		else:
-			animColli.play("walk")
+			animacoes.play("walk")
 	else:
 		if velocity.y < 0 and doubleJump:
-			animColli.play("jump")
+			animacoes.play("jump")
 		elif velocity.y > 0:
-			animColli.play("fall")
+			animacoes.play("fall")
 
 func devolta():
 	speed = 1
@@ -137,10 +135,20 @@ func player_comprador_method():
 	pass
 
 func _on_pes_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
-	if area.has_method("dano") and area.is_in_group("alvo"):
+	if area.is_in_group("alvo"):
 		print("hit!")
 		var ataque = Ataque.new()
 		ataque.dano_ataque = dano_forca
 		ataque.forca_knockback = forca_knockback
 		ataque.posicao_ataque = global_position
 		area.dano(ataque)
+
+
+func _on_pes_body_entered(body):
+	if body.is_in_group("alvo"):
+		print("hit!")
+		var ataque = Ataque.new()
+		ataque.dano_ataque = dano_forca
+		ataque.forca_knockback = forca_knockback
+		ataque.posicao_ataque = global_position
+		body.dano(ataque)

@@ -7,12 +7,9 @@ extends EntidadeViva
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var estaVivo = true
-var estaMorrer = false
 var patrulhando = false
 var velocy_old = 0
 
-@onready var animCorn = $AnimationPlayer
-@onready var spriteCorn = $Sprite2D
 @onready var chao = $RayCast2D
 @onready var alvo = $target
 
@@ -40,25 +37,25 @@ func _physics_process(delta):
 #		elif !chao.is_colliding() or is_on_wall():
 #			virar()
 	
-	verificar_vida(estaMorrer)
+	estou_vivo(animacoes)
 	move_and_slide()
 	auto_animar("walk", "idle", "jump", "fall")
 	fall()
 
 func fall():
 	if !is_on_floor() and position.y > 200000:
-		animCorn.play("fall")
+		animacoes.play("fall")
 
 
 func _on_hitbox_body_entered(body):
 	if body.is_in_group("Vegetal"):
-		morte()
+		morte(animacoes)
 
 func _on_target_body_entered(body):
 	if estaMorrer:
 		return
 	if body.is_in_group("Bala"):
-		morte()
+		morte(animacoes)
 	elif body.has_method("dano"):
 		var ataque = Ataque.new()
 		ataque.dano_ataque = dano_forca
@@ -72,17 +69,6 @@ func _on_teste_parede_body_entered(body):
 		pass
 	else:
 		patrulhar()
-
-
-func morte():
-	if estaMorrer:
-		return
-	animCorn.play("dead")
-	$hitbox/CollisionPolygon2D.call_deferred("set_disabled", true)
-	$CollisionPolygon2D.call_deferred("set_disabled", true)
-	estaMorrer = true
-	await get_tree().create_timer(0.75).timeout
-	queue_free()
 
 func virar():
 	scale.x = abs(scale.x) * -1
@@ -99,6 +85,6 @@ func patrulhar():
 
 func _on_target_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
 	if area.is_in_group("Bala"):
-		morte()
+		morte(animacoes)
 	else:
 		pass

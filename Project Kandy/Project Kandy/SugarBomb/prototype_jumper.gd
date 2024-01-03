@@ -8,13 +8,10 @@ const vel_salto = -580
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var estaVivo = true
-var estaMorrer = false
 var patrulhando = false
 var diff_speed_aerial = 0.6
 var explodindo = false
 
-@onready var animBomb = $AnimationPlayer
-@onready var spriteBomb = $Sprite2D
 @onready var chao = $RayCast2D
 @onready var alvo = $target
 
@@ -37,7 +34,7 @@ func _physics_process(delta):
 		elif !chao.is_colliding():
 			virar()
 	
-	verificar_vida(estaMorrer)
+	estou_vivo()
 	move_and_slide()
 	atualizar_Anims(velocy)
 	fall()
@@ -47,18 +44,18 @@ func atualizar_Anims(velocy):
 		return
 	if is_on_floor():
 		if velocy == 0:
-			animBomb.play("idle")
+			animacoes.play("idle")
 		else:
-			animBomb.play("idle")
+			animacoes.play("idle")
 	else:
 		if velocity.y < 0:
-			animBomb.play("idle")
+			animacoes.play("idle")
 		#elif position.y > 200:
-			#animBomb.play("dead")
+			#animacoes.play("dead")
 
 func fall():
 	if !is_on_floor() and position.y > 200000:
-		animBomb.play("idle")
+		animacoes.play("idle")
 
 
 func _on_hitbox_body_entered(body):
@@ -82,18 +79,11 @@ func explodir():
 	var cena_explosiva = kaboom.instantiate()
 	cena_explosiva.cor = 1
 	owner.call_deferred("add_child", cena_explosiva)
-	cena_explosiva.global_position = spriteBomb.global_position
+	cena_explosiva.global_position = sprite.global_position
 	
 func virar():
 	scale.x = abs(scale.x) * -1
 	velocy= velocy * -1
-
-func morte():
-	if estaMorrer:
-		return
-	estaMorrer = true
-	queue_free()
-
 
 func _on_target_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
 	if area.is_in_group("Bala"):
