@@ -384,7 +384,6 @@ _data = {
 [node name="SweetCorn2" type="CharacterBody2D" node_paths=PackedStringArray("animacoes", "sprite", "hit_flash", "hitbox")]
 scale = Vector2(8, 8)
 script = ExtResource("1_5xf0j")
-vida_total = 1
 dano_forca = 2.0
 forca_knockback = 2000.0
 velocidade = -160.0

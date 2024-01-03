@@ -25,3 +25,19 @@ func _physics_process(delta):
 		pass
 	if desaparecer:
 		queue_free()
+
+func _on_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
+	if area.is_in_group("alvo"):
+		var ataque = Ataque.new()
+		ataque.dano_ataque = dano_forca
+		ataque.forca_knockback = forca_knockback
+		ataque.posicao_ataque = global_position
+		area.dano(ataque)
+
+func _on_body_entered(body):
+	if body.is_in_group("alvo"):
+		var ataque = Ataque.new()
+		ataque.dano_ataque = dano_forca
+		ataque.forca_knockback = forca_knockback
+		ataque.posicao_ataque = global_position
+		body.dano(ataque)

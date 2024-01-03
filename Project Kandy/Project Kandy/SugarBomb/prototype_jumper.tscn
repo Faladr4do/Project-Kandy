@@ -129,6 +129,7 @@ shape = SubResource("CircleShape2D_ahg3r")
 debug_color = Color(0.556863, 0.545098, 0.372549, 0.419608)
 
 [node name="HitFlashAnimPlay" type="AnimationPlayer" parent="."]
+autoplay = "hit_flash"
 libraries = {
 "": SubResource("AnimationLibrary_7l40g")
 }

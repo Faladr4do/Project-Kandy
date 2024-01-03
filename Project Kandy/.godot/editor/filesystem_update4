@@ -10,3 +10,10 @@ res://Project Kandy/Sweet Corn/sweet_cornBasic.tscn
 res://Project Kandy/Sweet Corn/sweet_cornPatroller.tscn
 res://Project Kandy/Pickups/Cura/cura.tscn
 res://Project Kandy/Projeteis/fireball.tscn
+res://gerenciador_jogo.gd
+res://Project Kandy/Assets/Globais/area_interagir.tscn
+res://Project Kandy/Assets/Globais/gerenciador_jogo.gd
+res://Project Kandy/Menus/menu_pausa.gd
+res://Project Kandy/Assets/Globais/EntidadeViva.gd
+res://Project Kandy/Sweet Corn/sweet_cornBasic.gd
+res://Project Kandy/BroColli/BroColli.gd

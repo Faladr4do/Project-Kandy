@@ -36,7 +36,8 @@ func _physics_process(delta):
 			velocity.y = vel_salto
 		elif !chao.is_colliding():
 			virar()
-
+	
+	verificar_vida(estaMorrer)
 	move_and_slide()
 	atualizar_Anims(velocy)
 	fall()
@@ -79,6 +80,7 @@ func _on_teste_frente_body_entered(body):
 
 func explodir():
 	var cena_explosiva = kaboom.instantiate()
+	cena_explosiva.cor = 1
 	owner.call_deferred("add_child", cena_explosiva)
 	cena_explosiva.global_position = spriteBomb.global_position
 	

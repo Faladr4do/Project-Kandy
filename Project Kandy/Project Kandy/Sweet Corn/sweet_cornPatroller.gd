@@ -40,6 +40,7 @@ func _physics_process(delta):
 #		elif !chao.is_colliding() or is_on_wall():
 #			virar()
 	
+	verificar_vida(estaMorrer)
 	move_and_slide()
 	auto_animar("walk", "idle", "jump", "fall")
 	fall()

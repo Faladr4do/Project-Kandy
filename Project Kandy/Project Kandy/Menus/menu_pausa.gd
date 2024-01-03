@@ -1,15 +1,15 @@
 extends Control
 
-@export var gerenciador_jogo : GerenciadorJogo = GerenciadorJogo.new()
+@export var gerenciador_jogo : GestorJogo
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	hide()
-	gerenciador_jogo.connect("pausar_jogo", alterar_menu_ao_cancelar)
+	gerenciador_jogo.connect("pausar_jogo", on_game_manager_toggle_game_paused)
 
 func _process(delta):
 	pass
 
-func alterar_menu_ao_cancelar(is_paused):
+func on_game_manager_toggle_game_paused(is_paused):
 	if is_paused:
 		show()
 	else:

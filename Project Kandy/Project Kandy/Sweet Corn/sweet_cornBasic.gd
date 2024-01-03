@@ -8,7 +8,6 @@ extends EntidadeViva
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-var estaMorrer = false
 var patrulhando = false
 
 @onready var animCorn = $AnimationPlayer
@@ -21,6 +20,7 @@ func _ready():
 	add_to_group("Inimigo")
 	add_to_group("Inimigo_Tocador")
 	alvo.add_to_group("Alvo")
+	hitbox.add_to_group("hitbox")
 	scale.x = abs(scale.x) * -1
 	if lado_esquerdo:
 		pass
@@ -30,7 +30,6 @@ func _ready():
 func _physics_process(delta):
 	if estaMorrer:
 		return
-	print(vida_total)
 	if !is_on_floor():
 		velocity.y += gravity * delta
 	
@@ -44,10 +43,10 @@ func _physics_process(delta):
 #			velocity.x = velocy
 #		elif !chao.is_colliding() or is_on_wall():
 #			virar()
-	
-	move_and_slide()
+	estou_vivo()
 	auto_animar("walk", "idle", "jump", "fall")
-	fall()
+	move_and_slide()
+
 	
 #func atualizar_Anims(velocy):
 	#if estaMorrer:
@@ -69,18 +68,19 @@ func fall():
 
 
 func _on_hitbox_body_entered(body):
-	if body.has_method("dano"):
-		print("body_hitbox")
-		var ataque = Ataque.new()
-		ataque.dano_ataque = dano_forca
-		ataque.forca_knockback = forca_knockback
-		ataque.posicao_ataque = global_position
-		body.dano(ataque, estaMorrer)
+	pass
+#	if body.has_method("dano") and !body.is_in_group("Inimigo"):
+#		print("body_hitbox")
+#		var ataque = Ataque.new()
+#		ataque.dano_ataque = dano_forca
+#		ataque.forca_knockback = forca_knockback
+#		ataque.posicao_ataque = global_position
+#		body.dano(ataque, estaMorrer)
 
 func _on_target_body_entered(body):
 	if estaMorrer:
 		return
-	if body.has_method("dano"):
+	if body.is_in_group("Vegetal"):
 		print("body_target")
 		var ataque = Ataque.new()
 		ataque.dano_ataque = dano_forca
@@ -110,6 +110,3 @@ func virar():
 	scale.x = abs(scale.x) * -1
 	velocy= -velocy
 
-func _on_target_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
-	if area.is_in_group("Bala"):
-		morte()

@@ -1,5 +1,5 @@
 extends Node
-class_name GerenciadorJogo
+class_name GestorJogo
 
 signal pausar_jogo(is_paused)
 

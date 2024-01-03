@@ -8,7 +8,7 @@ var explodiu = false
 @onready var anim_kaboom = $AnimationPlayer
 @onready var som_explosivo = $explosion
 
-@export var cor = 2
+@export var cor = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -33,7 +33,7 @@ func _on_body_entered(body):
 func mudar_cor():
 	if cor == 1:
 		sprite_kaboom.modulate = Color(1, 1, 1)
-	if cor == 2:
+	elif cor == 2:
 		sprite_kaboom.modulate = Color(1, 0, 1)
 
 func stuff():
