@@ -88,10 +88,10 @@ shape = SubResource("CircleShape2D_ofriq")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("")
+autoplay = "idle"
 libraries = {
 "": SubResource("AnimationLibrary_xd1tj")
 }
-autoplay = "idle"
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(35, -6.5)
