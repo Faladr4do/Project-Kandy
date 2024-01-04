@@ -3,6 +3,7 @@ class_name EntidadeViva
 
 @export var vida_total : int
 @export var vivo : bool = true
+@export var delete_collision : bool = true
 @export var dano_forca : float
 @export var forca_knockback : float
 @export var salto_forca : float
@@ -13,17 +14,19 @@ class_name EntidadeViva
 @export var sprite : Sprite2D
 @export var hit_flash : AnimationPlayer
 @export var hitbox : Area2D
+@export var collisionPolygon : CollisionPolygon2D
+@export var collisionShape : CollisionShape2D
 
 var receber_dano = false
 var esta_atacar = false
 var esta_correr = false
 var estaMorrer = false
+var collision
 @onready var anim_morte = animacoes
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	hitbox.add_to_group("Hitbox")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -71,10 +74,24 @@ func morte():
 	if estaMorrer:
 		return
 	animacoes.play("dead")
-	$hitbox/CollisionPolygon2D.call_deferred("set_disabled", true)
-	$CollisionPolygon2D.call_deferred("set_disabled", true)
+	if collisionPolygon and !collisionShape:
+		collision = collisionPolygon
+	elif collisionShape and !collisionPolygon:
+		collision = collisionShape
+	if delete_collision:
+		hitbox.call_deferred("set_disabled", true)
+		collision.call_deferred("set_disabled", true)
 	estaMorrer = true
-	await get_tree().create_timer(0.75).timeout
+	await get_tree().create_timer(tempo_imune).timeout
 	queue_free()
 #func tempo_hit_flash(hit_flash: AnimationPlayer):
 	#tempo_imune = hit_flash.get_animation_length("hit_flash")
+
+func shoot(cena : PackedScene, vel_projetil : float, caster : Marker2D):
+	var cena_instanciada = cena.instantiate()
+	if scale.y < 0:
+		cena_instanciada.velocidade = -vel_projetil
+	elif scale.y > 0:
+		cena_instanciada.velocidade = vel_projetil
+	owner.add_child(cena_instanciada)
+	cena_instanciada.global_position = caster.global_position

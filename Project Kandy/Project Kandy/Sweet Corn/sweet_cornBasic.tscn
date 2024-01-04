@@ -381,7 +381,7 @@ _data = {
 "hit_flash": SubResource("Animation_102jk")
 }
 
-[node name="SweetCorn2" type="CharacterBody2D" node_paths=PackedStringArray("animacoes", "sprite", "hit_flash", "hitbox")]
+[node name="SweetCorn2" type="CharacterBody2D" node_paths=PackedStringArray("animacoes", "sprite", "hit_flash", "hitbox", "collisionPolygon")]
 scale = Vector2(8, 8)
 script = ExtResource("1_5xf0j")
 dano_forca = 1.0
@@ -390,7 +390,8 @@ velocidade = -160.0
 animacoes = NodePath("AnimationPlayer")
 sprite = NodePath("Sprite2D")
 hit_flash = NodePath("HitFlashAnimPlay")
-hitbox = NodePath("target")
+hitbox = NodePath("hitbox")
+collisionPolygon = NodePath("CollisionPolygon2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_hckry")

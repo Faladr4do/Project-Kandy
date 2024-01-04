@@ -16,9 +16,10 @@ var patrulhando = false
 func _ready():
 	add_to_group("Vivo")
 	add_to_group("Inimigo")
+	add_to_group("Alvo")
 	add_to_group("Inimigo_Tocador")
-	alvo.add_to_group("alvo")
-	hitbox.add_to_group("hitbox")
+	alvo.add_to_group("Alvo")
+	hitbox.add_to_group("Hitbox")
 	scale.x = abs(scale.x) * -1
 	if lado_esquerdo:
 		pass

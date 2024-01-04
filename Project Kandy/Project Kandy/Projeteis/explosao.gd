@@ -1,19 +1,22 @@
 extends Area2D
 
-var dano_explosivo = Global.dano_explosivo
-var forca_knockback = 3000
+@export var dano_explosivo : int
+@export var forca_knockback = 3000
+@export var cor = 1
+
 var explodiu = false
 
 @onready var sprite_kaboom = $Sprite2D
 @onready var anim_kaboom = $AnimationPlayer
 @onready var som_explosivo = $explosion
 
-@export var cor = 1
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	add_to_group("Explosivo")
-	
+	if cor == 1:
+		$".".modulate = Color(1, 1, 1)
+	elif cor == 2:
+		$".".modulate = Color(1, 0, 1)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

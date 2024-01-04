@@ -12,6 +12,10 @@ res://Project Kandy/Sweet Corn/sweet_cornPatroller.tscn
 res://Project Kandy/Pickups/Cura/cura.tscn
 res://Project Kandy/Projeteis/fireball.tscn
 res://Project Kandy/Assets/Globais/area_interagir.tscn
-res://Project Kandy/Sweet Corn/sweet_cornBasic.gd
 res://Project Kandy/BroColli/BroColli.gd
+res://Project Kandy/Sweet Corn/sweet_cornBasic.gd
+res://Project Kandy/Assets/Globais/EntidadeViva.gd
 res://Project Kandy/SugarBomb/prototype_jumper.gd
+res://Project Kandy/Projeteis/explosao.gd
+res://Project Kandy/Projeteis/fireball.gd
+res://Project Kandy/Assets/Globais/gerenciador_jogo.gd

@@ -58,7 +58,7 @@ func _physics_process(delta):
 		relogio.stop()
 		relogio.emit_signal("timeout")
 		
-	if Input.is_action_just_pressed("estigar"):
+	if Input.is_action_pressed("estigar"):
 		if !cooldown and !estaAtacar:
 			estaAtacar = true
 			animacoes.play("shoot")
@@ -106,13 +106,7 @@ func devolta():
 	lentoTempo = false
 
 func estigar():
-	var cena_estigada = fire.instantiate()
-	if scale.y < 0:
-		cena_estigada.velocidade = -100
-	elif scale.y > 0:
-		cena_estigada.velocidade = 100
-	owner.add_child(cena_estigada)
-	cena_estigada.global_position = mira.global_position
+	shoot(fire, 100, mira)
 
 #func _on_hitbox_body_entered(body):
 	#if body.is_in_group("Inimigo_Tocador"):
@@ -137,7 +131,7 @@ func player_comprador_method():
 func _on_pes_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
 	print(area.get_groups())
 	if area.is_in_group("Alvo"):
-		print("hit!")
+		print("toma!")
 		var ataque = Ataque.new()
 		ataque.dano_ataque = dano_forca
 		ataque.forca_knockback = forca_knockback
@@ -154,13 +148,3 @@ func _on_pes_body_entered(body):
 		ataque.forca_knockback = forca_knockback
 		ataque.posicao_ataque = global_position
 		body.dano(ataque)
-
-
-func _on_pes_area_entered(area):
-	if area.is_in_group("alvo"):
-		print("hit!")
-		var ataque = Ataque.new()
-		ataque.dano_ataque = dano_forca
-		ataque.forca_knockback = forca_knockback
-		ataque.posicao_ataque = global_position
-		area.dano(ataque)

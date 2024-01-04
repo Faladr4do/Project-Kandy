@@ -67,16 +67,18 @@ _data = {
 "hit_flash": SubResource("Animation_t0r3l")
 }
 
-[node name="SugarBomber" type="CharacterBody2D" node_paths=PackedStringArray("animacoes", "sprite", "hit_flash", "hitbox")]
+[node name="SugarBomber" type="CharacterBody2D" node_paths=PackedStringArray("animacoes", "sprite", "hit_flash", "hitbox", "collisionShape")]
 scale = Vector2(8, 8)
 script = ExtResource("1_31toa")
-vida_total = 1
+forca_knockback = 1500.0
 salto_forca = -580.0
 velocidade = 480.0
+tempo_imune = 0.0
 animacoes = NodePath("AnimationPlayer")
 sprite = NodePath("Sprite2D")
 hit_flash = NodePath("HitFlashAnimPlay")
 hitbox = NodePath("hitbox")
+collisionShape = NodePath("CollisionShape2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_mo4g3")

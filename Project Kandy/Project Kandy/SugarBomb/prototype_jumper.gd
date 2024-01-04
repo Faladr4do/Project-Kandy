@@ -33,7 +33,6 @@ func _physics_process(delta):
 			velocity.y = vel_salto
 		elif !chao.is_colliding():
 			virar()
-	
 	estou_vivo()
 	move_and_slide()
 	atualizar_Anims(velocy)
