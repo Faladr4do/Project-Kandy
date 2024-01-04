@@ -17,7 +17,7 @@ func _ready():
 	add_to_group("Vivo")
 	add_to_group("Inimigo")
 	add_to_group("Inimigo_Tocador")
-	alvo.add_to_group("Alvo")
+	alvo.add_to_group("alvo")
 	hitbox.add_to_group("hitbox")
 	scale.x = abs(scale.x) * -1
 	if lado_esquerdo:
@@ -64,9 +64,10 @@ func fall():
 	if !is_on_floor() and position.y > 200000:
 		animacoes.play("fall")
 
-func _on_hitbox_body_entered(body):
-	if body.is_in_group("Vegetal"):
-		morte()
+func _on_target_body_entered(body):
+	pass
+	#if body.is_in_group("Vegetal"):
+		#morte()
 	#if body.has_method("dano") and body.is_in_group("Vegetal"):
 		#print("body_hitbox")
 		#var ataque = Ataque.new()
@@ -75,7 +76,7 @@ func _on_hitbox_body_entered(body):
 		#ataque.posicao_ataque = global_position
 		#body.dano(ataque)
 
-func _on_target_body_entered(body):
+func _on_hitbox_body_entered(body):
 	if estaMorrer:
 		return
 	if body.is_in_group("Vegetal"):

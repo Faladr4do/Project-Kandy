@@ -405,6 +405,7 @@ process_callback = 0
 position_smoothing_enabled = true
 
 [node name="pes" type="Area2D" parent="."]
+position = Vector2(0, 0.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pes"]
 position = Vector2(0.5, 11)
@@ -429,6 +430,7 @@ autoplay = "hit_flash"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
+[connection signal="area_entered" from="pes" to="." method="_on_pes_area_entered"]
 [connection signal="area_shape_entered" from="pes" to="." method="_on_pes_area_shape_entered"]
 [connection signal="body_entered" from="pes" to="." method="_on_pes_body_entered"]
 [connection signal="area_shape_entered" from="hitbox" to="." method="_on_hitbox_area_shape_entered"]

@@ -135,7 +135,8 @@ func player_comprador_method():
 	pass
 
 func _on_pes_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
-	if area.is_in_group("alvo"):
+	print(area.get_groups())
+	if area.is_in_group("Alvo"):
 		print("hit!")
 		var ataque = Ataque.new()
 		ataque.dano_ataque = dano_forca
@@ -145,10 +146,21 @@ func _on_pes_area_shape_entered(area_rid, area, area_shape_index, local_shape_in
 
 
 func _on_pes_body_entered(body):
-	if body.is_in_group("alvo"):
+	print("body tar!")
+	if body.is_in_group("Alvo"):
 		print("hit!")
 		var ataque = Ataque.new()
 		ataque.dano_ataque = dano_forca
 		ataque.forca_knockback = forca_knockback
 		ataque.posicao_ataque = global_position
 		body.dano(ataque)
+
+
+func _on_pes_area_entered(area):
+	if area.is_in_group("alvo"):
+		print("hit!")
+		var ataque = Ataque.new()
+		ataque.dano_ataque = dano_forca
+		ataque.forca_knockback = forca_knockback
+		ataque.posicao_ataque = global_position
+		area.dano(ataque)
