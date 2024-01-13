@@ -209,7 +209,7 @@ _data = {
 z_index = 5
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_pkgu8")
-dano_explosivo = 4
+dano_explosivo = 2
 cor = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

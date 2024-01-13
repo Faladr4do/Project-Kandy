@@ -354,18 +354,20 @@ _data = {
 "hit_flash": SubResource("Animation_2wj5e")
 }
 
-[node name="BroColli" type="CharacterBody2D" node_paths=PackedStringArray("animacoes", "sprite", "hit_flash", "hitbox", "collisionPolygon")]
+[node name="BroColli" type="CharacterBody2D" node_paths=PackedStringArray("animacoes", "sprite", "hit_flash", "hitbox", "caster", "collisionPolygon")]
 z_index = 1
 scale = Vector2(8, 8)
 script = ExtResource("1_6f88t")
-vida_total = 3
-delete_collision = false
+dano_forca = 1.0
+forca_knockback = 1500.0
 salto_forca = 900.0
 velocidade = 440.0
 animacoes = NodePath("AnimationPlayer")
+vida_total = 3
 sprite = NodePath("Sprite2D")
 hit_flash = NodePath("HitFlashAnimPlay")
 hitbox = NodePath("hitbox")
+caster = NodePath("Sprite2D/Marker2D")
 collisionPolygon = NodePath("CollisionPolygon2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -432,7 +434,7 @@ autoplay = "hit_flash"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
-[connection signal="area_shape_entered" from="pes" to="." method="_on_pes_area_shape_entered"]
+[connection signal="area_entered" from="pes" to="." method="_on_pes_area_entered"]
 [connection signal="body_entered" from="pes" to="." method="_on_pes_body_entered"]
 [connection signal="area_shape_entered" from="hitbox" to="." method="_on_hitbox_area_shape_entered"]
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

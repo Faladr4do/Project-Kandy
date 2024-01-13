@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://c5pnis6kufugs"]
+[gd_scene load_steps=15 format=3 uid="uid://c5pnis6kufugs"]
 
 [ext_resource type="Script" path="res://Project Kandy/SugarBomb/prototype_jumper.gd" id="1_31toa"]
+[ext_resource type="PackedScene" uid="uid://dq5nc5oa72eke" path="res://Project Kandy/Projeteis/explosao.tscn" id="2_7wdiy"]
 [ext_resource type="Shader" uid="uid://cyuovkuipu54b" path="res://Project Kandy/Assets/Shaders/hit_flash.tres" id="2_k1v2x"]
 [ext_resource type="Texture2D" uid="uid://7v6d7t2ys3o7" path="res://Project Kandy/SugarBomb/sprites/BrigadeiroBase.png" id="2_vlpq1"]
 
@@ -67,22 +68,28 @@ _data = {
 "hit_flash": SubResource("Animation_t0r3l")
 }
 
-[node name="SugarBomber" type="CharacterBody2D" node_paths=PackedStringArray("animacoes", "sprite", "hit_flash", "hitbox", "collisionShape")]
+[node name="SugarBomber" type="CharacterBody2D" node_paths=PackedStringArray("alvo", "chao_detect", "animacoes", "sprite", "hit_flash", "hitbox", "caster", "collisionShape")]
 scale = Vector2(8, 8)
 script = ExtResource("1_31toa")
+kaboom = ExtResource("2_7wdiy")
+alvo = NodePath("target")
+chao_detect = NodePath("RayCast2D")
 forca_knockback = 1500.0
 salto_forca = -580.0
 velocidade = 480.0
-tempo_imune = 0.0
 animacoes = NodePath("AnimationPlayer")
+tempo_imune = 0.0
 sprite = NodePath("Sprite2D")
 hit_flash = NodePath("HitFlashAnimPlay")
-hitbox = NodePath("hitbox")
+hitbox = NodePath("target")
+caster = NodePath("Sprite2D/Marker2D")
 collisionShape = NodePath("CollisionShape2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_mo4g3")
 texture = ExtResource("2_vlpq1")
+
+[node name="Marker2D" type="Marker2D" parent="Sprite2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.5, 0.5)
@@ -104,19 +111,19 @@ scale = Vector2(0.937, 0.3)
 [node name="patrolTempo" type="Timer" parent="."]
 wait_time = 2.0
 
-[node name="hitbox" type="Area2D" parent="."]
+[node name="target" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="target"]
 position = Vector2(0, -1)
 shape = SubResource("CapsuleShape2D_y7ssg")
 debug_color = Color(1, 0, 0.137255, 0.419608)
 
-[node name="target" type="Area2D" parent="."]
+[node name="hitbox" type="Area2D" parent="."]
 scale = Vector2(0.97, 0.97)
 collision_layer = 7
 collision_mask = 7
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="target"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
 scale = Vector2(0.9, 0.85)
 shape = SubResource("CircleShape2D_bfqyq")
 debug_color = Color(0.890196, 0, 0.796078, 0.235294)
@@ -136,7 +143,7 @@ libraries = {
 }
 autoplay = "hit_flash"
 
-[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
-[connection signal="area_shape_entered" from="target" to="." method="_on_target_area_shape_entered"]
 [connection signal="body_entered" from="target" to="." method="_on_target_body_entered"]
+[connection signal="area_shape_entered" from="hitbox" to="." method="_on_hitbox_area_shape_entered"]
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_entered" from="teste frente" to="." method="_on_teste_frente_body_entered"]

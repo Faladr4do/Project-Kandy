@@ -1,0 +1,149 @@
+[gd_scene load_steps=15 format=3 uid="uid://c5pnis6kufugs"]
+
+[ext_resource type="Script" path="res://Project Kandy/SugarBomb/prototype_jumper.gd" id="1_31toa"]
+[ext_resource type="PackedScene" uid="uid://dq5nc5oa72eke" path="res://Project Kandy/Projeteis/explosao.tscn" id="2_7wdiy"]
+[ext_resource type="Shader" uid="uid://cyuovkuipu54b" path="res://Project Kandy/Assets/Shaders/hit_flash.tres" id="2_k1v2x"]
+[ext_resource type="Texture2D" uid="uid://7v6d7t2ys3o7" path="res://Project Kandy/SugarBomb/sprites/BrigadeiroBase.png" id="2_vlpq1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mo4g3"]
+shader = ExtResource("2_k1v2x")
+shader_parameter/ativo = true
+shader_parameter/hit = Color(1, 1, 1, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ofriq"]
+radius = 15.6393
+
+[sub_resource type="Animation" id="Animation_i07wb"]
+resource_name = "idle"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xd1tj"]
+_data = {
+"idle": SubResource("Animation_i07wb")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y7ssg"]
+radius = 7.125
+height = 16.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bfqyq"]
+radius = 10.1588
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ahg3r"]
+radius = 8.61651
+
+[sub_resource type="Animation" id="Animation_6i7x4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/ativo")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_t0r3l"]
+resource_name = "hit_flash"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/ativo")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7l40g"]
+_data = {
+"RESET": SubResource("Animation_6i7x4"),
+"hit_flash": SubResource("Animation_t0r3l")
+}
+
+[node name="SugarBomber" type="CharacterBody2D" node_paths=PackedStringArray("alvo", "chao", "animacoes", "sprite", "hit_flash", "hitbox", "caster", "collisionShape")]
+scale = Vector2(8, 8)
+script = ExtResource("1_31toa")
+kaboom = ExtResource("2_7wdiy")
+alvo = NodePath("target")
+chao = NodePath("RayCast2D")
+forca_knockback = 1500.0
+salto_forca = -580.0
+velocidade = 480.0
+animacoes = NodePath("AnimationPlayer")
+tempo_imune = 0.0
+sprite = NodePath("Sprite2D")
+hit_flash = NodePath("HitFlashAnimPlay")
+hitbox = NodePath("target")
+caster = NodePath("Sprite2D/Marker2D")
+collisionShape = NodePath("CollisionShape2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_mo4g3")
+texture = ExtResource("2_vlpq1")
+
+[node name="Marker2D" type="Marker2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_ofriq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("")
+libraries = {
+"": SubResource("AnimationLibrary_xd1tj")
+}
+autoplay = "idle"
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(35, -6.5)
+scale = Vector2(0.937, 0.3)
+
+[node name="tempoMorte" type="Timer" parent="."]
+
+[node name="patrolTempo" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="target" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="target"]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_y7ssg")
+debug_color = Color(1, 0, 0.137255, 0.419608)
+
+[node name="hitbox" type="Area2D" parent="."]
+scale = Vector2(0.97, 0.97)
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+scale = Vector2(0.9, 0.85)
+shape = SubResource("CircleShape2D_bfqyq")
+debug_color = Color(0.890196, 0, 0.796078, 0.235294)
+
+[node name="teste frente" type="Area2D" parent="."]
+position = Vector2(0.625, -0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="teste frente"]
+position = Vector2(1, -1)
+scale = Vector2(0.935737, 0.938125)
+shape = SubResource("CircleShape2D_ahg3r")
+debug_color = Color(0.556863, 0.545098, 0.372549, 0.419608)
+
+[node name="HitFlashAnimPlay" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_7l40g")
+}
+autoplay = "hit_flash"
+
+[connection signal="body_entered" from="target" to="." method="_on_hitbox_body_entered"]
+[connection signal="area_shape_entered" from="hitbox" to="." method="_on_target_area_shape_entered"]
+[connection signal="body_entered" from="hitbox" to="." method="_on_target_body_entered"]
+[connection signal="body_entered" from="teste frente" to="." method="_on_teste_frente_body_entered"]

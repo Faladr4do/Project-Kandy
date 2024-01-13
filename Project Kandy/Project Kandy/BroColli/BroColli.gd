@@ -1,4 +1,4 @@
-extends EntidadeViva
+extends VegetalPlayer
 
 const SPEED = 440.0
 const  JUMP_VELOCITY = 900.0
@@ -9,9 +9,7 @@ var vida_max = Global.vidas_max
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-@onready var mira : Marker2D = $Sprite2D/Marker2D
 @onready var estigar_cooldown = $"estigar cooldown"
-
 
 @export var fire : PackedScene = preload("res://Project Kandy/Projeteis/fireball.tscn")
 
@@ -35,10 +33,10 @@ func _physics_process(delta):
 		velocity.y += (gravity * delta) * speed
 	# Handle Jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = (JUMP_VELOCITY) * -1
+		velocity.y = -JUMP_VELOCITY
 		doubleJump = true
 	elif Input.is_action_just_pressed("jump") and doubleJump:
-			velocity.y = (JUMP_VELOCITY * 1) * -1
+			velocity.y = -(JUMP_VELOCITY * 1)
 			doubleJump = false
 		
 	if Input.is_action_just_pressed("reiniciar"):
@@ -106,42 +104,14 @@ func devolta():
 	lentoTempo = false
 
 func estigar():
-	shoot(fire, 100, mira)
-
-#func _on_hitbox_body_entered(body):
-	#if body.is_in_group("Inimigo_Tocador"):
-		#print("ouch toque")
-		#Global.vidas_totais -= Global.dano_toque
-		#hit_flash.play("hit_flash")
-#
-#func _on_hitbox_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
-	#if !hit_flash.is_playing():
-		#if area.is_in_group("Explosivo"):
-			#print("ouch explosão")
-			#Global.vidas_totais -= Global.dano_explosivo
-			#hit_flash.play("hit_flash")
-		#if area.is_in_group("Obstaculo"):
-			#print("ouch obstaculo")
-			#Global.vidas_totais -= Global.dano_obstaculo
-			#hit_flash.play("hit_flash")
+	shoot(fire, 100, caster)
 
 func player_comprador_method():
 	pass
 
-#func _on_pes_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
-	#print(area.get_groups())
-	#if area.is_in_group("Alvo"):
-		#print("toma!")
-		#var ataque = Ataque.new()
-		#ataque.dano_ataque = dano_forca
-		#ataque.forca_knockback = forca_knockback
-		#ataque.posicao_ataque = global_position
-		#area.dano(ataque)
-
-
 func _on_pes_body_entered(body):
-	print("body tar!")
-	if body.is_in_group("Alvo"):
+	print(body.get_groups())
+	if body.is_in_group("Inimigo"):
 		print("hit!")
 		var ataque = Ataque.new()
 		ataque.dano_ataque = dano_forca

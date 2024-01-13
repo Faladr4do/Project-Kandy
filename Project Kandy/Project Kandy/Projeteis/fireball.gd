@@ -26,20 +26,12 @@ func _physics_process(delta):
 	if desaparecer:
 		queue_free()
 
-func _on_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
-	print(area.get_groups())
-	if area.is_in_group("Hitbox"):
+func _on_body_entered(body):
+	print(body.get_groups())
+	if body.is_in_group("Inimigo"):
 		var ataque = Ataque.new()
 		ataque.dano_ataque = dano_forca
-		ataque.forca_knockback = forca_knockback
+		ataque.forca_knockback = 0
 		ataque.posicao_ataque = global_position
-		area.dano(ataque)
-
-#func _on_body_entered(body):
-	#print("body " % body.get_groups())
-	#if body.is_in_group("Hitbox"):
-		#var ataque = Ataque.new()
-		#ataque.dano_ataque = dano_forca
-		#ataque.forca_knockback = forca_knockback
-		#ataque.posicao_ataque = global_position
-		#body.dano(ataque)
+		body.dano(ataque)
+	queue_free()

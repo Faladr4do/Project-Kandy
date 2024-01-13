@@ -1,16 +1,20 @@
-res://Project Kandy/S. Leek/sleek.tscn
+res://jogo_full.tscn
 res://gerenciador_jogo.gd
 res://Project Kandy/Assets/Shaders/hit_flash.tres
 res://Project Kandy/Assets/Fontes/AtariFont.tres
-res://jogo_full.tscn
 res://Project Kandy/Niveis/mapa_testes.tscn
 res://Project Kandy/BroColli/bro_colli.tscn
 res://Project Kandy/Projeteis/explosao.tscn
+res://Project Kandy/S. Leek/sleek.tscn
 res://Project Kandy/SugarBomb/prototype_jumper.tscn
 res://Project Kandy/Sweet Corn/sweet_cornBasic.tscn
 res://Project Kandy/Sweet Corn/sweet_cornPatroller.tscn
-res://Project Kandy/Pickups/Cura/cura.tscn
+res://Project Kandy/ObjetosProgramaveis/ObjetoInflamavel/explo_obj.tscn
 res://Project Kandy/Projeteis/fireball.tscn
-res://Project Kandy/Assets/Globais/area_interagir.tscn
-res://Project Kandy/Projeteis/fireball.gd
+res://Project Kandy/Menus/menu_principal.tscn
+res://Project Kandy/Sweet Corn/sweet_cornBasic.gd
 res://Project Kandy/BroColli/BroColli.gd
+res://Project Kandy/Assets/Globais/InimigoExplosivo.gd
+res://Project Kandy/Assets/Globais/InimigoBase.gd
+res://Project Kandy/SugarBomb/prototype_jumper.gd
+res://Project Kandy/Projeteis/fireball.gd

@@ -1,4 +1,4 @@
-extends EntidadeViva
+extends InimigoBase
 
 
 @onready var velocy = -160.0
@@ -9,9 +9,6 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var estaVivo = true
 var patrulhando = false
 var velocy_old = 0
-
-@onready var chao = $RayCast2D
-@onready var alvo = $target
 
 func _ready():
 	add_to_group("Vivo")
@@ -37,7 +34,7 @@ func _physics_process(delta):
 #		elif !chao.is_colliding() or is_on_wall():
 #			virar()
 	
-	estou_vivo(animacoes)
+	estou_vivo()
 	move_and_slide()
 	auto_animar("walk", "idle", "jump", "fall")
 	fall()

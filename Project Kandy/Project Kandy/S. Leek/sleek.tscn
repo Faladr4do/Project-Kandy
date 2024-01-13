@@ -1,15 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://80s3n5i5k805"]
+[gd_scene load_steps=2 format=3 uid="uid://80s3n5i5k805"]
 
-[ext_resource type="Script" path="res://PersTeste.gd" id="1_p1741"]
 [ext_resource type="Texture2D" uid="uid://w08tmv2ifsl7" path="res://Project Kandy/S. Leek/sprites/SLeekBase.png" id="2_vbc8j"]
 
-[node name="AlhoFrances" type="CharacterBody2D" node_paths=PackedStringArray("animacoes", "sprite", "hitbox")]
-script = ExtResource("1_p1741")
-salto_forca = -800.0
-velocidade = 440.0
-animacoes = NodePath("AnimationPlayer")
-sprite = NodePath("Sprite2D")
-hitbox = NodePath("hitbox")
+[node name="AlhoFrances" type="CharacterBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(8, 8)

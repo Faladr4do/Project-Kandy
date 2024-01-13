@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmifw75sha4tn"]
+
+[ext_resource type="Script" path="res://Project Kandy/ObjetosProgramaveis/ObjetoInflamavel/explo_obj.gd" id="1_4oos2"]
+[ext_resource type="Texture2D" uid="uid://1nb66pqfpq60" path="res://Project Kandy/DummyTesters/DummyTester.png" id="1_d2508"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pakm7"]
+size = Vector2(128, 160)
+
+[node name="ExploObj" type="CharacterBody2D"]
+script = ExtResource("1_4oos2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(8, 8)
+texture = ExtResource("1_d2508")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_pakm7")
+
+[node name="Marker2D" type="Marker2D" parent="."]
