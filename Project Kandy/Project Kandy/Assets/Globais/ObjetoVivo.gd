@@ -1,7 +1,7 @@
 extends Objeto
 class_name ObjetoVivo
 
-@export var dano_forca : float
+@export var dano_forca : float = 1
 @export var forca_knockback : float
 @export var salto_forca : float
 @export var velocidade : float
@@ -9,22 +9,6 @@ class_name ObjetoVivo
 @export var animacoes : AnimationPlayer
 
 @onready var anim_morte = animacoes
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	add_to_group("ObjetoVivo")
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	hit_flash_play()
-
-func dano(dano_ataque: Ataque, bool_morte = 0):
-	vida_total -= dano_ataque.dano_ataque
-	print(vida_total)
-	if vida_total < 0:
-		bool_morte = true
-	receber_dano = true
-	velocity = (global_position - dano_ataque.posicao_ataque).normalized() * dano_ataque.forca_knockback
 
 func funcao_morte():
 	estaMorrer = true
@@ -71,3 +55,6 @@ func shoot(cena : PackedScene, vel_projetil : float, caster : Marker2D):
 		cena_instanciada.velocidade = vel_projetil
 	owner.add_child(cena_instanciada)
 	cena_instanciada.global_position = caster.global_position
+
+func gestor_grupos():
+	add_to_group("ObjetoVivo")

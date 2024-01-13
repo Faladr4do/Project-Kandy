@@ -386,11 +386,18 @@ scale = Vector2(8, 8)
 script = ExtResource("1_voh2w")
 alvo = NodePath("target")
 chao_detect = NodePath("RayCast2D")
+dano_forca = null
+forca_knockback = null
+salto_forca = null
 velocidade = 160.0
 animacoes = NodePath("AnimationPlayer")
+vida_total = null
+vivo = null
+delete_collision = null
+tempo_imune = null
 sprite = NodePath("Sprite2D")
 hit_flash = NodePath("HitFlashAnimPlay")
-hitbox = NodePath("hitbox")
+hitbox = NodePath("")
 collisionPolygon = NodePath("CollisionPolygon2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -441,6 +448,7 @@ libraries = {
 }
 autoplay = "hit_flash"
 
+[connection signal="body_entered" from="target" to="." method="_on_hitbox_body_entered"]
 [connection signal="area_shape_entered" from="hitbox" to="." method="_on_target_area_shape_entered"]
 [connection signal="body_entered" from="hitbox" to="." method="_on_target_body_entered"]
 [connection signal="body_entered" from="teste parede" to="." method="_on_teste_parede_body_entered"]

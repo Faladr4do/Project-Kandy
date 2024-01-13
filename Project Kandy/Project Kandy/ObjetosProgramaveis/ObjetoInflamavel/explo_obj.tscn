@@ -1,13 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmifw75sha4tn"]
+[gd_scene load_steps=5 format=3 uid="uid://dmifw75sha4tn"]
 
 [ext_resource type="Script" path="res://Project Kandy/ObjetosProgramaveis/ObjetoInflamavel/explo_obj.gd" id="1_4oos2"]
 [ext_resource type="Texture2D" uid="uid://1nb66pqfpq60" path="res://Project Kandy/DummyTesters/DummyTester.png" id="1_d2508"]
+[ext_resource type="PackedScene" uid="uid://dq5nc5oa72eke" path="res://Project Kandy/Projeteis/explosao.tscn" id="2_kjrbh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pakm7"]
 size = Vector2(128, 160)
 
-[node name="ExploObj" type="CharacterBody2D"]
+[node name="ExploObj" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "caster", "collisionShape")]
 script = ExtResource("1_4oos2")
+kaboom = ExtResource("2_kjrbh")
+sprite = NodePath("Sprite2D")
+caster = NodePath("Marker2D")
+collisionShape = NodePath("CollisionShape2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(8, 8)

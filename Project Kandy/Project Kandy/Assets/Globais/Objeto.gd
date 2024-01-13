@@ -19,8 +19,9 @@ var esta_correr = false
 var estaMorrer = false
 var collision
 
-func _ready():
-	hitbox.add_to_group("Hitbox")
+func _process(delta):
+	hit_flash_play()
+	gestor_grupos()
 
 func hit_flash_play():
 	if receber_dano:
@@ -30,3 +31,13 @@ func hit_flash_play():
 		await get_tree().create_timer(tempo_imune).timeout
 		receber_dano = false
 		hitbox.monitoring = true
+
+func dano(dano_ataque: Ataque):
+	vida_total -= dano_ataque.dano_ataque
+	print(vida_total)
+	if dano_ataque.dano_ataque:
+		receber_dano = true
+	velocity = (global_position - dano_ataque.posicao_ataque).normalized() * dano_ataque.forca_knockback
+
+func gestor_grupos():
+	add_to_group("Objeto")

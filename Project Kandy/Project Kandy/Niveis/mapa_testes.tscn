@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c466srbesxb7h"]
+[gd_scene load_steps=11 format=3 uid="uid://c466srbesxb7h"]
 
 [ext_resource type="PackedScene" uid="uid://c0ej330af3pbo" path="res://Project Kandy/BroColli/bro_colli.tscn" id="1_0qhot"]
 [ext_resource type="Texture2D" uid="uid://tkwdg4lmkmy4" path="res://Project Kandy/Assets/Tiles/moving_platforms.png" id="2_e6woo"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c5pnis6kufugs" path="res://Project Kandy/SugarBomb/prototype_jumper.tscn" id="6_huasy"]
 [ext_resource type="PackedScene" uid="uid://dapxtpx1vq5jn" path="res://Project Kandy/Sweet Corn/sweet_cornBasic.tscn" id="6_luu6s"]
 [ext_resource type="PackedScene" uid="uid://dmifw75sha4tn" path="res://Project Kandy/ObjetosProgramaveis/ObjetoInflamavel/explo_obj.tscn" id="7_uptr3"]
+[ext_resource type="PackedScene" uid="uid://bn8643nc87bav" path="res://Project Kandy/Sweet Corn/sweet_cornPatroller.tscn" id="8_81ena"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vwwv1"]
 texture = ExtResource("2_e6woo")
@@ -66,3 +67,6 @@ position = Vector2(382, -116)
 
 [node name="ExploObj" parent="." instance=ExtResource("7_uptr3")]
 position = Vector2(-3063, -501)
+
+[node name="SweetCorn" parent="." instance=ExtResource("8_81ena")]
+position = Vector2(1895, -196)

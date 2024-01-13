@@ -28,7 +28,7 @@ func _physics_process(delta):
 
 func _on_body_entered(body):
 	print(body.get_groups())
-	if body.is_in_group("Inimigo"):
+	if body.is_in_group("Inimigo") or body.is_in_group("ObjetoExplosivo"):
 		var ataque = Ataque.new()
 		ataque.dano_ataque = dano_forca
 		ataque.forca_knockback = 0

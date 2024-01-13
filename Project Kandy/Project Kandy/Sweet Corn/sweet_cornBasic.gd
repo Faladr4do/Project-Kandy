@@ -1,8 +1,6 @@
 extends InimigoBase
 
-
-@onready var velocy = -160.0
-@onready var velocyOld = 0
+@onready var velocidadeOld = 0
 
 @export var lado_esquerdo : bool = true
 
@@ -25,29 +23,13 @@ func _physics_process(delta):
 	if is_on_floor():
 		chao_detect = $RayCast2D
 		if chao_detect.is_colliding() and !is_on_wall():
-			velocity.x = velocy
+			velocity.x = velocidade
 		elif !chao_detect.is_colliding():
 			virar()
 	
 	estou_vivo()
-	gestor_grupos()
 	auto_animar("walk", "idle", "jump", "fall")
 	move_and_slide()
-
-	
-#func atualizar_Anims(velocy):
-	#if estaMorrer:
-		#return
-	#if is_on_floor():
-		#if velocy == 0:
-			#animacoes.play("idle")
-		#else:
-			#animacoes.play("walk")
-	#else:
-		#if velocity.y < 0:
-			#animacoes.play("jump")
-		#elif position.y > 200:
-			#animacoes.play("dead")
 
 func fall():
 	if !is_on_floor() and position.y > 200000:
@@ -60,7 +42,7 @@ func _on_target_body_entered(body):
 		ataque.dano_ataque = 0
 		ataque.forca_knockback = forca_knockback * 0.5
 		ataque.posicao_ataque = global_position
-		body.dano(ataque, estaMorrer)
+		body.dano(ataque)
 
 func _on_hitbox_body_entered(body):
 	if estaMorrer:
@@ -70,7 +52,7 @@ func _on_hitbox_body_entered(body):
 		ataque.dano_ataque = dano_forca
 		ataque.forca_knockback = forca_knockback
 		ataque.posicao_ataque = global_position
-		body.dano(ataque, estaMorrer)
+		body.dano(ataque)
 		virar()
 
 func _on_teste_parede_body_entered(body):
@@ -81,4 +63,4 @@ func _on_teste_parede_body_entered(body):
 
 func virar():
 	scale.x = abs(scale.x) * -1
-	velocy= -velocy
+	velocidade= -velocidade

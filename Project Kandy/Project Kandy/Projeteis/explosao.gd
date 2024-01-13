@@ -31,7 +31,7 @@ func _on_body_entered(body):
 		ataque.dano_ataque = dano_explosivo
 		ataque.forca_knockback = forca_knockback
 		ataque.posicao_ataque = global_position
-		body.dano(ataque, explodiu)
+		body.dano(ataque)
 
 func mudar_cor():
 	if cor == 1:

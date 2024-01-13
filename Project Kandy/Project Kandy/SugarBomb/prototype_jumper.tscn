@@ -115,6 +115,7 @@ wait_time = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="target"]
 position = Vector2(0, -1)
+scale = Vector2(1.05, 1)
 shape = SubResource("CapsuleShape2D_y7ssg")
 debug_color = Color(1, 0, 0.137255, 0.419608)
 

@@ -21,12 +21,6 @@ var speed = 1
 var tempo_coyote = 0.0
 var temporizar_coyote = 0.1
 
-
-func _ready():
-	add_to_group("Vivo")
-	add_to_group("Vegetal")
-	
-
 func _physics_process(delta):
 	# Add the gravity.
 	if !is_on_floor():
