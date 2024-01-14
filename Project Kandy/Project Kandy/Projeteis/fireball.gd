@@ -31,7 +31,7 @@ func _on_body_entered(body):
 	if body.is_in_group("Inimigo") or body.is_in_group("ObjetoExplosivo"):
 		var ataque = Ataque.new()
 		ataque.dano_ataque = dano_forca
-		ataque.forca_knockback = 0
+		ataque.forca_knockback = forca_knockback
 		ataque.posicao_ataque = global_position
 		body.dano(ataque)
 	queue_free()

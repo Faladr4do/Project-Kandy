@@ -33,7 +33,7 @@ func _physics_process(delta):
 			velocity.y = -(JUMP_VELOCITY * 1)
 			doubleJump = false
 		
-	if Input.is_action_just_pressed("reiniciar"):
+	if Input.is_action_just_pressed("reiniciar") and !receber_dano:
 		vida_total = Global.vidas_max
 		get_tree().reload_current_scene()
 	

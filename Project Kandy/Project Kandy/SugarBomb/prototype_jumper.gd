@@ -13,6 +13,8 @@ var explodindo = false
 
 func _ready():
 	add_to_group("Inimigo")
+	if !lado_esquerdo:
+		virar()
 
 func _physics_process(delta):
 	if estaMorrer:
@@ -51,8 +53,9 @@ func fall():
 
 
 func _on_target_body_entered(body):
-	if body.is_in_group("Vegetal"):
-		morte()
+	pass
+	#if body.is_in_group("Vegetal"):
+		#morte()
 
 func _on_hitbox_body_entered(body):
 	if estaMorrer:
@@ -70,12 +73,3 @@ func _on_teste_frente_body_entered(body):
 func virar():
 	scale.x = abs(scale.x) * -1
 	velocy= velocy * -1
-
-func _on_target_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
-	if area.is_in_group("Bala"):
-		explodir()
-		morte()
-
-
-func _on_hitbox_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
-	pass # Replace with function body.

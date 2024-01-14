@@ -8,6 +8,8 @@ class_name ObjetoVivo
 
 @export var animacoes : AnimationPlayer
 
+@export var lado_esquerdo : bool = true
+
 @onready var anim_morte = animacoes
 
 func funcao_morte():

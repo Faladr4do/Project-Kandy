@@ -78,6 +78,7 @@ forca_knockback = 1500.0
 salto_forca = -580.0
 velocidade = 480.0
 animacoes = NodePath("AnimationPlayer")
+lado_esquerdo = false
 tempo_imune = 0.0
 sprite = NodePath("Sprite2D")
 hit_flash = NodePath("HitFlashAnimPlay")
@@ -145,6 +146,5 @@ libraries = {
 autoplay = "hit_flash"
 
 [connection signal="body_entered" from="target" to="." method="_on_target_body_entered"]
-[connection signal="area_shape_entered" from="hitbox" to="." method="_on_hitbox_area_shape_entered"]
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_entered" from="teste frente" to="." method="_on_teste_frente_body_entered"]

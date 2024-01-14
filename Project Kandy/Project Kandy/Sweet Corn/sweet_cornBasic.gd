@@ -1,17 +1,9 @@
 extends InimigoBase
 
-@onready var velocidadeOld = 0
-
-@export var lado_esquerdo : bool = true
-
-# Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
-	scale.x = abs(scale.x) * -1
 	if lado_esquerdo:
-		pass
-	else:
 		virar()
 
 func _physics_process(delta):
@@ -19,11 +11,9 @@ func _physics_process(delta):
 		return
 	if !is_on_floor():
 		velocity.y += gravity * delta
-	
-	if is_on_floor():
-		chao_detect = $RayCast2D
+	elif is_on_floor():
 		if chao_detect.is_colliding() and !is_on_wall():
-			velocity.x = velocidade
+			velocity.x = -velocidade
 		elif !chao_detect.is_colliding():
 			virar()
 	

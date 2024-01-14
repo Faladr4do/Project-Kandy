@@ -12,16 +12,3 @@ res://Project Kandy/Sweet Corn/sweet_cornPatroller.tscn
 res://Project Kandy/ObjetosProgramaveis/ObjetoInflamavel/explo_obj.tscn
 res://Project Kandy/Projeteis/fireball.tscn
 res://Project Kandy/Menus/menu_principal.tscn
-res://Project Kandy/Sweet Corn/sweet_cornBasic.gd
-res://Project Kandy/BroColli/BroColli.gd
-res://Project Kandy/Assets/Globais/InimigoExplosivo.gd
-res://Project Kandy/Assets/Globais/InimigoBase.gd
-res://Project Kandy/SugarBomb/prototype_jumper.gd
-res://Project Kandy/Projeteis/fireball.gd
-res://Project Kandy/Sweet Corn/sweet_cornPatroller.gd
-res://Project Kandy/ObjetosProgramaveis/ObjetoInflamavel/explo_obj.gd
-res://Project Kandy/Assets/Globais/Objeto.gd
-res://Project Kandy/Assets/Globais/ObjetoExplosivo.gd
-res://Project Kandy/Assets/Globais/ObjetoVivo.gd
-res://Project Kandy/Assets/Globais/VegetalPlayer.gd
-res://Project Kandy/Projeteis/explosao.gd

@@ -381,13 +381,16 @@ _data = {
 "hit_flash": SubResource("Animation_0kguw")
 }
 
-[node name="SweetCorn" type="CharacterBody2D" node_paths=PackedStringArray("alvo", "chao_detect", "animacoes", "sprite", "hit_flash", "hitbox", "collisionPolygon")]
+[node name="SweetCornPatroller" type="CharacterBody2D" node_paths=PackedStringArray("alvo", "chao_detect", "animacoes", "sprite", "hit_flash", "hitbox", "collisionPolygon")]
 scale = Vector2(8, 8)
 script = ExtResource("1_voh2w")
 alvo = NodePath("target")
 chao_detect = NodePath("RayCast2D")
+forca_knockback = 2000.0
 velocidade = 160.0
 animacoes = NodePath("AnimationPlayer")
+lado_esquerdo = false
+vida_total = 1
 sprite = NodePath("Sprite2D")
 hit_flash = NodePath("HitFlashAnimPlay")
 hitbox = NodePath("hitbox")
@@ -441,6 +444,6 @@ libraries = {
 }
 autoplay = "hit_flash"
 
-[connection signal="area_shape_entered" from="hitbox" to="." method="_on_target_area_shape_entered"]
-[connection signal="body_entered" from="hitbox" to="." method="_on_target_body_entered"]
+[connection signal="body_entered" from="target" to="." method="_on_target_body_entered"]
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_entered" from="teste parede" to="." method="_on_teste_parede_body_entered"]

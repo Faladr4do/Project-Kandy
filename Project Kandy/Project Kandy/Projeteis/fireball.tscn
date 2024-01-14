@@ -9,6 +9,7 @@ size = Vector2(10.16, 5)
 [node name="fireball" type="Area2D"]
 scale = Vector2(8, 8)
 script = ExtResource("1_5jgkk")
+forca_knockback = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1, 1.19209e-07)
