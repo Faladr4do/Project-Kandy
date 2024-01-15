@@ -13,15 +13,18 @@ func _physics_process(delta):
 		return
 	if !is_on_floor():
 		velocity.y += gravity * delta
-	elif is_on_floor() and !patrulhando:
-		if chao_detect.is_colliding():
-			velocity.x = -velocidade
-		elif !chao_detect.is_colliding():
-			await patrulhar()
-			virar()
-	elif is_on_floor() and patrulhando:
-		velocity.x = 0
-	print(velocity)
+	elif is_on_floor():
+		if !patrulhando:
+			if chao_detect.is_colliding():
+				velocity.x = -velocidade
+			elif !chao_detect.is_colliding():
+				patrulhando = true
+				virar()
+				print(patrulhando)
+		elif patrulhando:
+			velocity.x = 0
+	if Input.is_action_just_pressed("interagir"):
+		patrulhando = !patrulhando
 	estou_vivo()
 	auto_animar("walk", "idle", "jump", "fall")
 	move_and_slide()
@@ -54,7 +57,7 @@ func _on_teste_parede_body_entered(body):
 	if body.is_in_group("Vegetal") or body.is_in_group("Bala"):
 		pass
 	else:
-		patrulhar()
+		patrulhando = true
 		virar()
 
 func virar():
@@ -62,12 +65,7 @@ func virar():
 	if patrulhando:
 		await get_tree().create_timer(3).timeout
 		print("patrulhou ja")
-		#patrulhando = false
+		patrulhando = false
 	scale.x = abs(scale.x) * -1
+	patrulhando = false
 	velocidade = -velocidade
-	#patrulhando = false
-
-func patrulhar():
-	if !patrulhando:
-		patrulhando = true
-	
