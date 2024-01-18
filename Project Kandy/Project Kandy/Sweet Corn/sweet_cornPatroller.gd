@@ -17,14 +17,14 @@ func _physics_process(delta):
 		if !patrulhando:
 			if chao_detect.is_colliding():
 				velocity.x = -velocidade
-			elif !chao_detect.is_colliding():
+			else:
 				patrulhando = true
 				virar()
-				print(patrulhando)
-		elif patrulhando:
+		else:
 			velocity.x = 0
 	if Input.is_action_just_pressed("interagir"):
 		patrulhando = !patrulhando
+	print(velocity)
 	estou_vivo()
 	auto_animar("walk", "idle", "jump", "fall")
 	move_and_slide()
@@ -65,7 +65,6 @@ func virar():
 	if patrulhando:
 		await get_tree().create_timer(3).timeout
 		print("patrulhou ja")
-		patrulhando = false
 	scale.x = abs(scale.x) * -1
 	patrulhando = false
 	velocidade = -velocidade

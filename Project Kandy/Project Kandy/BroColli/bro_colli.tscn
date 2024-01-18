@@ -358,7 +358,6 @@ _data = {
 z_index = 1
 scale = Vector2(8, 8)
 script = ExtResource("1_6f88t")
-forca_knockback = 1500.0
 salto_forca = 900.0
 velocidade = 440.0
 animacoes = NodePath("AnimationPlayer")
@@ -434,6 +433,7 @@ autoplay = "hit_flash"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [connection signal="area_entered" from="pes" to="." method="_on_pes_area_entered"]
+[connection signal="area_shape_entered" from="pes" to="." method="_on_pes_area_shape_entered"]
 [connection signal="body_entered" from="pes" to="." method="_on_pes_body_entered"]
 [connection signal="area_shape_entered" from="hitbox" to="." method="_on_hitbox_area_shape_entered"]
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
