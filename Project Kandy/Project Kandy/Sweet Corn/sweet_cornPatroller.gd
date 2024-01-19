@@ -19,7 +19,7 @@ func _physics_process(delta):
 				velocity.x = -velocidade
 			else:
 				patrulhando = true
-				virar()
+				await virar()
 		else:
 			velocity.x = 0
 	if Input.is_action_just_pressed("interagir"):
