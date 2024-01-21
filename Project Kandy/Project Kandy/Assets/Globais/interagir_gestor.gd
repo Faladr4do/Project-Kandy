@@ -21,8 +21,8 @@ func _process(delta):
 		areas_ativas.sort_custom(ordenar_distancia_jogador)
 		texto.text = texto_base + areas_ativas[0].nome_acao
 		texto.global_position = areas_ativas[0].global_position
-		texto.global_position.y -= 36
-		texto.global_position.x -= texto.size.x / 2
+		texto.global_position.y -= 76
+		texto.global_position.x -= texto.size.x
 		texto.show()
 	else:
 		texto.hide()

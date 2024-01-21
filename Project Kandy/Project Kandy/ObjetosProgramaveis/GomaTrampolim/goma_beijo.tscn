@@ -174,7 +174,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_728gn"]
 size = Vector2(144, 70)
 
-[node name="Area2D" type="Area2D"]
+[node name="Trampolim" type="Area2D"]
 script = ExtResource("1_x6bn4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

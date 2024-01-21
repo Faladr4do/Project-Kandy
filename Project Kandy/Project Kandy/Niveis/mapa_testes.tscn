@@ -43,10 +43,10 @@ sources/0 = SubResource("TileSetAtlasSource_vwwv1")
 process_mode = 1
 
 [node name="BroColli" parent="." instance=ExtResource("1_0qhot")]
-position = Vector2(-2689, -504)
+position = Vector2(-2548, -550)
 
 [node name="DrPedra" parent="." instance=ExtResource("3_6de72")]
-position = Vector2(-1988, -427)
+position = Vector2(-1987, -420)
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(8, 8)
@@ -61,7 +61,7 @@ position = Vector2(-541, -123)
 position = Vector2(1965, -121)
 
 [node name="SweetCorn2" parent="." instance=ExtResource("7_jb2jq")]
-position = Vector2(925, -127)
+position = Vector2(928, -121)
 
 [node name="RedTwins" parent="." instance=ExtResource("7_xyao1")]
-position = Vector2(-3055, -508)
+position = Vector2(-3035, -476)

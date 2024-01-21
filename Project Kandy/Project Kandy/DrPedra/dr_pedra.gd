@@ -42,15 +42,6 @@ func _on_animation_player_animation_finished(anim_name):
 		elif anim_name == "idle_pestanejar":
 			conta_idle = 0
 
-#Dialogo começa assim que o player entra na area
-func _on_area_dialogo_body_entered(body):
-	if body.is_in_group("Vegetal") and !intro_feita:
-		Dialog.comecar_dialogo(local_falar, intro)
-		intro_feita = true
-	elif intro_feita:
-		Dialog.comecar_dialogo(local_falar, falas)
-		#do this#
-
 func _on_area_voltar_dr_body_entered(body):
 	if body.is_in_group("Vegetal"):
 		scale.x = abs(scale.x) * -1
