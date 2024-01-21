@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c0vxysqew3npd" path="res://Project Kandy/DrPedra/dr_pedra.tscn" id="3_6de72"]
 [ext_resource type="PackedScene" uid="uid://051ksev1cvoe" path="res://Project Kandy/ObjetosProgramaveis/GomaTrampolim/goma_beijo.tscn" id="4_ya8g6"]
 [ext_resource type="PackedScene" uid="uid://dapxtpx1vq5jn" path="res://Project Kandy/Sweet Corn/sweet_cornBasic.tscn" id="7_jb2jq"]
-[ext_resource type="PackedScene" uid="uid://dmifw75sha4tn" path="res://Project Kandy/ObjetosProgramaveis/ObjetoInflamavel/explo_obj.tscn" id="7_uptr3"]
+[ext_resource type="PackedScene" uid="uid://xqjbpnw1t7fm" path="res://Project Kandy/RapMato & SliceSpice/red_twins.tscn" id="7_xyao1"]
 [ext_resource type="PackedScene" uid="uid://bn8643nc87bav" path="res://Project Kandy/Sweet Corn/sweet_cornPatroller.tscn" id="8_81ena"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vwwv1"]
@@ -43,7 +43,7 @@ sources/0 = SubResource("TileSetAtlasSource_vwwv1")
 process_mode = 1
 
 [node name="BroColli" parent="." instance=ExtResource("1_0qhot")]
-position = Vector2(1432, -112)
+position = Vector2(-2689, -504)
 
 [node name="DrPedra" parent="." instance=ExtResource("3_6de72")]
 position = Vector2(-1988, -427)
@@ -57,11 +57,11 @@ layer_0/tile_data = PackedInt32Array(65530, 0, 0, 65531, 65536, 0, 65532, 65536,
 [node name="GomaBeijo" parent="." instance=ExtResource("4_ya8g6")]
 position = Vector2(-541, -123)
 
-[node name="ExploObj" parent="." instance=ExtResource("7_uptr3")]
-position = Vector2(-3063, -501)
-
 [node name="SweetCorn" parent="." instance=ExtResource("8_81ena")]
 position = Vector2(1965, -121)
 
 [node name="SweetCorn2" parent="." instance=ExtResource("7_jb2jq")]
 position = Vector2(925, -127)
+
+[node name="RedTwins" parent="." instance=ExtResource("7_xyao1")]
+position = Vector2(-3055, -508)

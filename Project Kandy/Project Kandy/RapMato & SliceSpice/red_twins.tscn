@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://xqjbpnw1t7fm"]
+[gd_scene load_steps=10 format=3 uid="uid://xqjbpnw1t7fm"]
 
 [ext_resource type="Texture2D" uid="uid://c58w4c1ssjuct" path="res://Project Kandy/RapMato & SliceSpice/sprites/MatoSpiceIdle.png" id="1_2e4mk"]
 [ext_resource type="Script" path="res://Project Kandy/RapMato & SliceSpice/red_twins.gd" id="1_wqrwh"]
+[ext_resource type="PackedScene" uid="uid://dabn8vv1h0aj3" path="res://Project Kandy/Assets/Globais/area_interagir.tscn" id="3_arcgl"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_h2sum"]
 a = Vector2(17, 10)
@@ -121,9 +122,13 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7j67h"]
 size = Vector2(39.75, 23)
 
-[node name="RedTwins" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ys8ae"]
+size = Vector2(78.5, 46.375)
+
+[node name="RedTwins" type="CharacterBody2D" node_paths=PackedStringArray("area_interacao")]
 scale = Vector2(8, 8)
 script = ExtResource("1_wqrwh")
+area_interacao = NodePath("AreaInteragir")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_2e4mk")
@@ -131,7 +136,7 @@ flip_h = true
 hframes = 7
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(0, -11.5)
+position = Vector2(0, -15.875)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = -10
@@ -146,8 +151,15 @@ libraries = {
 autoplay = "idle"
 
 [node name="Area2D" type="Area2D" parent="."]
+monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_7j67h")
+
+[node name="AreaInteragir" parent="." instance=ExtResource("3_arcgl")]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="AreaInteragir"]
+position = Vector2(2.75, -1.9375)
+shape = SubResource("RectangleShape2D_ys8ae")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

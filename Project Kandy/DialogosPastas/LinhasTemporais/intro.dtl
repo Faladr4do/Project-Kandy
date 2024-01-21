@@ -1,0 +1,8 @@
+set {dialogo} = 1
+join BroColli 1
+BroColli (BroColliTalking): Hey It'sa me Bro Colli!!!
+join Pedras 3
+Pedras (DrPedraIdle): Yooo... Tu aí!
+Pedras (DrPedraIdle): Ta calaaaado!
+set {dialogo} = 0
+[end_timeline]

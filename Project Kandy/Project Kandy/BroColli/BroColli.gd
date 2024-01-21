@@ -22,6 +22,8 @@ var tempo_coyote = 0.0
 var temporizar_coyote = 0.1
 
 func _physics_process(delta):
+	if Dialogic.VAR.dialogo != 0:
+		return
 	# Add the gravity.
 	if !is_on_floor():
 		velocity.y += (gravity * delta) * speed

@@ -1,0 +1,29 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(0.0705882, 0.470588, 0.0705882, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+"default_portrait": "BroColliTalking",
+"description": "Um bróculo sério e misterioso.",
+"display_name": "BroColli",
+"mirror": false,
+"nicknames": ["BroColli"],
+"offset": Vector2(0, 0),
+"portraits": {
+"BroColliTalking": {
+"export_overrides": {
+"image": "\"res://DialogosPastas/Personagens/BroColli/Retrato/BroColliTalk.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+"scale": 0.4
+}

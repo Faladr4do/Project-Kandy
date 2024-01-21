@@ -1,3 +1,5 @@
+res://DialogosPastas/LinhasTemporais/intro.dtl
+res://DialogosPastas/Personagens/BroColli/BroColli.dch
 res://jogo_full.tscn
 res://gerenciador_jogo.gd
 res://Project Kandy/Assets/Shaders/hit_flash.tres
@@ -9,9 +11,16 @@ res://Project Kandy/S. Leek/sleek.tscn
 res://Project Kandy/SugarBomb/prototype_jumper.tscn
 res://Project Kandy/Sweet Corn/sweet_cornBasic.tscn
 res://Project Kandy/Sweet Corn/sweet_cornPatroller.tscn
-res://Project Kandy/ObjetosProgramaveis/ObjetoInflamavel/explo_obj.tscn
 res://Project Kandy/Projeteis/fireball.tscn
-res://Project Kandy/Menus/menu_principal.tscn
-res://teste_algorythm/Teste.gd
-res://teste.tscn
+res://Project Kandy/RapMato & SliceSpice/red_twins.tscn
 res://Project Kandy/Sweet Corn/sweet_cornPatroller.gd
+res://Project Kandy/RapMato & SliceSpice/red_twins.gd
+res://Project Kandy/DrPedra/dr_pedra.tscn
+res://Project Kandy/Assets/Globais/area_interagir.tscn
+res://Project Kandy/Assets/Globais/AreaInteragir.gd
+res://Project Kandy/Assets/Globais/interagir_gestor.gd
+res://Project Kandy/Assets/Globais/interagir_gestor.tscn
+res://Project Kandy/DrPedra/dr_pedra.gd
+res://Project Kandy/Assets/Globais/ObjetoFalante.gd
+res://Project Kandy/BroColli/BroColli.gd
+res://DialogosPastas/Personagens/Pedras/Pedras.dch

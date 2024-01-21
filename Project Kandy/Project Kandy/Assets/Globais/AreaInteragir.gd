@@ -4,7 +4,7 @@ class_name AreaInteragir
 
 @export var nome_acao = "interagir"
 
-var interagir = func():
+var interagir : Callable = func():
 	pass
 
 func _on_body_entered(body):

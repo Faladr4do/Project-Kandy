@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends ObjetoFalante
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -6,8 +6,6 @@ var conta_idle = 0
 
 var intro_feita = false
 var esta_falar = false
-
-@onready var area_interagir: AreaInteragir = $AreaInteragir
 
 @onready var local_falar = $Marker2D.global_position
 @onready var animPedra = $AnimationPlayer
@@ -27,13 +25,12 @@ var falas: Array[String] = [
 
 
 func _ready():
-	area_interagir.interagir = Callable(self, "_on_interact")
+	area_interacao.interagir = Callable(self, "inter_act")
 
 func _physics_process(delta):
 	# Add the gravity.
 	if !is_on_floor():
 		velocity.y += gravity * delta
-	
 	esta_falar = Dialog.dialogo_ativo 
 	gerir_idle()
 	move_and_slide()
@@ -68,3 +65,9 @@ func gerir_idle():
 		elif conta_idle == 5:
 			animPedra.play("idle_pestanejar")
 			await animPedra.animation_finished
+
+func inter_act():
+	if Dialogic.current_timeline != null:
+		return
+	Dialogic.start('intro')
+	get_viewport().set_input_as_handled()

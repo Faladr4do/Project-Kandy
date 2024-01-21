@@ -206,11 +206,10 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m73oy"]
 
 [node name="explosao" type="Area2D"]
+modulate = Color(1, 0, 1, 1)
 z_index = 5
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_pkgu8")
-dano_explosivo = 2
-cor = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(11, -10)

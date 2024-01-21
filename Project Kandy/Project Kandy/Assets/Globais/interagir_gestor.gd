@@ -19,7 +19,7 @@ func desregistar_area(area: AreaInteragir):
 func _process(delta):
 	if areas_ativas.size() > 0 and pode_interagir:
 		areas_ativas.sort_custom(ordenar_distancia_jogador)
-		texto.text = texto_base + areas_ativas[0].action_name
+		texto.text = texto_base + areas_ativas[0].nome_acao
 		texto.global_position = areas_ativas[0].global_position
 		texto.global_position.y -= 36
 		texto.global_position.x -= texto.size.x / 2
@@ -39,4 +39,3 @@ func _input(event):
 			texto.hide()
 			await areas_ativas[0].interagir.call()
 			pode_interagir = true
-			
