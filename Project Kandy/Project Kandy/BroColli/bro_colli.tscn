@@ -378,6 +378,7 @@ hframes = 5
 position = Vector2(12, 0)
 
 [node name="TextureRect" type="TextureRect" parent="Sprite2D"]
+visible = false
 z_index = -40
 anchors_preset = 8
 anchor_left = 0.5

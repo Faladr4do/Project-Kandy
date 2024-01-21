@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c466srbesxb7h"]
+[gd_scene load_steps=12 format=3 uid="uid://c466srbesxb7h"]
 
 [ext_resource type="PackedScene" uid="uid://c0ej330af3pbo" path="res://Project Kandy/BroColli/bro_colli.tscn" id="1_0qhot"]
 [ext_resource type="Texture2D" uid="uid://tkwdg4lmkmy4" path="res://Project Kandy/Assets/Tiles/moving_platforms.png" id="2_e6woo"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://051ksev1cvoe" path="res://Project Kandy/ObjetosProgramaveis/GomaTrampolim/goma_beijo.tscn" id="4_ya8g6"]
 [ext_resource type="PackedScene" uid="uid://dapxtpx1vq5jn" path="res://Project Kandy/Sweet Corn/sweet_cornBasic.tscn" id="7_jb2jq"]
 [ext_resource type="PackedScene" uid="uid://xqjbpnw1t7fm" path="res://Project Kandy/RapMato & SliceSpice/red_twins.tscn" id="7_xyao1"]
-[ext_resource type="PackedScene" uid="uid://bn8643nc87bav" path="res://Project Kandy/Sweet Corn/sweet_cornPatroller.tscn" id="8_81ena"]
 [ext_resource type="Texture2D" uid="uid://cbhtnrunmk6gp" path="res://Project Kandy/Assets/Tiles/Sky.png" id="8_yrwgj"]
 [ext_resource type="PackedScene" uid="uid://tampoaptrmt6" path="res://Project Kandy/ObjetosProgramaveis/PlataformaSemPausa/moving_platform_X.tscn" id="10_bd3b6"]
 [ext_resource type="PackedScene" uid="uid://c0uajrex47bwh" path="res://Project Kandy/ObjetosProgramaveis/PlataformaNova/plataforma.tscn" id="10_mlssu"]
@@ -45,58 +44,52 @@ sources/0 = SubResource("TileSetAtlasSource_vwwv1")
 [node name="MapaTestes" type="Node2D"]
 process_mode = 1
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(1, -1)
-motion_mirroring = Vector2(240, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(960, 540)
-scale = Vector2(8, 8)
-texture = ExtResource("8_yrwgj")
-
-[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
-visible = false
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("8_yrwgj")
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_scale = 292.262
 
 [node name="BroColli" parent="." instance=ExtResource("1_0qhot")]
-position = Vector2(1040, 682)
-
-[node name="DrPedra" parent="." instance=ExtResource("3_6de72")]
-position = Vector2(-1219, 348)
+position = Vector2(2596, 850)
 
 [node name="TileMap" type="TileMap" parent="."]
-position = Vector2(656, 792)
+position = Vector2(2212, 960)
 scale = Vector2(8, 8)
 tile_set = SubResource("TileSet_8g56j")
 format = 2
 layer_0/tile_data = PackedInt32Array(65530, 0, 0, 65531, 65536, 0, 65532, 65536, 0, 65533, 65536, 0, 65534, 65536, 0, 65535, 65536, 0, 0, 65536, 0, 1, 65536, 0, 2, 65536, 0, 3, 65536, 0, 4, 65536, 0, 5, 65536, 0, 6, 65536, 0, 7, 65536, 0, 8, 65536, 0, 9, 65536, 0, 10, 65536, 0, 11, 65536, 0, 12, 65536, 0, 13, 65536, 0, 14, 65536, 0, 15, 65536, 0, 16, 65536, 0, 17, 131072, 0, -131082, 65536, 1, -131081, 65536, 1, -131080, 131072, 1, -131085, 65536, 1, -131084, 65536, 1, -131083, 65536, 1, -131088, 65536, 1, -131087, 65536, 1, -131086, 65536, 1, -131089, 65536, 1, -131092, 65536, 1, -131091, 65536, 1, -131090, 65536, 1, -131095, 65536, 1, -131094, 65536, 1, -131093, 65536, 1, -131098, 0, 1, -131097, 65536, 1, -131096, 65536, 1)
 
 [node name="GomaBeijo" parent="." instance=ExtResource("4_ya8g6")]
-position = Vector2(83, 577)
-
-[node name="SweetCorn" parent="." instance=ExtResource("8_81ena")]
-position = Vector2(2049, 663)
-
-[node name="SweetCorn2" parent="." instance=ExtResource("7_jb2jq")]
-position = Vector2(652, 623)
-
-[node name="RedTwins" parent="." instance=ExtResource("7_xyao1")]
-position = Vector2(-2367, 284)
+position = Vector2(1639, 745)
 
 [node name="Plataformas" type="Node2D" parent="."]
+position = Vector2(1556, 168)
 
 [node name="Plataforma_X" parent="Plataformas" instance=ExtResource("10_bd3b6")]
 position = Vector2(1472, 528)
 
 [node name="Plataforma" parent="Plataformas" instance=ExtResource("10_mlssu")]
-position = Vector2(2092, 524)
-distancia = Vector2(150, 120)
-tempo_deslocacao = 3.0
+position = Vector2(2292, 212)
+distancia = Vector2(220, -320)
 phase_offset = 0.755
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Céu" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Céu"]
+scale = Vector2(8, 8)
+texture = ExtResource("8_yrwgj")
+centered = false
+
+[node name="Inimigos" type="Node" parent="."]
+
+[node name="SweetCorn2" parent="Inimigos" instance=ExtResource("7_jb2jq")]
+position = Vector2(2208, 791)
+
+[node name="NPCs" type="Node" parent="."]
+
+[node name="DrPedra" parent="NPCs" instance=ExtResource("3_6de72")]
+position = Vector2(337, 516)
+
+[node name="RedTwins" parent="NPCs" instance=ExtResource("7_xyao1")]
+position = Vector2(-811, 452)
