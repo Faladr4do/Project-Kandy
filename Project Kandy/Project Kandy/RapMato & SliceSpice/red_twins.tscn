@@ -123,7 +123,7 @@ _data = {
 size = Vector2(39.75, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ys8ae"]
-size = Vector2(78.5, 46.375)
+size = Vector2(56.625, 29.4063)
 
 [node name="RedTwins" type="CharacterBody2D" node_paths=PackedStringArray("area_interacao")]
 scale = Vector2(8, 8)
@@ -159,7 +159,7 @@ shape = SubResource("RectangleShape2D_7j67h")
 [node name="AreaInteragir" parent="." instance=ExtResource("3_arcgl")]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="AreaInteragir"]
-position = Vector2(2.75, -1.9375)
+position = Vector2(0, -3.203)
 shape = SubResource("RectangleShape2D_ys8ae")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
