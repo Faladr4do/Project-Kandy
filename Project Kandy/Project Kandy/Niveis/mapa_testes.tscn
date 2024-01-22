@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c466srbesxb7h"]
+[gd_scene load_steps=13 format=3 uid="uid://c466srbesxb7h"]
 
 [ext_resource type="PackedScene" uid="uid://c0ej330af3pbo" path="res://Project Kandy/BroColli/bro_colli.tscn" id="1_0qhot"]
 [ext_resource type="Texture2D" uid="uid://tkwdg4lmkmy4" path="res://Project Kandy/Assets/Tiles/moving_platforms.png" id="2_e6woo"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://051ksev1cvoe" path="res://Project Kandy/ObjetosProgramaveis/GomaTrampolim/goma_beijo.tscn" id="4_ya8g6"]
 [ext_resource type="PackedScene" uid="uid://dapxtpx1vq5jn" path="res://Project Kandy/Sweet Corn/sweet_cornBasic.tscn" id="7_jb2jq"]
 [ext_resource type="PackedScene" uid="uid://xqjbpnw1t7fm" path="res://Project Kandy/RapMato & SliceSpice/red_twins.tscn" id="7_xyao1"]
+[ext_resource type="PackedScene" uid="uid://bn8643nc87bav" path="res://Project Kandy/Sweet Corn/sweet_cornPatroller.tscn" id="8_c2o0w"]
 [ext_resource type="Texture2D" uid="uid://cbhtnrunmk6gp" path="res://Project Kandy/Assets/Tiles/Sky.png" id="8_yrwgj"]
 [ext_resource type="PackedScene" uid="uid://tampoaptrmt6" path="res://Project Kandy/ObjetosProgramaveis/PlataformaSemPausa/moving_platform_X.tscn" id="10_bd3b6"]
 [ext_resource type="PackedScene" uid="uid://c0uajrex47bwh" path="res://Project Kandy/ObjetosProgramaveis/PlataformaNova/plataforma.tscn" id="10_mlssu"]
@@ -85,6 +86,10 @@ centered = false
 
 [node name="SweetCorn2" parent="Inimigos" instance=ExtResource("7_jb2jq")]
 position = Vector2(2208, 791)
+
+[node name="SweetCornPatroller" parent="Inimigos" instance=ExtResource("8_c2o0w")]
+position = Vector2(3772, 824)
+velocidade = -160.0
 
 [node name="NPCs" type="Node" parent="."]
 

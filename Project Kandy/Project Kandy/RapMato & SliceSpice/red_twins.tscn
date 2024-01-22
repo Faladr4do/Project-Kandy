@@ -157,6 +157,7 @@ monitoring = false
 shape = SubResource("RectangleShape2D_7j67h")
 
 [node name="AreaInteragir" parent="." instance=ExtResource("3_arcgl")]
+nome_acao = "falar"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="AreaInteragir"]
 position = Vector2(0, -3.203)
