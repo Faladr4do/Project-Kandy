@@ -9,26 +9,19 @@ var vida_max = Global.vidas_max
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-@onready var estigar_cooldown = $"estigar cooldown"
-
-@export var fire : PackedScene = preload("res://Project Kandy/Projeteis/fireball.tscn")
-
-var doubleJump = false
-var lentoTempo = false
-var estaAtacar = false
-var cooldown = false
-var speed = 1
-var tempo_coyote = 0.0
-var temporizar_coyote = 0.1
-
 func _physics_process(delta):
 	if Dialogic.VAR.dialogo != 0:
 		return
 	# Add the gravity.
 	if !is_on_floor():
 		velocity.y += (gravity * delta) * speed
+	if is_on_floor() and !pode_saltar:
+		pode_saltar = true
+	elif pode_saltar and tempo_coyote.is_stopped():
+		tempo_coyote.start()
+		
 	# Handle Jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and pode_saltar:
 		velocity.y = -JUMP_VELOCITY
 		doubleJump = true
 	elif Input.is_action_just_pressed("jump") and doubleJump:
@@ -114,3 +107,7 @@ func _on_pes_body_entered(body):
 		ataque.forca_knockback = forca_knockback
 		ataque.posicao_ataque = global_position
 		body.dano(ataque)
+
+
+func _on_tempo_coyote_timeout():
+	pode_saltar = false

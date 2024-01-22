@@ -354,11 +354,13 @@ _data = {
 "hit_flash": SubResource("Animation_2wj5e")
 }
 
-[node name="BroColli" type="CharacterBody2D" node_paths=PackedStringArray("animacoes", "sprite", "hit_flash", "hitbox", "caster", "collisionPolygon")]
+[node name="BroColli" type="CharacterBody2D" node_paths=PackedStringArray("tempo_coyote", "estigar_cooldown", "animacoes", "sprite", "hit_flash", "hitbox", "caster", "collisionPolygon")]
 z_index = 1
 scale = Vector2(8, 8)
 collision_layer = 3
 script = ExtResource("1_6f88t")
+tempo_coyote = NodePath("TempoCoyote")
+estigar_cooldown = NodePath("estigar cooldown")
 salto_forca = 900.0
 velocidade = 440.0
 animacoes = NodePath("AnimationPlayer")
@@ -435,8 +437,13 @@ autoplay = "hit_flash"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
+[node name="TempoCoyote" type="Timer" parent="."]
+wait_time = 0.15
+one_shot = true
+
 [connection signal="area_entered" from="pes" to="." method="_on_pes_area_entered"]
 [connection signal="area_shape_entered" from="pes" to="." method="_on_pes_area_shape_entered"]
 [connection signal="body_entered" from="pes" to="." method="_on_pes_body_entered"]
 [connection signal="area_shape_entered" from="hitbox" to="." method="_on_hitbox_area_shape_entered"]
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="timeout" from="TempoCoyote" to="." method="_on_tempo_coyote_timeout"]

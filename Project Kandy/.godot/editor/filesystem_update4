@@ -7,3 +7,5 @@ res://Project Kandy/BroColli/bro_colli.tscn
 res://Project Kandy/DrPedra/dr_pedra.tscn
 res://Project Kandy/Menus/menu_principal.tscn
 res://Project Kandy/ObjetosProgramaveis/PlataformaNova/plataforma.tscn
+res://Project Kandy/BroColli/BroColli.gd
+res://Project Kandy/Assets/Globais/VegetalPlayer.gd
