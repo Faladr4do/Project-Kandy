@@ -439,11 +439,9 @@ autoplay = "hit_flash"
 
 [node name="TempoCoyote" type="Timer" parent="."]
 wait_time = 0.15
-one_shot = true
 
 [connection signal="area_entered" from="pes" to="." method="_on_pes_area_entered"]
 [connection signal="area_shape_entered" from="pes" to="." method="_on_pes_area_shape_entered"]
 [connection signal="body_entered" from="pes" to="." method="_on_pes_body_entered"]
 [connection signal="area_shape_entered" from="hitbox" to="." method="_on_hitbox_area_shape_entered"]
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
-[connection signal="timeout" from="TempoCoyote" to="." method="_on_tempo_coyote_timeout"]

@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=3 uid="uid://b2jqj81e6rn1h"]
+
+[ext_resource type="Texture2D" uid="uid://brgldvwqi3en" path="res://Project Kandy/Assets/Tiles/WallsFloor.png" id="1_pbpnx"]
+[ext_resource type="Texture2D" uid="uid://cbhtnrunmk6gp" path="res://Project Kandy/Assets/Tiles/Sky.png" id="2_p3swn"]
+[ext_resource type="PackedScene" uid="uid://c0ej330af3pbo" path="res://Project Kandy/BroColli/bro_colli.tscn" id="3_sl12o"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w3od6"]
+texture = ExtResource("1_pbpnx")
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:2/0 = 0
+3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:2/0/physics_layer_0/angular_velocity = 0.0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:3/0 = 0
+3:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:3/0/physics_layer_0/angular_velocity = 0.0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:3/0 = 0
+2:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:3/0/physics_layer_0/angular_velocity = 0.0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:3/0 = 0
+1:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:3/0/physics_layer_0/angular_velocity = 0.0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:3/0 = 0
+0:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:3/0/physics_layer_0/angular_velocity = 0.0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_yyxia"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_w3od6")
+
+[node name="Nivel1Part1" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(8, 8)
+tile_set = SubResource("TileSet_yyxia")
+format = 2
+layer_0/tile_data = PackedInt32Array(196612, 0, 2, 262148, 0, 3, 196613, 65536, 2, 262149, 65536, 3, 196614, 131072, 2, 262150, 131072, 3, 196615, 196608, 2, 262151, 196608, 3, 327684, 0, 3, 327685, 65536, 3, 327686, 131072, 3, 327687, 196608, 3)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Céu" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Céu"]
+scale = Vector2(8, 8)
+texture = ExtResource("2_p3swn")
+centered = false
+
+[node name="BroColli" parent="." instance=ExtResource("3_sl12o")]
+position = Vector2(732, 269)

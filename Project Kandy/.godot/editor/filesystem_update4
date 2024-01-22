@@ -7,9 +7,4 @@ res://Project Kandy/BroColli/bro_colli.tscn
 res://Project Kandy/DrPedra/dr_pedra.tscn
 res://Project Kandy/Menus/menu_principal.tscn
 res://Project Kandy/ObjetosProgramaveis/PlataformaNova/plataforma.tscn
-res://Project Kandy/BroColli/BroColli.gd
-res://Project Kandy/Assets/Globais/VegetalPlayer.gd
-res://Project Kandy/Sweet Corn/sweet_cornPatroller.tscn
-res://Project Kandy/Projeteis/fireball.tscn
-res://Project Kandy/Sweet Corn/sweet_cornBasic.tscn
-res://Project Kandy/Sweet Corn/sweet_cornBasic.gd
+res://Project Kandy/Niveis/nivel_1_part_1.tscn
