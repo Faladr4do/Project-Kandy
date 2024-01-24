@@ -8,3 +8,7 @@ res://Project Kandy/DrPedra/dr_pedra.tscn
 res://Project Kandy/Menus/menu_principal.tscn
 res://Project Kandy/ObjetosProgramaveis/PlataformaNova/plataforma.tscn
 res://Project Kandy/Niveis/nivel_1_part_1.tscn
+res://Project Kandy/Assets/Fontes/AtariFont.tres
+res://Project Kandy/Menus/menu_opcoes.tscn
+res://Project Kandy/Menus/menu_principal.gd
+res://Project Kandy/Menus/menu_opcoes.gd

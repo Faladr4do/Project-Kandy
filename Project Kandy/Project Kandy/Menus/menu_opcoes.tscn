@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://h4favlr6b62j"]
+
+[ext_resource type="FontFile" uid="uid://chvuo2lxramxx" path="res://Project Kandy/Assets/Fontes/AtariClassic-gry3.ttf" id="1_3xo8c"]
+[ext_resource type="Script" path="res://Project Kandy/Menus/menu_opcoes.gd" id="1_gb7oc"]
+
+[node name="menu_opcoes" type="Control" node_paths=PackedStringArray("botao_sair")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gb7oc")
+botao_sair = NodePath("MarginContainer/VBoxContainer/Sair")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="ConfigurarLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_3xo8c")
+theme_override_font_sizes/font_size = 60
+text = "Configurar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sair" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_3xo8c")
+theme_override_font_sizes/font_size = 40
+text = "Voltar"
