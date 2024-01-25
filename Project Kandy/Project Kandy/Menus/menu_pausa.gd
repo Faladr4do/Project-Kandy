@@ -23,7 +23,7 @@ func _on_botao_reiniciar_pressed():
 	get_tree().reload_current_scene()
 
 func _on_botao_configurar_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://Project Kandy/Menus/menu_opcoes.tscn")
 
 
 func _on_botao_sair_pressed():

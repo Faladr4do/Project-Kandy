@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bpkq80ppot606"]
+[gd_scene load_steps=5 format=3 uid="uid://bpkq80ppot606"]
 
 [ext_resource type="FontFile" uid="uid://chvuo2lxramxx" path="res://Project Kandy/Assets/Fontes/AtariClassic-gry3.ttf" id="1_pi0a5"]
+[ext_resource type="LabelSettings" uid="uid://dt4qythdv8y4n" path="res://Project Kandy/Assets/Fontes/AtariFont.tres" id="2_it38k"]
 [ext_resource type="PackedScene" uid="uid://b7mppsj3sykem" path="res://Project Kandy/Menus/SubCategorias/modo_tela.tscn" id="2_jloti"]
 [ext_resource type="PackedScene" uid="uid://cqrir1ec4l0k7" path="res://Project Kandy/Menus/SubCategorias/resolucao_tela.tscn" id="3_ekh31"]
 
@@ -54,15 +55,25 @@ layout_mode = 2
 
 [node name="VideoContainer" type="HSplitContainer" parent="TabContainer/Video"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Video/VideoContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/separation = 30
+
+[node name="Configurar Tela" type="Label" parent="TabContainer/Video/VideoContainer/VBoxContainer"]
+layout_mode = 2
+text = "Configurar Tela"
+label_settings = ExtResource("2_it38k")
 
 [node name="HBoxContainer" parent="TabContainer/Video/VideoContainer/VBoxContainer" instance=ExtResource("2_jloti")]
 layout_mode = 2
