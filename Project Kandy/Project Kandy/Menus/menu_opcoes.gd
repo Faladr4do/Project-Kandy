@@ -1,20 +1,6 @@
 extends Control
 
-@export var botao_sair : Button
+@export var menu_principal : PackedScene
 
-
-signal sair_menu_opcoes
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	botao_sair.button_down.connect(clicar_voltar)
-	set_process(false)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	#https://www.youtube.com/watch?v=fFIST_4wmyI
-	pass
-
-func clicar_voltar():
-	sair_menu_opcoes.emit()
-	set_process(false)
+func _on_sair_pressed():
+	get_tree().change_scene_to_file("res://Project Kandy/Menus/menu_principal.tscn")

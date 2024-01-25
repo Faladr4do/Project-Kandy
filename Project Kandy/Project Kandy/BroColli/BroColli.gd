@@ -22,11 +22,14 @@ func _physics_process(delta):
 		
 	# Handle Jump.
 	if Input.is_action_just_pressed("jump") and pode_saltar:
+		print("salto1")
 		velocity.y = -JUMP_VELOCITY
 		doubleJump = true
+		pode_saltar = false
 	elif Input.is_action_just_pressed("jump") and doubleJump:
-			velocity.y = -(JUMP_VELOCITY * 1)
-			doubleJump = false
+		print("salto2")
+		velocity.y = -(JUMP_VELOCITY * 1)
+		doubleJump = false
 	
 	if Input.is_action_just_pressed("reiniciar") and !receber_dano:
 		vida_total = Global.vidas_max

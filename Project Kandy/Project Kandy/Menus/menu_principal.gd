@@ -1,24 +1,14 @@
 extends Control
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
+@export var menu_opcoes : PackedScene
+@export var menu_principal : VBoxContainer
+@export var cena_jogo : PackedScene
 
 func _on_botao_jogar_pressed():
-	get_tree().change_scene_to_file("res://jogo_full.tscn")
+	get_tree().change_scene_to_packed(cena_jogo)
 
 func _on_botao_definições_pressed():
-	get_tree().change_scene_to_file("res://Project Kandy/Menus/menu_opcoes.tscn")
+	get_tree().change_scene_to_packed(menu_opcoes)
 
 func _on_botao_sair_pressed():
 	get_tree().quit()
-
-
-

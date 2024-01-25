@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7mppsj3sykem"]
+
+[ext_resource type="Script" path="res://Project Kandy/Menus/SubCategorias/ModoTela.gd" id="1_nxqdm"]
+
+[node name="ModoTela" type="HBoxContainer" node_paths=PackedStringArray("botao_opcoes")]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nxqdm")
+botao_opcoes = NodePath("OptionButton")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "Modo de Tela"
+
+[node name="OptionButton" type="OptionButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 8
+item_count = 4
+popup/item_0/text = "Tela-Cheia"
+popup/item_0/id = 0
+popup/item_1/text = "Modo janela"
+popup/item_1/id = 1
+popup/item_2/text = "Janela sem bordas"
+popup/item_2/id = 2
+popup/item_3/text = "Tela-Cheia sem bordas"
+popup/item_3/id = 3

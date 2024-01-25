@@ -1,0 +1,135 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpkq80ppot606"]
+
+[ext_resource type="FontFile" uid="uid://chvuo2lxramxx" path="res://Project Kandy/Assets/Fontes/AtariClassic-gry3.ttf" id="1_pi0a5"]
+[ext_resource type="PackedScene" uid="uid://b7mppsj3sykem" path="res://Project Kandy/Menus/SubCategorias/modo_tela.tscn" id="2_jloti"]
+[ext_resource type="PackedScene" uid="uid://cqrir1ec4l0k7" path="res://Project Kandy/Menus/SubCategorias/resolucao_tela.tscn" id="3_ekh31"]
+
+[node name="tab_configuracoes" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 150.0
+offset_top = 150.0
+offset_right = -150.0
+offset_bottom = -150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_pi0a5")
+theme_override_font_sizes/font_size = 20
+current_tab = 1
+
+[node name="Jogo" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="JogoContainer" type="HSplitContainer" parent="TabContainer/Jogo"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Jogo/JogoContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/Jogo/JogoContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Video" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+
+[node name="VideoContainer" type="HSplitContainer" parent="TabContainer/Video"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Video/VideoContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" parent="TabContainer/Video/VideoContainer/VBoxContainer" instance=ExtResource("2_jloti")]
+layout_mode = 2
+
+[node name="ResolucaoTela" parent="TabContainer/Video/VideoContainer/VBoxContainer" instance=ExtResource("3_ekh31")]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/Video/VideoContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Audio" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="AudioContainer" type="HSplitContainer" parent="TabContainer/Audio"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Audio/AudioContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/Audio/AudioContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Controlos" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="ControlosContainer" type="HSplitContainer" parent="TabContainer/Controlos"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Controlos/ControlosContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/Controlos/ControlosContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Testes" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="TestesContainer" type="HSplitContainer" parent="TabContainer/Testes"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Testes/TestesContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/Testes/TestesContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
