@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b7mppsj3sykem"]
+[gd_scene load_steps=3 format=3 uid="uid://b7mppsj3sykem"]
 
 [ext_resource type="Script" path="res://Project Kandy/Menus/SubCategorias/ModoTela.gd" id="1_nxqdm"]
+[ext_resource type="FontFile" uid="uid://chvuo2lxramxx" path="res://Project Kandy/Assets/Fontes/AtariClassic-gry3.ttf" id="2_1ne2i"]
 
 [node name="ModoTela" type="HBoxContainer" node_paths=PackedStringArray("botao_opcoes")]
 anchors_preset = 14
@@ -16,12 +17,17 @@ botao_opcoes = NodePath("OptionButton")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_1ne2i")
+theme_override_font_sizes/font_size = 15
 text = "Modo de Tela"
 
 [node name="OptionButton" type="OptionButton" parent="."]
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 8
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_1ne2i")
 item_count = 4
 popup/item_0/text = "Tela-Cheia"
 popup/item_0/id = 0

@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bpkq80ppot606"]
 
 [ext_resource type="FontFile" uid="uid://chvuo2lxramxx" path="res://Project Kandy/Assets/Fontes/AtariClassic-gry3.ttf" id="1_pi0a5"]
-[ext_resource type="LabelSettings" uid="uid://dt4qythdv8y4n" path="res://Project Kandy/Assets/Fontes/AtariFont.tres" id="2_it38k"]
 [ext_resource type="PackedScene" uid="uid://b7mppsj3sykem" path="res://Project Kandy/Menus/SubCategorias/modo_tela.tscn" id="2_jloti"]
 [ext_resource type="PackedScene" uid="uid://cqrir1ec4l0k7" path="res://Project Kandy/Menus/SubCategorias/resolucao_tela.tscn" id="3_ekh31"]
+[ext_resource type="PackedScene" uid="uid://b1wivxdfgjrfq" path="res://Project Kandy/Menus/SubCategorias/barra_luminosidade.tscn" id="5_hlv8p"]
 
 [node name="tab_configuracoes" type="Control"]
 layout_mode = 3
@@ -72,13 +72,19 @@ theme_override_constants/separation = 30
 
 [node name="Configurar Tela" type="Label" parent="TabContainer/Video/VideoContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("1_pi0a5")
+theme_override_font_sizes/font_size = 20
 text = "Configurar Tela"
-label_settings = ExtResource("2_it38k")
 
 [node name="HBoxContainer" parent="TabContainer/Video/VideoContainer/VBoxContainer" instance=ExtResource("2_jloti")]
 layout_mode = 2
 
 [node name="ResolucaoTela" parent="TabContainer/Video/VideoContainer/VBoxContainer" instance=ExtResource("3_ekh31")]
+layout_mode = 2
+
+[node name="BarraLuminosidade" parent="TabContainer/Video/VideoContainer/VBoxContainer" instance=ExtResource("5_hlv8p")]
 layout_mode = 2
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/Video/VideoContainer"]
