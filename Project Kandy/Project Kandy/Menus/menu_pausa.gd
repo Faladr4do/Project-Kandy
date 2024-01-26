@@ -20,15 +20,16 @@ func _on_botao_jogar_pressed():
 	gerenciador_jogo.game_paused = false
 
 func _on_botao_reiniciar_pressed():
+	gerenciador_jogo.game_paused = false
 	get_tree().reload_current_scene()
 
 func _on_botao_configurar_pressed():
+	gerenciador_jogo.game_paused = false
 	get_tree().change_scene_to_file("res://Project Kandy/Menus/menu_opcoes.tscn")
-
 
 func _on_botao_sair_pressed():
 	get_tree().quit()
 
-
 func _on_botao_voltar_menu_pressed():
+	gerenciador_jogo.game_paused = false
 	get_tree().change_scene_to_file("res://Project Kandy/Menus/menu_principal.tscn")

@@ -29,3 +29,6 @@ func game_over():
 	await get_tree().create_timer(4).timeout
 	jogador.vida_total = Global.vidas_max
 	get_tree().reload_current_scene()
+
+#https://kayillustrations.itch.io/parallax-terrestrial-planet
+#https://ansimuz.itch.io/mountain-dusk-parallax-background

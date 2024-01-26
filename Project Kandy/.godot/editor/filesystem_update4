@@ -8,6 +8,6 @@ res://Project Kandy/Menus/menu_pausa.tscn
 res://Project Kandy/BroColli/bro_colli.tscn
 res://Project Kandy/Menus/SubCategorias/modo_tela.tscn
 res://Project Kandy/Menus/SubCategorias/resolucao_tela.tscn
-res://Project Kandy/Menus/SubCategorias/barra_luminosidade.gd
 res://Project Kandy/Menus/SubCategorias/barra_luminosidade.tscn
-res://Project Kandy/Assets/Fontes/AtariFont.tres
+res://Project Kandy/Menus/menu_pausa.gd
+res://Project Kandy/Assets/Globais/gerenciador_jogo.gd
