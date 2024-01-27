@@ -1,15 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://c466srbesxb7h"]
+[gd_scene load_steps=13 format=3 uid="uid://c466srbesxb7h"]
 
 [ext_resource type="PackedScene" uid="uid://c0ej330af3pbo" path="res://Project Kandy/BroColli/bro_colli.tscn" id="1_0qhot"]
 [ext_resource type="Texture2D" uid="uid://tkwdg4lmkmy4" path="res://Project Kandy/Assets/Tiles/moving_platforms.png" id="2_e6woo"]
 [ext_resource type="PackedScene" uid="uid://c0vxysqew3npd" path="res://Project Kandy/DrPedra/dr_pedra.tscn" id="3_6de72"]
 [ext_resource type="PackedScene" uid="uid://051ksev1cvoe" path="res://Project Kandy/ObjetosProgramaveis/GomaTrampolim/goma_beijo.tscn" id="4_ya8g6"]
-[ext_resource type="Texture2D" uid="uid://cwrla58vcbu8c" path="res://Project Kandy/Assets/Tiles/layers/parallax-mountain-mountains.png" id="7_6d6f2"]
-[ext_resource type="Texture2D" uid="uid://bg0y2ypm5jcqu" path="res://Project Kandy/Assets/Tiles/layers/parallax-mountain-montain-far.png" id="7_hq66g"]
+[ext_resource type="PackedScene" uid="uid://3iexrkllijo4" path="res://Project Kandy/Assets/FundosNivel/Nivel1Montanhas.tscn" id="6_okftv"]
 [ext_resource type="PackedScene" uid="uid://dapxtpx1vq5jn" path="res://Project Kandy/Sweet Corn/sweet_cornBasic.tscn" id="7_jb2jq"]
 [ext_resource type="PackedScene" uid="uid://xqjbpnw1t7fm" path="res://Project Kandy/RapMato & SliceSpice/red_twins.tscn" id="7_xyao1"]
 [ext_resource type="PackedScene" uid="uid://bn8643nc87bav" path="res://Project Kandy/Sweet Corn/sweet_cornPatroller.tscn" id="8_c2o0w"]
-[ext_resource type="Texture2D" uid="uid://cbhtnrunmk6gp" path="res://Project Kandy/Assets/Tiles/Sky.png" id="8_yrwgj"]
 [ext_resource type="PackedScene" uid="uid://tampoaptrmt6" path="res://Project Kandy/ObjetosProgramaveis/PlataformaSemPausa/moving_platform_X.tscn" id="10_bd3b6"]
 [ext_resource type="PackedScene" uid="uid://c0uajrex47bwh" path="res://Project Kandy/ObjetosProgramaveis/PlataformaNova/plataforma.tscn" id="10_mlssu"]
 
@@ -74,33 +72,7 @@ position = Vector2(2292, 212)
 distancia = Vector2(220, -320)
 phase_offset = 0.755
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="Céu" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Céu"]
-scale = Vector2(8, 8)
-texture = ExtResource("8_yrwgj")
-centered = false
-
-[node name="Céu3" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.05, 0)
-motion_mirroring = Vector2(272, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Céu3"]
-scale = Vector2(8, 8)
-texture = ExtResource("7_hq66g")
-centered = false
-
-[node name="Céu2" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.1, 0)
-motion_mirroring = Vector2(544, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Céu2"]
-scale = Vector2(8, 8)
-texture = ExtResource("7_6d6f2")
-centered = false
+[node name="ParallaxBackground" parent="." instance=ExtResource("6_okftv")]
 
 [node name="Inimigos" type="Node" parent="."]
 

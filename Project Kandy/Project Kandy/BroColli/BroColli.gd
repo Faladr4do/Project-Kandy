@@ -19,8 +19,7 @@ func _physics_process(delta):
 		pode_saltar = true
 	elif pode_saltar and tempo_coyote.is_stopped():
 		tempo_coyote.start()
-		
-	# Handle Jump.
+# Handle Jump.
 	if Input.is_action_just_pressed("jump") and pode_saltar:
 		print("salto1")
 		velocity.y = -JUMP_VELOCITY

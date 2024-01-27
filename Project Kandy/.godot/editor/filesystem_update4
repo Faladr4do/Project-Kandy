@@ -1,13 +1,9 @@
-res://jogo_full.tscn
+res://Project Kandy/Niveis/nivel_1_part_1.tscn
 res://gerenciador_jogo.gd
 res://Project Kandy/Assets/Shaders/hit_flash.tres
+res://jogo_full.tscn
 res://Project Kandy/Niveis/mapa_testes.tscn
-res://Project Kandy/Niveis/nivel_1_part_1.tscn
 res://Project Kandy/Menus/tab_configuracoes.tscn
 res://Project Kandy/Menus/menu_pausa.tscn
 res://Project Kandy/BroColli/bro_colli.tscn
-res://Project Kandy/Menus/SubCategorias/modo_tela.tscn
-res://Project Kandy/Menus/SubCategorias/resolucao_tela.tscn
-res://Project Kandy/Menus/SubCategorias/barra_luminosidade.tscn
-res://Project Kandy/Menus/menu_pausa.gd
-res://Project Kandy/Assets/Globais/gerenciador_jogo.gd
+res://Project Kandy/Assets/FundosNivel/Nivel1Montanhas.tscn

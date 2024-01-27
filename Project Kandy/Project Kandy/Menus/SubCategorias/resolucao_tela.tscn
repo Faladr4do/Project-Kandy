@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqrir1ec4l0k7"]
+[gd_scene load_steps=3 format=3 uid="uid://cqrir1ec4l0k7"]
 
 [ext_resource type="Script" path="res://Project Kandy/Menus/SubCategorias/resolucao_tela.gd" id="1_vk85u"]
+[ext_resource type="LabelSettings" uid="uid://dt4qythdv8y4n" path="res://Project Kandy/Assets/Fontes/AtariFont.tres" id="2_8m7jx"]
 
 [node name="ResolucaoTela" type="HBoxContainer" node_paths=PackedStringArray("botao_opcoes")]
 anchors_preset = 14
@@ -17,6 +18,7 @@ botao_opcoes = NodePath("OptionButton")
 [node name="Label" type="Label" parent="."]
 layout_mode = 2
 text = "Resolucao de Tela"
+label_settings = ExtResource("2_8m7jx")
 
 [node name="OptionButton" type="OptionButton" parent="."]
 layout_mode = 2

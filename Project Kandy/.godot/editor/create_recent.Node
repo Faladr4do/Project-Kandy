@@ -1,3 +1,4 @@
+TileMap
 HSlider
 Label
 VBoxContainer
@@ -11,5 +12,3 @@ TabBar
 TabContainer
 Button
 Timer
-Node
-Node2D
