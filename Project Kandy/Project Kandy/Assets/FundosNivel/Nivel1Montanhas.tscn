@@ -1,10 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://3iexrkllijo4"]
+[gd_scene load_steps=5 format=3 uid="uid://3iexrkllijo4"]
 
+[ext_resource type="Script" path="res://Project Kandy/Assets/FundosNivel/Nivel1Montanhas.gd" id="1_evyy2"]
 [ext_resource type="Texture2D" uid="uid://cbhtnrunmk6gp" path="res://Project Kandy/Assets/Tiles/Sky.png" id="1_fls6w"]
-[ext_resource type="Texture2D" uid="uid://bg0y2ypm5jcqu" path="res://Project Kandy/Assets/Tiles/layers/parallax-mountain-montain-far.png" id="2_rxry1"]
-[ext_resource type="Texture2D" uid="uid://cwrla58vcbu8c" path="res://Project Kandy/Assets/Tiles/layers/parallax-mountain-mountains.png" id="3_vva6j"]
+[ext_resource type="Texture2D" uid="uid://d7phxxmljplf" path="res://Project Kandy/Assets/Tiles/MontanhasFarParallax.png" id="3_6tmy1"]
+[ext_resource type="Texture2D" uid="uid://cv3ubkgss1swt" path="res://Project Kandy/Assets/Tiles/MontanhasParallax.png" id="4_nthis"]
 
-[node name="ParallaxBackground" type="ParallaxBackground"]
+[node name="ParallaxBackground" type="ParallaxBackground" node_paths=PackedStringArray("plano_fundo_ceu", "plano_fundo_longe", "plano_fundo_longe2", "plano_fundo_perto")]
+offset = Vector2(0, -100)
+transform = Transform2D(1, 0, 0, 1, 0, -100)
+script = ExtResource("1_evyy2")
+plano_fundo_ceu = NodePath("Céu/Sprite2D")
+plano_fundo_longe = NodePath("MontanhasTras/Sprite2D")
+plano_fundo_longe2 = NodePath("MontanhasTras2/Sprite2D")
+plano_fundo_perto = NodePath("MontanhasFrente/Sprite2D")
 
 [node name="Céu" type="ParallaxLayer" parent="."]
 texture_filter = 1
@@ -22,7 +30,7 @@ motion_mirroring = Vector2(2176, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="MontanhasTras"]
 scale = Vector2(8, 8)
-texture = ExtResource("2_rxry1")
+texture = ExtResource("3_6tmy1")
 centered = false
 
 [node name="MontanhasTras2" type="ParallaxLayer" parent="."]
@@ -33,7 +41,7 @@ motion_mirroring = Vector2(2176, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="MontanhasTras2"]
 scale = Vector2(8, 8)
-texture = ExtResource("2_rxry1")
+texture = ExtResource("3_6tmy1")
 centered = false
 
 [node name="MontanhasFrente" type="ParallaxLayer" parent="."]
@@ -43,5 +51,5 @@ motion_mirroring = Vector2(4352, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="MontanhasFrente"]
 scale = Vector2(8, 8)
-texture = ExtResource("3_vva6j")
+texture = ExtResource("4_nthis")
 centered = false

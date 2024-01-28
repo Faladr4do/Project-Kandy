@@ -3,7 +3,9 @@ class_name GestorJogo
 
 signal pausar_jogo(is_paused)
 
-@onready var jogador = $MapaTestes/BroColli
+@export var nivel : PackedScene
+#@export var jogador : PackedScene
+@onready var jogador = $"Nivel1Part1/BroColli"
 
 var game_paused = false:
 	get:

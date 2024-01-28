@@ -1,8 +1,8 @@
 extends CanvasLayer
 
-@onready var mostrar_moedas = $Label
-@onready var mostrar_vidas = $Label2
-@onready var jogador = $"../MapaTestes/BroColli"
+@export var mostrar_moedas : Label
+@export var mostrar_vidas : Label
+@onready var jogador = $"../Nivel1Part1/BroColli"
 
 func _process(_delta):
 	mostrar_moedas.text = "Moedas: "+ str(Global.moedas_coletadas)

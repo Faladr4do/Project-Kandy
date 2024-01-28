@@ -2,8 +2,8 @@ extends Area2D
 
 @onready var animGoma = $AnimationPlayer
 
-var poder_salto = -1600
-var usavel = true
+@export var poder_salto : float = 16
+var usavel : bool = true
 
 func _physics_process(delta):
 	pass
@@ -13,7 +13,7 @@ func _on_body_entered(body):
 	if body.is_in_group("Vegetal") or body.is_in_group("Inimigo"):
 		print("saltar")
 		animGoma.play("goma_jump")
-		body.velocity.y = poder_salto
+		body.velocity.y = -poder_salto * 100
 		if body.is_in_group("Vegetal"):
 			body.doubleJump = true
 

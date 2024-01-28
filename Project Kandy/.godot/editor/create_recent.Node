@@ -1,4 +1,8 @@
+Node
 TileMap
+AnimatableBody2D
+PathFollow2D
+Path2D
 HSlider
 Label
 VBoxContainer
@@ -8,7 +12,3 @@ HBoxContainer
 MarginContainer
 HSplitContainer
 GridContainer
-TabBar
-TabContainer
-Button
-Timer

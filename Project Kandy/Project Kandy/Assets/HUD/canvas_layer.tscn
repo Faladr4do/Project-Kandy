@@ -3,10 +3,12 @@
 [ext_resource type="Script" path="res://Project Kandy/Assets/HUD/CanvasLayer.gd" id="1_oosja"]
 [ext_resource type="LabelSettings" uid="uid://dt4qythdv8y4n" path="res://Project Kandy/Assets/Fontes/AtariFont.tres" id="2_gdcek"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="CanvasLayer" type="CanvasLayer" node_paths=PackedStringArray("mostrar_moedas", "mostrar_vidas")]
 scale = Vector2(5, 5)
 transform = Transform2D(5, 0, 0, 5, 0, 0)
 script = ExtResource("1_oosja")
+mostrar_moedas = NodePath("Label")
+mostrar_vidas = NodePath("Label2")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 2.0
@@ -14,8 +16,7 @@ offset_top = 2.0
 offset_right = 42.0
 offset_bottom = 18.0
 scale = Vector2(0.7, 0.7)
-text = "
-"
+text = "adad"
 label_settings = ExtResource("2_gdcek")
 
 [node name="Label2" type="Label" parent="."]

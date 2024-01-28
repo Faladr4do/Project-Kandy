@@ -1,9 +1,18 @@
-res://Project Kandy/Niveis/nivel_1_part_1.tscn
+res://Project Kandy/Menus/menu_principal.tscn
 res://gerenciador_jogo.gd
 res://Project Kandy/Assets/Shaders/hit_flash.tres
 res://jogo_full.tscn
-res://Project Kandy/Niveis/mapa_testes.tscn
+res://Project Kandy/Assets/Globais/gerenciador_jogo.gd
+res://Project Kandy/Menus/menu_opcoes.tscn
+res://Project Kandy/Niveis/nivel_1_part_1.tscn
 res://Project Kandy/Menus/tab_configuracoes.tscn
 res://Project Kandy/Menus/menu_pausa.tscn
 res://Project Kandy/BroColli/bro_colli.tscn
 res://Project Kandy/Assets/FundosNivel/Nivel1Montanhas.tscn
+res://Project Kandy/ObjetosProgramaveis/PlataformaSemPausa/moving_platform.tscn
+res://Project Kandy/ObjetosProgramaveis/GomaTrampolim/goma_beijo.tscn
+res://Project Kandy/Sweet Corn/sweet_cornBasic.tscn
+res://Project Kandy/Assets/HUD/canvas_layer.tscn
+res://Project Kandy/Assets/HUD/CanvasLayer.gd
+res://Project Kandy/BroColli/BroColli.gd
+res://Project Kandy/ObjetosProgramaveis/PlataformaSemPausa/moving_platform.gd

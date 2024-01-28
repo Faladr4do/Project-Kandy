@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://chvuo2lxramxx" path="res://Project Kandy/Assets/Fontes/AtariClassic-gry3.ttf" id="1_3xo8c"]
 [ext_resource type="Script" path="res://Project Kandy/Menus/menu_opcoes.gd" id="1_gb7oc"]
-[ext_resource type="PackedScene" uid="uid://cmklmesqxmnuq" path="res://Project Kandy/Menus/menu_principal.tscn" id="2_mqbhc"]
+[ext_resource type="PackedScene" uid="uid://cmklmesqxmnuq" path="res://Project Kandy/Menus/menu_principal.tscn" id="2_2uq5v"]
 [ext_resource type="Texture2D" uid="uid://caux3micg22pu" path="res://Project Kandy/Assets/ImagensMenu/wallpaperflare.com_wallpaper.jpg" id="3_e78y2"]
 [ext_resource type="PackedScene" uid="uid://bpkq80ppot606" path="res://Project Kandy/Menus/tab_configuracoes.tscn" id="5_0ujcr"]
 
@@ -14,7 +14,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gb7oc")
-menu_principal = ExtResource("2_mqbhc")
+menu_principal = ExtResource("2_2uq5v")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0

@@ -110,6 +110,5 @@ func _on_pes_body_entered(body):
 		ataque.posicao_ataque = global_position
 		body.dano(ataque)
 
-
 func _on_tempo_coyote_timeout():
 	pode_saltar = false
