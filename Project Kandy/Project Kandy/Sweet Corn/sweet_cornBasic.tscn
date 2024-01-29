@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://5kex756gnjbo" path="res://Project Kandy/Sweet Corn/sprites/SweetCornWalk.png" id="4_jjah7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hckry"]
+resource_local_to_scene = true
 shader = ExtResource("2_8v52t")
 shader_parameter/ativo = true
 shader_parameter/hit = Color(1, 1, 1, 1)

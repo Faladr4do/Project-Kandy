@@ -31,6 +31,7 @@ Global="*res://Project Kandy/Assets/Globais/global.gd"
 Dialog="*res://Project Kandy/Assets/Globais/DialogManager.gd"
 Interagir="*res://Project Kandy/Assets/Globais/interagir_gestor.tscn"
 Dialogic="*res://addons/dialogic/Other/DialogicGameHandler.gd"
+Checkpoint="*res://Project Kandy/Assets/Globais/Checkpoint.gd"
 
 [dialogic]
 

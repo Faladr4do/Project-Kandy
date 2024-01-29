@@ -5,6 +5,8 @@ const  JUMP_VELOCITY = 900.0
 var relogio = Timer.new()
 
 var vida_max = Global.vidas_max
+var boss1_won : bool = false
+var jumping : bool = true
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -23,12 +25,15 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump") and pode_saltar:
 		print("salto1")
 		velocity.y = -JUMP_VELOCITY
-		doubleJump = true
+		jumping = true
+		if boss1_won:
+			doubleJump = true
 		pode_saltar = false
 	elif Input.is_action_just_pressed("jump") and doubleJump:
 		print("salto2")
 		velocity.y = -(JUMP_VELOCITY * 1)
 		doubleJump = false
+		jumping = false
 	
 	if Input.is_action_just_pressed("reiniciar") and !receber_dano:
 		vida_total = Global.vidas_max
@@ -79,12 +84,13 @@ func atualizar_Anims(direction):
 	if estaAtacar:
 		return
 	if is_on_floor():
+		jumping = false
 		if direction == 0:
 			animacoes.play("idle")
 		else:
 			animacoes.play("walk")
 	else:
-		if velocity.y < 0 and doubleJump:
+		if velocity.y < 0 and jumping:
 			animacoes.play("jump")
 		elif velocity.y > 0:
 			animacoes.play("fall")
