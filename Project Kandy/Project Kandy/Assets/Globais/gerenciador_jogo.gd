@@ -28,7 +28,6 @@ func _input(event):
 		emit_signal("pausar_jogo", game_paused)
 
 func game_over():
-	await get_tree().create_timer(4).timeout
 	jogador.vida_total = Global.vidas_max
 	get_tree().reload_current_scene()
 

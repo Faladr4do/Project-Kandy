@@ -1,7 +1,8 @@
 CollisionShape2D
-Sprite2D
-Area2D
 Node
+Area2D
+AnimatedSprite2D
+Sprite2D
 TileMap
 AnimatableBody2D
 PathFollow2D
@@ -11,5 +12,3 @@ Label
 VBoxContainer
 OptionButton
 VSeparator
-HBoxContainer
-MarginContainer

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://du1buswme6sdm"]
+
+[ext_resource type="Script" path="res://Project Kandy/ObjetosProgramaveis/Barreiras/bloqueador.gd" id="1_ftkqq"]
+
+[node name="Bloqueador" type="Area2D"]
+script = ExtResource("1_ftkqq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
