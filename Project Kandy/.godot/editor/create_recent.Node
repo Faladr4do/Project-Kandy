@@ -1,8 +1,10 @@
+Camera2D
+Sprite2D
+AnimationPlayer
 CollisionShape2D
 Node
 Area2D
 AnimatedSprite2D
-Sprite2D
 TileMap
 AnimatableBody2D
 PathFollow2D
@@ -10,5 +12,3 @@ Path2D
 HSlider
 Label
 VBoxContainer
-OptionButton
-VSeparator

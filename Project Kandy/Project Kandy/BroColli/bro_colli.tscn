@@ -387,11 +387,6 @@ libraries = {
 }
 autoplay = "idle"
 
-[node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(0, -100)
-process_callback = 0
-position_smoothing_enabled = true
-
 [node name="pes" type="Area2D" parent="."]
 position = Vector2(0, 0.5)
 

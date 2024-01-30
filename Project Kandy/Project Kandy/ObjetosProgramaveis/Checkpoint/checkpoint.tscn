@@ -1,36 +1,236 @@
-[gd_scene load_steps=7 format=3 uid="uid://dvkxudvn80qm8"]
+[gd_scene load_steps=12 format=3 uid="uid://dvkxudvn80qm8"]
 
 [ext_resource type="Script" path="res://Project Kandy/ObjetosProgramaveis/Checkpoint/checkpoint.gd" id="1_3ioxy"]
 [ext_resource type="Texture2D" uid="uid://brgldvwqi3en" path="res://Project Kandy/Assets/Tiles/WallsFloor.png" id="1_grfnu"]
-[ext_resource type="Texture2D" uid="uid://ch18f4w2sxcxx" path="res://Project Kandy/ObjetosProgramaveis/Checkpoint/sprites/candle.png" id="3_1wrj1"]
+[ext_resource type="Texture2D" uid="uid://doy1afucgamd7" path="res://Project Kandy/Projeteis/sprites/Creation-Sheet.png" id="4_k4458"]
+[ext_resource type="Texture2D" uid="uid://ckun7si48seu8" path="res://Project Kandy/Projeteis/sprites/fireball.png" id="5_4wjrb"]
+[ext_resource type="Texture2D" uid="uid://c8anta2lq816a" path="res://Project Kandy/Projeteis/sprites/IdleLoop-Sheet.png" id="5_mrd6i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j3foq"]
 size = Vector2(23.375, 38.375)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7xrpn"]
-atlas = ExtResource("3_1wrj1")
-region = Rect2(6, 0, 6, 29)
+[sub_resource type="Animation" id="Animation_0eyih"]
+resource_name = "acender"
+length = 1.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_k4458")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D2:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [14]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D2:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D2:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+}
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_kxuk2"]
-animations = [{
-"frames": [],
-"loop": true,
-"name": &"ativado",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7xrpn")
-}],
-"loop": true,
-"name": &"desativado",
-"speed": 5.0
-}]
+[sub_resource type="Animation" id="Animation_olq7b"]
+resource_name = "acesa"
+length = 0.6
+loop_mode = 1
+step = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_mrd6i")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D2:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D2:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D2:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
 
-[node name="Checkpoint" type="Area2D"]
+[sub_resource type="Animation" id="Animation_ul451"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_k4458")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D2:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [14]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D2:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D2:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_j31w1"]
+resource_name = "desacesa"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_4wjrb")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D2:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D2:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D2:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hvvv4"]
+_data = {
+"RESET": SubResource("Animation_ul451"),
+"acender": SubResource("Animation_0eyih"),
+"acesa": SubResource("Animation_olq7b"),
+"desacesa": SubResource("Animation_j31w1")
+}
+
+[node name="Checkpoint" type="Area2D" node_paths=PackedStringArray("sprite_chama", "chama")]
 scale = Vector2(8, 8)
 collision_layer = 0
 script = ExtResource("1_3ioxy")
+sprite_chama = NodePath("Sprite2D2")
+chama = NodePath("Sprite2D2/AnimationPlayer")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_grfnu")
@@ -40,10 +240,19 @@ region_rect = Rect2(40, 0, 6, 28)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5.187)
 shape = SubResource("RectangleShape2D_j3foq")
+debug_color = Color(0, 0.6, 0.701961, 0)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-visible = false
-sprite_frames = SubResource("SpriteFrames_kxuk2")
-animation = &"desativado"
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-0.5, -8.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_k4458")
+hframes = 14
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D2"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_hvvv4")
+}
 
 [connection signal="body_entered" from="." to="." method="_on_Checkpoint_body_entered"]
+[connection signal="animation_finished" from="Sprite2D2/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
