@@ -37,10 +37,14 @@ Checkpoint="*res://Project Kandy/Assets/Globais/Checkpoint.gd"
 
 directories/dch_directory={
 "BroColli": "res://DialogosPastas/Personagens/BroColli/BroColli.dch",
-"Pedras": "res://DialogosPastas/Personagens/Pedras/Pedras.dch"
+"Pedras": "res://DialogosPastas/Personagens/Pedras/Pedras.dch",
+"RapMato": "res://DialogosPastas/Personagens/RedTwins/RapMato.dch",
+"SliceSpice": "res://DialogosPastas/Personagens/RedTwins/SliceSpice.dch"
 }
 directories/dtl_directory={
-"intro": "res://DialogosPastas/LinhasTemporais/intro.dtl"
+"intro": "res://DialogosPastas/LinhasTemporais/intro.dtl",
+"president_watcher": "res://DialogosPastas/LinhasTemporais/president_watcher.dtl",
+"sem_dialogo": "res://DialogosPastas/LinhasTemporais/sem_dialogo.dtl"
 }
 glossary/default_case_sensitive=true
 layout/style_list=[]

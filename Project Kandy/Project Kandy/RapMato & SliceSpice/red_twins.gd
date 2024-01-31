@@ -22,7 +22,7 @@ func _physics_process(delta):
 
 func _on_area_2d_body_entered(body):
 	if body.has_method("player_comprador_method"):
-		Dialogic.start('intro')
+		Dialogic.start(dialogo)
 		get_viewport().set_input_as_handled()
 		#Global.moedas_coletadas *= 2
 		#Dialog.comecar_dialogo(local_falar, falas)
@@ -31,5 +31,5 @@ func _on_area_2d_body_entered(body):
 func inter_act():
 	if Dialogic.current_timeline != null:
 		return
-	Dialogic.start('intro')
+	Dialogic.start(dialogo)
 	get_viewport().set_input_as_handled()
