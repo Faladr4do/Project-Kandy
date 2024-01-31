@@ -6,8 +6,12 @@ extends Area2D
 @export var forca_knockback : float = 2000
 @export var velocidade : float 
 
-@onready var anim_fogo = $AnimationPlayer
-@onready var sprite_fogo = $Sprite2D
+var desaparecer = false
+
+var distancia
+var posicao_ini
+
+@onready var sprite_estigada = $Sprite2D
 
 func _ready():
 	add_to_group("Bala")
@@ -15,7 +19,12 @@ func _ready():
 func _physics_process(delta):
 	position += transform.x * velocidade * delta
 	if velocidade < 0:
-		sprite_fogo.flip_v= true
+		sprite_estigada.flip_h= true
+		sprite_estigada.rotation_degrees = 21.8
+	else:
+		pass
+	if desaparecer:
+		queue_free()
 
 func _on_body_entered(body):
 	print(body.get_groups())
@@ -25,13 +34,4 @@ func _on_body_entered(body):
 		ataque.forca_knockback = forca_knockback
 		ataque.posicao_ataque = global_position
 		body.dano(ataque)
-	velocidade = 0
-	anim_fogo.play("explodir")
-
-func _on_animation_player_animation_finished(anim_name):
-	if anim_name == "explodir" or anim_name == "extinguir":
-		queue_free()
-
-
-func _on_gestor_alcance_timeout():
-	anim_fogo.play("extinguir")
+	queue_free()

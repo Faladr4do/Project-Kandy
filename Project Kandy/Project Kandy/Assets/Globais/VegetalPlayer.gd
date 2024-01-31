@@ -3,7 +3,7 @@ class_name VegetalPlayer
 
 @export var tempo_coyote : Timer
 @export var estigar_cooldown : Timer
-@export var fire : PackedScene = preload("res://Project Kandy/Projeteis/fireball.tscn")
+@export var fire : PackedScene
 
 var doubleJump = false
 var lentoTempo = false

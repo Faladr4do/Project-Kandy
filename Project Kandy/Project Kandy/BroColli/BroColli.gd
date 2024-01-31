@@ -5,7 +5,7 @@ const  JUMP_VELOCITY = 900.0
 var relogio = Timer.new()
 
 var vida_max = Global.vidas_max
-var boss1_won : bool = false
+@export var boss1_won : bool = false
 var jumping : bool = true
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
