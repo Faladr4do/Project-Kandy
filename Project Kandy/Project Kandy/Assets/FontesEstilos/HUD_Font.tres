@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://dc313cvmebsck"]
+
+[ext_resource type="FontFile" uid="uid://chvuo2lxramxx" path="res://Project Kandy/Assets/FontesEstilos/AtariClassic-gry3.ttf" id="1_n1cnx"]
+
+[resource]
+font = ExtResource("1_n1cnx")
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)

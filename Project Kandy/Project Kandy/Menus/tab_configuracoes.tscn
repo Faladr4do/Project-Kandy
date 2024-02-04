@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bpkq80ppot606"]
 
-[ext_resource type="FontFile" uid="uid://chvuo2lxramxx" path="res://Project Kandy/Assets/Fontes/AtariClassic-gry3.ttf" id="1_pi0a5"]
+[ext_resource type="FontFile" uid="uid://chvuo2lxramxx" path="res://Project Kandy/Assets/FontesEstilos/AtariClassic-gry3.ttf" id="1_pi0a5"]
 [ext_resource type="PackedScene" uid="uid://b7mppsj3sykem" path="res://Project Kandy/Menus/SubCategorias/modo_tela.tscn" id="2_jloti"]
 [ext_resource type="PackedScene" uid="uid://cqrir1ec4l0k7" path="res://Project Kandy/Menus/SubCategorias/resolucao_tela.tscn" id="3_ekh31"]
 [ext_resource type="PackedScene" uid="uid://b1wivxdfgjrfq" path="res://Project Kandy/Menus/SubCategorias/barra_luminosidade.tscn" id="5_hlv8p"]
@@ -41,6 +41,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+dragger_visibility = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Jogo/JogoContainer"]
 layout_mode = 2
@@ -64,6 +65,7 @@ offset_right = -20.0
 offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 2
+dragger_visibility = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Video/VideoContainer"]
 layout_mode = 2
@@ -102,6 +104,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+dragger_visibility = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Audio/AudioContainer"]
 layout_mode = 2
@@ -122,6 +125,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+dragger_visibility = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Controlos/ControlosContainer"]
 layout_mode = 2
@@ -142,6 +146,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+dragger_visibility = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Testes/TestesContainer"]
 layout_mode = 2

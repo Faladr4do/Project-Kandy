@@ -26,4 +26,4 @@ func _on_area_2d_body_entered(body):
 		ataque.dano_ataque = dano_obstaculo
 		ataque.forca_knockback = forca_knockback
 		ataque.posicao_ataque = global_position
-		body.dano(ataque, cortou)
+		body.dano(ataque)

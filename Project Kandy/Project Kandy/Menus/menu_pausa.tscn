@@ -1,11 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6i0fl7bbgfvc"]
+[gd_scene load_steps=7 format=3 uid="uid://c6i0fl7bbgfvc"]
 
-[ext_resource type="LabelSettings" uid="uid://dt4qythdv8y4n" path="res://Project Kandy/Assets/Fontes/AtariFont.tres" id="1_4cwht"]
+[ext_resource type="LabelSettings" uid="uid://dt4qythdv8y4n" path="res://Project Kandy/Assets/FontesEstilos/AtariFont.tres" id="1_4cwht"]
 [ext_resource type="Script" path="res://Project Kandy/Menus/menu_pausa.gd" id="1_bplvm"]
-[ext_resource type="FontFile" uid="uid://chvuo2lxramxx" path="res://Project Kandy/Assets/Fontes/AtariClassic-gry3.ttf" id="2_4iyud"]
+[ext_resource type="FontFile" uid="uid://chvuo2lxramxx" path="res://Project Kandy/Assets/FontesEstilos/AtariClassic-gry3.ttf" id="2_4iyud"]
+[ext_resource type="Texture2D" uid="uid://cy3ews0caoxu5" path="res://Project Kandy/Assets/GUI/BordaMenuPausa.png" id="2_iw7t4"]
+[ext_resource type="Theme" uid="uid://d4k7b02m1i26d" path="res://Project Kandy/Assets/FontesEstilos/estilo_botao.tres" id="2_w8hgs"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_17qth"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(1, 0.74902, 0.560784, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.639216, 0.694118, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
@@ -22,6 +29,7 @@ grow_vertical = 2
 script = ExtResource("1_bplvm")
 
 [node name="Panel2" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0.784314)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -30,70 +38,94 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.447917
 anchor_top = 0.407407
 anchor_right = 0.65625
 anchor_bottom = 0.777778
-offset_left = -116.0
-offset_top = -170.0
-offset_right = -266.0
-offset_bottom = -270.0
+offset_left = -154.001
+offset_top = -234.0
+offset_right = -265.0
+offset_bottom = -287.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
 theme_override_styles/panel = SubResource("StyleBoxFlat_17qth")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.036
-anchor_top = 0.186667
-anchor_right = 0.964
-anchor_bottom = 0.813333
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 15
-alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -264.0
+offset_top = -299.0
+offset_right = 264.0
+offset_bottom = 299.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_iw7t4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -149.0
+offset_top = -200.5
+offset_right = 149.0
+offset_bottom = 200.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_w8hgs")
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Label" type="Label" parent="TextureRect/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 text = "= PAUSA ="
 label_settings = ExtResource("1_4cwht")
 horizontal_alignment = 1
 
-[node name="BotaoJogar" type="Button" parent="Panel/VBoxContainer"]
+[node name="BotaoJogar" type="Button" parent="TextureRect/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
-theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme = ExtResource("2_w8hgs")
 theme_override_fonts/font = ExtResource("2_4iyud")
 text = "Jogar"
 
-[node name="BotaoReiniciar" type="Button" parent="Panel/VBoxContainer"]
+[node name="BotaoReiniciar" type="Button" parent="TextureRect/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_4iyud")
 text = "Voltar para
 Checkpoint"
 
-[node name="BotaoConfigurar" type="Button" parent="Panel/VBoxContainer"]
+[node name="BotaoConfigurar" type="Button" parent="TextureRect/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_4iyud")
 text = "Configurar"
 
-[node name="BotaoSair" type="Button" parent="Panel/VBoxContainer"]
+[node name="BotaoSair" type="Button" parent="TextureRect/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_4iyud")
 text = "Sair"
 
-[node name="BotaoVoltarMenu" type="Button" parent="Panel/VBoxContainer"]
+[node name="BotaoVoltarMenu" type="Button" parent="TextureRect/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_4iyud")
 text = "Voltar para
 Menu Principal"
 
-[connection signal="pressed" from="Panel/VBoxContainer/BotaoJogar" to="." method="_on_botao_jogar_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/BotaoReiniciar" to="." method="_on_botao_reiniciar_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/BotaoConfigurar" to="." method="_on_botao_configurar_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/BotaoSair" to="." method="_on_botao_sair_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/BotaoVoltarMenu" to="." method="_on_botao_voltar_menu_pressed"]
+[connection signal="pressed" from="TextureRect/VBoxContainer/BotaoJogar" to="." method="_on_botao_jogar_pressed"]
+[connection signal="pressed" from="TextureRect/VBoxContainer/BotaoReiniciar" to="." method="_on_botao_reiniciar_pressed"]
+[connection signal="pressed" from="TextureRect/VBoxContainer/BotaoConfigurar" to="." method="_on_botao_configurar_pressed"]
+[connection signal="pressed" from="TextureRect/VBoxContainer/BotaoSair" to="." method="_on_botao_sair_pressed"]
+[connection signal="pressed" from="TextureRect/VBoxContainer/BotaoVoltarMenu" to="." method="_on_botao_voltar_menu_pressed"]

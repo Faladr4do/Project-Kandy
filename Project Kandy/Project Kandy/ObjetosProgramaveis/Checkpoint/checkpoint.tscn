@@ -226,6 +226,7 @@ _data = {
 }
 
 [node name="Checkpoint" type="Area2D" node_paths=PackedStringArray("sprite_chama", "chama")]
+z_index = -1
 scale = Vector2(8, 8)
 collision_layer = 0
 script = ExtResource("1_3ioxy")

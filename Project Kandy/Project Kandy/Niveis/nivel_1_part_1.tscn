@@ -6112,30 +6112,30 @@ nivel_alvo = ExtResource("15_pv1fu")
 position = Vector2(53.5068, 172.062)
 shape = SubResource("RectangleShape2D_3a8bf")
 
-[node name="Divesos" type="Node" parent="."]
+[node name="Diversos" type="Node" parent="."]
 
-[node name="Bloqueador" parent="Divesos" node_paths=PackedStringArray("colisao") instance=ExtResource("11_82uga")]
+[node name="Bloqueador" parent="Diversos" node_paths=PackedStringArray("colisao") instance=ExtResource("11_82uga")]
 position = Vector2(-9937, -2482)
 colisao = NodePath("CollisionShape2D")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Divesos/Bloqueador"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Diversos/Bloqueador"]
 position = Vector2(33.7793, -18.2378)
 shape = SubResource("RectangleShape2D_xkrot")
 
-[node name="Bloqueador2" parent="Divesos" node_paths=PackedStringArray("colisao") instance=ExtResource("11_82uga")]
+[node name="Bloqueador2" parent="Diversos" node_paths=PackedStringArray("colisao") instance=ExtResource("11_82uga")]
 position = Vector2(-4808.17, 2778.6)
 colisao = NodePath("CollisionShape2D")
 queda = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Divesos/Bloqueador2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Diversos/Bloqueador2"]
 position = Vector2(29.5864, 0)
 shape = SubResource("RectangleShape2D_d2wwo")
 
-[node name="Bloqueador3" parent="Divesos" node_paths=PackedStringArray("colisao") instance=ExtResource("11_82uga")]
+[node name="Bloqueador3" parent="Diversos" node_paths=PackedStringArray("colisao") instance=ExtResource("11_82uga")]
 position = Vector2(1040.06, 2889)
 colisao = NodePath("CollisionShape2D")
 queda = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Divesos/Bloqueador3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Diversos/Bloqueador3"]
 position = Vector2(241.438, -85.5378)
 shape = SubResource("RectangleShape2D_d2wwo")

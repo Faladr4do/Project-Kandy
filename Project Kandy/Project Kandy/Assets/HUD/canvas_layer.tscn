@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://em3bia5jdls6"]
 
 [ext_resource type="Script" path="res://Project Kandy/Assets/HUD/CanvasLayer.gd" id="1_oosja"]
-[ext_resource type="LabelSettings" uid="uid://dt4qythdv8y4n" path="res://Project Kandy/Assets/Fontes/AtariFont.tres" id="2_gdcek"]
+[ext_resource type="LabelSettings" uid="uid://dc313cvmebsck" path="res://Project Kandy/Assets/FontesEstilos/HUD_Font.tres" id="2_ujoxb"]
 
 [node name="CanvasLayer" type="CanvasLayer" node_paths=PackedStringArray("mostrar_moedas", "mostrar_vidas")]
 scale = Vector2(5, 5)
@@ -16,8 +16,8 @@ offset_top = 2.0
 offset_right = 42.0
 offset_bottom = 18.0
 scale = Vector2(0.7, 0.7)
-text = "adad"
-label_settings = ExtResource("2_gdcek")
+text = "habla"
+label_settings = ExtResource("2_ujoxb")
 
 [node name="Label2" type="Label" parent="."]
 offset_left = 2.0
@@ -25,6 +25,6 @@ offset_top = 13.2
 offset_right = 42.0
 offset_bottom = 29.2
 scale = Vector2(0.7, 0.7)
-text = "
+text = "español
 "
-label_settings = ExtResource("2_gdcek")
+label_settings = ExtResource("2_ujoxb")

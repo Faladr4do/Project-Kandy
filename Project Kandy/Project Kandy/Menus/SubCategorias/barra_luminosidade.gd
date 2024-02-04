@@ -10,3 +10,7 @@ func _ready():
 func _process(delta):
 	#https://www.youtube.com/watch?v=ef065J7reGw
 	pass
+
+
+func _on_luminosidade_value_changed(value):
+	pass # Replace with function body.

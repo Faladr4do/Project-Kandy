@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://dk8vcysnhe2wi"]
 
-[ext_resource type="FontFile" uid="uid://chvuo2lxramxx" path="res://Project Kandy/Assets/Fontes/AtariClassic-gry3.ttf" id="1_0bqjx"]
+[ext_resource type="FontFile" uid="uid://chvuo2lxramxx" path="res://Project Kandy/Assets/FontesEstilos/AtariClassic-gry3.ttf" id="1_0bqjx"]
 [ext_resource type="Script" path="res://Project Kandy/Assets/Globais/interagir_gestor.gd" id="1_lkdm0"]
-[ext_resource type="LabelSettings" uid="uid://dt4qythdv8y4n" path="res://Project Kandy/Assets/Fontes/AtariFont.tres" id="3_ijw7s"]
+[ext_resource type="LabelSettings" uid="uid://dc313cvmebsck" path="res://Project Kandy/Assets/FontesEstilos/HUD_Font.tres" id="3_vouan"]
 
 [node name="InteragirGestor" type="Node2D"]
 script = ExtResource("1_lkdm0")
@@ -20,6 +20,6 @@ scale = Vector2(2, 2)
 size_flags_horizontal = 8
 theme_override_fonts/font = ExtResource("1_0bqjx")
 text = "[E] 	PARA INTERAGIR"
-label_settings = ExtResource("3_ijw7s")
+label_settings = ExtResource("3_vouan")
 horizontal_alignment = 1
 vertical_alignment = 1

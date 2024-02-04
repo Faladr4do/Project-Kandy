@@ -22,3 +22,4 @@ func adicionar_itens_resolucao():
 
 func resolucao_selecionada(selecionado):
 	DisplayServer.window_set_size(DICIONARIO_RESOLUCOES.values()[selecionado])
+	print_debug(DICIONARIO_RESOLUCOES.values()[selecionado])

@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" path="res://Project Kandy/Assets/CaixaTexto/MarginContainer.gd" id="1_u83u8"]
 [ext_resource type="Texture2D" uid="uid://cewt1pa1i5pvm" path="res://Project Kandy/Assets/CaixaTexto/sprites/CaixaTextoExprimental.png" id="2_i872s"]
-[ext_resource type="FontFile" uid="uid://chvuo2lxramxx" path="res://Project Kandy/Assets/Fontes/AtariClassic-gry3.ttf" id="3_uap4f"]
+[ext_resource type="FontFile" uid="uid://chvuo2lxramxx" path="res://Project Kandy/Assets/FontesEstilos/AtariClassic-gry3.ttf" id="3_uap4f"]
+
 
 [node name="CaixaTexto" type="MarginContainer"]
 offset_right = 32.0

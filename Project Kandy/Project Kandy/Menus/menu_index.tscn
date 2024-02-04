@@ -1,0 +1,77 @@
+[gd_scene load_steps=7 format=3 uid="uid://cbxo8q6eymk18"]
+
+[ext_resource type="FontFile" uid="uid://chvuo2lxramxx" path="res://Project Kandy/Assets/FontesEstilos/AtariClassic-gry3.ttf" id="1_6h8r2"]
+[ext_resource type="Script" path="res://Project Kandy/Menus/menu_index.gd" id="1_t2r1b"]
+[ext_resource type="PackedScene" uid="uid://dgdvruik070w8" path="res://jogo_full.tscn" id="2_od18c"]
+[ext_resource type="PackedScene" uid="uid://0urscw4y8aqn" path="res://Project Kandy/Menus/menu_configurar.tscn" id="3_kly3f"]
+[ext_resource type="Texture2D" uid="uid://b6t03vyftr0ed" path="res://Project Kandy/Assets/ImagensMenu/imagem_temporaria.jpg" id="3_v4ek5"]
+[ext_resource type="Theme" uid="uid://d4k7b02m1i26d" path="res://Project Kandy/Assets/FontesEstilos/estilo_botao.tres" id="4_g2sd2"]
+
+[node name="MenuIndex" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t2r1b")
+nivel_atual = ExtResource("2_od18c")
+cena_opcoes = ExtResource("3_kly3f")
+imagem_fundo = ExtResource("3_v4ek5")
+
+[node name="ImagemFundo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BotoesMenu" type="VBoxContainer" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -419.0
+offset_right = 554.0
+grow_vertical = 0
+
+[node name="JogarBotao" type="Button" parent="BotoesMenu"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("4_g2sd2")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_6h8r2")
+theme_override_font_sizes/font_size = 45
+text = "Jogar"
+
+[node name="ConfigurarBotao" type="Button" parent="BotoesMenu"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("4_g2sd2")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_6h8r2")
+theme_override_font_sizes/font_size = 45
+text = "Configurar"
+
+[node name="SairBotao" type="Button" parent="BotoesMenu"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("4_g2sd2")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_6h8r2")
+theme_override_font_sizes/font_size = 45
+text = "Sair"
+
+[connection signal="pressed" from="BotoesMenu/JogarBotao" to="." method="_on_jogar_botao_pressed"]
+[connection signal="pressed" from="BotoesMenu/ConfigurarBotao" to="." method="_on_configurar_botao_pressed"]
+[connection signal="pressed" from="BotoesMenu/SairBotao" to="." method="_on_sair_botao_pressed"]
