@@ -1,7 +1,5 @@
 extends Area2D
 
-#var direcao = Vector2.RIGHT
-
 @export var dano_forca : float = 1
 @export var forca_knockback : float = 2000
 @export var velocidade : float 
@@ -11,6 +9,7 @@ extends Area2D
 
 func _ready():
 	add_to_group("Bala")
+	add_to_group("Incendiar")
 
 func _physics_process(delta):
 	position += transform.x * velocidade * delta
@@ -31,7 +30,6 @@ func _on_body_entered(body):
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "explodir" or anim_name == "extinguir":
 		queue_free()
-
 
 func _on_gestor_alcance_timeout():
 	anim_fogo.play("extinguir")

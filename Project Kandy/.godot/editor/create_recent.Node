@@ -1,3 +1,8 @@
+AnimationPlayer
+ColorRect
+CanvasLayer
+Node
+WorldEnvironment
 Button
 Label
 VBoxContainer
@@ -5,10 +10,6 @@ MarginContainer
 TextureRect
 Panel
 CollisionShape2D
-Node
 TileMap
 Area2D
 AudioStreamPlayer2D
-Timer
-AnimationPlayer
-Camera2D

@@ -1,6 +1,7 @@
 extends Camera2D
 
 @export var zoom_camera : float = 1
+@export var escala_baixo : float = 1.0
 @export var escala_esquerda : float = 1.25
 @export var escala_direita : float = 1.0
 @export var offset_camera : Vector2 = Vector2(0,-150)
@@ -13,7 +14,7 @@ func _ready():
 	var tamanho_mapa_pixel = rect_mapa.size * tamanho_tile
 	limit_right = tamanho_mapa_pixel.x * escala_direita
 	limit_left = -tamanho_mapa_pixel.x * escala_esquerda
-	limit_bottom = tamanho_mapa_pixel.y
+	limit_bottom = tamanho_mapa_pixel.y * escala_baixo
 	position_smoothing_enabled = smooth_camera
 	camera(zoom_camera)
 	print_debug(limit_right)

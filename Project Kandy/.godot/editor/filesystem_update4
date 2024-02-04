@@ -25,3 +25,16 @@ res://Project Kandy/Menus/menu_configurar.gd
 res://Project Kandy/Menus/SubCategorias/barra_luminosidade.tscn
 res://Project Kandy/Menus/menu_index.gd
 res://Project Kandy/Menus/SubCategorias/barra_luminosidade.gd
+res://Project Kandy/Assets/Globais/hambiente_global.tres
+res://Project Kandy/Assets/Globais/world_environment.tscn
+res://Project Kandy/Projeteis/fireball.tscn
+res://Project Kandy/Projeteis/fireball.gd
+res://Project Kandy/ObjetosProgramaveis/Checkpoint/checkpoint.gd
+res://Project Kandy/ObjetosProgramaveis/Checkpoint/checkpoint.tscn
+res://Project Kandy/Assets/CameraPlayer/camera_player.tscn
+res://Project Kandy/Assets/CameraPlayer/camera_player.gd
+res://Project Kandy/Assets/HUD/transicao_nivel.gd
+res://Project Kandy/Assets/HUD/transicao_nivel.tscn
+res://Project Kandy/Niveis/MudarNivel/mudar_nivel.tscn
+res://Project Kandy/Niveis/MudarNivel/mudar_nivel.gd
+res://Project Kandy/BroColli/BroColli.gd

@@ -101,7 +101,7 @@ func devolta():
 	lentoTempo = false
 
 func estigar():
-	shoot(fire, 100, caster)
+	shoot(fire, 120, caster)
 
 func player_comprador_method():
 	pass
