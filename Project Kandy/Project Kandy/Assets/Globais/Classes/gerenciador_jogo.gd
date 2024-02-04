@@ -7,13 +7,13 @@ signal pausar_jogo(is_paused)
 #@export var jogador : PackedScene
 @onready var jogador = $"Nivel1Part1/BroColli"
 
-var game_paused = false:
+var jogo_pausado = false:
 	get:
-		return game_paused
-	set(value):
-		game_paused = value
-		get_tree().paused = game_paused
-		emit_signal("pausar_jogo", game_paused)
+		return jogo_pausado
+	set(valor):
+		jogo_pausado = valor
+		get_tree().paused = jogo_pausado
+		emit_signal("pausar_jogo", jogo_pausado)
 
 func _process(delta):
 	verificar_vida_player()
@@ -24,8 +24,8 @@ func verificar_vida_player():
 
 func _input(event):
 	if event.is_action_pressed("cancelar"):
-		game_paused = !game_paused
-		emit_signal("pausar_jogo", game_paused)
+		jogo_pausado = !jogo_pausado
+		emit_signal("pausar_jogo", jogo_pausado)
 
 func game_over():
 	jogador.vida_total = Global.vidas_max

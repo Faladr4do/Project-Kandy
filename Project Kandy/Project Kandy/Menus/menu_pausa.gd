@@ -4,12 +4,12 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	hide()
-	gerenciador_jogo.connect("pausar_jogo", on_game_manager_toggle_game_paused)
+	gerenciador_jogo.connect("pausar_jogo", on_game_manager_toggle_jogo_pausado)
 
 func _process(delta):
 	pass
 
-func on_game_manager_toggle_game_paused(is_paused):
+func on_game_manager_toggle_jogo_pausado(is_paused):
 	if is_paused:
 		show()
 	else:
@@ -17,19 +17,19 @@ func on_game_manager_toggle_game_paused(is_paused):
 
 
 func _on_botao_jogar_pressed():
-	gerenciador_jogo.game_paused = false
+	gerenciador_jogo.jogo_pausado = false
 
 func _on_botao_reiniciar_pressed():
-	gerenciador_jogo.game_paused = false
+	gerenciador_jogo.jogo_pausado = false
 	get_tree().reload_current_scene()
 
 func _on_botao_configurar_pressed():
-	gerenciador_jogo.game_paused = false
+	gerenciador_jogo.jogo_pausado = false
 	get_tree().change_scene_to_file("res://Project Kandy/Menus/menu_configurar.tscn")
 
 func _on_botao_sair_pressed():
 	get_tree().quit()
 
 func _on_botao_voltar_menu_pressed():
-	gerenciador_jogo.game_paused = false
+	gerenciador_jogo.jogo_pausado = false
 	get_tree().change_scene_to_file("res://Project Kandy/Menus/menu_index.tscn")
