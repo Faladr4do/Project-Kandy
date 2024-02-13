@@ -1,22 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c6i0fl7bbgfvc"]
+[gd_scene load_steps=6 format=3 uid="uid://c6i0fl7bbgfvc"]
 
 [ext_resource type="LabelSettings" uid="uid://dt4qythdv8y4n" path="res://Project Kandy/Assets/FontesEstilos/AtariFont.tres" id="1_4cwht"]
 [ext_resource type="Script" path="res://Project Kandy/Menus/menu_pausa.gd" id="1_bplvm"]
 [ext_resource type="FontFile" uid="uid://chvuo2lxramxx" path="res://Project Kandy/Assets/FontesEstilos/AtariClassic-gry3.ttf" id="2_4iyud"]
 [ext_resource type="Texture2D" uid="uid://cy3ews0caoxu5" path="res://Project Kandy/Assets/GUI/BordaMenuPausa.png" id="2_iw7t4"]
 [ext_resource type="Theme" uid="uid://d4k7b02m1i26d" path="res://Project Kandy/Assets/FontesEstilos/estilo_botao.tres" id="2_w8hgs"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_17qth"]
-bg_color = Color(1, 0.74902, 0.560784, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(1, 0.639216, 0.694118, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
 
 [node name="MenuPausa" type="Control"]
 process_mode = 2
@@ -36,24 +24,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Panel" type="Panel" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.447917
-anchor_top = 0.407407
-anchor_right = 0.65625
-anchor_bottom = 0.777778
-offset_left = -154.001
-offset_top = -234.0
-offset_right = -265.0
-offset_bottom = -287.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(2, 2)
-theme_override_styles/panel = SubResource("StyleBoxFlat_17qth")
-metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1

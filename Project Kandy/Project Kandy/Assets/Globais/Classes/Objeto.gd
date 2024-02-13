@@ -1,6 +1,8 @@
 extends CharacterBody2D
 class_name Objeto
 
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
 @export var vida_total : int
 @export var vivo : bool = true
 @export var delete_collision : bool = true
@@ -25,7 +27,8 @@ func _process(delta):
 
 func hit_flash_play():
 	if receber_dano:
-		hitbox.monitoring = false
+		if is_in_group("Vegetal"):
+			hitbox.monitoring = false
 		if hit_flash:
 			hit_flash.play("hit_flash")
 		await get_tree().create_timer(tempo_imune).timeout

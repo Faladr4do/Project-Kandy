@@ -175,6 +175,7 @@ _data = {
 size = Vector2(144, 70)
 
 [node name="Trampolim" type="Area2D"]
+z_index = -1
 script = ExtResource("1_x6bn4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

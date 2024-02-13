@@ -4,8 +4,6 @@ const vel_salto = -580
 
 @onready var velocy = 480.0
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var estaVivo = true
 var patrulhando = false
 var diff_speed_aerial = 0.6
@@ -27,7 +25,7 @@ func _physics_process(delta):
 			velocity.x = velocy
 			velocity.y = vel_salto
 		elif !chao_detect.is_colliding():
-			virar()
+			animacoes.play("rolar")
 	estou_vivo()
 	move_and_slide()
 	atualizar_Anims(velocy)

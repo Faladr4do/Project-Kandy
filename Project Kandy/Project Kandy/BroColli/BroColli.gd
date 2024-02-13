@@ -8,9 +8,6 @@ var vida_max = Global.vidas_max
 @export var boss1_won : bool = false
 var jumping : bool = true
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
 func _physics_process(delta):
 	if Dialogic.VAR.dialogo != 0:
 		return
@@ -75,6 +72,8 @@ func _physics_process(delta):
 		
 	if is_on_floor():
 		tempo_coyote
+	
+	#print_debug(sprite.material._get_shader_rid)
 	
 	hit_flash_play()
 	move_and_slide()
