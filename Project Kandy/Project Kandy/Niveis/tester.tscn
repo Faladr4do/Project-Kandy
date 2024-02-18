@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c0ej330af3pbo" path="res://Project Kandy/BroColli/bro_colli.tscn" id="2_t6rcg"]
 [ext_resource type="PackedScene" uid="uid://dd1br3saykilj" path="res://Project Kandy/Assets/CameraPlayer/camera_player.tscn" id="3_glsvb"]
 [ext_resource type="PackedScene" uid="uid://3iexrkllijo4" path="res://Project Kandy/Assets/FundosNivel/Nivel1Montanhas.tscn" id="4_3f6v6"]
-[ext_resource type="PackedScene" uid="uid://x5vscg7i04vk" path="res://Project Kandy/Sweet Corn Spotter/sweet_cornSpotter.tscn" id="5_m640v"]
+[ext_resource type="PackedScene" uid="uid://x5vscg7i04vk" path="res://Project Kandy/ChocoHound/ChocoHound.tscn" id="5_m640v"]
 [ext_resource type="PackedScene" uid="uid://bn8643nc87bav" path="res://Project Kandy/Sweet Corn/sweet_cornPatroller.tscn" id="6_33o22"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e1brd"]

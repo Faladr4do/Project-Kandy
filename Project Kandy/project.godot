@@ -91,11 +91,11 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
 folder_colors={
 "res://Project Kandy/BroColli/": "green",
+"res://Project Kandy/ChocoHound/": "red",
 "res://Project Kandy/DrPedra/": "green",
 "res://Project Kandy/RapMato & SliceSpice/": "green",
 "res://Project Kandy/SugarBomb/": "red",
 "res://Project Kandy/SugarShooter/": "orange",
-"res://Project Kandy/Sweet Corn Spotter/": "orange",
 "res://Project Kandy/Sweet Corn/": "red"
 }
 
