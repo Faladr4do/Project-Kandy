@@ -5,6 +5,7 @@ var carga_doce : bool = false
 const TEMPO_CARGA : float = 1.0
 var carga_acc : float = 0.0
 var stop : bool = false
+var animacao_atual : String
 
 func _ready():
 	if lado_esquerdo:
@@ -28,11 +29,17 @@ func _physics_process(delta):
 					stopper()
 					carga_acc = 0
 		elif !chao_detect.is_colliding():
+			carga_doce = false
 			virar()
-	
+	animacao_atual = animacoes.get_assigned_animation()
+	print_debug(animacao_atual)
 	destruir_capacete()
 	estou_vivo()
-	auto_animar("walk", "idle", "jump", "fall")
+	if !carga_doce:
+		auto_animar("walk", "spot", "jump", "fall")
+	elif carga_doce:
+		if !animacao_atual == "lunge":
+			animacoes.play("lunge")
 	move_and_slide()
 
 func fall():
@@ -69,6 +76,12 @@ func virar():
 
 func _on_spot_body_entered(body):
 	if body.is_in_group("Vegetal"):
+		stop = true
+		velocity.x = 0
+		if !animacao_atual == "spot":
+			animacoes.play("spot")
+		await animacoes.animation_finished
+		stop = false
 		velocity.x = -velocidade * 4
 		carga_doce = true
 

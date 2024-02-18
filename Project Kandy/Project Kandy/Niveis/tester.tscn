@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://d4ix05q2n37lx"]
+[gd_scene load_steps=10 format=3 uid="uid://d4ix05q2n37lx"]
 
 [ext_resource type="Texture2D" uid="uid://c0r0dmjqv83o" path="res://Project Kandy/Assets/Tiles/WallsFloorsRedoo.png" id="1_ydtna"]
 [ext_resource type="PackedScene" uid="uid://c0ej330af3pbo" path="res://Project Kandy/BroColli/bro_colli.tscn" id="2_t6rcg"]
 [ext_resource type="PackedScene" uid="uid://dd1br3saykilj" path="res://Project Kandy/Assets/CameraPlayer/camera_player.tscn" id="3_glsvb"]
 [ext_resource type="PackedScene" uid="uid://3iexrkllijo4" path="res://Project Kandy/Assets/FundosNivel/Nivel1Montanhas.tscn" id="4_3f6v6"]
 [ext_resource type="PackedScene" uid="uid://x5vscg7i04vk" path="res://Project Kandy/ChocoHound/ChocoHound.tscn" id="5_m640v"]
-[ext_resource type="PackedScene" uid="uid://bn8643nc87bav" path="res://Project Kandy/Sweet Corn/sweet_cornPatroller.tscn" id="6_33o22"]
+[ext_resource type="PackedScene" uid="uid://dapxtpx1vq5jn" path="res://Project Kandy/Sweet Corn/sweet_cornBasic.tscn" id="6_ef0xf"]
+[ext_resource type="PackedScene" uid="uid://bxnxghro2gmeg" path="res://Project Kandy/CakeKing/cake_king.tscn" id="7_anntg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e1brd"]
 texture = ExtResource("1_ydtna")
@@ -1835,6 +1836,10 @@ mapa_nivel = NodePath("../../TileMap")
 
 [node name="SweetCorn" parent="Inimigo" instance=ExtResource("5_m640v")]
 position = Vector2(-1242.82, -1257.63)
+capacete = null
 
-[node name="SweetCornPatroller" parent="Inimigo" instance=ExtResource("6_33o22")]
-position = Vector2(1249, -1178)
+[node name="SweetCorn2" parent="Inimigo" instance=ExtResource("6_ef0xf")]
+position = Vector2(1197.18, -1182)
+
+[node name="CakeKing" parent="." instance=ExtResource("7_anntg")]
+position = Vector2(137.246, -1777.6)
