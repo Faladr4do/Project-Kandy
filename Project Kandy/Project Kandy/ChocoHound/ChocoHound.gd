@@ -32,7 +32,6 @@ func _physics_process(delta):
 			carga_doce = false
 			virar()
 	animacao_atual = animacoes.get_assigned_animation()
-	print_debug(animacao_atual)
 	destruir_capacete()
 	estou_vivo()
 	if !carga_doce:
@@ -82,7 +81,7 @@ func _on_spot_body_entered(body):
 			animacoes.play("spot")
 		await animacoes.animation_finished
 		stop = false
-		velocity.x = -velocidade * 4
+		velocity.x = -velocidade * 6
 		carga_doce = true
 
 #func stopper():

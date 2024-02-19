@@ -1,14 +1,14 @@
-AnimationPlayer
 CollisionShape2D
+CollisionPolygon2D
+Area2D
+AnimationPlayer
 Sprite2D
 CharacterBody2D
 AudioStreamPlayer2D
 Node
 TileMap
-Area2D
 Marker2D
 ColorRect
 CanvasLayer
 WorldEnvironment
 Button
-Label

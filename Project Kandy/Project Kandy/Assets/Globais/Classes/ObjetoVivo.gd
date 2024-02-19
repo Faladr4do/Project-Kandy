@@ -19,16 +19,17 @@ func funcao_morte():
 	queue_free()
 
 func auto_animar(walk, idle, jump, fall):
-	if is_on_floor() and !esta_atacar:
-		if velocity.x != 0:
-			animacoes.play(walk)
-		else:
-			animacoes.play(idle)
-	elif !is_on_floor():
-		if velocity.y < 0:
-			animacoes.play(jump, -1, 1)
-		elif velocity.y > 0:
-			animacoes.play(fall)
+	if animacoes:
+		if is_on_floor() and !esta_atacar:
+			if velocity.x != 0:
+				animacoes.play(walk)
+			else:
+				animacoes.play(idle)
+		elif !is_on_floor():
+			if velocity.y < 0:
+				animacoes.play(jump, -1, 1)
+			elif velocity.y > 0:
+				animacoes.play(fall)
 
 func estou_vivo():
 	if vida_total < 0:

@@ -12,5 +12,9 @@ res://Project Kandy/Menus/menu_pausa.tscn
 res://Project Kandy/Helmets/viking_helmet.tscn
 res://Project Kandy/Pickups/Moeda/moeda.tscn
 res://Project Kandy/CakeKing/cake_king.tscn
-res://Project Kandy/CakeKing/cake_king.gd
 res://Project Kandy/Projeteis/fireball.tscn
+res://Project Kandy/CakeKing/cake_king.gd
+res://Project Kandy/Assets/Globais/Classes/ObjetoVivo.gd
+res://Project Kandy/ChocoHound/ChocoHound.gd
+res://Project Kandy/Niveis/nivel_1_part_2.tscn
+res://Project Kandy/Niveis/nivel_1_part_1.tscn

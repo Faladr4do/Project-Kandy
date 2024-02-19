@@ -1,7 +1,6 @@
-[gd_scene load_steps=22 format=3 uid="uid://x5vscg7i04vk"]
+[gd_scene load_steps=21 format=3 uid="uid://x5vscg7i04vk"]
 
 [ext_resource type="Script" path="res://Project Kandy/ChocoHound/ChocoHound.gd" id="1_h8eeo"]
-[ext_resource type="PackedScene" uid="uid://c25p2vil8i0en" path="res://Project Kandy/Helmets/viking_helmet.tscn" id="2_si4bn"]
 [ext_resource type="Shader" uid="uid://cyuovkuipu54b" path="res://Project Kandy/Assets/Shaders/hit_flash.tres" id="3_s0big"]
 [ext_resource type="Texture2D" uid="uid://dqjmbeb17h03c" path="res://Project Kandy/ChocoHound/sprites/SnickerHoundPreLunge.png" id="5_0g8e7"]
 [ext_resource type="Texture2D" uid="uid://cxosvf0ptmfxc" path="res://Project Kandy/ChocoHound/sprites/SnickerHound.png" id="5_d8bq6"]
@@ -387,7 +386,6 @@ script = ExtResource("1_h8eeo")
 area_visao = NodePath("spot")
 alvo = NodePath("target")
 chao_detect = NodePath("RayCast2D")
-capacete = ExtResource("2_si4bn")
 forca_knockback = 2000.0
 velocidade = 160.0
 animacoes = NodePath("AnimationPlayer")
