@@ -1,9 +1,8 @@
+res://jogo_full.tscn
 res://gerenciador_jogo.gd
 res://Project Kandy/Assets/Shaders/hit_flash.tres
 res://Project Kandy/Assets/FontesEstilos/AtariFont.tres
 res://Project Kandy/Assets/FontesEstilos/estilo_botao.tres
-res://DialogosPastas/Personagens/Pedras/Pedras.dch
-res://jogo_full.tscn
 res://Project Kandy/Niveis/nivel_1_part_3.tscn
 res://Project Kandy/BroColli/bro_colli.tscn
 res://Project Kandy/Sweet Corn/sweet_cornBasic.tscn
@@ -13,3 +12,5 @@ res://Project Kandy/Menus/menu_pausa.tscn
 res://Project Kandy/Helmets/viking_helmet.tscn
 res://Project Kandy/Pickups/Moeda/moeda.tscn
 res://Project Kandy/CakeKing/cake_king.tscn
+res://Project Kandy/CakeKing/cake_king.gd
+res://Project Kandy/Projeteis/fireball.tscn

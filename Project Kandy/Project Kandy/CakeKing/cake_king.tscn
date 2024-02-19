@@ -1,11 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxnxghro2gmeg"]
+[gd_scene load_steps=4 format=3 uid="uid://bxnxghro2gmeg"]
 
+[ext_resource type="Script" path="res://Project Kandy/CakeKing/cake_king.gd" id="1_ksyr5"]
 [ext_resource type="Texture2D" uid="uid://bmgj0d8fuwe21" path="res://Project Kandy/CakeKing/sprites/BoloReiExpriment.png" id="1_vqn2t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y0xit"]
 size = Vector2(1366, 557)
 
 [node name="CakeKing" type="CharacterBody2D"]
+texture_filter = 1
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_ksyr5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(8, 8)
