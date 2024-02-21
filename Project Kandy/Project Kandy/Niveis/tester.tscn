@@ -1837,7 +1837,6 @@ mapa_nivel = NodePath("../../TileMap")
 
 [node name="SweetCorn" parent="Inimigo" instance=ExtResource("5_m640v")]
 position = Vector2(-1242.82, -1257.63)
-capacete = null
 
 [node name="SweetCorn2" parent="Inimigo" instance=ExtResource("6_ef0xf")]
 position = Vector2(1197.18, -1182)

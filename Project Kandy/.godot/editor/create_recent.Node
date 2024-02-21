@@ -1,3 +1,6 @@
+WorldEnvironment
+Node
+TileMap
 CollisionShape2D
 CollisionPolygon2D
 Area2D
@@ -5,10 +8,7 @@ AnimationPlayer
 Sprite2D
 CharacterBody2D
 AudioStreamPlayer2D
-Node
-TileMap
 Marker2D
 ColorRect
 CanvasLayer
-WorldEnvironment
 Button
