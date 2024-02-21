@@ -16,7 +16,7 @@ run_deploy_remote_debug=false
 
 [recent_files]
 
-scenes=["res://Project Kandy/Niveis/boss_room_test.tscn", "res://Project Kandy/Niveis/nivel_1_part_1.tscn", "res://Project Kandy/Niveis/nivel_1_part_2.tscn", "res://Project Kandy/CakeKing/cake_king.tscn", "res://Project Kandy/Niveis/tester.tscn", "res://Project Kandy/BroColli/bro_colli.tscn", "res://Project Kandy/Niveis/nivel_1_part_3.tscn", "res://jogo_full.tscn", "res://Project Kandy/ChocoHound/ChocoHound.tscn", "res://Project Kandy/Sweet Corn/sweet_cornBasic.tscn"]
+scenes=["res://Project Kandy/Niveis/boss_room_test.tscn", "res://Project Kandy/Niveis/nivel_1_part_1.tscn", "res://Project Kandy/Niveis/nivel_1_part_2.tscn", "res://Project Kandy/CakeKing/cake_king.tscn", "res://Project Kandy/Niveis/tester.tscn", "res://Project Kandy/ChocoHound/ChocoHound.tscn", "res://Project Kandy/Sweet Corn/sweet_cornBasic.tscn", "res://Project Kandy/BroColli/bro_colli.tscn", "res://Project Kandy/Niveis/nivel_1_part_3.tscn", "res://jogo_full.tscn"]
 scripts=["res://Project Kandy/Menus/menu_pausa.gd", "res://Project Kandy/Niveis/nivel_1_part_1.gd", "res://Project Kandy/Niveis/nivel_1_part_2.gd", "res://Project Kandy/Assets/Globais/Classes/ObjetoVivo.gd", "res://Project Kandy/Assets/Globais/Classes/Objeto.gd", "res://Project Kandy/Projeteis/fireball.gd", "res://Project Kandy/CakeKing/cake_king.gd", "res://Project Kandy/Assets/CameraPlayer/camera_player.gd", "res://Project Kandy/Pickups/Moeda/moeda.gd", "res://Project Kandy/Helmets/viking_helmet.gd"]
 
 [linked_properties]

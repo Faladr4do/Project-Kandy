@@ -1,16 +1,14 @@
-res://Project Kandy/Niveis/boss_room_test.tscn
+res://Project Kandy/Assets/Ambiente/game_environment.tres
+res://jogo_full.tscn
 res://gerenciador_jogo.gd
 res://Project Kandy/Assets/Shaders/hit_flash.tres
 res://Project Kandy/Assets/FontesEstilos/AtariFont.tres
 res://Project Kandy/Assets/FontesEstilos/estilo_botao.tres
-res://jogo_full.tscn
+res://DialogosPastas/Personagens/Pedras/Pedras.dch
 res://Project Kandy/Niveis/nivel_1_part_3.tscn
 res://Project Kandy/BroColli/bro_colli.tscn
-res://Project Kandy/Sweet Corn/sweet_cornBasic.tscn
-res://Project Kandy/ChocoHound/ChocoHound.tscn
 res://Project Kandy/Niveis/tester.tscn
 res://Project Kandy/CakeKing/cake_king.tscn
 res://Project Kandy/Niveis/nivel_1_part_2.tscn
 res://Project Kandy/Niveis/nivel_1_part_1.tscn
-res://Project Kandy/Assets/CameraPlayer/camera_player.gd
-res://Project Kandy/Assets/Ambiente/game_environment.tres
+res://Project Kandy/Niveis/boss_room_test.tscn
