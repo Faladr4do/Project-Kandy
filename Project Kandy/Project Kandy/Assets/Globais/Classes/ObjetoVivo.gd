@@ -6,8 +6,6 @@ class_name ObjetoVivo
 @export var salto_forca : float
 @export var velocidade : float
 
-@export var animacoes : AnimationPlayer
-
 @export var lado_esquerdo : bool = true
 
 @onready var anim_morte = animacoes
@@ -50,12 +48,14 @@ func morte():
 	await get_tree().create_timer(tempo_imune).timeout
 	queue_free()
 
-func shoot(cena : PackedScene, vel_projetil : float, caster : Marker2D):
+func shoot(cena : PackedScene, vel_projetil : float, caster : Marker2D, projectile_range : bool = 0):
 	var cena_instanciada = cena.instantiate()
 	if scale.y < 0:
 		cena_instanciada.velocidade = -vel_projetil
 	elif scale.y > 0:
 		cena_instanciada.velocidade = vel_projetil
+	if projectile_range:
+		cena_instanciada.infinite_range = true
 	owner.add_child(cena_instanciada)
 	cena_instanciada.global_position = caster.global_position
 

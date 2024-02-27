@@ -9,6 +9,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var tempo_imune : float = 0.6
 
 @export var sprite : Sprite2D
+@export var animacoes : AnimationPlayer
 @export var hit_flash : AnimationPlayer
 @export var hitbox : Area2D
 @export var caster : Marker2D

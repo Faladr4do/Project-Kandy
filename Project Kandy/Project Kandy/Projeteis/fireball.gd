@@ -4,17 +4,22 @@ extends Area2D
 @export var forca_knockback : float = 2000
 @export var velocidade : float 
 
-@onready var anim_fogo = $AnimationPlayer
-@onready var sprite_fogo = $Sprite2D
+@onready var anim_fire = $AnimationPlayer
+@onready var sprite_fire = $Sprite2D
+@onready var gestor_alcance = $gestor_alcance
+
+var infinite_range : bool = false
 
 func _ready():
 	add_to_group("Bala")
 	add_to_group("Incendiar")
+	if !infinite_range:
+		gestor_alcance.start()
 
 func _physics_process(delta):
 	position += transform.x * velocidade * delta
 	if velocidade < 0:
-		sprite_fogo.flip_v= true
+		sprite_fire.flip_v= true
 
 func _on_body_entered(body):
 	print(body.get_groups())
@@ -25,11 +30,11 @@ func _on_body_entered(body):
 		ataque.posicao_ataque = global_position
 		body.dano(ataque)
 	velocidade = 0
-	anim_fogo.play("explodir")
+	anim_fire.play("explodir")
 
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "explodir" or anim_name == "extinguir":
 		queue_free()
 
 func _on_gestor_alcance_timeout():
-	anim_fogo.play("extinguir")
+	anim_fire.play("extinguir")

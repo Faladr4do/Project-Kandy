@@ -380,7 +380,7 @@ _data = {
 "hit_flash": SubResource("Animation_102jk")
 }
 
-[node name="ChocoHound" type="CharacterBody2D" node_paths=PackedStringArray("area_visao", "alvo", "chao_detect", "animacoes", "sprite", "hit_flash", "hitbox", "collisionPolygon")]
+[node name="ChocoHound" type="CharacterBody2D" node_paths=PackedStringArray("area_visao", "alvo", "chao_detect", "animacoes", "sprite", "animacoes", "hit_flash", "hitbox", "collisionPolygon")]
 scale = Vector2(10, 10)
 script = ExtResource("1_h8eeo")
 area_visao = NodePath("spot")
@@ -391,6 +391,7 @@ velocidade = 160.0
 animacoes = NodePath("AnimationPlayer")
 vida_total = 3
 sprite = NodePath("Sprite2D")
+animacoes = NodePath("AnimationPlayer")
 hit_flash = NodePath("HitFlashAnimPlay")
 hitbox = NodePath("hitbox")
 collisionPolygon = NodePath("CollisionPolygon2D")
@@ -409,7 +410,7 @@ libraries = {
 autoplay = "idle"
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2(-13.5, -4.1)
+position = Vector2(-14.6, -4.6)
 scale = Vector2(0.937, 0.3)
 
 [node name="PontoCapacete" type="Marker2D" parent="."]

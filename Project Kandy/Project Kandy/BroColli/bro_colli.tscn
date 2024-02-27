@@ -354,7 +354,7 @@ _data = {
 "hit_flash": SubResource("Animation_2wj5e")
 }
 
-[node name="BroColli" type="CharacterBody2D" node_paths=PackedStringArray("tempo_coyote", "estigar_cooldown", "animacoes", "sprite", "hit_flash", "hitbox", "caster", "collisionPolygon")]
+[node name="BroColli" type="CharacterBody2D" node_paths=PackedStringArray("tempo_coyote", "estigar_cooldown", "animacoes", "sprite", "animacoes", "hit_flash", "hitbox", "caster", "collisionPolygon")]
 z_index = 1
 scale = Vector2(8, 8)
 collision_layer = 3
@@ -368,6 +368,7 @@ velocidade = 440.0
 animacoes = NodePath("AnimationPlayer")
 vida_total = 3
 sprite = NodePath("Sprite2D")
+animacoes = NodePath("AnimationPlayer")
 hit_flash = NodePath("HitFlashAnimPlay")
 hitbox = NodePath("hitbox")
 caster = NodePath("Sprite2D/Marker2D")
