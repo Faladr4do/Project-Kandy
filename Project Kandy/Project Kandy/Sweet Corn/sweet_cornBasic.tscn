@@ -383,7 +383,7 @@ _data = {
 "hit_flash": SubResource("Animation_102jk")
 }
 
-[node name="SweetCorn" type="CharacterBody2D" node_paths=PackedStringArray("alvo", "chao_detect", "animacoes", "sprite", "animacoes", "hit_flash", "hitbox", "collisionPolygon")]
+[node name="SweetCorn" type="CharacterBody2D" node_paths=PackedStringArray("alvo", "chao_detect", "sprite", "animacoes", "hit_flash", "hitbox", "collisionPolygon")]
 scale = Vector2(8, 8)
 script = ExtResource("1_5xf0j")
 alvo = NodePath("target")
@@ -391,7 +391,6 @@ chao_detect = NodePath("RayCast2D")
 capacete = ExtResource("7_yysic")
 forca_knockback = 2000.0
 velocidade = 160.0
-animacoes = NodePath("AnimationPlayer")
 vida_total = 5
 sprite = NodePath("Sprite2D")
 animacoes = NodePath("AnimationPlayer")

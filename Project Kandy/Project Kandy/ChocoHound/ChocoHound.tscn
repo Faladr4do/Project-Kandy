@@ -380,7 +380,7 @@ _data = {
 "hit_flash": SubResource("Animation_102jk")
 }
 
-[node name="ChocoHound" type="CharacterBody2D" node_paths=PackedStringArray("area_visao", "alvo", "chao_detect", "animacoes", "sprite", "animacoes", "hit_flash", "hitbox", "collisionPolygon")]
+[node name="ChocoHound" type="CharacterBody2D" node_paths=PackedStringArray("area_visao", "alvo", "chao_detect", "sprite", "animacoes", "hit_flash", "hitbox", "collisionPolygon")]
 scale = Vector2(10, 10)
 script = ExtResource("1_h8eeo")
 area_visao = NodePath("spot")
@@ -388,7 +388,6 @@ alvo = NodePath("target")
 chao_detect = NodePath("RayCast2D")
 forca_knockback = 2000.0
 velocidade = 160.0
-animacoes = NodePath("AnimationPlayer")
 vida_total = 3
 sprite = NodePath("Sprite2D")
 animacoes = NodePath("AnimationPlayer")

@@ -4,11 +4,15 @@ extends InimigoBase
 
 @onready var spot : Area2D = $Spot
 
+var cor : int
+
 func _ready():
 	if !lado_esquerdo:
 		virar()
 	if vida_total > 0:
 		colocar_capacete()
+	randomizar_cor()
+	print_debug(cor)
 
 func _physics_process(delta):
 	if estaMorrer:
@@ -64,3 +68,12 @@ func _on_animation_finished(anim_name):
 		shoot(cuspo,-60, caster)
 		await get_tree().create_timer(2).timeout
 		esta_atacar = false
+
+func randomizar_cor():
+	cor = randi_range(1,3)
+	if cor == 1:
+		modulate= Color(1,1,1)
+	if cor == 2:
+		modulate= Color(1,8,1)
+	if cor == 3:
+		modulate= Color(1,1,8)
