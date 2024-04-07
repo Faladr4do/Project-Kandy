@@ -1,14 +1,19 @@
 res://Project Kandy/Assets/Ambiente/game_environment.tres
-res://Project Kandy/Niveis/nivel_1_part_3.tscn
+res://Project Kandy/BroColli/bro_colli.tscn
 res://gerenciador_jogo.gd
 res://Project Kandy/Assets/Shaders/hit_flash.tres
+res://Project Kandy/Assets/FontesEstilos/AtariFont.tres
+res://Project Kandy/Assets/FontesEstilos/estilo_botao.tres
+res://Project Kandy/Assets/Globais/Classes/gerenciador_jogo.gd
 res://DialogosPastas/Personagens/Pedras/Pedras.dch
-res://Project Kandy/BroColli/bro_colli.tscn
 res://Project Kandy/ChocoHound/ChocoHound.tscn
 res://Project Kandy/Niveis/tester.tscn
 res://Project Kandy/Helmets/viking_helmet.tscn
-res://Project Kandy/ObjetosProgramaveis/GomaTrampolim/goma_beijo.tscn
 res://Project Kandy/Sweet Corn/sweet_cornBasic.tscn
 res://Project Kandy/MnM/mnm_enemy.tscn
-res://Project Kandy/Niveis/nivel_1_part_2.tscn
-res://MnM.gd
+res://Project Kandy/Niveis/nivel_1.tscn
+res://Project Kandy/Niveis/nivel_2.tscn
+res://jogo_full.tscn
+res://Project Kandy/Niveis/MudarNivel/mudar_nivel.tscn
+res://Project Kandy/Niveis/nivel_3.tscn
+res://Project Kandy/Assets/HUD/hud.tscn

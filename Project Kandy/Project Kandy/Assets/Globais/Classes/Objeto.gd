@@ -38,7 +38,6 @@ func hit_flash_play():
 
 func dano(dano_ataque: Ataque):
 	vida_total -= dano_ataque.dano_ataque
-	print(vida_total)
 	if dano_ataque.dano_ataque:
 		receber_dano = true
 	velocity = (global_position - dano_ataque.posicao_ataque).normalized() * dano_ataque.forca_knockback

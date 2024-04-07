@@ -22,7 +22,7 @@ func _physics_process(delta):
 		sprite_fire.flip_v= true
 
 func _on_body_entered(body):
-	print(body.get_groups())
+	#print(body.get_groups())
 	if body.is_in_group("Inimigo") or body.is_in_group("ObjetoExplosivo"):
 		var ataque = Ataque.new()
 		ataque.dano_ataque = dano_forca

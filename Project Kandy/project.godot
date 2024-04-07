@@ -12,9 +12,8 @@ config_version=5
 
 config/name="Project Kandy"
 config/tags=PackedStringArray("main_projects")
-run/main_scene="res://Project Kandy/Niveis/nivel_1_part_3.tscn"
+run/main_scene="res://jogo_full.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-run/max_fps=144
 boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
 boot_splash/image="res://Project Kandy/Assets/Icons/kandy_icon.png"
 boot_splash/fullsize=false
@@ -82,6 +81,7 @@ window/size/viewport_height=1080
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="viewport"
+window/stretch/scale=0.5
 
 [editor_plugins]
 

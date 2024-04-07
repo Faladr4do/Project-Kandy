@@ -93,7 +93,5 @@ func _on_spot_body_entered(body):
 
 func stopper():
 	stop = true
-	print_debug(stop)
 	await get_tree().create_timer(1).timeout
 	stop = false
-	print_debug(stop)

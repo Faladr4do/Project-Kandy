@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://em3bia5jdls6"]
+
+[ext_resource type="Script" path="res://Project Kandy/Assets/HUD/hud.gd" id="1_oosja"]
+[ext_resource type="LabelSettings" uid="uid://dc313cvmebsck" path="res://Project Kandy/Assets/FontesEstilos/HUD_Font.tres" id="2_ujoxb"]
+
+[node name="HUD" type="CanvasLayer"]
+scale = Vector2(5, 5)
+transform = Transform2D(5, 0, 0, 5, 0, 0)
+script = ExtResource("1_oosja")
+
+[node name="Moedas" type="Label" parent="."]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 42.0
+offset_bottom = 18.0
+scale = Vector2(0.7, 0.7)
+text = "habla"
+label_settings = ExtResource("2_ujoxb")
+
+[node name="Vidas" type="Label" parent="."]
+offset_left = 2.0
+offset_top = 13.2
+offset_right = 42.0
+offset_bottom = 29.2
+scale = Vector2(0.7, 0.7)
+text = "español
+"
+label_settings = ExtResource("2_ujoxb")

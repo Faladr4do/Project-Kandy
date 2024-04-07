@@ -22,7 +22,6 @@ func colocar_capacete():
 
 func destruir_capacete():
 	if vida_total == 0 and (capacete_colocado and !capacete_destruido):
-		print_debug(capacete_colocado)
 		capacete_colocado.destruido = true
 		capacete_colocado.cair = gravity
 		capacete_destruido = true

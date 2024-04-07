@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://cqe4djgrpvy12"]
 
-[ext_resource type="Script" path="res://MnM.gd" id="1_yul1t"]
+[ext_resource type="Script" path="res://Project Kandy/MnM/MnM.gd" id="1_67xh3"]
 [ext_resource type="PackedScene" uid="uid://4x2r6sxmbkka" path="res://Project Kandy/Projeteis/choco_spit.tscn" id="2_0br31"]
 [ext_resource type="PackedScene" uid="uid://c25p2vil8i0en" path="res://Project Kandy/Helmets/viking_helmet.tscn" id="2_174ao"]
 [ext_resource type="Texture2D" uid="uid://b03dnnrpqum11" path="res://Project Kandy/MnM/sprites/MnMWalk.png" id="2_tf8rs"]
@@ -258,7 +258,7 @@ _data = {
 size = Vector2(11.4375, 14.875)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g7a10"]
-size = Vector2(55, 7)
+size = Vector2(55, 4)
 
 [sub_resource type="Animation" id="Animation_4daqx"]
 length = 0.001
@@ -298,10 +298,11 @@ _data = {
 }
 
 [node name="MnM" type="CharacterBody2D" node_paths=PackedStringArray("alvo", "chao_detect", "sprite", "animacoes", "hit_flash", "hitbox", "caster", "collisionPolygon")]
+modulate = Color(1, 8, 1, 1)
 texture_filter = 1
 position = Vector2(0.5, 0)
 scale = Vector2(8, 8)
-script = ExtResource("1_yul1t")
+script = ExtResource("1_67xh3")
 cuspo = ExtResource("2_0br31")
 alvo = NodePath("Target")
 chao_detect = NodePath("RayCast2D")
@@ -352,7 +353,7 @@ debug_color = Color(0, 0.635294, 0.403922, 0.419608)
 [node name="Spot" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spot"]
-position = Vector2(-26.0625, -0.5)
+position = Vector2(-26.0625, 1)
 shape = SubResource("RectangleShape2D_g7a10")
 debug_color = Color(0.972549, 0.160784, 0, 0.419608)
 
