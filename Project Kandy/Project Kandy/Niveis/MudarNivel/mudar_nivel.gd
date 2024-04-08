@@ -13,9 +13,6 @@ func _ready():
 	nivel_atual = str(get_parent().get_parent()).split(":")[0]
 	numero_nivel = nivel_atual.to_int()
 	nivel_alvo = FICHEIRO_INI + str(numero_nivel+1) + FICHEIRO_FIN
-	print_debug(nivel_atual)
-	print_debug(nivel_alvo)
-	print_debug(numero_nivel)
 
 func _on_body_entered(body):
 	if body.is_in_group("Vegetal"):

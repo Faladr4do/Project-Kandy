@@ -8,6 +8,8 @@ var nivel
 var prox_nivel
 var jogador
 
+var loading : bool = false
+
 var jogo_pausado = false:
 	get:
 		return jogo_pausado
@@ -20,6 +22,11 @@ func _ready():
 	nivel = level_search("NivelCena")
 	if !jogador and nivel:
 		jogador = nivel.get_node("BroColli")
+	print_debug(nivel)
+	print_debug(jogador)
+
+func _process(delta):
+	nivel = level_search("NivelCena")
 
 #func _process(delta):
 	#if jogador:
@@ -54,10 +61,15 @@ func get_child_by_class(tipo_class):
 			nivel = child
 
 func level_search(name_class):
-	var all_children = get_children()
-	for classe in all_children:
-		if classe.is_class(name_class):
-			return classe
+	if !loading:
+		loading = true
+		print_debug(loading)
+		var all_children = get_children()
+		for classe : Node in all_children:
+			if classe.is_class(name_class):
+				print_debug(classe.name)
+				return classe
+				loading = false
 
 #https://kayillustrations.itch.io/parallax-terrestrial-planet
 #https://ansimuz.itch.io/mountain-dusk-parallax-background
