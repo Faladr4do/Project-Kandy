@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://d140b5llvcryx"]
+[gd_scene load_steps=25 format=3 uid="uid://d140b5llvcryx"]
 
 [ext_resource type="Script" path="res://Project Kandy/Niveis/nivel_2.gd" id="1_l7uvf"]
 [ext_resource type="Texture2D" uid="uid://c0r0dmjqv83o" path="res://Project Kandy/Assets/Tiles/WallsFloorsRedoo.png" id="2_abylp"]
@@ -9272,6 +9272,12 @@ size = Vector2(76.46, 296)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y3f2y"]
 size = Vector2(21.2725, 187.147)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vq6ad"]
+size = Vector2(444, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ta7uq"]
+size = Vector2(400, 54.4488)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hbudy"]
 
 [node name="Nivel2" type="Node2D" node_paths=PackedStringArray("jogador")]
@@ -9409,6 +9415,24 @@ colisao = NodePath("CollisionShape2D")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Diversos/Bloqueador2"]
 position = Vector2(46.6362, -29.4264)
 shape = SubResource("RectangleShape2D_y3f2y")
+
+[node name="Bloqueador3" parent="Diversos" node_paths=PackedStringArray("colisao") instance=ExtResource("10_vuj0o")]
+position = Vector2(-883.103, 1793.55)
+colisao = NodePath("CollisionShape2D")
+queda = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Diversos/Bloqueador3"]
+position = Vector2(76.1025, 58.4489)
+shape = SubResource("RectangleShape2D_vq6ad")
+
+[node name="Bloqueador4" parent="Diversos" node_paths=PackedStringArray("colisao") instance=ExtResource("10_vuj0o")]
+position = Vector2(496.897, 1819.55)
+colisao = NodePath("CollisionShape2D")
+queda = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Diversos/Bloqueador4"]
+position = Vector2(-17.8975, 41.4489)
+shape = SubResource("RectangleShape2D_ta7uq")
 
 [node name="mudar_nivel" parent="Diversos" node_paths=PackedStringArray("area_nivel") instance=ExtResource("11_s0gan")]
 position = Vector2(-6295, -249)

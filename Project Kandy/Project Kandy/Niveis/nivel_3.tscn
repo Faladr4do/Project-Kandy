@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://n2itlsopjume"]
+[gd_scene load_steps=21 format=3 uid="uid://n2itlsopjume"]
 
 [ext_resource type="Texture2D" uid="uid://c0r0dmjqv83o" path="res://Project Kandy/Assets/Tiles/WallsFloorsRedoo.png" id="1_dex52"]
 [ext_resource type="PackedScene" uid="uid://c0ej330af3pbo" path="res://Project Kandy/BroColli/bro_colli.tscn" id="2_osj4h"]
@@ -29219,11 +29219,14 @@ size = Vector2(92.8269, 318)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l2b57"]
 size = Vector2(137, 293)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2hams"]
-size = Vector2(229, 339)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w6eob"]
 size = Vector2(107, 582)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yv1or"]
+size = Vector2(470, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2hams"]
+size = Vector2(229, 339)
 
 [node name="Nivel3" type="Node2D"]
 position = Vector2(2986.89, 1199)
@@ -29331,6 +29334,22 @@ colisao = NodePath("CollisionShape2D")
 position = Vector2(-136.211, -85.5736)
 shape = SubResource("RectangleShape2D_l2b57")
 
+[node name="Bloqueador3" parent="Diversos" instance=ExtResource("6_wkney")]
+position = Vector2(3452, 1313)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Diversos/Bloqueador3"]
+position = Vector2(110.5, -214)
+shape = SubResource("RectangleShape2D_w6eob")
+
+[node name="Bloqueador4" parent="Diversos" node_paths=PackedStringArray("colisao") instance=ExtResource("6_wkney")]
+position = Vector2(632.124, 3793.42)
+colisao = NodePath("CollisionShape2D")
+queda = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Diversos/Bloqueador4"]
+position = Vector2(38.8757, 31.5833)
+shape = SubResource("RectangleShape2D_yv1or")
+
 [node name="mudar_nivel" parent="Diversos" node_paths=PackedStringArray("area_nivel") instance=ExtResource("9_ohnwj")]
 position = Vector2(-1529.84, -12.2323)
 area_nivel = NodePath("CollisionShape2D")
@@ -29338,13 +29357,6 @@ area_nivel = NodePath("CollisionShape2D")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Diversos/mudar_nivel"]
 position = Vector2(23.3386, -52.2677)
 shape = SubResource("RectangleShape2D_2hams")
-
-[node name="Bloqueador3" parent="Diversos" instance=ExtResource("6_wkney")]
-position = Vector2(3452, 1313)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Diversos/Bloqueador3"]
-position = Vector2(110.5, -214)
-shape = SubResource("RectangleShape2D_w6eob")
 
 [node name="Tranpolis" type="Node" parent="."]
 
