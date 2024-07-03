@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cf13f415ueo8d"
+path="res://.godot/imported/Powerup 15.wav-14a544e347919420aee5eb6c5daa6432.sample"
+
+[deps]
+
+source_file="res://Project Kandy/ObjetosProgramaveis/Checkpoint/audios/Powerup 15.wav"
+dest_files=["res://.godot/imported/Powerup 15.wav-14a544e347919420aee5eb6c5daa6432.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

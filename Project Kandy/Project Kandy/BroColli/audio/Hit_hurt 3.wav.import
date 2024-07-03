@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://r46dfbldrqtj"
+path="res://.godot/imported/Hit_hurt 3.wav-cf7fb2b8a86757f7819ed2d400370d3a.sample"
+
+[deps]
+
+source_file="res://Project Kandy/BroColli/audio/Hit_hurt 3.wav"
+dest_files=["res://.godot/imported/Hit_hurt 3.wav-cf7fb2b8a86757f7819ed2d400370d3a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

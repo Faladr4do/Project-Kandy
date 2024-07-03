@@ -30,11 +30,14 @@ func hit_flash_play():
 	if receber_dano:
 		if is_in_group("Vegetal"):
 			hitbox.monitoring = false
+		if $Hurt and !$Hurt.playing:
+			$Hurt.play()
 		if hit_flash:
 			hit_flash.play("hit_flash")
 		await get_tree().create_timer(tempo_imune).timeout
 		receber_dano = false
-		hitbox.monitoring = true
+		if hitbox:
+			hitbox.monitoring = true
 
 func dano(dano_ataque: Ataque):
 	vida_total -= dano_ataque.dano_ataque

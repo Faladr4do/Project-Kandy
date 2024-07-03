@@ -1,0 +1,10 @@
+set {dialogo} = 1
+join shrummy 1
+shrummy: Hey! Queres passar por aquele portão gigante? Eu posso te ajudar.
+join BroColli 3 [ mirrored="true"]
+BroColli: ...
+shrummy: O meu vizinho de baixo consegue o abrir, ele é bastante parecido contigo...
+shrummy: Já agora, podes lhe dar um olá por mim? Eu quero lhe convidar para sair mas não tive coragem...
+set {falou_shroom} = true
+set {dialogo} = 0
+[end_timeline]

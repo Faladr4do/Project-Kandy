@@ -160,6 +160,8 @@ var FIELD_SCENES := {
 	DialogicEvent.ValueType.FIXED_OPTIONS	: 	"res://addons/dialogic/Editor/Events/Fields/field_options_fixed.tscn",
 	DialogicEvent.ValueType.NUMBER: 			"res://addons/dialogic/Editor/Events/Fields/field_number.tscn",
 	DialogicEvent.ValueType.VECTOR2: 			"res://addons/dialogic/Editor/Events/Fields/field_vector2.tscn",
+	DialogicEvent.ValueType.VECTOR3: 			"res://addons/dialogic/Editor/Events/Fields/field_vector3.tscn",
+	DialogicEvent.ValueType.VECTOR4: 			"res://addons/dialogic/Editor/Events/Fields/field_vector4.tscn"
 	}
 
 func build_editor(build_header:bool = true, build_body:bool = false) ->  void:
@@ -249,7 +251,16 @@ func build_editor(build_header:bool = true, build_body:bool = false) ->  void:
 
 		# Some things need to be called AFTER the field is added to the tree
 		if editor_node is DialogicVisualEditorField:
-			editor_node._set_value(resource.get(p.name))
+			# Only set the value if the field is visible
+			#
+			# This prevents events with varied value types (event_setting, event_variable)
+			# from injecting incorrect types into hidden fields, which then throw errors
+			# in the console.
+			if p.has('condition') and not p.condition.is_empty():
+				if _evaluate_visibility_condition(p):
+					editor_node._set_value(resource.get(p.name))
+			else:
+				editor_node._set_value(resource.get(p.name))
 
 			editor_node.value_changed.connect(set_property)
 
@@ -305,9 +316,7 @@ func recalculate_field_visibility() -> void:
 			if p.location == 1:
 				has_any_enabled_body_content = true
 		else:
-			var expr := Expression.new()
-			expr.parse(p.condition)
-			if expr.execute([], resource):
+			if _evaluate_visibility_condition(p):
 				if p.node != null:
 					p.node.show()
 				if p.location == 1:
@@ -315,8 +324,6 @@ func recalculate_field_visibility() -> void:
 			else:
 				if p.node != null:
 					p.node.hide()
-			if expr.has_execute_failed():
-				printerr("[Dialogic] Failed executing visibility condition for '",p.get('property', 'unnamed'),"': " + expr.get_error_text())
 	%ExpandButton.visible = has_any_enabled_body_content
 
 
@@ -327,10 +334,32 @@ func set_property(property_name:String, value:Variant) -> void:
 		end_node.parent_node_changed()
 
 
+func _evaluate_visibility_condition(p: Dictionary) -> bool:
+	var expr := Expression.new()
+	expr.parse(p.condition)
+	var result: bool
+	if expr.execute([], resource):
+		result = true
+	else:
+		result = false
+	if expr.has_execute_failed():
+		printerr("[Dialogic] Failed executing visibility condition for '",p.get('property', 'unnamed'),"': " + expr.get_error_text())
+	return result
+
+
 func _on_resource_ui_update_needed() -> void:
 	for node_info in field_list:
 		if node_info.node and node_info.node.has_method('set_value'):
-			node_info.node.set_value(resource.get(node_info.property))
+			# Only set the value if the field is visible
+			#
+			# This prevents events with varied value types (event_setting, event_variable)
+			# from injecting incorrect types into hidden fields, which then throw errors
+			# in the console.
+			if node_info.has('condition') and not node_info.condition.is_empty():
+				if _evaluate_visibility_condition(node_info):
+					node_info.node.set_value(resource.get(node_info.property))
+			else:
+				node_info.node.set_value(resource.get(node_info.property))
 	recalculate_field_visibility()
 
 

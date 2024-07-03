@@ -1,12 +1,15 @@
-[gd_scene load_steps=20 format=3 uid="uid://c0ej330af3pbo"]
+[gd_scene load_steps=23 format=3 uid="uid://c0ej330af3pbo"]
 
 [ext_resource type="Script" path="res://Project Kandy/BroColli/BroColli.gd" id="1_6f88t"]
 [ext_resource type="Texture2D" uid="uid://cmj6xb5led6hh" path="res://Project Kandy/BroColli/sprites/BroColliIdle.png" id="2_32dr2"]
-[ext_resource type="PackedScene" uid="uid://b2cdnd4va8f67" path="res://Project Kandy/Projeteis/fireball.tscn" id="2_fi4f0"]
+[ext_resource type="PackedScene" uid="uid://cl0jkevmvw03a" path="res://Project Kandy/Projeteis/ervilha_voadora.tscn" id="2_b0406"]
 [ext_resource type="Shader" uid="uid://cyuovkuipu54b" path="res://Project Kandy/Assets/Shaders/hit_flash.tres" id="2_kgus3"]
 [ext_resource type="Texture2D" uid="uid://camufduobrdxn" path="res://Project Kandy/BroColli/sprites/BroColliJump.png" id="3_0caea"]
 [ext_resource type="Texture2D" uid="uid://bsp2ucfp8bs48" path="res://Project Kandy/BroColli/sprites/BroColliWalk.png" id="4_nr7f2"]
 [ext_resource type="Texture2D" uid="uid://daab8s3kc4ew8" path="res://Project Kandy/BroColli/sprites/BroColliShoot.png" id="5_ppboh"]
+[ext_resource type="AudioStream" uid="uid://ro6dhr2wu57" path="res://Project Kandy/BroColli/audio/JumpPlayer.wav" id="8_emp1j"]
+[ext_resource type="AudioStream" uid="uid://r46dfbldrqtj" path="res://Project Kandy/BroColli/audio/Hit_hurt 3.wav" id="9_ok3ee"]
+[ext_resource type="AudioStream" uid="uid://cmjh21ktdn17x" path="res://Project Kandy/BroColli/audio/throw.wav" id="10_pw585"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_010wr"]
 shader = ExtResource("2_kgus3")
@@ -62,18 +65,6 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("AudioStreamPlayer:stream")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [null]
 }
 
 [sub_resource type="Animation" id="Animation_fn71b"]
@@ -182,18 +173,6 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("AudioStreamPlayer:stream")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [null, null]
 }
 
 [sub_resource type="Animation" id="Animation_4pauf"]
@@ -313,9 +292,6 @@ _data = {
 "walk": SubResource("Animation_31ol2")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k2yhu"]
-size = Vector2(6, 2)
-
 [sub_resource type="Animation" id="Animation_pubv5"]
 length = 0.001
 tracks/0/type = "value"
@@ -354,6 +330,9 @@ _data = {
 "hit_flash": SubResource("Animation_2wj5e")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k2yhu"]
+size = Vector2(6, 2)
+
 [node name="BroColli" type="CharacterBody2D" node_paths=PackedStringArray("tempo_coyote", "estigar_cooldown", "sprite", "animacoes", "hit_flash", "hitbox", "caster", "collisionPolygon")]
 z_index = 1
 scale = Vector2(8, 8)
@@ -362,7 +341,7 @@ script = ExtResource("1_6f88t")
 boss1_won = true
 tempo_coyote = NodePath("TempoCoyote")
 estigar_cooldown = NodePath("estigar cooldown")
-fire = ExtResource("2_fi4f0")
+fire = ExtResource("2_b0406")
 salto_forca = 900.0
 velocidade = 440.0
 vida_total = 3
@@ -390,6 +369,12 @@ libraries = {
 }
 autoplay = "idle"
 
+[node name="HitFlashAnimPlay" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_agprx")
+}
+autoplay = "hit_flash"
+
 [node name="pes" type="Area2D" parent="."]
 position = Vector2(0, 0.5)
 
@@ -408,16 +393,18 @@ polygon = PackedVector2Array(-2.5, 1, -0.5, 1, -0.5, 0, -1.5, 0, -1.5, -3, 1.5, 
 wait_time = 0.5
 autostart = true
 
-[node name="HitFlashAnimPlay" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_agprx")
-}
-autoplay = "hit_flash"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-
 [node name="TempoCoyote" type="Timer" parent="."]
 wait_time = 0.15
+
+[node name="PlayerJump" type="AudioStreamPlayer2D" parent="."]
+scale = Vector2(0.125, 0.125)
+stream = ExtResource("8_emp1j")
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_ok3ee")
+
+[node name="PeaThrow" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_pw585")
 
 [connection signal="area_entered" from="pes" to="." method="_on_pes_area_entered"]
 [connection signal="area_shape_entered" from="pes" to="." method="_on_pes_area_shape_entered"]

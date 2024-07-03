@@ -1,14 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://dgdvruik070w8"]
 
 [ext_resource type="Script" path="res://Project Kandy/Assets/Globais/Classes/gerenciador_jogo.gd" id="1_8ttu7"]
-[ext_resource type="PackedScene" uid="uid://b2jqj81e6rn1h" path="res://Project Kandy/Niveis/nivel_1.tscn" id="2_igup7"]
+[ext_resource type="PackedScene" uid="uid://n2itlsopjume" path="res://Project Kandy/Niveis/nivel_3.tscn" id="2_ody4u"]
 [ext_resource type="PackedScene" uid="uid://em3bia5jdls6" path="res://Project Kandy/Assets/HUD/hud.tscn" id="3_dwfcq"]
 [ext_resource type="PackedScene" uid="uid://c6i0fl7bbgfvc" path="res://Project Kandy/Menus/menu_pausa.tscn" id="4_lai64"]
 
 [node name="GestorJogo" type="Node"]
 script = ExtResource("1_8ttu7")
-
-[node name="Nivel1" parent="." instance=ExtResource("2_igup7")]
+nivel_selecionado = ExtResource("2_ody4u")
 
 [node name="HUD" parent="." instance=ExtResource("3_dwfcq")]
 

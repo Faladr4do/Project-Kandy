@@ -1,5 +1,8 @@
 extends InimigoBase
 
+@onready var mnm_spit : AudioStreamPlayer2D = $Spit
+@onready var mnm_hurt : AudioStreamPlayer2D = $Hurt
+
 @export var cuspo : PackedScene
 
 @onready var spot : Area2D = $Spot
@@ -64,6 +67,7 @@ func _on_spot_body_entered(body):
 
 func _on_animation_finished(anim_name):
 	if anim_name == "cuspir":
+		mnm_spit.play()
 		shoot(cuspo,-60, caster)
 		await get_tree().create_timer(2).timeout
 		esta_atacar = false

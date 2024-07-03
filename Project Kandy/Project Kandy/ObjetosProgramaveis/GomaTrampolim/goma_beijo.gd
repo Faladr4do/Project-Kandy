@@ -1,5 +1,6 @@
 extends Area2D
 
+@onready var boing = $Boing
 @onready var animGoma = $AnimationPlayer
 
 @export var poder_salto : float = 16
@@ -14,6 +15,7 @@ func _on_body_entered(body):
 		print("saltar")
 		animGoma.play("goma_jump")
 		body.animacoes.play("jump")
+		boing.play()
 		body.velocity.y = -poder_salto * 100
 		if body.is_in_group("Vegetal"):
 			body.doubleJump = true

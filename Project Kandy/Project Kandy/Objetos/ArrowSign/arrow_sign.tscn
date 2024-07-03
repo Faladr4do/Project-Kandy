@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4xq4cm4ryxaw"]
+
+[ext_resource type="Texture2D" uid="uid://lmpuklwb80cd" path="res://Project Kandy/Objetos/ArrowSign/sprite/ArrowSign.png" id="1_7pfxb"]
+
+[node name="ArrowSign" type="Sprite2D"]
+z_index = -5
+scale = Vector2(8, 8)
+texture = ExtResource("1_7pfxb")

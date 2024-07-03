@@ -1,0 +1,29 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(0.133333, 0.282353, 0.0588235, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+"default_portrait": "SLeek",
+"description": "Um alho frãnces com um trabalho honesto.",
+"display_name": "Sleek",
+"mirror": false,
+"nicknames": ["S.Leek"],
+"offset": Vector2(0, 0),
+"portraits": {
+"SLeek": {
+"export_overrides": {
+"image": "\"res://DialogosPastas/Personagens/Sleek/SLeek/SLeekBase_new.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+"scale": 0.4
+}

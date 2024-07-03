@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cqe4djgrpvy12"]
+[gd_scene load_steps=21 format=3 uid="uid://cqe4djgrpvy12"]
 
 [ext_resource type="Script" path="res://Project Kandy/MnM/MnM.gd" id="1_67xh3"]
 [ext_resource type="PackedScene" uid="uid://4x2r6sxmbkka" path="res://Project Kandy/Projeteis/choco_spit.tscn" id="2_0br31"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bs46slif8r1m4" path="res://Project Kandy/MnM/sprites/MnMSpit.png" id="3_tpcjk"]
 [ext_resource type="Shader" uid="uid://cyuovkuipu54b" path="res://Project Kandy/Assets/Shaders/hit_flash.tres" id="4_oc1v7"]
 [ext_resource type="Texture2D" uid="uid://csupyv2vsgr1s" path="res://Project Kandy/MnM/sprites/MnMDeath.png" id="4_v68dl"]
+[ext_resource type="AudioStream" uid="uid://ddwtirj2od6lc" path="res://Project Kandy/MnM/audios/MnM Spit.wav" id="8_qqwfb"]
+[ext_resource type="AudioStream" uid="uid://bolujnkch7epg" path="res://Project Kandy/MnM/audios/MnM Hurt.wav" id="9_u3j6h"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7mo7f"]
 resource_local_to_scene = true
@@ -368,6 +370,12 @@ libraries = {
 "": SubResource("AnimationLibrary_mfm10")
 }
 autoplay = "hit_flash"
+
+[node name="Spit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_qqwfb")
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_u3j6h")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]
 [connection signal="body_entered" from="Target" to="." method="_on_target_body_entered"]

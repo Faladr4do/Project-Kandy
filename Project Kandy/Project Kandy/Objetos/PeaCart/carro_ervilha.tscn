@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://eu3uvrafdy2x"]
+
+[ext_resource type="Texture2D" uid="uid://qmpjhxnsxmbv" path="res://Project Kandy/Objetos/PeaCart/sprite/PeaCartFull.png" id="1_tcvnr"]
+
+[node name="CarroErvilha" type="Sprite2D"]
+z_index = -1
+position = Vector2(-56, 32)
+scale = Vector2(8, 8)
+texture = ExtResource("1_tcvnr")

@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://7v6d7t2ys3o7" path="res://Project Kandy/SugarBomb/sprites/BrigadeiroBase.png" id="2_vlpq1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mo4g3"]
+resource_local_to_scene = true
 shader = ExtResource("2_k1v2x")
 shader_parameter/ativo = true
 shader_parameter/hit = Color(1, 1, 1, 1)
@@ -244,7 +245,7 @@ _data = {
 "hit_flash": SubResource("Animation_t0r3l")
 }
 
-[node name="SugarBomber" type="CharacterBody2D" node_paths=PackedStringArray("alvo", "chao_detect", "animacoes", "sprite", "hit_flash", "hitbox", "caster", "collisionShape")]
+[node name="SugarBomber" type="CharacterBody2D" node_paths=PackedStringArray("alvo", "chao_detect", "sprite", "animacoes", "hit_flash", "hitbox", "caster", "collisionShape")]
 scale = Vector2(8, 8)
 script = ExtResource("1_31toa")
 kaboom = ExtResource("2_7wdiy")
@@ -253,10 +254,10 @@ chao_detect = NodePath("RayCast2D")
 forca_knockback = 1500.0
 salto_forca = -580.0
 velocidade = 480.0
-animacoes = NodePath("AnimationPlayer")
 lado_esquerdo = false
 tempo_imune = 0.0
 sprite = NodePath("Sprite2D")
+animacoes = NodePath("AnimationPlayer")
 hit_flash = NodePath("HitFlashAnimPlay")
 hitbox = NodePath("target")
 caster = NodePath("Sprite2D/Marker2D")
@@ -269,7 +270,7 @@ texture = ExtResource("2_vlpq1")
 [node name="Marker2D" type="Marker2D" parent="Sprite2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.45, 0.45)
 shape = SubResource("CircleShape2D_ofriq")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

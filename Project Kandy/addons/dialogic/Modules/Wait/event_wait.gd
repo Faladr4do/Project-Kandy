@@ -20,13 +20,13 @@ var hide_text: bool = true
 func _execute() -> void:
 	var final_wait_time := time
 
-	if dialogic.Input.auto_skip.enabled:
-		var time_per_event: float = dialogic.Input.auto_skip.time_per_event
+	if dialogic.Inputs.auto_skip.enabled:
+		var time_per_event: float = dialogic.Inputs.auto_skip.time_per_event
 		final_wait_time = min(time, time_per_event)
 
 	if hide_text and dialogic.has_subsystem("Text"):
 		dialogic.Text.update_dialog_text('')
-		dialogic.Text.hide_text_boxes()
+		dialogic.Text.hide_textbox()
 	dialogic.current_state = dialogic.States.WAITING
 	await dialogic.get_tree().create_timer(time, true, DialogicUtil.is_physics_timer()).timeout
 	dialogic.current_state = dialogic.States.IDLE

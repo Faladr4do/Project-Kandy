@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://051ksev1cvoe"]
+[gd_scene load_steps=11 format=3 uid="uid://051ksev1cvoe"]
 
 [ext_resource type="Texture2D" uid="uid://mw0cxxua1t68" path="res://Project Kandy/ObjetosProgramaveis/GomaTrampolim/sprites/GomaBeijoIdle.png" id="1_esfl4"]
 [ext_resource type="Script" path="res://Project Kandy/ObjetosProgramaveis/GomaTrampolim/goma_beijo.gd" id="1_x6bn4"]
 [ext_resource type="Texture2D" uid="uid://d3et3ohecf7j0" path="res://Project Kandy/ObjetosProgramaveis/GomaTrampolim/sprites/GomaBeijoJump.png" id="2_4a644"]
+[ext_resource type="AudioStream" uid="uid://bk74xiu6gsdp2" path="res://Project Kandy/ObjetosProgramaveis/GomaTrampolim/audio/GomaBeijo.wav" id="4_ibagb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5l6wf"]
 size = Vector2(144, 53)
@@ -198,6 +199,9 @@ autoplay = "idle"
 position = Vector2(0, 45)
 shape = SubResource("RectangleShape2D_728gn")
 debug_color = Color(0.854902, 0, 0.890196, 0.419608)
+
+[node name="Boing" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ibagb")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

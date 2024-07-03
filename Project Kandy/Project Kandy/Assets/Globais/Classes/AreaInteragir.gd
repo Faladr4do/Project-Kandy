@@ -2,7 +2,7 @@ extends Area2D
 
 class_name AreaInteragir
 
-@export var nome_acao = "interagir"
+@export var nome_acao : String = "interagir"
 
 var interagir : Callable = func():
 	pass

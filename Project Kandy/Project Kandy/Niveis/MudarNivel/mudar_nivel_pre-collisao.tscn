@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0mb0m0l7c40j"]
+
+[ext_resource type="Script" path="res://Project Kandy/Niveis/MudarNivel/mudar_nivel_pre.gd" id="1_slbd1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2eyv4"]
+size = Vector2(82, 137)
+
+[node name="mudar_nivel" type="Area2D"]
+script = ExtResource("1_slbd1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -0.5)
+shape = SubResource("RectangleShape2D_2eyv4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

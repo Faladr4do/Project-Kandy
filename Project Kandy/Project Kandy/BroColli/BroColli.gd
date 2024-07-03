@@ -1,5 +1,8 @@
 extends VegetalPlayer
 
+@onready var jump_audio = $PlayerJump
+@onready var pea_throw = $PeaThrow
+
 const SPEED = 440.0
 const  JUMP_VELOCITY = 900.0
 var relogio = Timer.new()
@@ -11,6 +14,7 @@ var jumping : bool = true
 func _physics_process(delta):
 	if Dialogic.VAR.dialogo != 0:
 		return
+	#print_debug(Dialogic.VAR.ervilhas)
 	# Add the gravity.
 	if !is_on_floor():
 		velocity.y += (gravity * delta) * speed
@@ -21,6 +25,7 @@ func _physics_process(delta):
 # Handle Jump.
 	if Input.is_action_just_pressed("jump") and pode_saltar:
 		print("salto1")
+		jump_audio.play()
 		velocity.y = -JUMP_VELOCITY
 		jumping = true
 		if boss1_won:
@@ -28,12 +33,14 @@ func _physics_process(delta):
 		pode_saltar = false
 	elif Input.is_action_just_pressed("jump") and doubleJump:
 		print("salto2")
+		jump_audio.play()
 		velocity.y = -(JUMP_VELOCITY * 1)
 		doubleJump = false
 		jumping = false
 	
 	if Input.is_action_just_pressed("reiniciar") and !receber_dano:
 		vida_total = Global.vidas_max
+		print_debug(get_tree())
 		get_tree().reload_current_scene()
 	
 	if Input.is_action_just_pressed("slown") and !lentoTempo:
@@ -49,9 +56,10 @@ func _physics_process(delta):
 		relogio.stop()
 		relogio.emit_signal("timeout")
 		
-	if Input.is_action_pressed("estigar"):
+	if Input.is_action_pressed("estigar") and Dialogic.VAR.ervilhas:
 		if !cooldown and !estaAtacar:
 			estaAtacar = true
+			pea_throw.play()
 			animacoes.play("shoot")
 			await animacoes.animation_finished
 			estigar()

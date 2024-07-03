@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://et4tjr74v6t0"
+path="res://.godot/imported/Explosion 1.wav-a24441ba87b8325a498e4e3f83f12e51.sample"
+
+[deps]
+
+source_file="res://Project Kandy/SugarBomb/audios/Explosion 1.wav"
+dest_files=["res://.godot/imported/Explosion 1.wav-a24441ba87b8325a498e4e3f83f12e51.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

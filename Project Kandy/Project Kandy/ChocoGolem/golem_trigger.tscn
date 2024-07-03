@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://1o7txmm7ccnd"]
+
+[ext_resource type="Script" path="res://Project Kandy/ChocoGolem/golem_trigger.gd" id="1_dc3c4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g8ynh"]
+size = Vector2(36.6667, 182.667)
+
+[node name="GolemTrigger" type="Area2D"]
+position = Vector2(290.667, 16.6667)
+script = ExtResource("1_dc3c4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-90.0005, 0)
+scale = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_g8ynh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

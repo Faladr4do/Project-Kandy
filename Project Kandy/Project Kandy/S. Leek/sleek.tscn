@@ -1,26 +1,158 @@
-[gd_scene load_steps=2 format=3 uid="uid://80s3n5i5k805"]
+[gd_scene load_steps=11 format=3 uid="uid://80s3n5i5k805"]
 
-[ext_resource type="Texture2D" uid="uid://w08tmv2ifsl7" path="res://Project Kandy/S. Leek/sprites/SLeekBase.png" id="2_vbc8j"]
+[ext_resource type="Script" path="res://Project Kandy/S. Leek/sleek.gd" id="1_i6jjc"]
+[ext_resource type="Texture2D" uid="uid://bayspl7fn1nlb" path="res://Project Kandy/S. Leek/sprites/SLeekBaseIdle.png" id="2_lndue"]
+[ext_resource type="PackedScene" uid="uid://dabn8vv1h0aj3" path="res://Project Kandy/Assets/Globais/area_interagir.tscn" id="3_eooms"]
+[ext_resource type="PackedScene" uid="uid://eu3uvrafdy2x" path="res://Project Kandy/Objetos/PeaCart/carro_ervilha.tscn" id="4_i1l6b"]
+[ext_resource type="Script" path="res://Project Kandy/Objetos/PeaCart/carro_ervilha.gd" id="5_p05k4"]
 
-[node name="AlhoFrances" type="CharacterBody2D"]
+[sub_resource type="Animation" id="Animation_7a7bt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_lndue")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [9]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_xje0m"]
+resource_name = "idle"
+length = 1.3
+loop_mode = 1
+step = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_lndue")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [9]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45, 0.6, 0.75, 0.9, 1.05, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s6xwf"]
+_data = {
+"RESET": SubResource("Animation_7a7bt"),
+"idle": SubResource("Animation_xje0m")
+}
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_np3mc"]
+a = Vector2(51, 1)
+b = Vector2(99, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j2uib"]
+size = Vector2(320, 200)
+
+[node name="AlhoFrances" type="CharacterBody2D" node_paths=PackedStringArray("area_interacao")]
+script = ExtResource("1_i6jjc")
+area_interacao = NodePath("AreaInteragir")
+dialogo = "comercio_ervilhas"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(8, 8)
-texture = ExtResource("2_vbc8j")
+texture = ExtResource("2_lndue")
+hframes = 9
+
+[node name="Marker2D" type="Marker2D" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_s6xwf")
+}
+autoplay = "idle"
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-71, 98)
+shape = SubResource("SegmentShape2D_np3mc")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(0, 4)
-scale = Vector2(8, 8)
-polygon = PackedVector2Array(-0.5, 8, -0.5, 12, -2.5, 12, -2.5, -6, 3.5, -6, 3.5, 12, 1.5, 12, 1.5, 8)
+[node name="AreaInteragir" parent="." instance=ExtResource("3_eooms")]
+nome_acao = "falar"
 
-[node name="hitbox" type="Area2D" parent="."]
-position = Vector2(0, 11)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaInteragir"]
+shape = SubResource("RectangleShape2D_j2uib")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hitbox"]
-position = Vector2(0, 81)
-scale = Vector2(8, 8)
-polygon = PackedVector2Array(-2.5, 1, -0.5, 1, -0.5, 0, -1.5, 0, -1.5, -3, 1.5, -3, 1.5, 1, 3.5, 1, 3.5, 0, 2.5, 0, 2.5, -9, 3.5, -9, 3.5, -6, 4.5, -6, 4.5, -10, 2.5, -10, 2.5, -11, 3.5, -11, 3.5, -16, -2.5, -16, -2.5, -11, -2.5, -10, -4.5, -10, -4.5, -6, -3.5, -6, -3.5, -9, -2.5, -9)
+[node name="CarroErvilha" parent="." instance=ExtResource("4_i1l6b")]
+script = ExtResource("5_p05k4")
+
+[connection signal="body_entered" from="AreaInteragir" to="." method="_on_area_interagir_body_entered"]

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cmjh21ktdn17x"
+path="res://.godot/imported/throw.wav-368a7d4cb90b7e59dc7ad89e8e9ee9e8.sample"
+
+[deps]
+
+source_file="res://Project Kandy/BroColli/audio/throw.wav"
+dest_files=["res://.godot/imported/throw.wav-368a7d4cb90b7e59dc7ad89e8e9ee9e8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

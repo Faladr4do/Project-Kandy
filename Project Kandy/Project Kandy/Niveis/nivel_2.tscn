@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://d140b5llvcryx"]
+[gd_scene load_steps=26 format=3 uid="uid://d140b5llvcryx"]
 
 [ext_resource type="Script" path="res://Project Kandy/Niveis/nivel_2.gd" id="1_l7uvf"]
 [ext_resource type="Texture2D" uid="uid://c0r0dmjqv83o" path="res://Project Kandy/Assets/Tiles/WallsFloorsRedoo.png" id="2_abylp"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dvkxudvn80qm8" path="res://Project Kandy/ObjetosProgramaveis/Checkpoint/checkpoint.tscn" id="9_qv65o"]
 [ext_resource type="PackedScene" uid="uid://du1buswme6sdm" path="res://Project Kandy/ObjetosProgramaveis/Barreiras/bloqueador.tscn" id="10_vuj0o"]
 [ext_resource type="PackedScene" uid="uid://blix7lxdleltu" path="res://Project Kandy/Niveis/MudarNivel/mudar_nivel.tscn" id="11_s0gan"]
+[ext_resource type="PackedScene" uid="uid://b4xq4cm4ryxaw" path="res://Project Kandy/Objetos/ArrowSign/arrow_sign.tscn" id="12_uwn4o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kf84k"]
 texture = ExtResource("2_abylp")
@@ -9441,3 +9442,6 @@ area_nivel = NodePath("../Bloqueador/CollisionShape2D")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Diversos/mudar_nivel"]
 scale = Vector2(10, 15)
 shape = SubResource("RectangleShape2D_hbudy")
+
+[node name="ArrowSign" parent="Diversos" instance=ExtResource("12_uwn4o")]
+position = Vector2(-6075, -164)

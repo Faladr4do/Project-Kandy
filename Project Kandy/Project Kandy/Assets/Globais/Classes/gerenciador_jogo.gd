@@ -1,6 +1,8 @@
 extends Node
 class_name GestorJogo
 
+@export var nivel_selecionado : PackedScene
+
 signal pausar_jogo(is_paused)
 
 var nivel_velho
@@ -19,6 +21,14 @@ var jogo_pausado = false:
 		emit_signal("pausar_jogo", jogo_pausado)
 
 func _ready():
+	if nivel_selecionado:
+		var nivel_criar = nivel_selecionado.instantiate()
+		add_child(nivel_criar)
+		nivel_selecionado = null
+	else:
+		var nivel_criar = Checkpoint.nivel_atual.instantiate()
+		add_child(nivel_criar)
+		nivel_selecionado = null
 	nivel = level_search("Node2D")
 	if !jogador and nivel:
 		jogador = nivel.get_node("BroColli")
@@ -30,12 +40,6 @@ func _process(delta):
 		nivel = level_search("Node2D")
 	if nivel:
 		jogador = nivel.get_node("BroColli")
-	if jogador:
-		verificar_vida_player()
-
-func verificar_vida_player():
-	if jogador.vida_total < 0:
-		game_over()
 
 func _input(event):
 	if event.is_action_pressed("cancelar"):
@@ -44,17 +48,16 @@ func _input(event):
 
 func mudar_nivel(file_path_lvl):
 	prox_nivel = load(file_path_lvl)
-	var new_lvl = prox_nivel.instantiate()
-	var nivel_velho = nivel.get_children()
-	add_child(new_lvl)
-	for child in nivel_velho:
-		child.queue_free()
-	nivel.queue_free()
-	nivel = new_lvl
-
-func game_over():
-	jogador.vida_total = Global.vidas_max
-	get_tree().reload_current_scene()
+	if prox_nivel == null:
+		get_tree().change_scene_to_file("res://Project Kandy/Menus/menu_index.tscn")
+	else:
+		var new_lvl = prox_nivel.instantiate()
+		var nivel_velho = nivel.get_children()
+		add_child(new_lvl)
+		for child in nivel_velho:
+			child.queue_free()
+		nivel.queue_free()
+		nivel = new_lvl
 
 func get_child_by_class(tipo_class):
 	for child in get_children():

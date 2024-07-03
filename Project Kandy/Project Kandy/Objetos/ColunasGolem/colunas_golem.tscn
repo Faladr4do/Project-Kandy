@@ -1,0 +1,192 @@
+[gd_scene load_steps=19 format=3 uid="uid://bn5k5qqmgwkxq"]
+
+[ext_resource type="Script" path="res://Project Kandy/Objetos/ColunasGolem/colunas_golem.gd" id="1_07j8b"]
+[ext_resource type="Shader" uid="uid://cyuovkuipu54b" path="res://Project Kandy/Assets/Shaders/hit_flash.tres" id="2_6e88j"]
+[ext_resource type="Texture2D" uid="uid://b70e0mk2qk3ii" path="res://Project Kandy/Objetos/ColunasGolem/sprites/ChocoColumn3.png" id="3_4n2re"]
+[ext_resource type="AudioStream" uid="uid://d3xbc33ljnt7c" path="res://Project Kandy/Objetos/ColunasGolem/audio/SpawnColuna.wav" id="4_m52r0"]
+[ext_resource type="AudioStream" uid="uid://b7f23sp12rtio" path="res://Project Kandy/Objetos/ColunasGolem/audio/EmergeColumn.wav" id="5_nqqfu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r0dyl"]
+resource_local_to_scene = true
+shader = ExtResource("2_6e88j")
+shader_parameter/ativo = true
+shader_parameter/hit = Color(1, 1, 1, 1)
+
+[sub_resource type="Animation" id="Animation_nsvvp"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_6kaem"]
+resource_name = "idle_1"
+length = 0.001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(18, 2, 14, 47)]
+}
+
+[sub_resource type="Animation" id="Animation_avnqe"]
+resource_name = "idle_2"
+length = 0.001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(1, 2, 15, 47)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uyhuf"]
+_data = {
+"RESET": SubResource("Animation_nsvvp"),
+"coluna_1": SubResource("Animation_6kaem"),
+"coluna_2": SubResource("Animation_avnqe")
+}
+
+[sub_resource type="Animation" id="Animation_cyt6u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 321)]
+}
+
+[sub_resource type="Animation" id="Animation_chewu"]
+resource_name = "spawn_too"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 378), Vector2(0, 283.5), Vector2(0, 283.5), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0vsty"]
+_data = {
+"RESET": SubResource("Animation_cyt6u"),
+"spawn_too": SubResource("Animation_chewu")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_065ps"]
+size = Vector2(10, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xa6ui"]
+size = Vector2(14.25, 47.375)
+
+[sub_resource type="Animation" id="Animation_djdwv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/ativo")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_ok4oq"]
+resource_name = "hit_flash"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/ativo")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e6e6q"]
+_data = {
+"RESET": SubResource("Animation_djdwv"),
+"hit_flash": SubResource("Animation_ok4oq")
+}
+
+[node name="ColunasGolem" type="CharacterBody2D" node_paths=PackedStringArray("spawn_coln", "emerge", "sprite", "animacoes", "hit_flash", "hitbox", "collisionShape")]
+z_index = -1
+script = ExtResource("1_07j8b")
+spawn_coln = NodePath("SpawnColuna")
+emerge = NodePath("EmergeColuna")
+tempo_imune = 0.1
+sprite = NodePath("Sprite2D")
+animacoes = NodePath("AnimationPlayer")
+hit_flash = NodePath("HitFlash")
+hitbox = NodePath("Hitbox")
+collisionShape = NodePath("CollisionShape2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_r0dyl")
+position = Vector2(0, 321)
+scale = Vector2(8, 8)
+texture = ExtResource("3_4n2re")
+region_enabled = true
+region_rect = Rect2(18, 2, 14, 47)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_uyhuf")
+}
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0vsty")
+}
+autoplay = "spawn_too"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_065ps")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+scale = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_xa6ui")
+
+[node name="HitFlash" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_e6e6q")
+}
+autoplay = "hit_flash"
+
+[node name="SpawnColuna" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_m52r0")
+
+[node name="EmergeColuna" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_nqqfu")
+
+[connection signal="animation_started" from="AnimationPlayer2" to="." method="_on_animation_started"]

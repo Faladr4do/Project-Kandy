@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://b5mklxk6lhoh0"]
+
+[ext_resource type="Script" path="res://Project Kandy/HolyApple/holy_apple.gd" id="1_gcf2d"]
+[ext_resource type="Texture2D" uid="uid://csjfvmddc4qnc" path="res://Project Kandy/HolyApple/sprite/apple.png" id="1_v1igj"]
+[ext_resource type="PackedScene" uid="uid://dabn8vv1h0aj3" path="res://Project Kandy/Assets/Globais/area_interagir.tscn" id="2_3b35g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_erigm"]
+radius = 44.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cpsh3"]
+size = Vector2(68.5, 30.7813)
+
+[node name="HolyApple" type="CharacterBody2D" node_paths=PackedStringArray("area_interacao")]
+script = ExtResource("1_gcf2d")
+area_interacao = NodePath("AreaInteragir")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(8, 8)
+texture = ExtResource("1_v1igj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-10, 19)
+shape = SubResource("CircleShape2D_erigm")
+
+[node name="AreaInteragir" parent="." instance=ExtResource("2_3b35g")]
+scale = Vector2(8, 8)
+nome_acao = "comer"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaInteragir"]
+position = Vector2(0, -2.39063)
+shape = SubResource("RectangleShape2D_cpsh3")

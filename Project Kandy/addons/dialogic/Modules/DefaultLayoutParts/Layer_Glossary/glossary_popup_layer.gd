@@ -23,7 +23,7 @@ enum TextColorModes {GLOBAL, ENTRY, CUSTOM}
 
 @export_group("Font")
 @export var font_use_global: bool = true
-@export_file('*.ttf') var font_custom: String = ""
+@export_file('*.ttf', '*.tres') var font_custom: String = ""
 
 @export_subgroup('Sizes')
 @export var font_title_size: int = 18
@@ -39,6 +39,7 @@ enum ModulateModes {BASE_COLOR_ONLY, ENTRY_COLOR_ON_BOX, GLOBAL_BG_COLOR}
 @export_subgroup("Size")
 @export var box_width: int = 200
 
+const MISSING_INDEX := -1
 func get_pointer() -> Control:
 	return $Pointer
 
@@ -73,41 +74,93 @@ func _ready() -> void:
 	_error = text_system.connect(&'animation_textbox_hide', get_pointer().hide)
 	_error = text_system.connect(&'meta_hover_started', _on_dialogic_display_dialog_text_meta_hover_started)
 	_error = text_system.connect(&'meta_hover_ended', _on_dialogic_display_dialog_text_meta_hover_ended)
-	_error = text_system.connect(&'meta_clicked', _on_dialogic_display_dialog_text_meta_clicked)
 
+
+func _try_translate(tr_base: String, property: StringName, fallback_entry: Dictionary) -> String:
+	var tr_key := tr_base.path_join(property)
+	var tr_value := tr(tr_key)
+
+	if tr_key == tr_value:
+		tr_value = fallback_entry.get(property, "")
+
+	return tr_value
 
 ## Method that shows the bubble and fills in the info
-func _on_dialogic_display_dialog_text_meta_hover_started(meta:String) -> void:
-	var info: Dictionary = DialogicUtil.autoload().Glossary.get_entry(meta)
+func _on_dialogic_display_dialog_text_meta_hover_started(meta: String) -> void:
+	var dialogic := DialogicUtil.autoload()
+	var glossary: DialogicGlossary = dialogic.Glossary.find_glossary(meta)
 
-	if not info:
+	var entry_title := ""
+	var entry_text := ""
+	var entry_extra := ""
+	var entry_color: Variant = null
+
+	var title_color := title_custom_color
+	var text_color := text_custom_color
+	var extra_color := extra_custom_color
+
+	if glossary == null:
 		return
 
+	var is_translation_enabled: bool = ProjectSettings.get_setting('dialogic/translation/enabled', false)
+
+	if not is_translation_enabled or glossary._translation_id.is_empty():
+		var entry := glossary.get_entry(meta)
+
+		if entry.is_empty():
+			return
+
+		var variable_system := dialogic.VAR
+		entry_title = variable_system.parse_variables(entry.get("title", ""))
+		entry_text = variable_system.parse_variables(entry.get("text", ""))
+		entry_extra = variable_system.parse_variables(entry.get("extra", ""))
+		entry_color = entry.get("color")
+
+	else:
+		var translation_key: String = glossary._translation_keys.get(meta)
+		var last_slash := translation_key.rfind('/')
+
+		if last_slash == MISSING_INDEX:
+			return
+
+		var tr_base := translation_key.substr(0, last_slash)
+
+		var entry := glossary.get_entry(meta)
+		entry_color = entry.get('color')
+
+		entry_title = _try_translate(tr_base, "title", entry)
+		entry_text = _try_translate(tr_base, "text", entry)
+		entry_extra = _try_translate(tr_base, "extra", entry)
+
+	if not entry_color == null:
+		title_color = entry_color
+		text_color = entry_color
+		extra_color = entry_color
+
 	get_pointer().show()
-	get_title().text = info.get(&'title', '')
-	get_text().text = info.get(&'text', '')
+	get_title().text = entry_title
+	get_text().text = entry_text
 	get_text().text = ['', '[center]', '[right]'][text_alignment] + get_text().text
-	get_extra().text = info.get(&'extra', '')
+	get_extra().text = entry_extra
 	get_extra().text = ['', '[center]', '[right]'][extra_alignment] + get_extra().text
 	get_pointer().global_position = get_pointer().get_global_mouse_position()
 
+
 	if title_color_mode == TextColorModes.ENTRY:
-		get_title().add_theme_color_override(&"font_color", info.get(&'color', title_custom_color) as Color)
+		get_title().add_theme_color_override(&"font_color", title_color)
 	if text_color_mode == TextColorModes.ENTRY:
-		get_text().add_theme_color_override(&"default_color", info.get(&'color', text_custom_color) as Color)
+		get_text().add_theme_color_override(&"default_color", text_color)
 	if extra_color_mode == TextColorModes.ENTRY:
-		get_extra().add_theme_color_override(&"default_color", info.get(&'color', extra_custom_color) as Color)
+		get_extra().add_theme_color_override(&"default_color", extra_color)
 
 	match box_modulate_mode:
 		ModulateModes.ENTRY_COLOR_ON_BOX:
-			get_panel().self_modulate = info.get(&'color', Color.WHITE)
-			get_panel_point().self_modulate = info.get(&'color', Color.WHITE)
-
-	DialogicUtil.autoload().Input.action_was_consumed = true
+			get_panel().self_modulate = title_color
+			get_panel_point().self_modulate = title_color
 
 
 ## Method that keeps the bubble at mouse position when visible
-func _process(_delta : float) -> void:
+func _process(_delta: float) -> void:
 	if Engine.is_editor_hint():
 		return
 
@@ -119,14 +172,12 @@ func _process(_delta : float) -> void:
 ## Method that hides the bubble
 func _on_dialogic_display_dialog_text_meta_hover_ended(_meta:String) -> void:
 	get_pointer().hide()
-	DialogicUtil.autoload().Input.action_was_consumed = false
 
-
-func _on_dialogic_display_dialog_text_meta_clicked(_meta:String) -> void:
-	DialogicUtil.autoload().Input.action_was_consumed = true
 
 
 func _apply_export_overrides() -> void:
+	var font_setting: String = get_global_setting("font", "")
+
 	# Apply fonts
 	var font: FontFile
 	if font_use_global and ResourceLoader.exists(get_global_setting(&'font', '') as String):
@@ -179,4 +230,3 @@ func _apply_export_overrides() -> void:
 		ModulateModes.GLOBAL_BG_COLOR:
 			panel.self_modulate = get_global_setting(&'bg_color', box_base_modulate)
 			get_panel_point().self_modulate = get_global_setting(&'bg_color', box_base_modulate)
-

@@ -56,9 +56,3 @@ func gerir_idle():
 		elif conta_idle == 5:
 			animPedra.play("idle_pestanejar")
 			await animPedra.animation_finished
-
-func inter_act():
-	if Dialogic.current_timeline != null:
-		return
-	Dialogic.start('intro')
-	get_viewport().set_input_as_handled()

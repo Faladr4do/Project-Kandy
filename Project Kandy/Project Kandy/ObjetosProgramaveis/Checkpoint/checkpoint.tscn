@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://dvkxudvn80qm8"]
+[gd_scene load_steps=13 format=3 uid="uid://dvkxudvn80qm8"]
 
 [ext_resource type="Script" path="res://Project Kandy/ObjetosProgramaveis/Checkpoint/checkpoint.gd" id="1_3ioxy"]
 [ext_resource type="Texture2D" uid="uid://brgldvwqi3en" path="res://Project Kandy/Assets/Tiles/WallsFloor.png" id="1_grfnu"]
 [ext_resource type="Texture2D" uid="uid://doy1afucgamd7" path="res://Project Kandy/Projeteis/sprites/Creation-Sheet.png" id="4_k4458"]
 [ext_resource type="Texture2D" uid="uid://ckun7si48seu8" path="res://Project Kandy/Projeteis/sprites/fireball.png" id="5_4wjrb"]
 [ext_resource type="Texture2D" uid="uid://c8anta2lq816a" path="res://Project Kandy/Projeteis/sprites/IdleLoop-Sheet.png" id="5_mrd6i"]
+[ext_resource type="AudioStream" uid="uid://cf13f415ueo8d" path="res://Project Kandy/ObjetosProgramaveis/Checkpoint/audios/Powerup 15.wav" id="6_cjn81"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j3foq"]
 size = Vector2(23.375, 38.375)
@@ -254,6 +255,9 @@ root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_hvvv4")
 }
+
+[node name="Check" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_cjn81")
 
 [connection signal="body_entered" from="." to="." method="_on_Checkpoint_body_entered"]
 [connection signal="animation_finished" from="Chama/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d3xbc33ljnt7c"
+path="res://.godot/imported/SpawnColuna.wav-4c3a360315f2bcd51c460eee89bed3a9.sample"
+
+[deps]
+
+source_file="res://Project Kandy/Objetos/ColunasGolem/audio/SpawnColuna.wav"
+dest_files=["res://.godot/imported/SpawnColuna.wav-4c3a360315f2bcd51c460eee89bed3a9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

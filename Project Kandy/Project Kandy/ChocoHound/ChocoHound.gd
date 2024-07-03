@@ -1,6 +1,11 @@
 extends InimigoBase
 
+@onready var hound_prelunge : AudioStreamPlayer2D = $PreLunge
+@onready var hound_lunge : AudioStreamPlayer2D = $Lunge
+@onready var hound_hurt : AudioStreamPlayer2D = $Hurt
+
 @export var area_visao : Area2D
+
 var carga_doce : bool = false
 const TEMPO_CARGA : float = 1.0
 var carga_acc : float = 0.0
@@ -38,7 +43,9 @@ func _physics_process(delta):
 		auto_animar("walk", "spot", "jump", "fall")
 	elif carga_doce:
 		if !animacao_atual == "lunge":
-			animacoes.play("lunge")
+			if !hound_lunge.playing:
+				animacoes.play("lunge")
+			hound_lunge.play()
 	move_and_slide()
 
 func fall():

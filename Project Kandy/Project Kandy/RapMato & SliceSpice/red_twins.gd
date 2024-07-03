@@ -10,9 +10,6 @@ const falas: Array[String] = [
 	"I'm trippin af, BIATCH!"
 ]
 
-func _ready():
-	area_interacao.interagir = Callable(self, "inter_act")
-
 func _physics_process(delta):
 	# Add the gravity.
 	if !is_on_floor():
@@ -26,10 +23,3 @@ func _on_area_2d_body_entered(body):
 		get_viewport().set_input_as_handled()
 		#Global.moedas_coletadas *= 2
 		#Dialog.comecar_dialogo(local_falar, falas)
-		
-		
-func inter_act():
-	if Dialogic.current_timeline != null:
-		return
-	Dialogic.start(dialogo)
-	get_viewport().set_input_as_handled()

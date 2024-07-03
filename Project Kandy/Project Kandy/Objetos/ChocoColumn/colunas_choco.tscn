@@ -1,0 +1,153 @@
+[gd_scene load_steps=14 format=3 uid="uid://bexifsa40bsd6"]
+
+[ext_resource type="Texture2D" uid="uid://caatuoguw3j3h" path="res://Project Kandy/Objetos/ChocoColumn/sprite/ChocoColumn.png" id="1_mj8xs"]
+[ext_resource type="Shader" uid="uid://cyuovkuipu54b" path="res://Project Kandy/Assets/Shaders/hit_flash.tres" id="2_so15k"]
+[ext_resource type="Script" path="res://Project Kandy/Objetos/ChocoColumn/colunas_choco.gd" id="2_udvcp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_opcw8"]
+resource_local_to_scene = true
+shader = ExtResource("2_so15k")
+shader_parameter/ativo = true
+shader_parameter/hit = Color(1, 1, 1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2uc1"]
+size = Vector2(10, 47)
+
+[sub_resource type="Animation" id="Animation_emr1u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(18, 2, 14, 47)]
+}
+
+[sub_resource type="Animation" id="Animation_n3v53"]
+resource_name = "idle_1"
+length = 0.001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(18, 2, 14, 47)]
+}
+
+[sub_resource type="Animation" id="Animation_8ms37"]
+resource_name = "idle_2"
+length = 0.001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(1, 2, 15, 47)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_knqx7"]
+_data = {
+"RESET": SubResource("Animation_emr1u"),
+"coluna_1": SubResource("Animation_n3v53"),
+"coluna_2": SubResource("Animation_8ms37")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_argop"]
+size = Vector2(14.25, 47.375)
+
+[sub_resource type="Animation" id="Animation_4dob1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/ativo")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_3oxd0"]
+resource_name = "hit_flash"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/ativo")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rp2wb"]
+_data = {
+"RESET": SubResource("Animation_4dob1"),
+"hit_flash": SubResource("Animation_3oxd0")
+}
+
+[node name="ColunasChoco" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "animacoes", "hit_flash", "hitbox")]
+z_index = -1
+script = ExtResource("2_udvcp")
+vida_total = 2
+tempo_imune = 0.2
+sprite = NodePath("Sprite2D")
+animacoes = NodePath("AnimationPlayer")
+hit_flash = NodePath("HitFlash")
+hitbox = NodePath("Hitbox")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_opcw8")
+scale = Vector2(8, 8)
+texture = ExtResource("1_mj8xs")
+region_enabled = true
+region_rect = Rect2(18, 2, 14, 47)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+scale = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_o2uc1")
+debug_color = Color(0, 0.521569, 0.611765, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite2D")
+libraries = {
+"": SubResource("AnimationLibrary_knqx7")
+}
+
+[node name="Hitbox" type="Area2D" parent="."]
+scale = Vector2(8, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, 0.0625)
+shape = SubResource("RectangleShape2D_argop")
+debug_color = Color(0, 0.6, 0.701961, 0.117647)
+
+[node name="HitFlash" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rp2wb")
+}
+autoplay = "hit_flash"

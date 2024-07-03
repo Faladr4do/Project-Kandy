@@ -1,0 +1,10 @@
+set {dialogo} = 1
+join sleek 1
+sleek (SLeek): OH! Olá potencial cliente! Eu venho de chegar da Vegetalândia!
+sleek (SLeek): Sou apenas um honesto vendedor de ervilhas que vende ervilhas!
+sleek (SLeek): Estaria disposto a comprar algumas ervilhas por apenas umas miseras moedas?
+- Claro! Adoro ervilhas?!
+- Sim.
+set {ervilhas} = true
+set {dialogo} = 0
+[end_timeline]

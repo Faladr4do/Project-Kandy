@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://x5vscg7i04vk"]
+[gd_scene load_steps=24 format=3 uid="uid://x5vscg7i04vk"]
 
 [ext_resource type="Script" path="res://Project Kandy/ChocoHound/ChocoHound.gd" id="1_h8eeo"]
 [ext_resource type="Shader" uid="uid://cyuovkuipu54b" path="res://Project Kandy/Assets/Shaders/hit_flash.tres" id="3_s0big"]
@@ -6,7 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://cxosvf0ptmfxc" path="res://Project Kandy/ChocoHound/sprites/SnickerHound.png" id="5_d8bq6"]
 [ext_resource type="Texture2D" uid="uid://btuo4066xma6o" path="res://Project Kandy/ChocoHound/sprites/SnickerHoundLunge.png" id="6_o0n3c"]
 [ext_resource type="Texture2D" uid="uid://ughaakscpr8g" path="res://Project Kandy/ChocoHound/sprites/SnickerHoundWalk.png" id="7_tcla3"]
+[ext_resource type="AudioStream" uid="uid://xyt5ddl13hn" path="res://Project Kandy/ChocoHound/audios/ChocoHound2.wav" id="8_ncs4n"]
 [ext_resource type="Texture2D" uid="uid://cmsyrk4bn356n" path="res://Project Kandy/ChocoHound/sprites/SnickerHoundSpot.png" id="8_yvpjw"]
+[ext_resource type="AudioStream" uid="uid://bfn2is5ytmteg" path="res://Project Kandy/ChocoHound/audios/ChocoHoundLunge.wav" id="9_lkfvp"]
+[ext_resource type="AudioStream" uid="uid://c00k7cb70d4o2" path="res://Project Kandy/ChocoHound/audios/ChocHoundPreLunge.mp3" id="10_ame3p"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hckry"]
 resource_local_to_scene = true
@@ -453,6 +456,15 @@ libraries = {
 "": SubResource("AnimationLibrary_a0cpg")
 }
 autoplay = "hit_flash"
+
+[node name="Lunge" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_ncs4n")
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_lkfvp")
+
+[node name="PreLunge" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_ame3p")
 
 [connection signal="body_entered" from="spot" to="." method="_on_spot_body_entered"]
 [connection signal="body_entered" from="target" to="." method="_on_target_body_entered"]

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b4qnhlm6vk2hv"
+path="res://.godot/imported/SweetCornHurrt.wav-3719ad505fdd8e135c6418ee530a3bd6.sample"
+
+[deps]
+
+source_file="res://Project Kandy/Sweet Corn/audios/SweetCornHurrt.wav"
+dest_files=["res://.godot/imported/SweetCornHurrt.wav-3719ad505fdd8e135c6418ee530a3bd6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
