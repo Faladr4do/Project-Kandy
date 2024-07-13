@@ -399,12 +399,15 @@ wait_time = 0.15
 [node name="PlayerJump" type="AudioStreamPlayer2D" parent="."]
 scale = Vector2(0.125, 0.125)
 stream = ExtResource("8_emp1j")
+bus = &"SFX"
 
 [node name="Hurt" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_ok3ee")
+bus = &"SFX"
 
 [node name="PeaThrow" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_pw585")
+bus = &"SFX"
 
 [connection signal="area_entered" from="pes" to="." method="_on_pes_area_entered"]
 [connection signal="area_shape_entered" from="pes" to="." method="_on_pes_area_shape_entered"]

@@ -1,20 +1,7 @@
 res://Project Kandy/Assets/Ambiente/game_environment.tres
-res://jogo_full.tscn
+res://Project Kandy/BroColli/bro_colli.tscn
 res://gerenciador_jogo.gd
 res://Project Kandy/Assets/Shaders/hit_flash.tres
 res://Project Kandy/Assets/FontesEstilos/AtariFont.tres
 res://Project Kandy/Assets/FontesEstilos/estilo_botao.tres
-res://Project Kandy/BroColli/bro_colli.tscn
-res://Project Kandy/TheAllFather/all_father.tscn
-res://Project Kandy/Shrummy/shrummy.tscn
-res://Project Kandy/ChocoGolem/choco_golem.tscn
-res://Project Kandy/ObjetosProgramaveis/BossBarra/boss_bar.tscn
-res://Project Kandy/Sweet Corn/sweet_cornBasic.tscn
-res://Project Kandy/Niveis/nivel_7.tscn
-res://Project Kandy/Niveis/nivel_6.tscn
-res://Project Kandy/HolyApple/holy_apple.tscn
-res://Project Kandy/Niveis/nivel_1.tscn
-res://DialogosPastas/LinhasTemporais/double_rock.dtl
-res://Project Kandy/Niveis/nivel_3.tscn
-res://Project Kandy/DrPedra/dr_pedra.gd
-res://Project Kandy/Assets/Globais/Classes/NivelCena.gd
+res://Project Kandy/Assets/FontesEstilos/SimpleFonte.tres

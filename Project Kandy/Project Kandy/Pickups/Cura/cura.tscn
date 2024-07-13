@@ -15,6 +15,8 @@ z_as_relative = false
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Area2D"]
 stream = ExtResource("3_nviax")
+pitch_scale = 0.7
+bus = &"SFX"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PackedVector2Array(-3.42857, -0.857143, -3.42857, 0.428571, -0.142857, 3.42857, 3.57143, 0.571429, 3.42857, -2.42857, 2.42857, -3.42857, 0.428571, -3.42857, 0, -2.57143, -0.571429, -3.42857, -2.42857, -3.42857, -3.57143, -2.42857)

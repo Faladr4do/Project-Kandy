@@ -392,7 +392,6 @@ chao_detect = NodePath("RayCast2D")
 capacete = ExtResource("7_yysic")
 forca_knockback = 2000.0
 velocidade = 160.0
-vida_total = 5
 sprite = NodePath("Sprite2D")
 animacoes = NodePath("AnimationPlayer")
 hit_flash = NodePath("HitFlashAnimPlay")
@@ -449,6 +448,7 @@ autoplay = "hit_flash"
 
 [node name="Hurt" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_kd6vn")
+bus = &"SFX"
 
 [connection signal="body_entered" from="target" to="." method="_on_target_body_entered"]
 [connection signal="area_shape_entered" from="hitbox" to="." method="_on_target_area_shape_entered"]

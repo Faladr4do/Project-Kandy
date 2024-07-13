@@ -875,12 +875,15 @@ shape = SubResource("RectangleShape2D_bcqph")
 
 [node name="Stmp" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("15_rgg0a")
+bus = &"SFX"
 
 [node name="SpcialStomp" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("16_rxvvr")
+bus = &"SFX"
 
 [node name="Melee" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("17_carg0")
+bus = &"SFX"
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]
 [connection signal="animation_started" from="AnimationPlayer" to="." method="_on_animation_started"]

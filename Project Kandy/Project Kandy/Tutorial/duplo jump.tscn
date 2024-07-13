@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://de0oe8rf7rk6a"]
+
+[ext_resource type="Texture2D" uid="uid://bqwvbcvgpln3w" path="res://Project Kandy/Tutorial/sprites/duplo jump.png" id="1_eer6c"]
+
+[node name="Sprite2D" type="Sprite2D"]
+scale = Vector2(8, 8)
+texture = ExtResource("1_eer6c")

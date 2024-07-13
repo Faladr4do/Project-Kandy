@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://b13y6akodea54"]
+
+[ext_resource type="LabelSettings" uid="uid://dt4qythdv8y4n" path="res://Project Kandy/Assets/FontesEstilos/AtariFont.tres" id="1_xymsy"]
+[ext_resource type="PackedScene" uid="uid://c5t2oduqbem4t" path="res://Project Kandy/Menus/SubCategorias/volume.tscn" id="2_my8ls"]
+
+[node name="GestorVolumes" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 10
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "Gestor de Volumes"
+label_settings = ExtResource("1_xymsy")
+
+[node name="Volume" parent="." instance=ExtResource("2_my8ls")]
+layout_mode = 2
+nome_bus = "Master"
+
+[node name="Volume2" parent="." instance=ExtResource("2_my8ls")]
+layout_mode = 2
+nome_bus = "Musica"
+
+[node name="Volume3" parent="." instance=ExtResource("2_my8ls")]
+layout_mode = 2
+nome_bus = "SFX"

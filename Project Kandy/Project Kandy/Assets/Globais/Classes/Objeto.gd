@@ -40,10 +40,11 @@ func hit_flash_play():
 			hitbox.monitoring = true
 
 func dano(dano_ataque: Ataque):
-	vida_total -= dano_ataque.dano_ataque
-	if dano_ataque.dano_ataque:
-		receber_dano = true
-	velocity = (global_position - dano_ataque.posicao_ataque).normalized() * dano_ataque.forca_knockback
+	if !receber_dano:
+		vida_total -= dano_ataque.dano_ataque
+		if dano_ataque.dano_ataque:
+			receber_dano = true
+		velocity = (global_position - dano_ataque.posicao_ataque).normalized() * dano_ataque.forca_knockback
 
 func gestor_grupos():
 	add_to_group("Objeto")

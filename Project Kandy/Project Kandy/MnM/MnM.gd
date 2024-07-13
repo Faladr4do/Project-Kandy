@@ -8,6 +8,7 @@ extends InimigoBase
 @onready var spot : Area2D = $Spot
 
 var cor : int
+var cor_cuspo
 
 func _ready():
 	if !lado_esquerdo:
@@ -68,19 +69,33 @@ func _on_spot_body_entered(body):
 func _on_animation_finished(anim_name):
 	if anim_name == "cuspir":
 		mnm_spit.play()
-		shoot(cuspo,-60, caster)
+		shoot_spit(-60, cor_cuspo)
 		await get_tree().create_timer(2).timeout
 		esta_atacar = false
+
+func shoot_spit(vel_projetil, cor):
+	var cena_instanciada = cuspo.instantiate()
+	if scale.y < 0:
+		cena_instanciada.velocidade = -vel_projetil
+	elif scale.y > 0:
+		cena_instanciada.velocidade = vel_projetil
+	cena_instanciada.modulate = cor
+	owner.add_child(cena_instanciada)
+	cena_instanciada.global_position = caster.global_position
 
 func randomizar_cor():
 	cor = randi_range(1,4)
 	# 1 - Vermelho	2 - Verde	3 - Roxo 4 - Azul
 	if cor == 1:
 		modulate= Color(1,1,1)
+		cor_cuspo = Color(1,1,1)
 	if cor == 2:
 		modulate= Color(1,8,1)
+		cor_cuspo = Color(1,8,1)
 	if cor == 3:
 		modulate= Color(1,1,8)
+		cor_cuspo = Color(1,1,8)
 	if cor == 4:
 		modulate= Color(1,8,1)
+		cor_cuspo = Color(1,8,1)
 		sprite.modulate = Color(1,1,100)

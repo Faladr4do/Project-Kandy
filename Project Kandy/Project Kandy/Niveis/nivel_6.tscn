@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dastjpggk6504"]
+[gd_scene load_steps=18 format=3 uid="uid://dastjpggk6504"]
 
 [ext_resource type="Script" path="res://Project Kandy/Niveis/nivel_6.gd" id="1_aclnw"]
 [ext_resource type="Texture2D" uid="uid://c0r0dmjqv83o" path="res://Project Kandy/Assets/Tiles/WallsFloorsRedoo.png" id="1_h76tr"]
@@ -10,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://c6e4y8aaeohwp" path="res://Project Kandy/Objetos/ChocoGate/chocolate_gate.tscn" id="7_e242u"]
 [ext_resource type="PackedScene" uid="uid://byboof3rfo1ua" path="res://Project Kandy/ObjetosProgramaveis/BossBarra/boss_bar.tscn" id="8_vci0q"]
 [ext_resource type="PackedScene" uid="uid://dyduowui301e6" path="res://Project Kandy/ObjetosProgramaveis/Barreiras/blocker_golem.tscn" id="9_6qiin"]
+[ext_resource type="PackedScene" uid="uid://blix7lxdleltu" path="res://Project Kandy/Niveis/MudarNivel/mudar_nivel.tscn" id="10_lnnh5"]
+[ext_resource type="AudioStream" uid="uid://du5hp6llu2xnb" path="res://Project Kandy/Assets/SoundTracks/Behind Bars.wav" id="12_atpa6"]
+[ext_resource type="PackedScene" uid="uid://dbx4tcbon4vt" path="res://Project Kandy/Pickups/Cura/cura.tscn" id="13_hypys"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0wxbb"]
 texture = ExtResource("1_h76tr")
@@ -34347,6 +34350,9 @@ physics_layer_0/collision_mask = 5
 sources/0 = SubResource("TileSetAtlasSource_0wxbb")
 sources/2 = SubResource("TileSetAtlasSource_ehu8v")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_258w5"]
+size = Vector2(110, 317)
+
 [node name="Nivel6" type="Node2D" node_paths=PackedStringArray("jogador")]
 position = Vector2(658, 29)
 script = ExtResource("1_aclnw")
@@ -34401,7 +34407,25 @@ entrada = false
 position = Vector2(-1919, -268)
 golem = NodePath("../../ChocoGolem")
 
-[node name="Node3" type="Node" parent="."]
+[node name="Checkpoint" type="Node" parent="."]
+
+[node name="mudar_nivel" parent="Checkpoint" node_paths=PackedStringArray("area_nivel") instance=ExtResource("10_lnnh5")]
+position = Vector2(-3883, -415)
+area_nivel = NodePath("CollisionShape2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint/mudar_nivel"]
+position = Vector2(-216, -2)
+shape = SubResource("RectangleShape2D_258w5")
 
 [node name="BossBar" parent="." node_paths=PackedStringArray("boss") instance=ExtResource("8_vci0q")]
 boss = NodePath("../ChocoGolem")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_atpa6")
+autoplay = true
+bus = &"Musica"
+
+[node name="Pickups" type="Node" parent="."]
+
+[node name="cura" parent="Pickups" instance=ExtResource("13_hypys")]
+position = Vector2(3745.49, 51.85)

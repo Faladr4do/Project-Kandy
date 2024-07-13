@@ -459,12 +459,15 @@ autoplay = "hit_flash"
 
 [node name="Lunge" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_ncs4n")
+bus = &"SFX"
 
 [node name="Hurt" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_lkfvp")
+bus = &"SFX"
 
 [node name="PreLunge" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_ame3p")
+bus = &"SFX"
 
 [connection signal="body_entered" from="spot" to="." method="_on_spot_body_entered"]
 [connection signal="body_entered" from="target" to="." method="_on_target_body_entered"]

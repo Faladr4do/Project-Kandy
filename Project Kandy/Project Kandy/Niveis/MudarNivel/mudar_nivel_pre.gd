@@ -25,6 +25,10 @@ func _on_body_entered(body):
 		var gestor = get_parent().get_parent().get_parent().get_parent()
 		print_debug(gestor)
 		print_debug(gestor.get_class())
+		Checkpoint.nivel_atual = nivel_alvo
+		Checkpoint.ultima_posicao = null
+		Checkpoint.moedas_coletadas = Global.moedas_coletadas
+		Checkpoint.vida_total = body.vida_total
 		if gestor.is_class("Node") and nivel_alvo:
 			gestor.mudar_nivel(nivel_alvo)
 		else:

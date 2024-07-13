@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5xun6s5772ya"]
+
+[ext_resource type="Texture2D" uid="uid://bgryfth6iugak" path="res://Project Kandy/Tutorial/sprites/Moedar.png" id="1_6mfon"]
+
+[node name="Sprite2D" type="Sprite2D"]
+scale = Vector2(8, 8)
+texture = ExtResource("1_6mfon")

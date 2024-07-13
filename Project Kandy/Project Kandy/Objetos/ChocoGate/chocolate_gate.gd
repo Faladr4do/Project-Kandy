@@ -6,7 +6,7 @@ extends AnimatableBody2D
 @onready var area_door : AreaInteragir = $AreaInteragir
 @onready var anims : AnimationPlayer = $AnimationPlayer
 
-var trancada : bool = false
+var trancada : bool = true
 
 func _ready():
 	area_door.interagir = Callable(self, "inter_act")
@@ -18,6 +18,8 @@ func inter_act():
 		anims.play("open")
 
 func _process(delta):
+	if Dialogic.VAR.falou_shroom and Dialogic.VAR.falou_father:
+		trancada = false
 	if entrada:
 		if !trancada:
 			area_door.monitoring = true

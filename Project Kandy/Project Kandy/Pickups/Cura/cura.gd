@@ -2,8 +2,6 @@ extends Sprite2D
 
 @onready var coletar_som = $Area2D/AudioStreamPlayer2D
 
-var cura = 1
-
 var coletada = false
 
 func _on_area_2d_body_entered(body):
@@ -13,5 +11,5 @@ func _on_area_2d_body_entered(body):
 		else:
 			coletada = true
 			coletar_som.play()
-			body.vida_total += cura
+			body.vida_total = Global.vidas_max
 			hide()

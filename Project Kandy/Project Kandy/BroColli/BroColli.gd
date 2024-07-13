@@ -28,7 +28,7 @@ func _physics_process(delta):
 		jump_audio.play()
 		velocity.y = -JUMP_VELOCITY
 		jumping = true
-		if boss1_won:
+		if Dialogic.VAR.duplo_salto == 1:
 			doubleJump = true
 		pode_saltar = false
 	elif Input.is_action_just_pressed("jump") and doubleJump:
@@ -39,8 +39,7 @@ func _physics_process(delta):
 		jumping = false
 	
 	if Input.is_action_just_pressed("reiniciar") and !receber_dano:
-		vida_total = Global.vidas_max
-		print_debug(get_tree())
+		Global.moedas_coletadas = Checkpoint.moedas_coletadas
 		get_tree().reload_current_scene()
 	
 	if Input.is_action_just_pressed("slown") and !lentoTempo:

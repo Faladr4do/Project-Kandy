@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://0urscw4y8aqn"]
+[gd_scene load_steps=8 format=3 uid="uid://0urscw4y8aqn"]
 
 [ext_resource type="Script" path="res://Project Kandy/Menus/menu_configurar.gd" id="1_1tq4r"]
 [ext_resource type="FontFile" uid="uid://chvuo2lxramxx" path="res://Project Kandy/Assets/FontesEstilos/AtariClassic-gry3.ttf" id="1_6m336"]
 [ext_resource type="PackedScene" uid="uid://bpkq80ppot606" path="res://Project Kandy/Menus/tab_configuracoes.tscn" id="1_7aarb"]
 [ext_resource type="Theme" uid="uid://d4k7b02m1i26d" path="res://Project Kandy/Assets/FontesEstilos/estilo_botao.tres" id="2_1hhvl"]
-[ext_resource type="PackedScene" uid="uid://cbxo8q6eymk18" path="res://Project Kandy/Menus/menu_index.tscn" id="2_3kpnl"]
-[ext_resource type="Texture2D" uid="uid://b6t03vyftr0ed" path="res://Project Kandy/Assets/ImagensMenu/imagem_temporaria.jpg" id="3_alqlb"]
+[ext_resource type="Texture2D" uid="uid://bbwtwchwdogtt" path="res://Project Kandy/Assets/GUI/MenuBackground.png" id="2_gytev"]
+[ext_resource type="AudioStream" uid="uid://dabvjkcuq5lhl" path="res://Project Kandy/Assets/SoundTracks/Glazin n Blazin.wav" id="7_6wjon"]
+[ext_resource type="PackedScene" uid="uid://bycsdpy3d31dn" path="res://Project Kandy/Ambiente/world_environment.tscn" id="7_a7a1i"]
 
 [node name="MenuConfigurar" type="Control"]
 process_mode = 3
@@ -20,8 +21,7 @@ offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1tq4r")
-menu_principal = ExtResource("2_3kpnl")
-imagem = ExtResource("3_alqlb")
+imagem = ExtResource("2_gytev")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -74,5 +74,12 @@ size_flags_vertical = 8
 theme = ExtResource("2_1hhvl")
 theme_override_font_sizes/font_size = 32
 text = "Sair"
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("7_a7a1i")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_6wjon")
+autoplay = true
+bus = &"Musica"
 
 [connection signal="pressed" from="SairBotao" to="." method="_on_sair_botao_pressed"]

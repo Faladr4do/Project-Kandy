@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://vljquldjxtbc"]
+
+[ext_resource type="Texture2D" uid="uid://cpwwijm0g7jf1" path="res://Project Kandy/Tutorial/sprites/Estigar.png" id="1_ymih3"]
+
+[node name="Sprite2D" type="Sprite2D"]
+scale = Vector2(8, 8)
+texture = ExtResource("1_ymih3")

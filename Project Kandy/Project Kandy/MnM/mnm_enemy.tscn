@@ -373,9 +373,11 @@ autoplay = "hit_flash"
 
 [node name="Spit" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_qqwfb")
+bus = &"SFX"
 
 [node name="Hurt" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_u3j6h")
+bus = &"SFX"
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]
 [connection signal="body_entered" from="Target" to="." method="_on_target_body_entered"]

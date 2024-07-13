@@ -280,7 +280,7 @@ b = Vector2(0, 0)
 size = Vector2(232, 343)
 
 [node name="ChocolateGate" type="AnimatableBody2D"]
-z_index = -1
+z_index = -2
 position = Vector2(1, 0)
 script = ExtResource("1_dgiwv")
 lvl_pass = ExtResource("2_g00qb")

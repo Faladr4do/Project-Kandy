@@ -6,7 +6,7 @@ class_name InimigoExplosivo
 func explodir():
 	var cena_explosiva = kaboom.instantiate()
 	cena_explosiva.cor = 1
-	owner.call_deferred("add_child", cena_explosiva)
+	owner.add_child(cena_explosiva)
 	cena_explosiva.global_position = caster.global_position
 
 func gestor_grupos():

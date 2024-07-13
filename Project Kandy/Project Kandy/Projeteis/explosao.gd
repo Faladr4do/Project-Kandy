@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var dano_explosivo : int
+@export var dano_explosivo : int = 1
 @export var forca_knockback = 3000
 @export var cor = 1
 

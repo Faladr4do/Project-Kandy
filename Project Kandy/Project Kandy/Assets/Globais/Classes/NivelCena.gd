@@ -6,9 +6,13 @@ class_name NivelCena
 func _ready():
 	if !jogador:
 		jogador = buscar_jogador("VegetalPlayer")
+	else:
+		jogador.vida_total = Checkpoint.vida_total
+		Global.moedas_coletadas = Checkpoint.moedas_coletadas
 
 func _enter_tree():
-	if Checkpoint.ultima_posicao:
+	Checkpoint.moedas_coletadas = Global.moedas_coletadas
+	if Checkpoint.ultima_posicao and Checkpoint.nivel_atual:
 		jogador.global_position = Checkpoint.ultima_posicao
 
 func buscar_jogador(nome_classe):
@@ -21,7 +25,6 @@ func buscar_jogador(nome_classe):
 func _process(delta):
 	#print_debug(get_tree().set_currentscene())
 	get_tree().set_current_scene(get_parent())
-	print_debug(jogador)
 	if jogador:
 		verificar_vida_player()
 	else:
@@ -33,4 +36,5 @@ func verificar_vida_player():
 
 func game_over():
 	jogador.vida_total = Global.vidas_max
+	Global.moedas_coletadas = Checkpoint.moedas_coletadas
 	get_tree().reload_current_scene()

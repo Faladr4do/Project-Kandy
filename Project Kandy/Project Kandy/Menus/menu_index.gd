@@ -1,9 +1,9 @@
 extends Control
 
 @export var nivel_atual : PackedScene
-@export var cena_opcoes : PackedScene
 @export var imagem_fundo : Texture2D
 
+@onready var cena_opcoes = "res://Project Kandy/Menus/menu_configurar.tscn"
 @onready var textura_fundo : TextureRect = $ImagemFundo
 
 func _ready():
@@ -18,7 +18,7 @@ func _on_jogar_botao_pressed():
 	get_tree().change_scene_to_packed(nivel_atual)
 
 func _on_configurar_botao_pressed():
-	get_tree().change_scene_to_packed(cena_opcoes)
+	get_tree().change_scene_to_file(cena_opcoes)
 
 func _on_sair_botao_pressed():
 	get_tree().quit()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://d140b5llvcryx"]
+[gd_scene load_steps=29 format=3 uid="uid://d140b5llvcryx"]
 
 [ext_resource type="Script" path="res://Project Kandy/Niveis/nivel_2.gd" id="1_l7uvf"]
 [ext_resource type="Texture2D" uid="uid://c0r0dmjqv83o" path="res://Project Kandy/Assets/Tiles/WallsFloorsRedoo.png" id="2_abylp"]
@@ -9,9 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://dglbh5md887ag" path="res://Project Kandy/ObjetosProgramaveis/CaramelSaw/serra_caramelo.tscn" id="7_y0y3w"]
 [ext_resource type="PackedScene" uid="uid://051ksev1cvoe" path="res://Project Kandy/ObjetosProgramaveis/GomaTrampolim/goma_beijo.tscn" id="8_b8ih1"]
 [ext_resource type="PackedScene" uid="uid://dvkxudvn80qm8" path="res://Project Kandy/ObjetosProgramaveis/Checkpoint/checkpoint.tscn" id="9_qv65o"]
+[ext_resource type="PackedScene" uid="uid://dbx4tcbon4vt" path="res://Project Kandy/Pickups/Cura/cura.tscn" id="10_15fpg"]
 [ext_resource type="PackedScene" uid="uid://du1buswme6sdm" path="res://Project Kandy/ObjetosProgramaveis/Barreiras/bloqueador.tscn" id="10_vuj0o"]
+[ext_resource type="PackedScene" uid="uid://bsfm2vssugol0" path="res://Project Kandy/Pickups/Moeda/moeda.tscn" id="11_pd211"]
 [ext_resource type="PackedScene" uid="uid://blix7lxdleltu" path="res://Project Kandy/Niveis/MudarNivel/mudar_nivel.tscn" id="11_s0gan"]
 [ext_resource type="PackedScene" uid="uid://b4xq4cm4ryxaw" path="res://Project Kandy/Objetos/ArrowSign/arrow_sign.tscn" id="12_uwn4o"]
+[ext_resource type="AudioStream" uid="uid://3ono1cuodixu" path="res://Project Kandy/Assets/SoundTracks/Into The Layers.wav" id="15_iilf0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kf84k"]
 texture = ExtResource("2_abylp")
@@ -9319,7 +9322,7 @@ tile_set = SubResource("TileSet_0dhyj")
 format = 2
 
 [node name="BroColli" parent="." instance=ExtResource("3_1aapd")]
-position = Vector2(-5130.35, -406.321)
+position = Vector2(2093, -1187)
 
 [node name="CameraPlayer" parent="BroColli" node_paths=PackedStringArray("mapa_nivel") instance=ExtResource("4_q7ixg")]
 limit_left = -6184
@@ -9335,20 +9338,25 @@ mapa_nivel = NodePath("../../Chao")
 
 [node name="SweetCorn" parent="Inimigos" instance=ExtResource("5_36pnd")]
 position = Vector2(-74, -900)
+vida_total = 2
 
 [node name="SweetCorn2" parent="Inimigos" instance=ExtResource("5_36pnd")]
 position = Vector2(-958, -832)
 lado_esquerdo = false
+vida_total = 2
 
 [node name="SweetCorn3" parent="Inimigos" instance=ExtResource("5_36pnd")]
 position = Vector2(-756, -36)
+vida_total = 2
 
 [node name="SweetCorn4" parent="Inimigos" instance=ExtResource("5_36pnd")]
 position = Vector2(190, -34)
 lado_esquerdo = false
+vida_total = 2
 
 [node name="SweetCorn5" parent="Inimigos" instance=ExtResource("5_36pnd")]
 position = Vector2(1096, 1244)
+vida_total = 2
 
 [node name="SweetCorn6" parent="Inimigos" instance=ExtResource("5_36pnd")]
 position = Vector2(-1261, 1342)
@@ -9359,10 +9367,15 @@ position = Vector2(-3138, 1525)
 
 [node name="SweetCorn7" parent="Inimigos" instance=ExtResource("5_36pnd")]
 position = Vector2(-4045, 1239)
+vida_total = 2
 
 [node name="SweetCorn8" parent="Inimigos" instance=ExtResource("5_36pnd")]
 position = Vector2(-5684, -230)
 lado_esquerdo = false
+vida_total = 2
+
+[node name="SugarBomber2" parent="Inimigos" instance=ExtResource("6_kamqo")]
+position = Vector2(-119.63, 1202.19)
 
 [node name="NPCs" type="Node" parent="."]
 
@@ -9398,6 +9411,63 @@ position = Vector2(-2567, 1460)
 position = Vector2(1362, -12)
 
 [node name="Pickups" type="Node" parent="."]
+
+[node name="cura" parent="Pickups" instance=ExtResource("10_15fpg")]
+position = Vector2(-5092, -359)
+
+[node name="cura2" parent="Pickups" instance=ExtResource("10_15fpg")]
+position = Vector2(-2020.33, -81.9116)
+
+[node name="cura3" parent="Pickups" instance=ExtResource("10_15fpg")]
+position = Vector2(-2003.37, 1513.32)
+
+[node name="cura4" parent="Pickups" instance=ExtResource("10_15fpg")]
+position = Vector2(1515.18, -70.5964)
+
+[node name="moeda" parent="Pickups" instance=ExtResource("11_pd211")]
+position = Vector2(972, -1083)
+
+[node name="moeda2" parent="Pickups" instance=ExtResource("11_pd211")]
+position = Vector2(-549.564, -1015.29)
+
+[node name="moeda3" parent="Pickups" instance=ExtResource("11_pd211")]
+position = Vector2(-1234.04, -149.791)
+
+[node name="moeda4" parent="Pickups" instance=ExtResource("11_pd211")]
+position = Vector2(593.119, -166.762)
+
+[node name="moeda5" parent="Pickups" instance=ExtResource("11_pd211")]
+position = Vector2(479.981, 1219.17)
+
+[node name="moeda6" parent="Pickups" instance=ExtResource("11_pd211")]
+position = Vector2(-3525.06, 1253.11)
+
+[node name="moeda7" parent="Pickups" instance=ExtResource("11_pd211")]
+position = Vector2(-4685, 546)
+
+[node name="moeda8" parent="Pickups" instance=ExtResource("11_pd211")]
+position = Vector2(-3966.3, -172.419)
+
+[node name="moeda9" parent="Pickups" instance=ExtResource("11_pd211")]
+position = Vector2(-4430.16, -534.457)
+
+[node name="moeda10" parent="Pickups" instance=ExtResource("11_pd211")]
+position = Vector2(-5380.51, -421.32)
+
+[node name="moeda11" parent="Pickups" instance=ExtResource("11_pd211")]
+position = Vector2(-311.978, -200.703)
+
+[node name="moeda12" parent="Pickups" instance=ExtResource("11_pd211")]
+position = Vector2(-855.035, 1439.78)
+
+[node name="moeda13" parent="Pickups" instance=ExtResource("11_pd211")]
+position = Vector2(-4684.72, 1219.17)
+
+[node name="moeda14" parent="Pickups" instance=ExtResource("11_pd211")]
+position = Vector2(-2291.87, 1360.59)
+
+[node name="moeda15" parent="Pickups" instance=ExtResource("11_pd211")]
+position = Vector2(1984.7, 1213.51)
 
 [node name="Diversos" type="Node" parent="."]
 
@@ -9445,3 +9515,9 @@ shape = SubResource("RectangleShape2D_hbudy")
 
 [node name="ArrowSign" parent="Diversos" instance=ExtResource("12_uwn4o")]
 position = Vector2(-6075, -164)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_iilf0")
+volume_db = -7.0
+autoplay = true
+bus = &"Musica"

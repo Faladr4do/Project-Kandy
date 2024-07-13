@@ -15,6 +15,7 @@ func _ready():
 	animacoes.play(tipo_coluna)
 
 func _process(delta):
+	receber_dano = false
 	anim_health_status()
 
 func anim_health_status():

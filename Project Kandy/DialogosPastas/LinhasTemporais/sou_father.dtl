@@ -1,0 +1,11 @@
+set {dialogo} = 1
+join all_father 1
+if {falou_shroom} == true and {falou_father} == false:
+	all_father: Quem vem lá?!
+	BroColli: ...
+	all_father: A Shrummy disse isso de mim?? Há muito tempo que sinto o mesmo, tenho que falar com ela enquanto partilhamos um regador...
+	all_father: Ah claro, considera o portão destrancado, camarada vegetal!
+	set {falou_father} = true
+elif {falou_shroom} == true and {falou_father} == true:
+	all_father: O portão já está aberto.
+set {dialogo} = 0

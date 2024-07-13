@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbxo8q6eymk18"]
+[gd_scene load_steps=8 format=3 uid="uid://cbxo8q6eymk18"]
 
 [ext_resource type="FontFile" uid="uid://chvuo2lxramxx" path="res://Project Kandy/Assets/FontesEstilos/AtariClassic-gry3.ttf" id="1_6h8r2"]
 [ext_resource type="Script" path="res://Project Kandy/Menus/menu_index.gd" id="1_t2r1b"]
 [ext_resource type="PackedScene" uid="uid://dgdvruik070w8" path="res://jogo_full.tscn" id="2_od18c"]
-[ext_resource type="Texture2D" uid="uid://b6t03vyftr0ed" path="res://Project Kandy/Assets/ImagensMenu/imagem_temporaria.jpg" id="3_v4ek5"]
+[ext_resource type="Texture2D" uid="uid://bbwtwchwdogtt" path="res://Project Kandy/Assets/GUI/MenuBackground.png" id="3_aybur"]
 [ext_resource type="Theme" uid="uid://d4k7b02m1i26d" path="res://Project Kandy/Assets/FontesEstilos/estilo_botao.tres" id="4_g2sd2"]
+[ext_resource type="AudioStream" uid="uid://dabvjkcuq5lhl" path="res://Project Kandy/Assets/SoundTracks/Glazin n Blazin.wav" id="7_26wa4"]
+[ext_resource type="PackedScene" uid="uid://bycsdpy3d31dn" path="res://Project Kandy/Ambiente/world_environment.tscn" id="7_gilne"]
 
 [node name="MenuIndex" type="Control"]
 process_mode = 3
@@ -20,7 +22,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_t2r1b")
 nivel_atual = ExtResource("2_od18c")
-imagem_fundo = ExtResource("3_v4ek5")
+imagem_fundo = ExtResource("3_aybur")
 
 [node name="ImagemFundo" type="TextureRect" parent="."]
 layout_mode = 1
@@ -69,6 +71,13 @@ theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("1_6h8r2")
 theme_override_font_sizes/font_size = 45
 text = "Sair"
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("7_gilne")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_26wa4")
+autoplay = true
+bus = &"Musica"
 
 [connection signal="pressed" from="BotoesMenu/JogarBotao" to="." method="_on_jogar_botao_pressed"]
 [connection signal="pressed" from="BotoesMenu/ConfigurarBotao" to="." method="_on_configurar_botao_pressed"]

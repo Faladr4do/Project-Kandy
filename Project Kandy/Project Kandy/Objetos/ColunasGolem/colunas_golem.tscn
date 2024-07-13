@@ -185,8 +185,10 @@ autoplay = "hit_flash"
 
 [node name="SpawnColuna" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_m52r0")
+bus = &"SFX"
 
 [node name="EmergeColuna" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_nqqfu")
+bus = &"SFX"
 
 [connection signal="animation_started" from="AnimationPlayer2" to="." method="_on_animation_started"]

@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Project Kandy"
 config/tags=PackedStringArray("main_projects")
-run/main_scene="res://jogo_full.tscn"
+run/main_scene="res://Project Kandy/Assets/Bootsplash/Bootsplash.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
 boot_splash/image="res://Project Kandy/Assets/Icons/kandy_icon.png"
@@ -22,7 +22,7 @@ config/icon="res://Project Kandy/Assets/Icons/kandy_icon.png"
 
 [audio]
 
-buses/default_bus_layout=""
+buses/default_bus_layout="res://Project Kandy/Ambiente/buses.tres"
 
 [autoload]
 
@@ -31,6 +31,8 @@ Dialog="*res://Project Kandy/Assets/Globais/DialogManager.gd"
 Interagir="*res://Project Kandy/Assets/Globais/interagir_gestor.tscn"
 Checkpoint="*res://Project Kandy/Assets/Globais/Checkpoint.gd"
 TransicaoNivel="*res://Project Kandy/Assets/HUD/transicao_nivel.tscn"
+Ambiente="*res://Project Kandy/Ambiente/world_environment.tscn"
+Menu="*res://Project Kandy/Assets/Globais/menu_conf_dir.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
@@ -40,6 +42,7 @@ directories/dch_directory={
 "Pedras": "res://DialogosPastas/Personagens/Pedras/Pedras.dch",
 "RapMato": "res://DialogosPastas/Personagens/RedTwins/RapMato.dch",
 "SliceSpice": "res://DialogosPastas/Personagens/RedTwins/SliceSpice.dch",
+"all_father": "res://DialogosPastas/Personagens/AllFather/all_father.dch",
 "shrummy": "res://DialogosPastas/Personagens/Shrummy/shrummy.dch",
 "sleek": "res://DialogosPastas/Personagens/Sleek/Sleek.dch",
 "unit_test_character": "res://Tests/Resources/unit_test_character.dch"
@@ -50,6 +53,7 @@ directories/dtl_directory={
 "intro": "res://DialogosPastas/LinhasTemporais/intro.dtl",
 "president_watcher": "res://DialogosPastas/LinhasTemporais/president_watcher.dtl",
 "sem_dialogo": "res://DialogosPastas/LinhasTemporais/sem_dialogo.dtl",
+"sou_father": "res://DialogosPastas/LinhasTemporais/sou_father.dtl",
 "sou_shrummy": "res://DialogosPastas/LinhasTemporais/sou_shrummy.dtl"
 }
 glossary/default_case_sensitive=true
@@ -58,7 +62,7 @@ layout/default_style="Default"
 variables={
 "dialogo": 0,
 "duplo_salto": 0,
-"ervilhas": true,
+"ervilhas": false,
 "esta_dialogo": false,
 "falou_father": false,
 "falou_shroom": false
@@ -89,6 +93,7 @@ text/autoadvance_enabled=false
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=3
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="viewport"

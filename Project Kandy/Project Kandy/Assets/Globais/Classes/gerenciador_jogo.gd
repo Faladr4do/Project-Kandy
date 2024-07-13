@@ -21,14 +21,20 @@ var jogo_pausado = false:
 		emit_signal("pausar_jogo", jogo_pausado)
 
 func _ready():
-	if nivel_selecionado:
-		var nivel_criar = nivel_selecionado.instantiate()
-		add_child(nivel_criar)
-		nivel_selecionado = null
+	if !Checkpoint.nivel_atual:
+		if nivel_selecionado:
+			var nivel_criar = nivel_selecionado.instantiate()
+			add_child(nivel_criar)
+			nivel_selecionado = null
+		else:
+			nivel_selecionado = load("res://Project Kandy/Niveis/nivel_1.tscn")
+			var nivel_criar = nivel_selecionado.instantiate()
+			add_child(nivel_criar)
+			nivel_selecionado = null
 	else:
-		var nivel_criar = Checkpoint.nivel_atual.instantiate()
+		var nivel_criar = load(Checkpoint.nivel_atual).instantiate()
 		add_child(nivel_criar)
-		nivel_selecionado = null
+		nivel_selecionado = load(Checkpoint.nivel_atual)
 	nivel = level_search("Node2D")
 	if !jogador and nivel:
 		jogador = nivel.get_node("BroColli")

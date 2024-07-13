@@ -21,7 +21,7 @@ label_settings = ExtResource("2_jiuls")
 [node name="Luminosidade" type="HSlider" parent="."]
 layout_mode = 2
 min_value = 0.01
-value = 50.0
+value = 50.01
 rounded = true
 
 [node name="PercentagemClareza" type="Label" parent="."]

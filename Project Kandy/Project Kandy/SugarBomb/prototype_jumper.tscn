@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://c5pnis6kufugs"]
+[gd_scene load_steps=18 format=3 uid="uid://c5pnis6kufugs"]
 
 [ext_resource type="Script" path="res://Project Kandy/SugarBomb/prototype_jumper.gd" id="1_31toa"]
 [ext_resource type="PackedScene" uid="uid://dq5nc5oa72eke" path="res://Project Kandy/Projeteis/explosao.tscn" id="2_7wdiy"]
 [ext_resource type="Shader" uid="uid://cyuovkuipu54b" path="res://Project Kandy/Assets/Shaders/hit_flash.tres" id="2_k1v2x"]
 [ext_resource type="Texture2D" uid="uid://7v6d7t2ys3o7" path="res://Project Kandy/SugarBomb/sprites/BrigadeiroBase.png" id="2_vlpq1"]
+[ext_resource type="AudioStream" uid="uid://5s3gbw8uspe4" path="res://Project Kandy/SugarBomb/audios/Jumper Jump.wav" id="5_py7lo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mo4g3"]
 resource_local_to_scene = true
@@ -323,6 +324,10 @@ libraries = {
 "": SubResource("AnimationLibrary_7l40g")
 }
 autoplay = "hit_flash"
+
+[node name="boing" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_py7lo")
+bus = &"SFX"
 
 [connection signal="body_entered" from="target" to="." method="_on_target_body_entered"]
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

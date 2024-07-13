@@ -13,4 +13,4 @@ func _process(delta):
 
 
 func _on_luminosidade_value_changed(value):
-	pass # Replace with function body.
+	Ambiente.environment.adjustment_brightness = value

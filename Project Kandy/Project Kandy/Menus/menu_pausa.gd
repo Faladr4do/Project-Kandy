@@ -21,10 +21,12 @@ func _on_botao_jogar_pressed():
 
 func _on_botao_reiniciar_pressed():
 	gerenciador_jogo.jogo_pausado = false
+	Global.moedas_coletadas = Checkpoint.moedas_coletadas
 	get_tree().reload_current_scene()
 
 func _on_botao_configurar_pressed():
 	gerenciador_jogo.jogo_pausado = false
+	Menu.menu_conf_back = true
 	get_tree().change_scene_to_file("res://Project Kandy/Menus/menu_configurar.tscn")
 
 func _on_botao_sair_pressed():

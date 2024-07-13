@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://c87m542g15oin"]
+[gd_scene load_steps=36 format=3 uid="uid://c87m542g15oin"]
 
 [ext_resource type="Script" path="res://Project Kandy/Niveis/nivel_4.gd" id="1_ntvoo"]
 [ext_resource type="Texture2D" uid="uid://c0r0dmjqv83o" path="res://Project Kandy/Assets/Tiles/WallsFloorsRedoo.png" id="2_xchwv"]
@@ -18,6 +18,10 @@
 [ext_resource type="PackedScene" uid="uid://dglbh5md887ag" path="res://Project Kandy/ObjetosProgramaveis/CaramelSaw/serra_caramelo.tscn" id="12_mkw42"]
 [ext_resource type="PackedScene" uid="uid://du1buswme6sdm" path="res://Project Kandy/ObjetosProgramaveis/Barreiras/bloqueador.tscn" id="13_bfkwi"]
 [ext_resource type="PackedScene" uid="uid://b4xq4cm4ryxaw" path="res://Project Kandy/Objetos/ArrowSign/arrow_sign.tscn" id="15_lahcj"]
+[ext_resource type="PackedScene" uid="uid://bsfm2vssugol0" path="res://Project Kandy/Pickups/Moeda/moeda.tscn" id="19_j4mhu"]
+[ext_resource type="PackedScene" uid="uid://dbx4tcbon4vt" path="res://Project Kandy/Pickups/Cura/cura.tscn" id="20_xyq3d"]
+[ext_resource type="AudioStream" uid="uid://dabvjkcuq5lhl" path="res://Project Kandy/Assets/SoundTracks/Glazin n Blazin.wav" id="21_quy2g"]
+[ext_resource type="PackedScene" uid="uid://vljquldjxtbc" path="res://Project Kandy/Tutorial/estigar.tscn" id="22_nikdm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vxdux"]
 texture = ExtResource("2_xchwv")
@@ -32109,7 +32113,7 @@ format = 2
 layer_0/tile_data = PackedInt32Array(-11469062, 2424832, 268435482, -11469063, 2490368, 268435482, -11469064, 2555904, 268435482, -11469065, 2621440, 268435482, -11403525, 2359296, 268435483, -11403526, 2424832, 268435483, -11403527, 2490368, 268435483, -11403528, 2555904, 268435483, -11403529, 2621440, 268435483, -11403530, 2686976, 268435483, -11337988, 2293760, 268435484, -11337989, 2359296, 268435484, -11337990, 2424832, 268435484, -11337991, 2490368, 268435484, -11337992, 2555904, 268435484, -11337993, 2621440, 268435484, -11337994, 2686976, 268435484, -11337995, 2752512, 268435484, -11272452, 2293760, 268435485, -11272453, 2359296, 268435485, -11272454, 2424832, 268435485, -11272455, 2490368, 268435485, -11272456, 2555904, 268435485, -11272457, 2621440, 268435485, -11272458, 2686976, 268435485, -11272459, 2752512, 268435485, -11206916, 2293760, 268435486, -11206917, 2359296, 268435486, -11206918, 2424832, 268435486, -11206919, 2490368, 268435486, -11206920, 2555904, 268435486, -11206921, 2621440, 268435486, -11206922, 2686976, 268435486, -11206923, 2752512, 268435486, -11141381, 2359296, 268435487, -11141382, 2424832, 268435487, -11141383, 2490368, 268435487, -11141384, 2555904, 268435487, -11141385, 2621440, 268435487, -11141386, 2686976, 268435487, -11141387, 2752512, 268435487, -11075844, 2293760, 268435488, -11075845, 2359296, 268435488, -11075846, 2424832, 268435488, -11075847, 2490368, 268435488, -11075848, 2555904, 268435488, -11075849, 2621440, 268435488, -11075850, 2686976, 268435488, -11010307, 2228224, 268435489, -11010308, 2293760, 268435489, -11010309, 2359296, 268435489, -11010311, 2490368, 268435489, -11010312, 2555904, 268435489, -11010313, 2621440, 268435489, -10944770, 2162688, 268435490, -10944771, 2228224, 268435490, -10944772, 2293760, 268435490, -10879233, 2097152, 268435491, -10879234, 2162688, 268435491, -10879235, 2228224, 268435491)
 
 [node name="BroColli" parent="." instance=ExtResource("3_y3ode")]
-position = Vector2(-6698, -3162)
+position = Vector2(2014, -14)
 
 [node name="CameraPlayer" parent="BroColli" node_paths=PackedStringArray("mapa_nivel") instance=ExtResource("4_8lmbk")]
 escala_baixo = 0.2
@@ -32128,6 +32132,7 @@ position = Vector2(569, 72)
 [node name="SweetCorn" parent="Inimigos" instance=ExtResource("7_b3uiv")]
 position = Vector2(1187.97, 30)
 lado_esquerdo = false
+vida_total = 1
 
 [node name="MnM2" parent="Inimigos" instance=ExtResource("6_f0n0l")]
 position = Vector2(-529, -52)
@@ -32149,6 +32154,7 @@ position = Vector2(-2928.77, -2966)
 
 [node name="SweetCorn5" parent="Inimigos" instance=ExtResource("7_b3uiv")]
 position = Vector2(-3954.77, -2790)
+vida_total = 1
 
 [node name="MnM4" parent="Inimigos" instance=ExtResource("6_f0n0l")]
 position = Vector2(-4979, -2868)
@@ -32248,3 +32254,68 @@ position = Vector2(-1346, -1230)
 poder_salto = 16.5
 
 [node name="Pickups" type="Node" parent="."]
+
+[node name="moeda" parent="Pickups" instance=ExtResource("19_j4mhu")]
+position = Vector2(869, -57)
+
+[node name="moeda2" parent="Pickups" instance=ExtResource("19_j4mhu")]
+position = Vector2(-6726.69, -3140.69)
+
+[node name="moeda3" parent="Pickups" instance=ExtResource("19_j4mhu")]
+position = Vector2(-42.6948, -28.6948)
+
+[node name="moeda4" parent="Pickups" instance=ExtResource("19_j4mhu")]
+position = Vector2(-862.695, -200.695)
+
+[node name="moeda5" parent="Pickups" instance=ExtResource("19_j4mhu")]
+position = Vector2(-3394.69, 123.305)
+
+[node name="moeda6" parent="Pickups" instance=ExtResource("19_j4mhu")]
+position = Vector2(-4918.69, 151.305)
+
+[node name="moeda7" parent="Pickups" instance=ExtResource("19_j4mhu")]
+position = Vector2(-5718.69, -564.695)
+
+[node name="moeda8" parent="Pickups" instance=ExtResource("19_j4mhu")]
+position = Vector2(-6154.69, -604.695)
+
+[node name="moeda9" parent="Pickups" instance=ExtResource("19_j4mhu")]
+position = Vector2(-4747, -1101)
+
+[node name="moeda10" parent="Pickups" instance=ExtResource("19_j4mhu")]
+position = Vector2(-3306.69, -1260.69)
+
+[node name="moeda11" parent="Pickups" instance=ExtResource("19_j4mhu")]
+position = Vector2(-2074.69, -1324.69)
+
+[node name="moeda12" parent="Pickups" instance=ExtResource("19_j4mhu")]
+position = Vector2(-1302.69, -2496.69)
+
+[node name="moeda13" parent="Pickups" instance=ExtResource("19_j4mhu")]
+position = Vector2(-2502.69, -3036.69)
+
+[node name="moeda14" parent="Pickups" instance=ExtResource("19_j4mhu")]
+position = Vector2(-4526.69, -3056.69)
+
+[node name="moeda15" parent="Pickups" instance=ExtResource("19_j4mhu")]
+position = Vector2(-5686.69, -3168.69)
+
+[node name="cura" parent="Pickups" instance=ExtResource("20_xyq3d")]
+position = Vector2(-3467, -2837)
+
+[node name="cura2" parent="Pickups" instance=ExtResource("20_xyq3d")]
+position = Vector2(-4942.69, 275.305)
+
+[node name="cura3" parent="Pickups" instance=ExtResource("20_xyq3d")]
+position = Vector2(841.305, 79.3052)
+
+[node name="cura4" parent="Pickups" instance=ExtResource("20_xyq3d")]
+position = Vector2(-1522.69, -228.695)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_quy2g")
+autoplay = true
+bus = &"Musica"
+
+[node name="Sprite2D" parent="." instance=ExtResource("22_nikdm")]
+position = Vector2(-3524, 106)

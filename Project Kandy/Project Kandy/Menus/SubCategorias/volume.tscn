@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5t2oduqbem4t"]
+
+[ext_resource type="Script" path="res://Project Kandy/Menus/SubCategorias/volume.gd" id="1_2bywp"]
+[ext_resource type="LabelSettings" uid="uid://dt4qythdv8y4n" path="res://Project Kandy/Assets/FontesEstilos/AtariFont.tres" id="2_1xon2"]
+
+[node name="Volume" type="VBoxContainer"]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2bywp")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+label_settings = ExtResource("2_1xon2")
+
+[node name="HSlider" type="HSlider" parent="."]
+layout_mode = 2
+max_value = 1.0
+step = 0.01

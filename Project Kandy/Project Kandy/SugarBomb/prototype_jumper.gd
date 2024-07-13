@@ -2,6 +2,7 @@ extends InimigoExplosivo
 
 const vel_salto = -580
 
+@onready var boing = $boing
 @onready var velocy = 480.0
 
 var estaVivo = true
@@ -21,6 +22,8 @@ func _physics_process(delta):
 		velocity.y += (gravity * delta) * diff_speed_aerial
 		velocity.x = velocy * diff_speed_aerial
 	if is_on_floor():
+		if !boing.playing:
+			boing.play()
 		if chao_detect.is_colliding():
 			velocity.x = velocy
 			velocity.y = vel_salto
@@ -59,6 +62,7 @@ func _on_hitbox_body_entered(body):
 	if estaMorrer:
 		return
 	if body.is_in_group("Vegetal"):
+		print_debug("explodir")
 		explodir()
 		morte()
 
@@ -66,6 +70,7 @@ func _on_teste_frente_body_entered(body):
 	if body.is_in_group("Vegetal") or body.is_in_group("Bala"):
 		pass
 	else:
+		print_debug("virar")
 		virar()
 
 func virar():
