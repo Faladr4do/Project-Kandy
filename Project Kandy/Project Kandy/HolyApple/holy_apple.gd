@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var you_won : PackedScene
+@onready var you_won = "res://Project Kandy/Menus/menu_index.tscn"
 @export var area_interacao : AreaInteragir
 
 func _ready():
@@ -12,4 +12,4 @@ func inter_act():
 	Checkpoint.ultima_posicao = null
 	Checkpoint.nivel_atual = null
 	Checkpoint.moedas_coletadas = null
-	get_tree().change_scene_to_packed(you_won)
+	get_tree().change_scene_to_file(you_won)

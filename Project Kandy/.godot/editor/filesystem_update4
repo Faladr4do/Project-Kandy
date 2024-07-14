@@ -5,3 +5,12 @@ res://Project Kandy/Assets/Shaders/hit_flash.tres
 res://Project Kandy/Assets/FontesEstilos/AtariFont.tres
 res://Project Kandy/Assets/FontesEstilos/estilo_botao.tres
 res://Project Kandy/Assets/FontesEstilos/SimpleFonte.tres
+res://Project Kandy/ChocoGolem/choco_golem.tscn
+res://Project Kandy/HolyApple/holy_apple.tscn
+res://Project Kandy/Menus/menu_configurar.tscn
+res://jogo_full.tscn
+res://Project Kandy/Menus/menu_index.tscn
+res://Project Kandy/Niveis/nivel_6.tscn
+res://Project Kandy/Assets/Bootsplash/Bootsplash.tscn
+res://Project Kandy/HolyApple/holy_apple.gd
+res://Project Kandy/Niveis/nivel_7.tscn

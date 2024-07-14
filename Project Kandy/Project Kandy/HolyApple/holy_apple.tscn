@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://b5mklxk6lhoh0"]
+[gd_scene load_steps=6 format=3 uid="uid://b5mklxk6lhoh0"]
 
 [ext_resource type="Script" path="res://Project Kandy/HolyApple/holy_apple.gd" id="1_gcf2d"]
 [ext_resource type="Texture2D" uid="uid://csjfvmddc4qnc" path="res://Project Kandy/HolyApple/sprite/apple.png" id="1_v1igj"]
 [ext_resource type="PackedScene" uid="uid://dabn8vv1h0aj3" path="res://Project Kandy/Assets/Globais/area_interagir.tscn" id="2_3b35g"]
-[ext_resource type="PackedScene" uid="uid://cbxo8q6eymk18" path="res://Project Kandy/Menus/menu_index.tscn" id="2_k3xyg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_erigm"]
 radius = 44.0
@@ -13,7 +12,6 @@ size = Vector2(68.5, 30.7813)
 
 [node name="HolyApple" type="CharacterBody2D" node_paths=PackedStringArray("area_interacao")]
 script = ExtResource("1_gcf2d")
-you_won = ExtResource("2_k3xyg")
 area_interacao = NodePath("AreaInteragir")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
