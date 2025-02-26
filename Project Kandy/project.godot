@@ -89,12 +89,12 @@ text/absolute_autopauses=false
 layout/end_behaviour=0
 text/autoadvance_enabled=false
 text/advance_delay=0.1
-translation/enabled=false
-translation/original_locale=""
+translation/enabled=true
 translation/file_mode=1
-translation/translation_folder=""
+translation/translation_folder="res://Language"
 translation/save_mode=0
 translation/add_separator=false
+translation/original_locale="en"
 
 [display]
 

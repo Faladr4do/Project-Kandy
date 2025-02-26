@@ -1,15 +1,15 @@
 set {dialogo} = 1
 join shrummy 1
 if {falou_shroom} == false:
-	shrummy: Hey! Queres passar por aquele portão gigante? Eu posso te ajudar.
+	shrummy: Hey! Queres passar por aquele portão gigante? Eu posso te ajudar. #id:2f
 	join BroColli 3 [ mirrored="true"]
-	BroColli: ...
-	shrummy: O meu vizinho de baixo consegue o abrir, ele é bastante parecido contigo...
-	shrummy: Já agora, podes lhe dar um olá por mim? Eu quero lhe convidar para sair mas não tive coragem...
+	BroColli: ... #id:30
+	shrummy: O meu vizinho de baixo consegue o abrir, ele é bastante parecido contigo... #id:31
+	shrummy: Já agora, podes lhe dar um olá por mim? Eu quero lhe convidar para sair mas não tive coragem... #id:32
 	set {falou_shroom} = true
 elif {falou_shroom}   ==   true and {falou_father} == false:
-	shrummy: Ele não mora longe, apenas no andar de baixo.
+	shrummy: Ele não mora longe, apenas no andar de baixo. #id:33
 elif {falou_shroom}   ==   true and {falou_father} == true:
-	shrummy: Ah a sério?! Muito obrigado camarada Vegetal!
+	shrummy: Ah a sério?! Muito obrigado camarada Vegetal! #id:34
 set {dialogo} = 0
 [end_timeline]

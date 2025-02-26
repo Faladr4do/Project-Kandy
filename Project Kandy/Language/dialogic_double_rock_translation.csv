@@ -1,0 +1,18 @@
+keys,en
+Text/17/text,"Ora Ora Ora, vejam só quem voltou a rastejar..."
+Choice/18/text,Vim te dar as 7 moedas!
+Choice/18/disabled_text,
+Text/19/text,Eu sabia que havias de ceder mais cedo ou mais tarde!
+Choice/1a/text,...
+Choice/1a/disabled_text,
+Text/1b/text,Volta a dizer?
+Text/1c/text,"Obrigado pelas moedinhas, mas já podes sair daqui, rapaz!"
+Text/1d/text,"Ah, olá rapaz, eu sou o Lelo! Leo é o meu gato!"
+Text/1e/text,...
+Text/1f/text,"Diga-me por acaso tens umas moedinhas para mim, rapaz???"
+Choice/20/text,"Sim, toma 7 moedinhas! "
+Choice/20/disabled_text,
+Text/21/text,"Ai tantas moedinhas, muito obrigado! Agora já posso comprar uns ténis novos!"
+Choice/22/text,"Não, sai me da frente! "
+Choice/22/disabled_text,
+Text/23/text,"Ai, fica a saber que não se fala assim com idosos! Nem pedras!"

@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://e57l6pwy3atd"
+
+[deps]
+
+files=["res://Language/dialogic_double_rock_translation.en.translation"]
+
+source_file="res://Language/dialogic_double_rock_translation.csv"
+dest_files=["res://Language/dialogic_double_rock_translation.en.translation"]
+
+[params]
+
+compress=true
+delimiter=0

@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://6h7ethoo1s3t"
+
+[deps]
+
+files=["res://Language/dialogic_president_watcher_translation.en.translation"]
+
+source_file="res://Language/dialogic_president_watcher_translation.csv"
+dest_files=["res://Language/dialogic_president_watcher_translation.en.translation"]
+
+[params]
+
+compress=true
+delimiter=0

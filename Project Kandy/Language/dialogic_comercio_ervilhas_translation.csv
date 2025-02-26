@@ -1,0 +1,9 @@
+keys,en
+Text/11/text,OH! Olá potencial cliente! Eu venho de chegar da Vegetalândia!
+Text/12/text,Sou apenas um honesto vendedor de ervilhas que vende ervilhas!
+Text/13/text,Estaria disposto a comprar algumas ervilhas por apenas umas miseras moedas?
+Choice/14/text,Claro! Adoro ervilhas?!
+Choice/14/disabled_text,
+Choice/15/text,Sim.
+Choice/15/disabled_text,
+Text/16/text,Essas ervilhas são das boas!

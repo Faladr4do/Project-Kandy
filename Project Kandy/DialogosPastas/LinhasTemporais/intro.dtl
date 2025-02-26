@@ -1,8 +1,8 @@
 set {dialogo} = 1
 join BroColli 1
-BroColli (BroColliTalking): Hey It'sa me Bro Colli!!!
+BroColli (BroColliTalking): Hey It'sa me Bro Colli!!! #id:24
 join Pedras 3
-Pedras (DrPedraIdle): Yooo... Tu aí!
-Pedras (DrPedraIdle): Ta calaaaado!
+Pedras (DrPedraIdle): Yooo... Tu aí! #id:25
+Pedras (DrPedraIdle): Ta calaaaado! #id:26
 set {dialogo} = 0
 [end_timeline]

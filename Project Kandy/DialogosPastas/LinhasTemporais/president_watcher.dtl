@@ -1,7 +1,7 @@
 set {dialogo} = 1
 join RapMato 3 [ mirrored="true"]
 join SliceSpice 4 [ mirrored="true"]
-RapMato: Oh olá! Só te estamos a vigiar para ver como te corre a missão.
-SliceSpice: Exato! Não nos deixes te distrair. De volta ao objetivo!
+RapMato: Oh olá! Só te estamos a vigiar para ver como te corre a missão. #id:27
+SliceSpice: Exato! Não nos deixes te distrair. De volta ao objetivo! #id:28
 set {dialogo} = 0
 [end_timeline]

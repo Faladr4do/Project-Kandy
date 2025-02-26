@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bt4v8soms0ijn"
+
+[deps]
+
+files=["res://Language/dialogic_sou_shrummy_translation.en.translation"]
+
+source_file="res://Language/dialogic_sou_shrummy_translation.csv"
+dest_files=["res://Language/dialogic_sou_shrummy_translation.en.translation"]
+
+[params]
+
+compress=true
+delimiter=0

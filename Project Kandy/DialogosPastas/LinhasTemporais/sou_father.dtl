@@ -1,11 +1,11 @@
 set {dialogo} = 1
 join all_father 1
 if {falou_shroom} == true and {falou_father} == false:
-	all_father: Quem vem lá?!
-	BroColli: ...
-	all_father: A Shrummy disse isso de mim?? Há muito tempo que sinto o mesmo, tenho que falar com ela enquanto partilhamos um regador...
-	all_father: Ah claro, considera o portão destrancado, camarada vegetal!
+	all_father: Quem vem lá?! #id:2a
+	BroColli: ... #id:2b
+	all_father: A Shrummy disse isso de mim?? Há muito tempo que sinto o mesmo, tenho que falar com ela enquanto partilhamos um regador... #id:2c
+	all_father: Ah claro, considera o portão destrancado, camarada vegetal! #id:2d
 	set {falou_father} = true
 elif {falou_shroom} == true and {falou_father} == true:
-	all_father: O portão já está aberto.
+	all_father: O portão já está aberto. #id:2e
 set {dialogo} = 0

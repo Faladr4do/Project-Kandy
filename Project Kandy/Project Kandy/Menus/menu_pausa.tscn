@@ -70,29 +70,29 @@ texture_filter = 1
 layout_mode = 2
 theme = ExtResource("2_w8hgs")
 theme_override_fonts/font = ExtResource("2_4iyud")
-text = "Jogar"
+text = "Play"
 
 [node name="BotaoReiniciar" type="Button" parent="TextureRect/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_4iyud")
-text = "Voltar para
-Checkpoint"
+text = "Return to 
+Last Checkpoint"
 
 [node name="BotaoConfigurar" type="Button" parent="TextureRect/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_4iyud")
-text = "Configurar"
+text = "Settings"
 
 [node name="BotaoSair" type="Button" parent="TextureRect/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_4iyud")
-text = "Sair"
+text = "Quit"
 
 [node name="BotaoVoltarMenu" type="Button" parent="TextureRect/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_4iyud")
-text = "Voltar para
-Menu Principal"
+text = "Return to 
+Main Menu"
 
 [connection signal="pressed" from="TextureRect/VBoxContainer/BotaoJogar" to="." method="_on_botao_jogar_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/BotaoReiniciar" to="." method="_on_botao_reiniciar_pressed"]

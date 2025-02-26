@@ -29,32 +29,11 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("1_pi0a5")
 theme_override_font_sizes/font_size = 20
-current_tab = 2
-
-[node name="Jogo" type="TabBar" parent="TabContainer"]
-visible = false
-layout_mode = 2
-
-[node name="JogoContainer" type="HSplitContainer" parent="TabContainer/Jogo"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-dragger_visibility = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Jogo/JogoContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/Jogo/JogoContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
+current_tab = 0
 
 [node name="Video" type="TabBar" parent="TabContainer"]
-visible = false
 layout_mode = 2
+metadata/_tab_index = 0
 
 [node name="VideoContainer" type="HSplitContainer" parent="TabContainer/Video"]
 layout_mode = 1
@@ -96,7 +75,9 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="Audio" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
+metadata/_tab_index = 1
 
 [node name="AudioContainer" type="HSplitContainer" parent="TabContainer/Audio"]
 layout_mode = 1
@@ -126,6 +107,7 @@ size_flags_horizontal = 3
 [node name="Controlos" type="TabBar" parent="TabContainer"]
 visible = false
 layout_mode = 2
+metadata/_tab_index = 2
 
 [node name="ControlosContainer" type="HSplitContainer" parent="TabContainer/Controlos"]
 layout_mode = 1
@@ -141,26 +123,5 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/Controlos/ControlosContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Testes" type="TabBar" parent="TabContainer"]
-visible = false
-layout_mode = 2
-
-[node name="TestesContainer" type="HSplitContainer" parent="TabContainer/Testes"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-dragger_visibility = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Testes/TestesContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/Testes/TestesContainer"]
 layout_mode = 2
 size_flags_horizontal = 3

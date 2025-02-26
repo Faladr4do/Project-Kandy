@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bidyv2bn73sss"
+
+[deps]
+
+files=["res://Language/dialogic_comercio_ervilhas_translation.en.translation"]
+
+source_file="res://Language/dialogic_comercio_ervilhas_translation.csv"
+dest_files=["res://Language/dialogic_comercio_ervilhas_translation.en.translation"]
+
+[params]
+
+compress=true
+delimiter=0

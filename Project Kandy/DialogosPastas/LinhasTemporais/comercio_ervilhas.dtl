@@ -1,13 +1,13 @@
 set {dialogo} = 1
 join sleek 1
 if {ervilhas} == false:
-	sleek (SLeek): OH! Olá potencial cliente! Eu venho de chegar da Vegetalândia!
-	sleek (SLeek): Sou apenas um honesto vendedor de ervilhas que vende ervilhas!
-	sleek (SLeek): Estaria disposto a comprar algumas ervilhas por apenas umas miseras moedas?
-	- Claro! Adoro ervilhas?!
-	- Sim.
+	sleek (SLeek): OH! Olá potencial cliente! Eu venho de chegar da Vegetalândia! #id:11
+	sleek (SLeek): Sou apenas um honesto vendedor de ervilhas que vende ervilhas! #id:12
+	sleek (SLeek): Estaria disposto a comprar algumas ervilhas por apenas umas miseras moedas? #id:13
+	- Claro! Adoro ervilhas?! #id:14
+	- Sim. #id:15
 else:
-	sleek: Essas ervilhas são das boas!
+	sleek: Essas ervilhas são das boas! #id:16
 set {ervilhas} = true
 set {dialogo} = 0
 [end_timeline]
