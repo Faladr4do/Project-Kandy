@@ -6,6 +6,7 @@ extends Golem
 @onready var caster_coluna : Marker2D = $ColunaMarker
 @onready var caster_wave : Marker2D = $WaveMarker
 @onready var move_timer : Timer = $MovementTimer
+@onready var area_attack : Area2D = $AreaAttack
 
 @export var coluna : PackedScene
 @export var choco_wave : PackedScene
@@ -121,9 +122,11 @@ func _on_animation_started(anim_name):
 		await get_tree().create_timer(0.2).timeout
 		shoot(coluna, 0, caster_coluna)
 	if anim_name == "melee_attack":
-		await get_tree().create_timer(7).timeout
+		await get_tree().create_timer(0.7).timeout
 		golem_melee.play()
 		melee = true
+		area_attack.monitoring = false
+		area_attack.monitoring = true
 		print_debug(melee)
 
 func _on_movement_timer_timeout():
@@ -134,7 +137,6 @@ func _on_movement_timer_timeout():
 			summon_column()
 	else:
 		move_timer.start()
-
 
 func area_ataque(body):
 	if body.is_in_group("Vegetal"):

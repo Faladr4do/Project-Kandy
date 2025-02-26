@@ -1,16 +1,18 @@
 res://Project Kandy/Assets/Ambiente/game_environment.tres
-res://Project Kandy/BroColli/bro_colli.tscn
-res://gerenciador_jogo.gd
+res://jogo_full.tscn
+res://Project Kandy/Assets/FontesEstilos/HUD_Font.tres
 res://Project Kandy/Assets/Shaders/hit_flash.tres
+res://Project Kandy/Assets/FontesEstilos/SimpleFonte.tres
 res://Project Kandy/Assets/FontesEstilos/AtariFont.tres
 res://Project Kandy/Assets/FontesEstilos/estilo_botao.tres
-res://Project Kandy/Assets/FontesEstilos/SimpleFonte.tres
+res://Project Kandy/Assets/Globais/Classes/gerenciador_jogo.gd
+res://Project Kandy/BroColli/bro_colli.tscn
 res://Project Kandy/ChocoGolem/choco_golem.tscn
 res://Project Kandy/HolyApple/holy_apple.tscn
 res://Project Kandy/Menus/menu_configurar.tscn
-res://jogo_full.tscn
 res://Project Kandy/Menus/menu_index.tscn
-res://Project Kandy/Niveis/nivel_6.tscn
 res://Project Kandy/Assets/Bootsplash/Bootsplash.tscn
-res://Project Kandy/HolyApple/holy_apple.gd
-res://Project Kandy/Niveis/nivel_7.tscn
+res://Project Kandy/Niveis/nivel_3.tscn
+res://Project Kandy/ChocoGolem/choco_golem.gd
+res://gerenciador_jogo.gd
+res://Project Kandy/Menus/menu_pausa.tscn
