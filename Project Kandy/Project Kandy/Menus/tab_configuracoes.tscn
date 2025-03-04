@@ -31,11 +31,11 @@ theme_override_fonts/font = ExtResource("1_pi0a5")
 theme_override_font_sizes/font_size = 20
 current_tab = 0
 
-[node name="Video" type="TabBar" parent="TabContainer"]
+[node name="VIDEO" type="TabBar" parent="TabContainer"]
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="VideoContainer" type="HSplitContainer" parent="TabContainer/Video"]
+[node name="VideoContainer" type="HSplitContainer" parent="TabContainer/VIDEO"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -48,38 +48,38 @@ grow_horizontal = 2
 grow_vertical = 2
 dragger_visibility = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Video/VideoContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/VIDEO/VideoContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 30
 
-[node name="Configurar Tela" type="Label" parent="TabContainer/Video/VideoContainer/VBoxContainer"]
+[node name="Configurar Tela" type="Label" parent="TabContainer/VIDEO/VideoContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("1_pi0a5")
 theme_override_font_sizes/font_size = 20
-text = "Configurar Tela"
+text = "VIDEO SETTINGS"
 
-[node name="HBoxContainer" parent="TabContainer/Video/VideoContainer/VBoxContainer" instance=ExtResource("2_jloti")]
+[node name="HBoxContainer" parent="TabContainer/VIDEO/VideoContainer/VBoxContainer" instance=ExtResource("2_jloti")]
 layout_mode = 2
 
-[node name="ResolucaoTela" parent="TabContainer/Video/VideoContainer/VBoxContainer" instance=ExtResource("3_ekh31")]
+[node name="ResolucaoTela" parent="TabContainer/VIDEO/VideoContainer/VBoxContainer" instance=ExtResource("3_ekh31")]
 layout_mode = 2
 
-[node name="BarraLuminosidade" parent="TabContainer/Video/VideoContainer/VBoxContainer" instance=ExtResource("5_hlv8p")]
+[node name="BarraLuminosidade" parent="TabContainer/VIDEO/VideoContainer/VBoxContainer" instance=ExtResource("5_hlv8p")]
 layout_mode = 2
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/Video/VideoContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/VIDEO/VideoContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Audio" type="TabBar" parent="TabContainer"]
+[node name="AUDIO" type="TabBar" parent="TabContainer"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="AudioContainer" type="HSplitContainer" parent="TabContainer/Audio"]
+[node name="AudioContainer" type="HSplitContainer" parent="TabContainer/AUDIO"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -92,24 +92,24 @@ grow_horizontal = 2
 grow_vertical = 2
 dragger_visibility = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Audio/AudioContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/AUDIO/AudioContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="GestorVolumes" parent="TabContainer/Audio/AudioContainer/VBoxContainer" instance=ExtResource("5_p113l")]
+[node name="GestorVolumes" parent="TabContainer/AUDIO/AudioContainer/VBoxContainer" instance=ExtResource("5_p113l")]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/Audio/AudioContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/AUDIO/AudioContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Controlos" type="TabBar" parent="TabContainer"]
+[node name="UH___" type="TabBar" parent="TabContainer"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
-[node name="ControlosContainer" type="HSplitContainer" parent="TabContainer/Controlos"]
+[node name="ControlosContainer" type="HSplitContainer" parent="TabContainer/UH___"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -118,10 +118,10 @@ grow_horizontal = 2
 grow_vertical = 2
 dragger_visibility = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Controlos/ControlosContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/UH___/ControlosContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/Controlos/ControlosContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/UH___/ControlosContainer"]
 layout_mode = 2
 size_flags_horizontal = 3

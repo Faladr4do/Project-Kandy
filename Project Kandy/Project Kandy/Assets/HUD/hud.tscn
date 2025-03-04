@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://em3bia5jdls6"]
 
-[ext_resource type="Script" path="res://Project Kandy/Assets/HUD/hud.gd" id="1_oosja"]
+[ext_resource type="Script" uid="uid://bh5mc8pm6idvq" path="res://Project Kandy/Assets/HUD/hud.gd" id="1_oosja"]
 [ext_resource type="LabelSettings" uid="uid://dc313cvmebsck" path="res://Project Kandy/Assets/FontesEstilos/HUD_Font.tres" id="2_ujoxb"]
 
 [node name="HUD" type="CanvasLayer"]

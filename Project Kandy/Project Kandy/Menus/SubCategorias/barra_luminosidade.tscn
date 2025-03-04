@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b1wivxdfgjrfq"]
 
-[ext_resource type="Script" path="res://Project Kandy/Menus/SubCategorias/barra_luminosidade.gd" id="1_34wiu"]
+[ext_resource type="Script" uid="uid://dhvkl8rttnb75" path="res://Project Kandy/Menus/SubCategorias/barra_luminosidade.gd" id="1_34wiu"]
 [ext_resource type="LabelSettings" uid="uid://qxpld33gk1nd" path="res://Project Kandy/Assets/FontesEstilos/SimpleFonte.tres" id="2_jiuls"]
 
 [node name="BarraLuminosidade" type="VBoxContainer"]
@@ -14,8 +14,7 @@ script = ExtResource("1_34wiu")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 2
-text = "Luminosidade
-"
+text = "Luminosity?"
 label_settings = ExtResource("2_jiuls")
 
 [node name="Luminosidade" type="HSlider" parent="."]

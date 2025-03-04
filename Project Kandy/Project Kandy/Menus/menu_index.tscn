@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cbxo8q6eymk18"]
 
 [ext_resource type="FontFile" uid="uid://chvuo2lxramxx" path="res://Project Kandy/Assets/FontesEstilos/AtariClassic-gry3.ttf" id="1_6h8r2"]
-[ext_resource type="Script" path="res://Project Kandy/Menus/menu_index.gd" id="1_t2r1b"]
+[ext_resource type="Script" uid="uid://cjier4yd1ai7b" path="res://Project Kandy/Menus/menu_index.gd" id="1_t2r1b"]
 [ext_resource type="PackedScene" uid="uid://dgdvruik070w8" path="res://jogo_full.tscn" id="2_od18c"]
 [ext_resource type="Texture2D" uid="uid://bbwtwchwdogtt" path="res://Project Kandy/Assets/GUI/MenuBackground.png" id="3_aybur"]
 [ext_resource type="Theme" uid="uid://d4k7b02m1i26d" path="res://Project Kandy/Assets/FontesEstilos/estilo_botao.tres" id="4_g2sd2"]
@@ -43,6 +43,7 @@ offset_right = 554.0
 grow_vertical = 0
 
 [node name="JogarBotao" type="Button" parent="BotoesMenu"]
+auto_translate_mode = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("4_g2sd2")
@@ -50,7 +51,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("1_6h8r2")
 theme_override_font_sizes/font_size = 45
-text = "Play"
+text = "PLAY"
 
 [node name="ConfigurarBotao" type="Button" parent="BotoesMenu"]
 layout_mode = 2
@@ -60,9 +61,10 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("1_6h8r2")
 theme_override_font_sizes/font_size = 45
-text = "Settings"
+text = "SETTINGS"
 
 [node name="SairBotao" type="Button" parent="BotoesMenu"]
+auto_translate_mode = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("4_g2sd2")
@@ -70,14 +72,14 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("1_6h8r2")
 theme_override_font_sizes/font_size = 45
-text = "Quit"
+text = "QUIT"
 
 [node name="WorldEnvironment" parent="." instance=ExtResource("7_gilne")]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_26wa4")
 autoplay = true
-bus = &"Musica"
+bus = &"Music"
 
 [connection signal="pressed" from="BotoesMenu/JogarBotao" to="." method="_on_jogar_botao_pressed"]
 [connection signal="pressed" from="BotoesMenu/ConfigurarBotao" to="." method="_on_configurar_botao_pressed"]

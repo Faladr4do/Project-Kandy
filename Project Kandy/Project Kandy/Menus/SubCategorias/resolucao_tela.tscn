@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cqrir1ec4l0k7"]
 
-[ext_resource type="Script" path="res://Project Kandy/Menus/SubCategorias/resolucao_tela.gd" id="1_vk85u"]
+[ext_resource type="Script" uid="uid://ci1gm4me2ivcx" path="res://Project Kandy/Menus/SubCategorias/resolucao_tela.gd" id="1_vk85u"]
 [ext_resource type="LabelSettings" uid="uid://qxpld33gk1nd" path="res://Project Kandy/Assets/FontesEstilos/SimpleFonte.tres" id="2_xi0ht"]
 
 [node name="ResolucaoTela" type="HBoxContainer" node_paths=PackedStringArray("botao_opcoes")]
@@ -17,7 +17,7 @@ botao_opcoes = NodePath("OptionButton")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 2
-text = "Resolucao de Tela"
+text = "Screen Resolution"
 label_settings = ExtResource("2_xi0ht")
 
 [node name="OptionButton" type="OptionButton" parent="."]

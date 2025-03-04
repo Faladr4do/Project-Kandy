@@ -1,13 +1,14 @@
 set {dialogo} = 1
-join sleek 1
+join  1
 if {ervilhas} == false:
-	sleek (SLeek): OH! Olá potencial cliente! Eu venho de chegar da Vegetalândia! #id:11
-	sleek (SLeek): Sou apenas um honesto vendedor de ervilhas que vende ervilhas! #id:12
-	sleek (SLeek): Estaria disposto a comprar algumas ervilhas por apenas umas miseras moedas? #id:13
-	- Claro! Adoro ervilhas?! #id:14
-	- Sim. #id:15
+	Sleek (SLeek): OH! Hey potential costumer! I've came from arriving from the Vegetabland! #id:11
+	Sleek (SLeek): Am only an honest pea merchant that sells peas! #id:12
+	Sleek (SLeek): Would you like to buy a few peas for a couple a coins? #id:13
+	- Off course! I peaing?! #id:14
+		Sleek: Me too, veggie, me too...
+	- yes. #id:15
 else:
-	sleek: Essas ervilhas são das boas! #id:16
+	Sleek: Those peas are the bomb! #id:16
 set {ervilhas} = true
 set {dialogo} = 0
 [end_timeline]

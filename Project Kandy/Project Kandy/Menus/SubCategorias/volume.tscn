@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c5t2oduqbem4t"]
 
-[ext_resource type="Script" path="res://Project Kandy/Menus/SubCategorias/volume.gd" id="1_2bywp"]
+[ext_resource type="Script" uid="uid://dbv8cb4c5lr1k" path="res://Project Kandy/Menus/SubCategorias/volume.gd" id="1_2bywp"]
 [ext_resource type="LabelSettings" uid="uid://dt4qythdv8y4n" path="res://Project Kandy/Assets/FontesEstilos/AtariFont.tres" id="2_1xon2"]
 
 [node name="Volume" type="VBoxContainer"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://0urscw4y8aqn"]
+[gd_scene load_steps=9 format=3 uid="uid://0urscw4y8aqn"]
 
-[ext_resource type="Script" path="res://Project Kandy/Menus/menu_configurar.gd" id="1_1tq4r"]
+[ext_resource type="Script" uid="uid://obvhnjc44vvt" path="res://Project Kandy/Menus/menu_configurar.gd" id="1_1tq4r"]
 [ext_resource type="FontFile" uid="uid://chvuo2lxramxx" path="res://Project Kandy/Assets/FontesEstilos/AtariClassic-gry3.ttf" id="1_6m336"]
 [ext_resource type="PackedScene" uid="uid://bpkq80ppot606" path="res://Project Kandy/Menus/tab_configuracoes.tscn" id="1_7aarb"]
 [ext_resource type="Theme" uid="uid://d4k7b02m1i26d" path="res://Project Kandy/Assets/FontesEstilos/estilo_botao.tres" id="2_1hhvl"]
 [ext_resource type="Texture2D" uid="uid://bbwtwchwdogtt" path="res://Project Kandy/Assets/GUI/MenuBackground.png" id="2_gytev"]
+[ext_resource type="FontFile" uid="uid://c754m7spiamai" path="res://Project Kandy/Assets/FontesEstilos/AtariClassicChunky-PxXP.ttf" id="6_12t07"]
 [ext_resource type="AudioStream" uid="uid://dabvjkcuq5lhl" path="res://Project Kandy/Assets/SoundTracks/Glazin n Blazin.wav" id="7_6wjon"]
 [ext_resource type="PackedScene" uid="uid://bycsdpy3d31dn" path="res://Project Kandy/Ambiente/world_environment.tscn" id="7_a7a1i"]
 
@@ -49,7 +50,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("1_6m336")
 theme_override_font_sizes/font_size = 40
-text = "Configurar"
+text = "SETTINGS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -72,14 +73,16 @@ grow_vertical = 0
 size_flags_horizontal = 4
 size_flags_vertical = 8
 theme = ExtResource("2_1hhvl")
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("6_12t07")
 theme_override_font_sizes/font_size = 32
-text = "Sair"
+text = "QUIT"
 
 [node name="WorldEnvironment" parent="." instance=ExtResource("7_a7a1i")]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_6wjon")
 autoplay = true
-bus = &"Musica"
+bus = &"Music"
 
 [connection signal="pressed" from="SairBotao" to="." method="_on_sair_botao_pressed"]

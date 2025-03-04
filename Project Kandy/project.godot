@@ -13,11 +13,11 @@ config_version=5
 config/name="Project Kandy"
 config/tags=PackedStringArray("main_projects")
 run/main_scene="res://Project Kandy/Assets/Bootsplash/Bootsplash.tscn"
-config/features=PackedStringArray("4.3", "GL Compatibility")
+config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
-boot_splash/image="res://Project Kandy/Assets/Icons/kandy_icon.png"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
+boot_splash/image="res://Project Kandy/Assets/Icons/kandy_icon.png"
 config/icon="res://Project Kandy/Assets/Icons/kandy_icon.png"
 
 [audio]
@@ -41,10 +41,10 @@ directories/dch_directory={
 "BroColli": "res://DialogosPastas/Personagens/BroColli/BroColli.dch",
 "Pedras": "res://DialogosPastas/Personagens/Pedras/Pedras.dch",
 "RapMato": "res://DialogosPastas/Personagens/RedTwins/RapMato.dch",
+"Sleek": "res://DialogosPastas/Personagens/Sleek/Sleek.dch",
 "SliceSpice": "res://DialogosPastas/Personagens/RedTwins/SliceSpice.dch",
 "all_father": "res://DialogosPastas/Personagens/AllFather/all_father.dch",
 "shrummy": "res://DialogosPastas/Personagens/Shrummy/shrummy.dch",
-"sleek": "res://DialogosPastas/Personagens/Sleek/Sleek.dch",
 "unit_test_character": "res://Tests/Resources/unit_test_character.dch"
 }
 directories/dtl_directory={
@@ -95,6 +95,7 @@ translation/translation_folder="res://Language"
 translation/save_mode=0
 translation/add_separator=false
 translation/original_locale="en"
+glossary/glossary_files=[]
 
 [display]
 
@@ -131,8 +132,7 @@ folder_colors={
 
 jump={
 "deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
-, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":87,"key_label":0,"unicode":119,"location":0,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":87,"key_label":0,"unicode":119,"location":0,"echo":false,"script":null)
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194320,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
@@ -151,6 +151,7 @@ right={
 attack={
 "deadzone": 0.5,
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(189, 17),"global_position":Vector2(193, 60),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
 ]
 }
 reiniciar={
@@ -165,6 +166,7 @@ slown={
 estigar={
 "deadzone": 0.5,
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(202, 3),"global_position":Vector2(206, 46),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
 ]
 }
 cancelar={
@@ -206,6 +208,12 @@ z_special={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":90,"key_label":0,"unicode":122,"location":0,"echo":false,"script":null)
 ]
 }
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://Language/language.txt")
+locale/test="en"
+locale/locale_filter_mode=0
 
 [layer_names]
 

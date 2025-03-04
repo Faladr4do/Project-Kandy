@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b7mppsj3sykem"]
 
-[ext_resource type="Script" path="res://Project Kandy/Menus/SubCategorias/ModoTela.gd" id="1_nxqdm"]
+[ext_resource type="Script" uid="uid://2u8arsqskovi" path="res://Project Kandy/Menus/SubCategorias/ModoTela.gd" id="1_nxqdm"]
 [ext_resource type="FontFile" uid="uid://chvuo2lxramxx" path="res://Project Kandy/Assets/FontesEstilos/AtariClassic-gry3.ttf" id="2_1ne2i"]
 [ext_resource type="LabelSettings" uid="uid://qxpld33gk1nd" path="res://Project Kandy/Assets/FontesEstilos/SimpleFonte.tres" id="3_2klfr"]
 
@@ -21,7 +21,7 @@ layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_1ne2i")
 theme_override_font_sizes/font_size = 15
-text = "Modo de Tela"
+text = "Screen"
 label_settings = ExtResource("3_2klfr")
 
 [node name="OptionButton" type="OptionButton" parent="."]
@@ -30,12 +30,10 @@ size_flags_horizontal = 10
 size_flags_vertical = 8
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_1ne2i")
-item_count = 4
-popup/item_0/text = "Tela-Cheia"
+item_count = 3
+popup/item_0/text = "Fullscreen"
 popup/item_0/id = 0
-popup/item_1/text = "Modo janela"
+popup/item_1/text = "Windowed"
 popup/item_1/id = 1
-popup/item_2/text = "Janela sem bordas"
+popup/item_2/text = "Windowed Without Borders"
 popup/item_2/id = 2
-popup/item_3/text = "Tela-Cheia sem bordas"
-popup/item_3/id = 3

@@ -10,7 +10,7 @@ var index_bus
 func _ready():
 	titulo.text = nome_bus
 	if titulo.text == "Master":
-		titulo.text = "Volume Geral"
+		titulo.text = "Total Volume"
 	index_bus = AudioServer.get_bus_index(nome_bus)
 	slider.value_changed.connect(ao_mudar_valor)
 	slider.value = db_to_linear(
@@ -27,7 +27,5 @@ func ao_mudar_valor(valor):
 
 func print_available_buses():
 	var bus_count = AudioServer.get_bus_count()
-	print("Available buses:")
 	for i in range(bus_count):
 		var bus_name = AudioServer.get_bus_name(i)
-		print(i, ": ", bus_name)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dgdvruik070w8"]
 
-[ext_resource type="Script" path="res://Project Kandy/Assets/Globais/Classes/gerenciador_jogo.gd" id="1_8ttu7"]
+[ext_resource type="Script" uid="uid://bgsk33ccdml40" path="res://Project Kandy/Assets/Globais/Classes/gerenciador_jogo.gd" id="1_8ttu7"]
 [ext_resource type="PackedScene" uid="uid://em3bia5jdls6" path="res://Project Kandy/Assets/HUD/hud.tscn" id="3_dwfcq"]
 [ext_resource type="PackedScene" uid="uid://c6i0fl7bbgfvc" path="res://Project Kandy/Menus/menu_pausa.tscn" id="4_lai64"]
 [ext_resource type="PackedScene" uid="uid://bycsdpy3d31dn" path="res://Project Kandy/Ambiente/world_environment.tscn" id="5_78neq"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://b7bwnr54cs50l"]
 
-[ext_resource type="Script" path="res://Project Kandy/Assets/Bootsplash/Bootsplash.gd" id="1_okmeg"]
+[ext_resource type="Script" uid="uid://de7uto7pt7aa2" path="res://Project Kandy/Assets/Bootsplash/Bootsplash.gd" id="1_okmeg"]
 [ext_resource type="AudioStream" uid="uid://c6xk8rvo1qm2u" path="res://Project Kandy/Assets/Bootsplash/NoodleStudiosP1.mp3" id="2_xria4"]
 [ext_resource type="AudioStream" uid="uid://bxxkl873ast0o" path="res://Project Kandy/Assets/Bootsplash/NoodleStudiosP2.mp3" id="3_3ypbv"]
 [ext_resource type="Texture2D" uid="uid://cae72l7op1ct8" path="res://Project Kandy/Assets/Bootsplash/Noodle.png" id="4_7c7yg"]
@@ -62,8 +62,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_acj3f"]
 _data = {
-"RESET": SubResource("Animation_rmg8g"),
-"bootsplash": SubResource("Animation_whn25")
+&"RESET": SubResource("Animation_rmg8g"),
+&"bootsplash": SubResource("Animation_whn25")
 }
 
 [node name="Control" type="Control"]
@@ -93,7 +93,7 @@ stream = ExtResource("3_3ypbv")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_acj3f")
+&"": SubResource("AnimationLibrary_acj3f")
 }
 autoplay = "bootsplash"
 

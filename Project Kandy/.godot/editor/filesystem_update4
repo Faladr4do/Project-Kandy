@@ -1,25 +1,22 @@
 res://Project Kandy/Assets/Ambiente/game_environment.tres
 res://jogo_full.tscn
 res://Project Kandy/Assets/FontesEstilos/HUD_Font.tres
-res://Project Kandy/Assets/Shaders/hit_flash.tres
 res://Project Kandy/Assets/FontesEstilos/SimpleFonte.tres
 res://Project Kandy/Assets/FontesEstilos/AtariFont.tres
 res://Project Kandy/Assets/FontesEstilos/estilo_botao.tres
+res://Project Kandy/Assets/Shaders/hit_flash.tres
+res://Project Kandy/Assets/Globais/Classes/gerenciador_jogo.gd
+res://Project Kandy/Menus/menu_configurar.tscn
 res://Project Kandy/Menus/menu_index.tscn
+res://Project Kandy/Assets/Bootsplash/Bootsplash.tscn
 res://Project Kandy/Menus/menu_pausa.tscn
 res://Project Kandy/Menus/tab_configuracoes.tscn
-res://DialogosPastas/LinhasTemporais/comercio_ervilhas.dtl
-res://DialogosPastas/LinhasTemporais/double_rock.dtl
+res://Project Kandy/ObjetosProgramaveis/Barreiras/bloqueador.tscn
+res://Project Kandy/Niveis/nivel_4.tscn
 res://DialogosPastas/LinhasTemporais/intro.dtl
+res://DialogosPastas/LinhasTemporais/double_rock.dtl
+res://DialogosPastas/LinhasTemporais/comercio_ervilhas.dtl
 res://DialogosPastas/LinhasTemporais/president_watcher.dtl
 res://DialogosPastas/LinhasTemporais/sem_dialogo.dtl
 res://DialogosPastas/LinhasTemporais/sou_father.dtl
 res://DialogosPastas/LinhasTemporais/sou_shrummy.dtl
-res://DialogosPastas/Personagens/AllFather/all_father.dch
-res://DialogosPastas/Personagens/BroColli/BroColli.dch
-res://DialogosPastas/Personagens/Pedras/Pedras.dch
-res://DialogosPastas/Personagens/RedTwins/RapMato.dch
-res://DialogosPastas/Personagens/RedTwins/SliceSpice.dch
-res://DialogosPastas/Personagens/Shrummy/shrummy.dch
-res://DialogosPastas/Personagens/Sleek/Sleek.dch
-res://Tests/Resources/unit_test_character.dch

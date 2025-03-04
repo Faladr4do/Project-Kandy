@@ -13,7 +13,7 @@ size_flags_vertical = 10
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 2
-text = "Gestor de Volumes"
+text = "Volume Manager"
 label_settings = ExtResource("1_xymsy")
 
 [node name="Volume" parent="." instance=ExtResource("2_my8ls")]
@@ -22,7 +22,7 @@ nome_bus = "Master"
 
 [node name="Volume2" parent="." instance=ExtResource("2_my8ls")]
 layout_mode = 2
-nome_bus = "Musica"
+nome_bus = "Music"
 
 [node name="Volume3" parent="." instance=ExtResource("2_my8ls")]
 layout_mode = 2

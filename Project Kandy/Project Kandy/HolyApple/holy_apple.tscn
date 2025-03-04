@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://b5mklxk6lhoh0"]
 
-[ext_resource type="Script" path="res://Project Kandy/HolyApple/holy_apple.gd" id="1_gcf2d"]
+[ext_resource type="Script" uid="uid://p07fubc233h4" path="res://Project Kandy/HolyApple/holy_apple.gd" id="1_gcf2d"]
 [ext_resource type="Texture2D" uid="uid://csjfvmddc4qnc" path="res://Project Kandy/HolyApple/sprite/apple.png" id="1_v1igj"]
 [ext_resource type="PackedScene" uid="uid://dabn8vv1h0aj3" path="res://Project Kandy/Assets/Globais/area_interagir.tscn" id="2_3b35g"]
 

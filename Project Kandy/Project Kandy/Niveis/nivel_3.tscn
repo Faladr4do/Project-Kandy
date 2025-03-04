@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=3 uid="uid://n2itlsopjume"]
 
-[ext_resource type="Script" path="res://Project Kandy/Niveis/nivel_3.gd" id="1_02gfh"]
+[ext_resource type="Script" uid="uid://bbd73jmvbd0i0" path="res://Project Kandy/Niveis/nivel_3.gd" id="1_02gfh"]
 [ext_resource type="Texture2D" uid="uid://c0r0dmjqv83o" path="res://Project Kandy/Assets/Tiles/WallsFloorsRedoo.png" id="1_dex52"]
 [ext_resource type="PackedScene" uid="uid://c0ej330af3pbo" path="res://Project Kandy/BroColli/bro_colli.tscn" id="2_osj4h"]
 [ext_resource type="PackedScene" uid="uid://dd1br3saykilj" path="res://Project Kandy/Assets/CameraPlayer/camera_player.tscn" id="3_wnje3"]
@@ -13068,7 +13068,7 @@ position = Vector2(2435.79, 3233.37)
 stream = ExtResource("17_k4asw")
 volume_db = -7.0
 autoplay = true
-bus = &"Musica"
+bus = &"Music"
 
 [node name="Tutorial" type="Node" parent="."]
 

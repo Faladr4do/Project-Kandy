@@ -1,27 +1,27 @@
 set {dialogo} = 1
 join Pedras 3
 if {duplo_salto} == 0.5:
-	Pedras: Ora Ora Ora, vejam só quem voltou a rastejar... #id:17
-	- Vim te dar as 7 moedas! #id:18
+	Pedras: Well well well, look who came crawling back... #id:17
+	- I came, to give you 7 coins! #id:18
 		set {duplo_salto} = 1
-		Pedras: Eu sabia que havias de ceder mais cedo ou mais tarde! #id:19
+		Pedras: Oi! I knew you'd give in, sooner or later! #id:19
 	- ... #id:1a
-		Pedras: Volta a dizer? #id:1b
+		Pedras: Say that again? #id:1b
 	set {dialogo} = 0
 	[end_timeline]
 elif {duplo_salto} == 1:
-	Pedras: Obrigado pelas moedinhas, mas já podes sair daqui, rapaz! #id:1c
+	Pedras: Thanks, now do as a tree and leave, lad! #id:1c
 	set {dialogo} = 0
 	[end_timeline]
-Pedras (DrPedraIdle): Ah, olá rapaz, eu sou o Lelo! Leo é o meu gato! #id:1d
+Pedras (DrPedraIdle): Oi, howdy lad, I'm Lelo! And Leo is my kitty! #id:1d
 join BroColli 1
 BroColli (BroColliTalking): ... #id:1e
-Pedras: Diga-me por acaso tens umas moedinhas para mim, rapaz??? #id:1f
-- Sim, toma 7 moedinhas! [if {duplo_salto} == 0] #id:20
+Pedras: Do tell, would you spare this ye olde stone a coin, lad??? #id:1f
+- Sure, take 7 of my coins... | [if {duplo_salto} == 0] #id:20
 	set {duplo_salto} = 1
-	Pedras: Ai tantas moedinhas, muito obrigado! Agora já posso comprar uns ténis novos! #id:21
-- Não, sai me da frente! [if {duplo_salto} == 0] #id:22
+	Pedras: Golly, so many a coinses! Now I can buy some new running shoes! #id:21
+- No, get out of my way! | [if {duplo_salto} == 0] #id:22
 	set {duplo_salto} = 0.5
-	Pedras: Ai, fica a saber que não se fala assim com idosos! Nem pedras! #id:23
+	Pedras: Oi, that's no way to speak to the elderly, lad! Even less to stones! #id:23
 set {dialogo} = 0
 [end_timeline]
